@@ -11,6 +11,7 @@ public class PlayerStamina : MonoBehaviour
     private readonly int staminaRoutineFit = 2;
 
     public bool needStamina = false;
+    private bool staminaRegenInProgress = false;
     public StaminaBar staminaBar;
 
 
@@ -28,9 +29,11 @@ public class PlayerStamina : MonoBehaviour
         staminaBar.SetStamina(currentStamina);
         needStamina = true;
         //StopAllCoroutines();
-        if(needStamina == true)
+        if(needStamina && !staminaRegenInProgress)
         {            
-            StartCoroutine(StaminaRegen()); 
+            staminaRegenInProgress = true;
+            StartCoroutine(StaminaRegen());
+
         }
         
         
@@ -42,7 +45,8 @@ public class PlayerStamina : MonoBehaviour
         {
             if (currentStamina > maxStamina - staminaRoutineFit)
             {
-                currentStamina = maxStamina - staminaRoutineFit;                
+                currentStamina = maxStamina - staminaRoutineFit;
+                staminaRegenInProgress = false;                
                 needStamina = false;
                 StopCoroutine(StaminaRegen());
             }
