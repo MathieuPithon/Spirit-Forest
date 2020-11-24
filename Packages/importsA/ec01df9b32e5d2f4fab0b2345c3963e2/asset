@@ -1,0 +1,55 @@
+﻿using System.Collections;
+using UnityEngine;
+
+public class PlayerStamina : MonoBehaviour
+{
+    public int maxStamina = 100;
+    public float currentStamina;
+
+    public StaminaBar staminaBar;
+    void Start()
+    {
+        currentStamina = maxStamina;
+        staminaBar.SetMaxStamina(maxStamina);
+        staminaBar.SetStamina(maxStamina);
+    }
+
+    void Update()
+    {
+        
+            currentStamina += 0.01f;
+            if (currentStamina>maxStamina)
+            {
+                currentStamina=maxStamina;
+            }
+            staminaBar.SetStamina(currentStamina);
+        
+    }
+
+    public void StaminaConsumption(float loss)
+    {
+        currentStamina-=loss;
+        staminaBar.SetStamina(currentStamina);
+    }
+    // public void Healing(float heal)
+    // {
+    //     float healthControl = currentStamina + heal >100 ? heal= 100f - currentStamina: heal = heal;
+    //     stillToHeal = heal;
+    //     healingInProgress = true;
+    
+    }
+    // IEnumerator ProgressBar()
+    // {
+    //     for (float i =0 ; i < 20; i += 0.01f)
+    //     {
+    //         yield return new WaitForSeconds(.005f);
+    //         currentStamina += 0.01f;
+    //         staminaBar.SetHealth(currentStamina);
+    //     }
+        
+ 
+        
+    
+
+
+

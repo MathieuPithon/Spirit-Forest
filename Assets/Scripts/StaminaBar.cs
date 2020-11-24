@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class StaminaBar : MonoBehaviour
 {
     public Slider slider;
-
+    
     public Gradient gradient;
     public Image fill;
     public void SetMaxStamina(int stamina)

@@ -18,6 +18,7 @@ public class PlayerStamina : MonoBehaviour
     {
         currentStamina = maxStamina;
         staminaBar.SetMaxStamina(maxStamina);
+        staminaBar.SetStamina(maxStamina);
     }
 
     public void LoseStamina(int staminaUsed)
