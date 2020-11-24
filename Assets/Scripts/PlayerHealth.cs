@@ -56,7 +56,10 @@ public class PlayerHealth : MonoBehaviour
 
     public void Healing(float heal)
     {
-        float healthControl = currentHealth + heal > 100 ? heal = 100f - currentHealth : heal = heal;
+        if (currentHealth + heal > 100)
+        {
+             heal = 100f - currentHealth;
+        }
         stillToHeal = heal;
         healingInProgress = true;
 
