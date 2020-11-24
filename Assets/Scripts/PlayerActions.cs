@@ -4,7 +4,6 @@ using UnityEngine;
 public class PlayerActions : MonoBehaviour
 {
 
-    public Animator animator;
     public SpriteRenderer spriteRenderer;
     public PlayerHealth playerHealth;
     public PlayerStamina playerStamina;
@@ -16,27 +15,19 @@ public class PlayerActions : MonoBehaviour
     { 
         if(Input.GetMouseButtonDown(0) && playerStamina.currentStamina > 20 && !cooldown)
         {   
-            animator.SetBool("Button", true);
             playerStamina.LoseStamina(20);
             cooldown = true;
             playerXp.XpGain(1);
             StartCoroutine(Cooldown(.5f));
         }
-        else{
-            animator.SetBool("Button", false);
-        }
         if (Input.GetButtonDown("powerup") && playerStamina.currentStamina > 20 && !cooldown)
         {
-            animator.SetBool("up", true);
             StartCoroutine(Delay());
             playerStamina.LoseStamina(40);
             cooldown = true;
             StartCoroutine(Cooldown(1.5f));
         }
-        else
-        {
-            animator.SetBool("up", false);
-        }
+
     }
     IEnumerator Cooldown(float cool)
     {
