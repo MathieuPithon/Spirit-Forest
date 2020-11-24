@@ -5,9 +5,9 @@ using UnityEngine;
 public class PlayerStamina : MonoBehaviour
 {
     public int maxStamina = 100;
-    public int currentStamina;
-    public float staminaRegenSpeed = 0.1f;
-    public int staminaRegen = 1;
+    public float currentStamina;
+    public float staminaRegenSpeed = 0.025f;
+    public float staminaRegen = 0.5f;
     private readonly int staminaRoutineFit = 2;
 
     public bool needStamina = false;

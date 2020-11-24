@@ -51312,7 +51312,15 @@ PrefabInstance:
       objectReference: {fileID: 1578618883}
     - target: {fileID: 3884590441344923146, guid: 19fdb8250b91de54299f989efae77eba, type: 3}
       propertyPath: needStamina
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3884590441344923146, guid: 19fdb8250b91de54299f989efae77eba, type: 3}
+      propertyPath: staminaRegen
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3884590441344923146, guid: 19fdb8250b91de54299f989efae77eba, type: 3}
+      propertyPath: staminaRegenSpeed
+      value: 0.025
       objectReference: {fileID: 0}
     - target: {fileID: 3884590441344923147, guid: 19fdb8250b91de54299f989efae77eba, type: 3}
       propertyPath: m_RootOrder

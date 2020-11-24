@@ -15,7 +15,7 @@ public class StaminaBar : MonoBehaviour
         fill.color = gradient.Evaluate(1f);
     }
 
-    public void SetStamina(int stamina)
+    public void SetStamina(float stamina)
     {
         slider.value = stamina;
 
