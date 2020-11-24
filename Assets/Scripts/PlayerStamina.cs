@@ -28,7 +28,7 @@ public class PlayerStamina : MonoBehaviour
         staminaBar.SetStamina(currentStamina);
         needStamina = true;
         //StopAllCoroutines();
-        if(needStamina == true)
+        if(needStamina)
         {            
             StartCoroutine(StaminaRegen()); 
         }
