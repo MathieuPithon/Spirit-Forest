@@ -1,24 +1,23 @@
 ﻿using UnityEngine;
-
-public class EnnemiPatrol : MonoBehaviour
+using UnityEngine.AI;
+public class snakepatrol : MonoBehaviour
 {
     public float speed;
     public Transform[] waypoints;
+
     public SpriteRenderer graphics;
-
-    public int damageOnCollision = 10;
-
     private Transform target;
     private int destPoint = 0;
 
-    public float lookRadius = 10f;
+    public float lookRadius =10f;
 
     Transform cible;
 
+    // Start is called before the first frame update
     void Start()
     {
-        target = waypoints[0];
         cible = PlayerManager.instance.player.transform;
+        target = waypoints[0];
     }
 
     void OnDrawGizmosSelected()
@@ -49,14 +48,4 @@ public class EnnemiPatrol : MonoBehaviour
             }
         }
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(collision.transform.CompareTag("Player"))
-        {
-            PlayerHealth playerHealth = collision.transform.GetComponent<PlayerHealth>();
-            playerHealth.TakeDamage(damageOnCollision);
-        }
-    }
 }
- 

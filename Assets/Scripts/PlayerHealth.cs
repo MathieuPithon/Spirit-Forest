@@ -1,10 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
 public class PlayerHealth : MonoBehaviour
 {
     public int maxHealth = 100;
-    public int currentHealth;
+    public float currentHealth;
+    private float stillToHeal = 0;
+    private bool healingInProgress = false;
 
     public float invincibilityTimeAfterHit = 2f;
     public bool isInvincible = false;
@@ -20,15 +23,23 @@ public class PlayerHealth : MonoBehaviour
         healthBar.SetMaxHealth(maxHealth);
     }
 
-    
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.H))// Prendre des dégats
+        if(Input.GetKeyDown(KeyCode.H))//test
         {
             TakeDamage(20);
         }
+        if (healingInProgress)
+        {
+            currentHealth += 0.1f;
+            stillToHeal -= 0.1f;
+            healthBar.SetHealth(currentHealth);
+            if (stillToHeal <= 0)
+            {
+                healingInProgress = false;
+            }
 
-        
+        }
     }
 
     public void TakeDamage(int damage)
@@ -41,7 +52,17 @@ public class PlayerHealth : MonoBehaviour
             StartCoroutine(InvincibilityFlash());
             StartCoroutine(HandleInvincibilityDelay());
         }
-        
+    }
+
+    public void Healing(float heal)
+    {
+        if (currentHealth + heal > 100)
+        {
+             heal = 100f - currentHealth;
+        }
+        stillToHeal = heal;
+        healingInProgress = true;
+
     }
 
     public IEnumerator InvincibilityFlash() //IEnumerator créé une coroutine

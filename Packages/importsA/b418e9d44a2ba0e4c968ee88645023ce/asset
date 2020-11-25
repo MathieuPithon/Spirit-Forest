@@ -1,0 +1,64 @@
+﻿using System.Collections;
+using UnityEngine;
+
+public class PlayerHealth : MonoBehaviour
+{
+    public int maxHealth = 100;
+    public float currentHealth;
+
+    public HealthBar healthBar;
+    private float stillToHeal = 0;
+    private bool healingInProgress = false;
+    void Start()
+    {
+        currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
+        healthBar.SetHealth(50);
+        currentHealth = 50;
+    }
+
+    void Update()
+    {
+        if (Input.GetButtonDown("damage"))
+        {
+            TakeDamage(10);
+        }
+        if (healingInProgress)
+        {
+            currentHealth += 0.1f;
+            stillToHeal -= 0.1f;
+            healthBar.SetHealth(currentHealth);
+            if (stillToHeal <= 0)
+            {
+                healingInProgress = false;
+            }
+
+        }
+    }
+    public void TakeDamage(float damage)
+    {
+        float healthControl = currentHealth - damage < 0 ? currentHealth =0 : currentHealth -= damage;
+        healthBar.SetHealth(currentHealth);
+    }
+    public void Healing(float heal)
+    {
+        float healthControl = currentHealth + heal >100 ? heal= 100f - currentHealth: heal = heal;
+        stillToHeal = heal;
+        healingInProgress = true;
+    
+    }
+    // IEnumerator ProgressBar()
+    // {
+    //     for (float i =0 ; i < 20; i += 0.01f)
+    //     {
+    //         yield return new WaitForSeconds(.005f);
+    //         currentHealth += 0.01f;
+    //         healthBar.SetHealth(currentHealth);
+    //     }
+        
+ 
+        
+    }
+
+
+

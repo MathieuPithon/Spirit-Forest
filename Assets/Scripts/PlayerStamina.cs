@@ -5,12 +5,13 @@ using UnityEngine;
 public class PlayerStamina : MonoBehaviour
 {
     public int maxStamina = 100;
-    public int currentStamina;
-    public float staminaRegenSpeed = 0.1f;
-    public int staminaRegen = 1;
+    public float currentStamina;
+    public float staminaRegenSpeed = 0.025f;
+    public float staminaRegen = 0.5f;
     private readonly int staminaRoutineFit = 2;
 
     public bool needStamina = false;
+    private bool staminaRegenInProgress = false;
     public StaminaBar staminaBar;
 
 
@@ -18,6 +19,7 @@ public class PlayerStamina : MonoBehaviour
     {
         currentStamina = maxStamina;
         staminaBar.SetMaxStamina(maxStamina);
+        staminaBar.SetStamina(maxStamina);
     }
 
     public void LoseStamina(int staminaUsed)
@@ -27,9 +29,11 @@ public class PlayerStamina : MonoBehaviour
         staminaBar.SetStamina(currentStamina);
         needStamina = true;
         //StopAllCoroutines();
-        if(needStamina == true)
+        if(needStamina && !staminaRegenInProgress)
         {            
-            StartCoroutine(StaminaRegen()); 
+            staminaRegenInProgress = true;
+            StartCoroutine(StaminaRegen());
+
         }
         
         
@@ -41,7 +45,8 @@ public class PlayerStamina : MonoBehaviour
         {
             if (currentStamina > maxStamina - staminaRoutineFit)
             {
-                currentStamina = maxStamina - staminaRoutineFit;                
+                currentStamina = maxStamina - staminaRoutineFit;
+                staminaRegenInProgress = false;                
                 needStamina = false;
                 StopCoroutine(StaminaRegen());
             }
