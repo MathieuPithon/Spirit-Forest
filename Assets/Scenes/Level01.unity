@@ -52566,11 +52566,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3884590441344923147, guid: 19fdb8250b91de54299f989efae77eba, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.06
+      value: 3.16
       objectReference: {fileID: 0}
     - target: {fileID: 3884590441344923147, guid: 19fdb8250b91de54299f989efae77eba, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -59.26
+      value: -58.15
       objectReference: {fileID: 0}
     - target: {fileID: 3884590441344923147, guid: 19fdb8250b91de54299f989efae77eba, type: 3}
       propertyPath: m_LocalPosition.z
@@ -52612,6 +52612,18 @@ PrefabInstance:
       propertyPath: m_BodyType
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3884590441344923150, guid: 19fdb8250b91de54299f989efae77eba, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3884590441344923150, guid: 19fdb8250b91de54299f989efae77eba, type: 3}
+      propertyPath: m_Simulated
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3884590441344923150, guid: 19fdb8250b91de54299f989efae77eba, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19fdb8250b91de54299f989efae77eba, type: 3}
 --- !u!1001 &3936220729153387657
@@ -52628,6 +52640,18 @@ PrefabInstance:
     - target: {fileID: 3936220728689199493, guid: c82721870f6a9bd419fef89dc7d033db, type: 3}
       propertyPath: lookRadius
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3936220728689199493, guid: c82721870f6a9bd419fef89dc7d033db, type: 3}
+      propertyPath: lookRadius2
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3936220728689199493, guid: c82721870f6a9bd419fef89dc7d033db, type: 3}
+      propertyPath: speed
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3936220728689199493, guid: c82721870f6a9bd419fef89dc7d033db, type: 3}
+      propertyPath: damageOnCollision
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3936220729045666788, guid: c82721870f6a9bd419fef89dc7d033db, type: 3}
       propertyPath: m_RootOrder
