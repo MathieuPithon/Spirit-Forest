@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce;
     public float groundCheckRadius;
     private float horizontalMovement;
-    public int jumpStamina = 50;
+    public int jumpStamina = 10;
 
     public bool isJumping;
     public bool isGrounded;
@@ -19,13 +19,23 @@ public class PlayerMovement : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public CapsuleCollider2D playerCollider;
     private Vector3 velocity = Vector3.zero;
-    
+    public static PlayerMovement instance;
 
+  private void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.LogWarning("Il y a plus d'une instance de PlayerMovement dans la scène");
+            return;
+        }
+
+        instance = this;
+    }
     private void Update()
     {
         PlayerStamina playerStamina = GetComponent<PlayerStamina>();        
 
-        horizontalMovement = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;        
+        horizontalMovement = Input.GetAxis("Horizontal") * moveSpeed * Time.fixedDeltaTime;        
 
         if (Input.GetButtonDown("Jump") && (isGrounded == true) && (playerStamina.currentStamina >= jumpStamina)) //Jump correspond par defaut à la barre espace
         {
@@ -37,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
 
         float characterVelocity = Mathf.Abs(rb.velocity.x);             //rb.velocity.x = vitesse du personnage sur axe X
         animator.SetFloat("Speed", characterVelocity);
-        MovePlayer(horizontalMovement);                                 //Si pb de déplacement remettre cette ligne dans fixedUpdate
+
     }
 
     
@@ -56,6 +66,7 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate ()//FIXED UPDATE S'UTILISE SEULEMENT POUR LES OPERATIONS DE PHYSIQUE (pas d'input ou quoi que ce soit d'autre)
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, collisionLayers);
+        MovePlayer(horizontalMovement);                                 //Si pb de déplacement remettre cette ligne dans fixedUpdate
                 
     }
 
@@ -69,6 +80,10 @@ public class PlayerMovement : MonoBehaviour
             spriteRenderer.flipX = true;
         }
     }
+    public void SlowPlayer(float slow)//Pas encore testé   
+    {
+        moveSpeed *= (1/slow);
+    }
 
     public void SlowPlayer(float slow)
     {        
@@ -80,11 +95,6 @@ public class PlayerMovement : MonoBehaviour
         moveSpeed *= speed;
     }
 
-    /*private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
-    }
-    */
-}
+    
+
 
