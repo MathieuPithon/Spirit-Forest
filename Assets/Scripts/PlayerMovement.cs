@@ -19,8 +19,18 @@ public class PlayerMovement : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public CapsuleCollider2D playerCollider;
     private Vector3 velocity = Vector3.zero;
-    
+    public static PlayerMovement instance;
 
+  private void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.LogWarning("Il y a plus d'une instance de PlayerMovement dans la scène");
+            return;
+        }
+
+        instance = this;
+    }
     private void Update()
     {
         PlayerStamina playerStamina = GetComponent<PlayerStamina>();        

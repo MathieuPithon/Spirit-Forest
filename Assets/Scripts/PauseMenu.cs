@@ -19,12 +19,14 @@ public class PauseMenu : MonoBehaviour
     }
     void Paused()
     {
+        PlayerMovement.instance.enabled = false;
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0;
         gameIsPaused = true;
     }
     public void Resume()
     {
+        PlayerMovement.instance.enabled = true;
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1;
         gameIsPaused = false;
