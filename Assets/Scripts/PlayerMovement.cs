@@ -80,12 +80,14 @@ public class PlayerMovement : MonoBehaviour
             spriteRenderer.flipX = true;
         }
     }
-
-    /*private void OnDrawGizmos()
+    public void SlowPlayer(float slow)//Pas encore testé   
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
+        moveSpeed *= (1/slow);
     }
-    */
+
+    public void SpeedPlayer(float speed)//Pas encore testé
+    {
+        moveSpeed *= speed;
+    }
 }
 

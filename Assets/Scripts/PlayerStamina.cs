@@ -14,17 +14,14 @@ public class PlayerStamina : MonoBehaviour
     private bool staminaRegenInProgress = false;
     public StaminaBar staminaBar;
 
-
     void Start()
     {
         currentStamina = maxStamina;
         staminaBar.SetMaxStamina(maxStamina);
         staminaBar.SetStamina(maxStamina);
     }
-
     public void LoseStamina(int staminaUsed)
-    {   
-        
+    {           
         currentStamina -= staminaUsed;
         staminaBar.SetStamina(currentStamina);
         needStamina = true;
@@ -33,12 +30,8 @@ public class PlayerStamina : MonoBehaviour
         {            
             staminaRegenInProgress = true;
             StartCoroutine(StaminaRegen());
-
-        }
-        
-        
+        }        
     }
-
     public IEnumerator StaminaRegen()
     {
         while(needStamina)//Fonctionne mais améliorable
@@ -55,9 +48,7 @@ public class PlayerStamina : MonoBehaviour
             yield return new WaitForSeconds(staminaRegenSpeed);
             currentStamina += staminaRegen;
             staminaBar.SetStamina(currentStamina);
-            yield return new WaitForSeconds(staminaRegenSpeed);
-            
-        }
-        
+            yield return new WaitForSeconds(staminaRegenSpeed);            
+        }        
     }
 }

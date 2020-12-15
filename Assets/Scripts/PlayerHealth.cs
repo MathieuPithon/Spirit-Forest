@@ -15,8 +15,6 @@ public class PlayerHealth : MonoBehaviour
 
     public SpriteRenderer graphics;
     public HealthBar healthBar;
-
-
     void Start()
     {
         currentHealth = maxHealth;
@@ -38,10 +36,8 @@ public class PlayerHealth : MonoBehaviour
             {
                 healingInProgress = false;
             }
-
         }
     }
-
     public void TakeDamage(int damage)
     {
         if(!isInvincible)
@@ -53,7 +49,6 @@ public class PlayerHealth : MonoBehaviour
             StartCoroutine(HandleInvincibilityDelay());
         }
     }
-
     public void Healing(float heal)
     {
         if (currentHealth + heal > 100)
@@ -62,9 +57,7 @@ public class PlayerHealth : MonoBehaviour
         }
         stillToHeal = heal;
         healingInProgress = true;
-
     }
-
     public IEnumerator InvincibilityFlash() //IEnumerator créé une coroutine
     {
         while (isInvincible)
@@ -75,7 +68,6 @@ public class PlayerHealth : MonoBehaviour
             yield return new WaitForSeconds(invincibilityFlashDelay);
         }
     }
-
     public IEnumerator HandleInvincibilityDelay()
     {
         yield return new WaitForSeconds(invincibilityTimeAfterHit);
