@@ -61,7 +61,7 @@ public class EnnemiPatrol : MonoBehaviour
 
         if (ecare <= lookRadius2)
         {
-            random = UnityEngine.Random.Range(1,10);
+            random = UnityEngine.Random.Range(1, 10);
         }
 
 
@@ -70,10 +70,10 @@ public class EnnemiPatrol : MonoBehaviour
             Vector3 dur = cible.position.Y() - transform.position.Y();
             transform.Translate(dur.normalized * 20 * Time.deltaTime, Space.World);
         }
-        
 
 
-//l'ennemi recule si il est trop près du joueur 
+
+        //l'ennemi recule si il est trop près du joueur 
         if (ecare <= lookRadius2 & random != 1)
         {
             Vector3 dar = transform.position.Y() - cible.position.Y();
