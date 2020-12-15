@@ -70,6 +70,16 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public void SlowPlayer(float slow)
+    {        
+        moveSpeed *= (1/slow);
+    }
+
+    public void SpeedPlayer(float speed)
+    {
+        moveSpeed *= speed;
+    }
+
     /*private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
