@@ -59345,7 +59345,15 @@ PrefabInstance:
       objectReference: {fileID: 895749550}
     - target: {fileID: 3884590441344923145, guid: 19fdb8250b91de54299f989efae77eba, type: 3}
       propertyPath: moveSpeed
-      value: 1300
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 3884590441344923145, guid: 19fdb8250b91de54299f989efae77eba, type: 3}
+      propertyPath: jumpStamina
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3884590441344923145, guid: 19fdb8250b91de54299f989efae77eba, type: 3}
+      propertyPath: groundCheckRadius
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3884590441344923146, guid: 19fdb8250b91de54299f989efae77eba, type: 3}
       propertyPath: m_Enabled
@@ -59353,7 +59361,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3884590441344923146, guid: 19fdb8250b91de54299f989efae77eba, type: 3}
       propertyPath: maxStamina
-      value: 96
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3884590441344923146, guid: 19fdb8250b91de54299f989efae77eba, type: 3}
       propertyPath: staminaBar
@@ -59365,7 +59373,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3884590441344923146, guid: 19fdb8250b91de54299f989efae77eba, type: 3}
       propertyPath: staminaRegen
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3884590441344923146, guid: 19fdb8250b91de54299f989efae77eba, type: 3}
       propertyPath: staminaRegenSpeed
