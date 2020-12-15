@@ -74,10 +74,10 @@ public class PlayerMovement : MonoBehaviour
     {
         if(_velocity > 0.1f)
         {
-            spriteRenderer.flipX = false;
+            spriteRenderer.transform.localScale = new Vector3(0.21f,0.17f,1);
         } else if(_velocity < -0.1f)
         {
-            spriteRenderer.flipX = true;
+            spriteRenderer.transform.localScale = new Vector3(-0.21f, 0.17f, 1);
         }
     }
     public void SlowPlayer(float slow)//Pas encore testé   

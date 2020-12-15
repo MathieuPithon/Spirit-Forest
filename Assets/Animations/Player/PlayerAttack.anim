@@ -20,6 +20,7 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
+<<<<<<< Updated upstream
       value: {fileID: -6300022427340494601, guid: 43a39ca9c1429a74cb00d391d14eb383, type: 3}
     - time: 0.06666667
       value: {fileID: -3061971124352811578, guid: 43a39ca9c1429a74cb00d391d14eb383, type: 3}
@@ -31,6 +32,45 @@ AnimationClip:
       value: {fileID: 0}
     attribute: m_Sprite
     path: PlayerAttack
+=======
+      value: {fileID: 21300000, guid: ce40b9eb539a7e14b8cafb6f7fecab94, type: 3}
+    - time: 0.016666668
+      value: {fileID: 21300000, guid: d4a89c84fe448f34c996bb2901fb422a, type: 3}
+    - time: 0.033333335
+      value: {fileID: 21300000, guid: e5b668fdeeb6a2b4381c3ac2a3bf550c, type: 3}
+    - time: 0.05
+      value: {fileID: 21300000, guid: 3c49c46f2f68d4b44b015ef7ae62aa8f, type: 3}
+    - time: 0.06666667
+      value: {fileID: 21300000, guid: 745cd28453cb00146b28019c1dbc1fb1, type: 3}
+    - time: 0.083333336
+      value: {fileID: 21300000, guid: aa292c909829b5040a5cb6e28f63d198, type: 3}
+    - time: 0.1
+      value: {fileID: 21300000, guid: c51f0ebd202f9ff4ebb3342147c8c81a, type: 3}
+    - time: 0.11666667
+      value: {fileID: 21300000, guid: 5e95509da65e161438d1474a85ea3261, type: 3}
+    - time: 0.13333334
+      value: {fileID: 21300000, guid: f8b422d9bfee3004a863412dc18eebfb, type: 3}
+    - time: 0.15
+      value: {fileID: 21300000, guid: a48fb5db052084644922c8eb6a2d652a, type: 3}
+    - time: 0.16666667
+      value: {fileID: 21300000, guid: 464e167956298404da7c8b5e9a8d01ee, type: 3}
+    - time: 0.18333334
+      value: {fileID: 21300000, guid: d376d48af4f836a45865fd0fe19acf32, type: 3}
+    - time: 0.2
+      value: {fileID: 21300000, guid: f89e54186988d1e44bf537d8b1c1f417, type: 3}
+    - time: 0.21666667
+      value: {fileID: 21300000, guid: 07a73bda1280b2f4b9f67c120075973b, type: 3}
+    - time: 0.23333333
+      value: {fileID: 21300000, guid: 8ef4f814b1ac4f14b845d892482837e5, type: 3}
+    - time: 0.25
+      value: {fileID: 21300000, guid: 1d5168b1a30bbdd409da3a4b7a0be478, type: 3}
+    - time: 0.26666668
+      value: {fileID: 21300000, guid: fe9420c771a9bcd4e906297081591d64, type: 3}
+    - time: 0.28333333
+      value: {fileID: 21300000, guid: 4be63351700dbf84e9e290027cb9384d, type: 3}
+    attribute: m_Sprite
+    path: 
+>>>>>>> Stashed changes
     classID: 212
     script: {fileID: 0}
   m_SampleRate: 60
@@ -41,24 +81,53 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
+<<<<<<< Updated upstream
       path: 1830249519
+=======
+      path: 0
+>>>>>>> Stashed changes
       attribute: 0
       script: {fileID: 0}
       typeID: 212
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
+<<<<<<< Updated upstream
     - {fileID: -6300022427340494601, guid: 43a39ca9c1429a74cb00d391d14eb383, type: 3}
     - {fileID: -3061971124352811578, guid: 43a39ca9c1429a74cb00d391d14eb383, type: 3}
     - {fileID: -6461697735168408586, guid: 43a39ca9c1429a74cb00d391d14eb383, type: 3}
     - {fileID: -7469665939733911504, guid: 43a39ca9c1429a74cb00d391d14eb383, type: 3}
     - {fileID: 0}
+=======
+    - {fileID: 21300000, guid: ce40b9eb539a7e14b8cafb6f7fecab94, type: 3}
+    - {fileID: 21300000, guid: d4a89c84fe448f34c996bb2901fb422a, type: 3}
+    - {fileID: 21300000, guid: e5b668fdeeb6a2b4381c3ac2a3bf550c, type: 3}
+    - {fileID: 21300000, guid: 3c49c46f2f68d4b44b015ef7ae62aa8f, type: 3}
+    - {fileID: 21300000, guid: 745cd28453cb00146b28019c1dbc1fb1, type: 3}
+    - {fileID: 21300000, guid: aa292c909829b5040a5cb6e28f63d198, type: 3}
+    - {fileID: 21300000, guid: c51f0ebd202f9ff4ebb3342147c8c81a, type: 3}
+    - {fileID: 21300000, guid: 5e95509da65e161438d1474a85ea3261, type: 3}
+    - {fileID: 21300000, guid: f8b422d9bfee3004a863412dc18eebfb, type: 3}
+    - {fileID: 21300000, guid: a48fb5db052084644922c8eb6a2d652a, type: 3}
+    - {fileID: 21300000, guid: 464e167956298404da7c8b5e9a8d01ee, type: 3}
+    - {fileID: 21300000, guid: d376d48af4f836a45865fd0fe19acf32, type: 3}
+    - {fileID: 21300000, guid: f89e54186988d1e44bf537d8b1c1f417, type: 3}
+    - {fileID: 21300000, guid: 07a73bda1280b2f4b9f67c120075973b, type: 3}
+    - {fileID: 21300000, guid: 8ef4f814b1ac4f14b845d892482837e5, type: 3}
+    - {fileID: 21300000, guid: 1d5168b1a30bbdd409da3a4b7a0be478, type: 3}
+    - {fileID: 21300000, guid: fe9420c771a9bcd4e906297081591d64, type: 3}
+    - {fileID: 21300000, guid: 4be63351700dbf84e9e290027cb9384d, type: 3}
+>>>>>>> Stashed changes
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
+<<<<<<< Updated upstream
     m_StopTime: 1.0166667
+=======
+    m_StopTime: 0.3
+>>>>>>> Stashed changes
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
