@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
     {
         PlayerStamina playerStamina = GetComponent<PlayerStamina>();        
 
-        horizontalMovement = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;        
+        horizontalMovement = Input.GetAxis("Horizontal") * moveSpeed * Time.fixedDeltaTime;        
 
         if (Input.GetButtonDown("Jump") && (isGrounded == true) && (playerStamina.currentStamina >= jumpStamina)) //Jump correspond par defaut à la barre espace
         {
@@ -47,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
 
         float characterVelocity = Mathf.Abs(rb.velocity.x);             //rb.velocity.x = vitesse du personnage sur axe X
         animator.SetFloat("Speed", characterVelocity);
-        MovePlayer(horizontalMovement);                                 //Si pb de déplacement remettre cette ligne dans fixedUpdate
+
     }
 
     
@@ -66,6 +66,7 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate ()//FIXED UPDATE S'UTILISE SEULEMENT POUR LES OPERATIONS DE PHYSIQUE (pas d'input ou quoi que ce soit d'autre)
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, collisionLayers);
+        MovePlayer(horizontalMovement);                                 //Si pb de déplacement remettre cette ligne dans fixedUpdate
                 
     }
 
