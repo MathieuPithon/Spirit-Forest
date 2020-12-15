@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce;
     public float groundCheckRadius;
     private float horizontalMovement;
-    public int jumpStamina = 50;
+    public int jumpStamina = 10;
 
     public bool isJumping;
     public bool isGrounded;
