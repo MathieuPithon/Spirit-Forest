@@ -2632,6 +2632,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xpBar: {fileID: 856654131}
   currentXp: 0
+  maxXP: 0
 --- !u!114 &382938708 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3884590441344923146, guid: 19fdb8250b91de54299f989efae77eba, type: 3}
@@ -6040,6 +6041,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99dbb631292d4b74a90ce2bed8a791c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerXp: {fileID: 382938707}
   slider: {fileID: 856654132}
   txt: {fileID: 1527999121}
   currentLevel: 0
@@ -7082,8 +7084,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.2699585, y: -1.079956}
-  m_SizeDelta: {x: 47.37201, y: 2.5509148}
+  m_AnchoredPosition: {x: 0, y: 0.09777808}
+  m_SizeDelta: {x: 0, y: 0.19556427}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &996621036
 MonoBehaviour:
@@ -7105,7 +7107,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a759ca9c915924a4a9682888eb17a61f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5638a255574861f418f8985e9d883413, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9823,8 +9825,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -101.43, y: -62.039948}
-  m_SizeDelta: {x: 142.5857, y: 30}
+  m_AnchoredPosition: {x: -93.53, y: -103.53}
+  m_SizeDelta: {x: 158.39142, y: 112.98004}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1527999121
 MonoBehaviour:
