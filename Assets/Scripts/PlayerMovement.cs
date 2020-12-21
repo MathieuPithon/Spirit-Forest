@@ -1,5 +1,4 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -21,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 velocity = Vector3.zero;
     public static PlayerMovement instance;
 
-  private void Awake()
+    private void Awake()
     {
         if (instance != null)
         {
@@ -33,9 +32,9 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Update()
     {
-        PlayerStamina playerStamina = GetComponent<PlayerStamina>();        
+        PlayerStamina playerStamina = GetComponent<PlayerStamina>();
 
-        horizontalMovement = Input.GetAxis("Horizontal") * moveSpeed * Time.fixedDeltaTime;        
+        horizontalMovement = Input.GetAxis("Horizontal") * moveSpeed * Time.fixedDeltaTime;
 
         if (Input.GetButtonDown("Jump") && (isGrounded == true) && (playerStamina.currentStamina >= jumpStamina)) //Jump correspond par defaut à la barre espace
         {
@@ -50,50 +49,46 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    
-
     void MovePlayer(float _horizontalMovement)
     {
         Vector3 targetVelocity = new Vector2(_horizontalMovement, rb.velocity.y);
         rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref velocity, .05f);
 
-        if(isJumping == true)
+        if (isJumping == true)
         {
             rb.AddForce(new Vector2(0f, jumpForce));
             isJumping = false;
         }
     }
-    void FixedUpdate ()//FIXED UPDATE S'UTILISE SEULEMENT POUR LES OPERATIONS DE PHYSIQUE (pas d'input ou quoi que ce soit d'autre)
+    void FixedUpdate()//FIXED UPDATE S'UTILISE SEULEMENT POUR LES OPERATIONS DE PHYSIQUE (pas d'input ou quoi que ce soit d'autre)
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, collisionLayers);
         MovePlayer(horizontalMovement);                                 //Si pb de déplacement remettre cette ligne dans fixedUpdate
-                
+
     }
 
     void Flip(float _velocity)
     {
-        if(_velocity > 0.1f)
+        if (_velocity > 0.1f)
         {
             spriteRenderer.flipX = false;
-        } else if(_velocity < -0.1f)
+        }
+        else if (_velocity < -0.1f)
         {
             spriteRenderer.flipX = true;
         }
     }
+
     public void SlowPlayer(float slow)//Pas encore testé   
     {
-        moveSpeed *= (1/slow);
+        moveSpeed *= (1 / slow);
     }
 
-    public void SlowPlayer(float slow)
-    {        
-        moveSpeed *= (1/slow);
-    }
-
-    public void SpeedPlayer(float speed)
+    public void SpeedPlayer(float speed)//Pas encore testé
     {
         moveSpeed *= speed;
     }
+}
 
     
 
