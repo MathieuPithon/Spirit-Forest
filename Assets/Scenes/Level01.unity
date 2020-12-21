@@ -2614,6 +2614,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94144c9eed21c414fb584651571b82b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 382938711}
   spriteRenderer: {fileID: 382938713}
   playerHealth: {fileID: 382938709}
   playerStamina: {fileID: 382938708}
@@ -2632,6 +2633,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xpBar: {fileID: 856654131}
   currentXp: 0
+  maxXp: 0
 --- !u!114 &382938708 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3884590441344923146, guid: 19fdb8250b91de54299f989efae77eba, type: 3}
@@ -2654,6 +2656,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11c691c745acf0642a3506784fc3dd85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &382938711 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3884590441344923141, guid: 19fdb8250b91de54299f989efae77eba, type: 3}
+  m_PrefabInstance: {fileID: 3884590441658505309}
+  m_PrefabAsset: {fileID: 0}
 --- !u!212 &382938713 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 3884590441344923144, guid: 19fdb8250b91de54299f989efae77eba, type: 3}
@@ -7082,8 +7089,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.2699585, y: -1.079956}
-  m_SizeDelta: {x: 47.37201, y: 2.5509148}
+  m_AnchoredPosition: {x: 0.000030518, y: 0.09777808}
+  m_SizeDelta: {x: -0.000030517578, y: 0.19550323}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &996621036
 MonoBehaviour:
@@ -7105,7 +7112,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a759ca9c915924a4a9682888eb17a61f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5638a255574861f418f8985e9d883413, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
