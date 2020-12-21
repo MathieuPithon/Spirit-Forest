@@ -8,6 +8,8 @@ public class PlayerActions : MonoBehaviour
     public PlayerHealth playerHealth;
     public PlayerStamina playerStamina;
     public PlayerXp playerXp;
+    public PauseMenu pauseMenu;
+    
 
     private bool cooldown = false;
 
@@ -27,7 +29,7 @@ public class PlayerActions : MonoBehaviour
             cooldown = true;
             StartCoroutine(Cooldown(1.5f));
         }
-
+        
     }
     IEnumerator Cooldown(float cool)
     {

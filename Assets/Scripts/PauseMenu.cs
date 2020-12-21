@@ -4,6 +4,9 @@ public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenuUI;
     public static bool gameIsPaused = false;
+    
+
+    
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -17,7 +20,7 @@ public class PauseMenu : MonoBehaviour
             }
         }
     }
-    void Paused()
+    public void Paused()
     {
         PlayerMovement.instance.enabled = false;
         GameObject.Find("Player").GetComponent<PlayerActions>().enabled = false;
