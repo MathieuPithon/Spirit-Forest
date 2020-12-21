@@ -17,8 +17,9 @@ public class XpBar : MonoBehaviour
     {
         slider.value = xp;
     }
-    public void SetLvl(int lvl)
+    public void SetLvl(int lvl, int maxXp)
     {
+        slider.maxValue = maxXp;
         currentLevel += lvl;
         txt.text = "Level " + currentLevel;
     }
