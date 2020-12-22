@@ -8,6 +8,7 @@ public class XpBar : MonoBehaviour
     public Text txt;
     public int currentLevel;
     
+    
     void Start () 
     {
         currentLevel = 1;

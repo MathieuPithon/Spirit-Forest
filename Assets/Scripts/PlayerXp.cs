@@ -8,6 +8,7 @@ public class PlayerXp : MonoBehaviour
     public XpBar xpBar;
     public int currentXp;
     public int maxXp;
+    public bool levelUp = false;
 
     void Start()
     {
@@ -25,10 +26,13 @@ public class PlayerXp : MonoBehaviour
             maxXp += 2;
             xpBar.SetXp(currentXp);
             xpBar.SetLvl(1, maxXp);
+            levelUp = true;
+            
         }else
         {
             currentXp += gain;
             xpBar.SetXp(currentXp);
         }
     }
+
 }
