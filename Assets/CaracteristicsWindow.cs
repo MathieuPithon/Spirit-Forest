@@ -7,6 +7,7 @@ public class CaracteristicsWindow : MonoBehaviour
     public PlayerHealth playerHealth;
     public PlayerStamina playerStamina;
     public PlayerXp playerXp;
+    public PlayerCombat playerStrength;
     public PauseMenu pauseMenu;
 
     public Text healthValue;
@@ -15,6 +16,8 @@ public class CaracteristicsWindow : MonoBehaviour
     public Text maxStaminaValue;
     public Text xpValue;
     public Text maxXpValue;
+    public Text strengthValue;
+    public Text maxStrengthValue;
 
     //pour la force, ajouter dans le take damage ? voir script d'attaque ?
 
@@ -27,9 +30,11 @@ public class CaracteristicsWindow : MonoBehaviour
         staminaValue.text = playerStamina.currentStamina.ToString();
         maxStaminaValue.text = playerStamina.maxStamina.ToString();
         xpValue.text = playerXp.currentXp.ToString();
-        maxXpValue.text = "?";
+        maxXpValue.text = playerXp.maxXp.ToString();
+        strengthValue.text = playerStrength.currentStrength.ToString();
+        maxStrengthValue.text = playerStrength.maxStrength.ToString();
 
-        if(Input.GetKeyDown(KeyCode.C) && (!PauseMenu.gameIsPaused))
+        if (Input.GetKeyDown(KeyCode.C) && (!PauseMenu.gameIsPaused))
         {
             if (isOpen)
             {

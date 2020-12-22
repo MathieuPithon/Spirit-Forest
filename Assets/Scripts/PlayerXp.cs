@@ -7,6 +7,7 @@ public class PlayerXp : MonoBehaviour
     
     public XpBar xpBar;
     public int currentXp;
+    public int maxXp = 10;
 
     void Start()
     {
@@ -17,9 +18,9 @@ public class PlayerXp : MonoBehaviour
  
     public void XpGain(int gain)
     {
-        if  (currentXp + gain >=10)
+        if  (currentXp + gain >= maxXp)
         {
-            currentXp = (currentXp+gain)-10;
+            currentXp = (currentXp+gain)- maxXp;
             xpBar.SetXp(currentXp);
             xpBar.SetLvl(1);
         }else

@@ -14,9 +14,8 @@ public class PlayerCombat : MonoBehaviour
 
     public float attackRange = 0.5f;
     public bool placement = true; // Placement de garde Haute (true) ou Basse (false)
-
-
-
+    public float currentStrength = 40;
+    public float maxStrength = 40;  //Stat arbitraire pour créer la variable. A redéfinir
 
     // Update is called once per frame
     void Update()
