@@ -19,14 +19,14 @@ public class XpBar : MonoBehaviour
         slider.value = xp;
         DisplayXp();
     }
-    public void SetLvl(int lvl, int maxXP)
+    public void SetLvl(int lvl, int maxXp)
     {
         currentLevel += lvl;
-        slider.maxValue = maxXP;
+        slider.maxValue = maxXp;
         DisplayXp();
     }
     public void DisplayXp()
     {
-        txt.text = "Level " + currentLevel +"\nCurrentXp: " + playerXp.currentXp + "/" + playerXp.maxXP;
+        txt.text = "Level " + currentLevel +"\nCurrentXp: " + playerXp.currentXp + "/" + playerXp.maxXp;
     }
 }
