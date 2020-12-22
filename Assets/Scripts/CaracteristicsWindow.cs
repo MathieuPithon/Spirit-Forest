@@ -23,8 +23,6 @@ public class CaracteristicsWindow : MonoBehaviour
     public Text maxHealthValue;
     public Text staminaValue;
     public Text maxStaminaValue;
-    public Text xpValue;
-    public Text maxXpValue;
     public Text strengthValue;
     public Text maxStrengthValue;
 
@@ -38,8 +36,6 @@ public class CaracteristicsWindow : MonoBehaviour
         maxHealthValue.text = playerHealth.maxHealth.ToString();
         staminaValue.text = playerStamina.currentStamina.ToString();
         maxStaminaValue.text = playerStamina.maxStamina.ToString();
-        xpValue.text = playerXp.currentXp.ToString();
-        maxXpValue.text = playerXp.maxXp.ToString();
         strengthValue.text = playerStrength.currentStrength.ToString();
         maxStrengthValue.text = playerStrength.maxStrength.ToString();
 
