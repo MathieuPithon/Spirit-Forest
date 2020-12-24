@@ -1833,11 +1833,11 @@ RectTransform:
   - {fileID: 895749549}
   - {fileID: 856654130}
   - {fileID: 48490111}
+  - {fileID: 1237475728}
   - {fileID: 1983563408}
   - {fileID: 2033908837}
   - {fileID: 1039167186}
   - {fileID: 615821310}
-  - {fileID: 1237475728}
   - {fileID: 332492591}
   m_Father: {fileID: 0}
   m_RootOrder: 11
@@ -2343,7 +2343,7 @@ GameObject:
   - component: {fileID: 332492593}
   - component: {fileID: 332492592}
   m_Layer: 5
-  m_Name: Image
+  m_Name: LevelUpAlarm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2366,8 +2366,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 650, y: 353.1}
-  m_SizeDelta: {x: 587.7257, y: 87.22693}
+  m_AnchoredPosition: {x: 706.7, y: 346}
+  m_SizeDelta: {x: 474.29724, y: 101.37213}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &332492592
 MonoBehaviour:
@@ -2382,14 +2382,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.49019608}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 19d8b9edcb941c34cb80c09df0d18154, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2985,9 +2985,10 @@ MonoBehaviour:
   levelUpAlarmUI: {fileID: 332492590}
   levelUpAlarm: {fileID: 1105191019}
   xpBar: {fileID: 856654131}
-  currentXp: 0
+  levelUpSideUI: {fileID: 370034329}
+  currentXp: 9
   maxXp: 10
-  levelUp: 0
+  caracteristicsPoints: 0
 --- !u!114 &382938708 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3884590441344923146, guid: 19fdb8250b91de54299f989efae77eba, type: 3}
@@ -3529,7 +3530,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &470920817
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3541,10 +3542,10 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1319968653}
   - {fileID: 1959206428}
   - {fileID: 1396416215}
   - {fileID: 1634809955}
-  - {fileID: 1319968653}
   m_Father: {fileID: 1237475728}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5909,7 +5910,7 @@ RectTransform:
   - {fileID: 1984589366}
   - {fileID: 142178329}
   m_Father: {fileID: 166824246}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -8519,7 +8520,7 @@ RectTransform:
   - {fileID: 630786879}
   - {fileID: 939870258}
   m_Father: {fileID: 166824246}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -9096,7 +9097,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Level up Alarm Text/////////
+  m_Text: "Vous avez 2 points de comp\xE9tence \xE0 d\xE9penser ! Appuyez sur 'C'
+    pour am\xE9liorer vos caract\xE9ristiques"
 --- !u!222 &1105191020
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10025,7 +10027,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1237475728
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10042,7 +10044,7 @@ RectTransform:
   - {fileID: 470920817}
   - {fileID: 1689911844}
   m_Father: {fileID: 166824246}
-  m_RootOrder: 8
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -10463,11 +10465,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 470920817}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.24, y: -0.000004261732}
+  m_AnchoredPosition: {x: 4.24, y: -0}
   m_SizeDelta: {x: 65.15906, y: 258.54303}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1319968654
@@ -11036,7 +11038,7 @@ RectTransform:
   m_Children:
   - {fileID: 906407189}
   m_Father: {fileID: 470920817}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -13074,7 +13076,7 @@ RectTransform:
   m_Children:
   - {fileID: 406218093}
   m_Father: {fileID: 470920817}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -59108,7 +59110,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -9.799988, y: -5.7599945}
+  m_AnchoredPosition: {x: -9.799988, y: -5.76001}
   m_SizeDelta: {x: 28.333496, y: 51.368103}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1689911845
@@ -60489,7 +60491,7 @@ RectTransform:
   m_Children:
   - {fileID: 1221101162}
   m_Father: {fileID: 470920817}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -60908,7 +60910,7 @@ RectTransform:
   - {fileID: 110101929}
   - {fileID: 471240967}
   m_Father: {fileID: 166824246}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -61262,7 +61264,7 @@ RectTransform:
   - {fileID: 1806157048}
   - {fileID: 1801739731}
   m_Father: {fileID: 166824246}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}

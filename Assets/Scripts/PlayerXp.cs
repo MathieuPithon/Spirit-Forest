@@ -6,6 +6,7 @@ public class PlayerXp : MonoBehaviour
     public GameObject levelUpAlarmUI;
     public Text levelUpAlarm;
     public XpBar xpBar;
+    public CaracteristicsWindow levelUpSideUI;
     public int currentXp;
     public int maxXp;
     public int caracteristicsPoints = 0;
@@ -19,13 +20,17 @@ public class PlayerXp : MonoBehaviour
 
     private void Update()
     {
-        levelUpAlarm.text = "Vous avez pris un niveau ! Appuyez sur 'C' pour améliorer une de vos statistiques";
+        
         if (caracteristicsPoints > 0)
+        {
+            levelUpAlarm.text = "Vous avez 1 point de compétence à dépenser ! Appuyez sur 'C' pour améliorer une de vos statistiques";
             levelUpAlarmUI.SetActive(true);
+            if(caracteristicsPoints > 1)
+                levelUpAlarm.text = "Vous avez " + caracteristicsPoints + 
+                    " points de compétence à dépenser ! Appuyez sur 'C' pour améliorer une de vos statistiques";
+        }        
         else levelUpAlarmUI.SetActive(false);
     }
-
-
     public void XpGain(int gain)
     {
         if  (currentXp + gain >=maxXp)
@@ -35,8 +40,9 @@ public class PlayerXp : MonoBehaviour
             xpBar.SetXp(currentXp);
             xpBar.SetLvl(1, maxXp);
             caracteristicsPoints += 1;
-            
-        }else
+            levelUpSideUI.levelUpUI.SetActive(true);
+        }
+        else
         {
             currentXp += gain;
             xpBar.SetXp(currentXp);

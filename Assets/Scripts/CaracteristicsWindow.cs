@@ -71,19 +71,23 @@ public class CaracteristicsWindow : MonoBehaviour
         playerHealth.maxHealth += upHealth;
         playerXp.caracteristicsPoints -= 1;
         healthBar.SetMaxHealth(playerHealth.maxHealth); //mise à jour de la barre de vie
-        levelUpUI.SetActive(false);
+        if(playerXp.caracteristicsPoints == 0)
+            levelUpUI.SetActive(false);
     }
     public void UpStamina()
     {
         playerStamina.maxStamina += upStamina;
         playerXp.caracteristicsPoints -= 1;
         staminaBar.SetMaxStamina(playerStamina.maxStamina);//mise à jour de la barre d'endurance
-        levelUpUI.SetActive(false);
+        if (playerXp.caracteristicsPoints == 0)
+            levelUpUI.SetActive(false);
     }
     public void UpStrength()
     {
         playerStrength.maxStrength += upStrength;
         playerXp.caracteristicsPoints -= 1;
-        levelUpUI.SetActive(false);
+        if (playerXp.caracteristicsPoints == 0)
+            levelUpUI.SetActive(false);
+        playerStrength.currentStrength = playerStrength.maxStrength; //mise à jour de la force
     }
 }
