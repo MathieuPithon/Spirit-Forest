@@ -55,7 +55,7 @@ public class CaracteristicsWindow : MonoBehaviour
             {
                 caracteristicsUI.SetActive(true); //Ouvre la fenetre
                 isOpen = true;
-                if (playerXp.levelUp)
+                if (playerXp.caracteristicsPoints > 0)
                 {
                     levelUpUI.SetActive(true);
                 }
@@ -69,21 +69,21 @@ public class CaracteristicsWindow : MonoBehaviour
     public void UpHealth()
     {
         playerHealth.maxHealth += upHealth;
-        playerXp.levelUp = false;
+        playerXp.caracteristicsPoints -= 1;
         healthBar.SetMaxHealth(playerHealth.maxHealth); //mise à jour de la barre de vie
         levelUpUI.SetActive(false);
     }
     public void UpStamina()
     {
         playerStamina.maxStamina += upStamina;
-        playerXp.levelUp = false;
+        playerXp.caracteristicsPoints -= 1;
         staminaBar.SetMaxStamina(playerStamina.maxStamina);//mise à jour de la barre d'endurance
         levelUpUI.SetActive(false);
     }
     public void UpStrength()
     {
         playerStrength.maxStrength += upStrength;
-        playerXp.levelUp = false;
+        playerXp.caracteristicsPoints -= 1;
         levelUpUI.SetActive(false);
     }
 }

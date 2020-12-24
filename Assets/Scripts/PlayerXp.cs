@@ -8,7 +8,7 @@ public class PlayerXp : MonoBehaviour
     public XpBar xpBar;
     public int currentXp;
     public int maxXp;
-    public bool levelUp = false;
+    public int caracteristicsPoints = 0;
 
     void Start()
     {
@@ -20,7 +20,7 @@ public class PlayerXp : MonoBehaviour
     private void Update()
     {
         levelUpAlarm.text = "Vous avez pris un niveau ! Appuyez sur 'C' pour améliorer une de vos statistiques";
-        if (levelUp)
+        if (caracteristicsPoints > 0)
             levelUpAlarmUI.SetActive(true);
         else levelUpAlarmUI.SetActive(false);
     }
@@ -34,7 +34,7 @@ public class PlayerXp : MonoBehaviour
             maxXp += 2;
             xpBar.SetXp(currentXp);
             xpBar.SetLvl(1, maxXp);
-            levelUp = true;
+            caracteristicsPoints += 1;
             
         }else
         {
