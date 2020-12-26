@@ -2,8 +2,7 @@
 using UnityEngine;
 
 public class CaracteristicsWindow : MonoBehaviour
-{
-   
+{   
     public GameObject caracteristicsUI;
     public GameObject levelUpUI;
     public PlayerHealth playerHealth;
@@ -56,13 +55,8 @@ public class CaracteristicsWindow : MonoBehaviour
                 caracteristicsUI.SetActive(true); //Ouvre la fenetre
                 isOpen = true;
                 if (playerXp.caracteristicsPoints > 0)
-                {
                     levelUpUI.SetActive(true);
-                }
-                else
-                {
-                    levelUpUI.SetActive(false);
-                }
+                else levelUpUI.SetActive(false);
             }
         }
     }

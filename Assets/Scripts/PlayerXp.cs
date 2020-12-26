@@ -1,5 +1,6 @@
 ﻿using UnityEngine.UI;
 using UnityEngine;
+using System.Collections;
 
 public class PlayerXp : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class PlayerXp : MonoBehaviour
     public int currentXp;
     public int maxXp;
     public int caracteristicsPoints = 0;
+    
 
     void Start()
     {
@@ -48,4 +50,5 @@ public class PlayerXp : MonoBehaviour
             xpBar.SetXp(currentXp);
         }
     }
+    
 }
