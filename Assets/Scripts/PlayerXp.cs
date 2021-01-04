@@ -12,6 +12,7 @@ public class PlayerXp : MonoBehaviour
     public int maxXp;
     public int caracteristicsPoints = 0;
     
+    public Animator fadeSystem;
 
     void Start()
     {
