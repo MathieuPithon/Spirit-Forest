@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class BetterJump : MonoBehaviour // Voir peut être si il es possible d'intégrer ce script dans le script PlayerMovement
+public class BetterJumps : MonoBehaviour // Voir peut être si il est possible d'intégrer ce script dans le script PlayerMovement
 {                                       // Là où le jump a été codé
     public float fallMultiplier = 2.5f;
     public float lowJumpMultiplier = 2f;
