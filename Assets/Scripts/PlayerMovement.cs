@@ -42,6 +42,15 @@ public class PlayerMovement : MonoBehaviour
             playerStamina.LoseStamina(jumpStamina);
         }
 
+        if (isGrounded == false)
+        {
+            animator.SetBool("Jump", true);
+        }
+        else
+        {
+            animator.SetBool("Jump", false);
+        }
+
         Flip(rb.velocity.x);
 
         float characterVelocity = Mathf.Abs(rb.velocity.x);             //rb.velocity.x = vitesse du personnage sur axe X
