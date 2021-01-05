@@ -29,8 +29,8 @@ public class PlayerXp : MonoBehaviour
             levelUpAlarm.text = "Vous avez 1 point de compétence à dépenser ! Appuyez sur 'C' pour améliorer une de vos statistiques";
             levelUpAlarmUI.SetActive(true);
             if(caracteristicsPoints > 1)
-                levelUpAlarm.text = "Vous avez " + caracteristicsPoints + 
-                    " points de compétence à dépenser ! Appuyez sur 'C' pour améliorer une de vos statistiques";
+                levelUpAlarm.text = $"Vous avez {caracteristicsPoints} points de compétence à dépenser !" +
+                    $" Appuyez sur 'C' pour améliorer une de vos statistiques";
         }        
         else levelUpAlarmUI.SetActive(false);
     }
