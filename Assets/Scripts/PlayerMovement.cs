@@ -42,6 +42,15 @@ public class PlayerMovement : MonoBehaviour
             playerStamina.LoseStamina(jumpStamina);
         }
 
+        if (isGrounded == false)
+        {
+            animator.SetBool("Jump", true);
+        }
+        else
+        {
+            animator.SetBool("Jump", false);
+        }
+
         Flip(rb.velocity.x);
 
         float characterVelocity = Mathf.Abs(rb.velocity.x);             //rb.velocity.x = vitesse du personnage sur axe X
@@ -71,11 +80,11 @@ public class PlayerMovement : MonoBehaviour
     {
         if (_velocity > 0.1f)
         {
-            spriteRenderer.flipX = false;
+            spriteRenderer.transform.localScale = new Vector3(0.21f, 0.17f, 1);
         }
         else if (_velocity < -0.1f)
         {
-            spriteRenderer.flipX = true;
+            spriteRenderer.transform.localScale = new Vector3(-0.21f, 0.17f, 1);
         }
     }
 
