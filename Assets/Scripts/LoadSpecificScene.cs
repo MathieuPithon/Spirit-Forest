@@ -22,8 +22,8 @@ public class LoadSpecificScene : MonoBehaviour
         GameObject.Find("Player").GetComponent<PlayerActions>().enabled = false;
         GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = false;
         GameObject.Find("Player").GetComponent<PlayerCombat>().enabled = false;
-        // PlayerMovement.instance.velocity = new Vector3(0, 0, 0);
-        // PlayerMovement.instance.MovePlayer(0);
+        PlayerMovement.instance.rb.velocity = Vector2.zero;
+        PlayerMovement.instance.animator.SetFloat("Speed", 0);
 
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
