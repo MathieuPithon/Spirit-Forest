@@ -51,9 +51,9 @@ public class PlayerHealth : MonoBehaviour
     }
     public void Healing(float heal)
     {
-        if (currentHealth + heal > 100)
+        if (currentHealth + heal > maxHealth)
         {
-             heal = 100f - currentHealth;
+             heal = maxHealth - currentHealth;
         }
         stillToHeal = heal;
         healingInProgress = true;
@@ -63,7 +63,7 @@ public class PlayerHealth : MonoBehaviour
         while (isInvincible)
         {
             graphics.color = new Color(1f, 1f, 1f, 0f);
-            yield return new WaitForSeconds(invincibilityFlashDelay); //pour ajouter un délai on utilise souvent yield (1f correspond à 1seconde)
+            yield return new WaitForSeconds(invincibilityFlashDelay); //pour ajouter un délai on utilise souvent yield
             graphics.color = new Color(1f, 1f, 1f, 1f);
             yield return new WaitForSeconds(invincibilityFlashDelay);
         }

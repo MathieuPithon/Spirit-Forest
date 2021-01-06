@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
-public class snakepatrol : MonoBehaviour
+public class Snakepatrol : MonoBehaviour
 {
     public float speed;
     public Transform[] waypoints;

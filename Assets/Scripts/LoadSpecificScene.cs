@@ -17,8 +17,8 @@ public class LoadSpecificScene : MonoBehaviour
 
     public IEnumerator LoadNextScene()
     {
-        fadeSystem.SetTrigger("FadeIn");
+        fadeSystem.SetTrigger("Start");
         yield return new WaitForSeconds(1f);
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
