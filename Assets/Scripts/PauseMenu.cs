@@ -25,6 +25,7 @@ public class PauseMenu : MonoBehaviour
         PlayerMovement.instance.enabled = false;
         GameObject.Find("Player").GetComponent<PlayerActions>().enabled = false;
         GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = false;
+        GameObject.Find("Player").GetComponent<PlayerCombat>().enabled = false;
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0;
         gameIsPaused = true;
@@ -34,6 +35,7 @@ public class PauseMenu : MonoBehaviour
         PlayerMovement.instance.enabled = true;
         GameObject.Find("Player").GetComponent<PlayerActions>().enabled = true;
         GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = true;
+        GameObject.Find("Player").GetComponent<PlayerCombat>().enabled = true;
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1;
         gameIsPaused = false;

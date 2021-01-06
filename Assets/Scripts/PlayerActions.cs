@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PlayerActions : MonoBehaviour
 {
-
+    public Animator animator;
     public SpriteRenderer spriteRenderer;
     public PlayerHealth playerHealth;
     public PlayerStamina playerStamina;
@@ -17,6 +17,7 @@ public class PlayerActions : MonoBehaviour
     { 
         if(Input.GetMouseButtonDown(0) && playerStamina.currentStamina > 20 && !cooldown)
         {   
+            animator.SetTrigger("Attack");
             playerStamina.LoseStamina(20);
             cooldown = true;
             playerXp.XpGain(1);
