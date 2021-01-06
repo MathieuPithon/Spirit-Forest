@@ -6,10 +6,12 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce;
     public float groundCheckRadius;
     private float horizontalMovement;
+    public float facingCoef = 1f;
     public int jumpStamina = 10;
 
     public bool isJumping;
     public bool isGrounded;
+    public bool faceRight = true;
 
     public Transform groundCheck;
     public LayerMask collisionLayers;
@@ -19,6 +21,8 @@ public class PlayerMovement : MonoBehaviour
     public CapsuleCollider2D playerCollider;
     private Vector3 velocity = Vector3.zero;
     public static PlayerMovement instance;
+    
+
 
     private void Awake()
     {
@@ -30,11 +34,26 @@ public class PlayerMovement : MonoBehaviour
 
         instance = this;
     }
+
     private void Update()
     {
         PlayerStamina playerStamina = GetComponent<PlayerStamina>();
+        faceRight = GameObject.Find("Player").GetComponent<PlayerCombat>().faceRight;
 
-        horizontalMovement = Input.GetAxis("Horizontal") * moveSpeed * Time.fixedDeltaTime;
+        if (rb.velocity.x > 0.1f && faceRight == false)
+        {
+            facingCoef = 0.3f;
+        }
+        else if (rb.velocity.x < -0.1f && faceRight == true)
+        {
+            facingCoef = 0.3f;
+        }
+        else
+        {
+            facingCoef = 1f;
+        }
+
+        horizontalMovement = Input.GetAxis("Horizontal") * moveSpeed * Time.fixedDeltaTime * facingCoef;
 
         if (Input.GetButtonDown("Jump") && (isGrounded == true) && (playerStamina.currentStamina >= jumpStamina)) //Jump correspond par defaut à la barre espace
         {
