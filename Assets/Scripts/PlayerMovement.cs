@@ -2,15 +2,16 @@
 
 public class PlayerMovement : MonoBehaviour
 {
-    public PlayerStamina playerStamina;
     public float moveSpeed;
     public float jumpForce;
     public float groundCheckRadius;
     private float horizontalMovement;
+    public float facingCoef = 1f;
     public int jumpStamina = 10;
 
     public bool isJumping;
     public bool isGrounded;
+    public bool faceRight = true;
 
     public Transform groundCheck;
     public LayerMask collisionLayers;
@@ -18,8 +19,10 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
     public SpriteRenderer spriteRenderer;
     public CapsuleCollider2D playerCollider;
-    public Vector3 velocity = Vector3.zero;
+    private Vector3 velocity = Vector3.zero;
     public static PlayerMovement instance;
+    
+
 
     private void Awake()
     {
@@ -31,13 +34,28 @@ public class PlayerMovement : MonoBehaviour
 
         instance = this;
     }
+
     private void Update()
     {
-        
+        PlayerStamina playerStamina = GetComponent<PlayerStamina>();
+        faceRight = GameObject.Find("Player").GetComponent<PlayerCombat>().faceRight;
 
-        horizontalMovement = Input.GetAxis("Horizontal") * moveSpeed * Time.fixedDeltaTime;
+        if (rb.velocity.x > 0.1f && faceRight == false)
+        {
+            facingCoef = 0.3f;
+        }
+        else if (rb.velocity.x < -0.1f && faceRight == true)
+        {
+            facingCoef = 0.3f;
+        }
+        else
+        {
+            facingCoef = 1f;
+        }
 
-        if (Input.GetButtonDown("Jump") && (isGrounded == true) && (playerStamina.CurrentStamina >= jumpStamina)) //Jump correspond par defaut à la barre espace
+        horizontalMovement = Input.GetAxis("Horizontal") * moveSpeed * Time.fixedDeltaTime * facingCoef;
+
+        if (Input.GetButtonDown("Jump") && (isGrounded == true) && (playerStamina.currentStamina >= jumpStamina)) //Jump correspond par defaut à la barre espace
         {
             isJumping = true;
             playerStamina.LoseStamina(jumpStamina);
@@ -59,7 +77,7 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    public void MovePlayer(float _horizontalMovement)
+    void MovePlayer(float _horizontalMovement)
     {
         Vector3 targetVelocity = new Vector2(_horizontalMovement, rb.velocity.y);
         rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref velocity, .05f);
