@@ -14,7 +14,6 @@ public class PlayerXp : MonoBehaviour
     
     public Animator fadeSystem;
 
-    public int maxXp;
 
     void Start()
     {

@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
     public SpriteRenderer spriteRenderer;
     public CapsuleCollider2D playerCollider;
-    private Vector3 velocity = Vector3.zero;
+    public Vector3 velocity = Vector3.zero;
     public static PlayerMovement instance;
 
     private void Awake()
@@ -49,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    void MovePlayer(float _horizontalMovement)
+    public void MovePlayer(float _horizontalMovement)
     {
         Vector3 targetVelocity = new Vector2(_horizontalMovement, rb.velocity.y);
         rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref velocity, .05f);

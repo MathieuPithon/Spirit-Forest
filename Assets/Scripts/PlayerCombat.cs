@@ -260,7 +260,7 @@ public class PlayerCombat : MonoBehaviour
 
     }
 
-    void CombatIndicateur()
+     public void CombatIndicateur()
     {
         if (Input.GetKey("down"))
         {
