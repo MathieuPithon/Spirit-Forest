@@ -25,7 +25,6 @@ public class PlayerStamina : MonoBehaviour
         currentStamina -= staminaUsed;
         staminaBar.SetStamina(currentStamina);
         needStamina = true;
-        //StopAllCoroutines();
         if(needStamina && !staminaRegenInProgress)
         {            
             staminaRegenInProgress = true;
@@ -50,5 +49,11 @@ public class PlayerStamina : MonoBehaviour
             staminaBar.SetStamina(currentStamina);
             yield return new WaitForSeconds(staminaRegenSpeed);            
         }        
+    }
+    public void CallStaminaRegen()
+    {
+        needStamina = true;
+        staminaRegenInProgress = true;
+        StartCoroutine(StaminaRegen());
     }
 }

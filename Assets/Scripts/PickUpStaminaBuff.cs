@@ -1,16 +1,16 @@
 ﻿using UnityEngine;
 
-public class PickUpHealthBuff : MonoBehaviour
+public class PickUpStaminaBuff : MonoBehaviour
 {
     public PlayerBuffs playerBuffs;
-    public int healthBuff = 40;
+    public int staminaBuff = 40;
     public float buffTimer = 2f;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
-        {            
-            playerBuffs.BuffHealth(healthBuff, buffTimer);
+        {
+            playerBuffs.BuffStamina(staminaBuff, buffTimer);
             Destroy(gameObject);
         }
     }
