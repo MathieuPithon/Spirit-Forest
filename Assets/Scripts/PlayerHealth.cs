@@ -9,6 +9,11 @@ public class PlayerHealth : MonoBehaviour
     private float stillToHeal = 0;
     private bool healingInProgress = false;
 
+    public bool isHealthBuffed = false;
+    public int healthBuffed;
+    public int maxHealthBeforeBuff;
+    public float buffTimer = 2f;
+    
     public float invincibilityTimeAfterHit = 2f;
     public bool isInvincible = false;
     public float invincibilityFlashDelay = 0.2f;
@@ -37,6 +42,7 @@ public class PlayerHealth : MonoBehaviour
                 healingInProgress = false;
             }
         }
+        
     }
     public void TakeDamage(int damage)
     {
@@ -58,6 +64,20 @@ public class PlayerHealth : MonoBehaviour
         stillToHeal = heal;
         healingInProgress = true;
     }
+
+    /*public void BuffHealth(int healthBuff)
+    {
+        maxHealthBeforeBuff = maxHealth;
+        healthBuffed = maxHealth + healthBuff;
+        Debug.Log("Buffed");
+        maxHealth = healthBuffed;
+        StartCoroutine(BuffTimer());
+    }
+    public void UnbuffHealth()
+    {
+        maxHealth = maxHealthBeforeBuff;
+        Debug.Log("Unbuffed");
+    }*/
     public IEnumerator InvincibilityFlash() //IEnumerator créé une coroutine
     {
         while (isInvincible)
@@ -73,4 +93,12 @@ public class PlayerHealth : MonoBehaviour
         yield return new WaitForSeconds(invincibilityTimeAfterHit);
         isInvincible = false;
     }
+    /*public IEnumerator BuffTimer()
+    {
+        Debug.Log("Debut de la coroutine");
+        yield return new WaitForSeconds(buffTimer);        
+        Debug.Log("fin de la coroutine");
+        UnbuffHealth();               
+    }*/
+    
 }

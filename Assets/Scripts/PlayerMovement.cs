@@ -2,6 +2,7 @@
 
 public class PlayerMovement : MonoBehaviour
 {
+    public PlayerStamina playerStamina;
     public float moveSpeed;
     public float jumpForce;
     public float groundCheckRadius;
@@ -32,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Update()
     {
-        PlayerStamina playerStamina = GetComponent<PlayerStamina>();
+        
 
         horizontalMovement = Input.GetAxis("Horizontal") * moveSpeed * Time.fixedDeltaTime;
 
