@@ -3,8 +3,9 @@ using UnityEngine;
 
 public class PlayerBuffs : MonoBehaviour
 {   
-    public PlayerHealth playerHealth;
-    public PlayerStamina playerStamina;
+    public PlayerHealth health;
+    public PlayerStamina stamina;
+    public PlayerMovement movement;
     public HealthBar healthBar;
     public StaminaBar staminaBar;
 
@@ -15,51 +16,67 @@ public class PlayerBuffs : MonoBehaviour
     private int staminaBuffed;
     private int maxStaminaBeforeBuff;
 
+    private float speedBuffed;
+    private float regularSpeed;
+
     //HEALTH BUFF
     public void BuffHealth(int healthBuff, float buffTimer)
     {
-        maxHealthBeforeBuff = playerHealth.maxHealth;
-        healthBuffed = playerHealth.maxHealth + healthBuff;
-        playerHealth.maxHealth = healthBuffed;
-        playerHealth.currentHealth += healthBuff;
-        healthBar.SetMaxHealth(playerHealth.maxHealth);
-        healthBar.SetHealth(playerHealth.currentHealth);
+        maxHealthBeforeBuff = health.maxHealth;
+        healthBuffed = health.maxHealth + healthBuff;
+        health.maxHealth = healthBuffed;
+        health.currentHealth += healthBuff;
+        healthBar.SetMaxHealth(health.maxHealth);
+        healthBar.SetHealth(health.currentHealth);
         StartCoroutine(HealthBuffTimer(healthBuff, buffTimer));
     }    
     public IEnumerator HealthBuffTimer(int healthBuff, float buffTimer)
     {
         yield return new WaitForSeconds(buffTimer);
-        playerHealth.maxHealth = maxHealthBeforeBuff;//Unbuff
-        playerHealth.currentHealth -= (healthBuff / 2);
-        if (playerHealth.currentHealth > playerHealth.maxHealth)
-            playerHealth.currentHealth = playerHealth.maxHealth;
-        else if (playerHealth.currentHealth < healthKeeper)//Si le héros meurt a cause de la fin du buff
-            playerHealth.currentHealth = healthKeeper;
+        health.maxHealth = maxHealthBeforeBuff;//Unbuff
+        health.currentHealth -= (healthBuff / 2);
+        if (health.currentHealth > health.maxHealth)
+            health.currentHealth = health.maxHealth;
+        else if (health.currentHealth < healthKeeper)//Si le héros meurt a cause de la fin du buff
+            health.currentHealth = healthKeeper;
 
-        healthBar.SetMaxHealth(playerHealth.maxHealth);
-        healthBar.SetHealth(playerHealth.currentHealth);
+        healthBar.SetMaxHealth(health.maxHealth);
+        healthBar.SetHealth(health.currentHealth);
     }
 
     //STAMINA BUFF
     public void BuffStamina(int staminaBuff, float buffTimer)
     {
-        maxStaminaBeforeBuff = playerStamina.maxStamina;
-        staminaBuffed = playerStamina.maxStamina + staminaBuff;
-        playerStamina.maxStamina = staminaBuffed;
-        playerStamina.CallStaminaRegen();//Pour lancer la regen
-        staminaBar.SetMaxStamina(playerStamina.maxStamina);
-        staminaBar.SetStamina(playerStamina.currentStamina);
+        maxStaminaBeforeBuff = stamina.maxStamina;
+        staminaBuffed = stamina.maxStamina + staminaBuff;
+        stamina.maxStamina = staminaBuffed;
+        stamina.CallStaminaRegen();//Pour lancer la regen
+        staminaBar.SetMaxStamina(stamina.maxStamina);
+        staminaBar.SetStamina(stamina.currentStamina);
         StartCoroutine(StaminaBuffTimer(buffTimer));
     }
     public IEnumerator StaminaBuffTimer(float buffTimer)
     {
         yield return new WaitForSeconds(buffTimer);
-        playerStamina.maxStamina = maxStaminaBeforeBuff; //Unbuff
-        if (playerStamina.currentStamina > playerStamina.maxStamina)
-            playerStamina.currentStamina = playerStamina.maxStamina;
+        stamina.maxStamina = maxStaminaBeforeBuff; //Unbuff
+        if (stamina.currentStamina > stamina.maxStamina)
+            stamina.currentStamina = stamina.maxStamina;
 
-        staminaBar.SetMaxStamina(playerStamina.maxStamina);
-        staminaBar.SetStamina(playerStamina.currentStamina);
+        staminaBar.SetMaxStamina(stamina.maxStamina);
+        staminaBar.SetStamina(stamina.currentStamina);
     }
 
+    //MoveSpeed Buff
+    public void BuffSpeed(float speedBuff, float buffTimer)
+    {
+        regularSpeed = movement.moveSpeed;
+        speedBuffed = movement.moveSpeed + speedBuff;
+        movement.moveSpeed = speedBuffed;
+        StartCoroutine(SpeedBuffTimer(buffTimer));
+    }
+    public IEnumerator SpeedBuffTimer(float buffTimer)
+    {
+        yield return new WaitForSeconds(buffTimer);
+        movement.moveSpeed = regularSpeed;//Unbuff
+    }
 }
