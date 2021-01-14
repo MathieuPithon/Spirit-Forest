@@ -23,7 +23,6 @@ public class CaracteristicsWindow : MonoBehaviour
     public Text staminaValue;
     public Text maxStaminaValue;
     public Text strengthValue;
-    public Text maxStrengthValue;
 
     public Text upHealthValue;
     public Text upStaminaValue;
@@ -35,8 +34,8 @@ public class CaracteristicsWindow : MonoBehaviour
         maxHealthValue.text = playerHealth.maxHealth.ToString();
         staminaValue.text = playerStamina.currentStamina.ToString();
         maxStaminaValue.text = playerStamina.maxStamina.ToString();
-        strengthValue.text = playerStrength.currentStrength.ToString();
-        maxStrengthValue.text = playerStrength.maxStrength.ToString();
+        strengthValue.text = playerStrength.strength.ToString();
+        
 
         upHealthValue.text = "+" + upHealth.ToString();
         upStaminaValue.text = "+" + upStamina.ToString();
@@ -78,10 +77,9 @@ public class CaracteristicsWindow : MonoBehaviour
     }
     public void UpStrength()
     {
-        playerStrength.maxStrength += upStrength;
+        playerStrength.strength += upStrength;
         playerXp.caracteristicsPoints -= 1;
         if (playerXp.caracteristicsPoints == 0)
             levelUpUI.SetActive(false);
-        playerStrength.currentStrength = playerStrength.maxStrength; //mise à jour de la force
     }
 }

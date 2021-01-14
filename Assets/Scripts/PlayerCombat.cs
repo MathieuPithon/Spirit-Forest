@@ -24,8 +24,8 @@ public class PlayerCombat : MonoBehaviour
     public float attackRange = 0.5f;
     public bool placement = true; // Placement de garde Haute (true) ou Basse (false)
     public bool faceRight = true; // Sens dans lequel le personnage est tourné, (true => Droite ; false => Gauche)
-    public float currentStrength = 40;
-    public float maxStrength = 40; //Stat arbitraire pour créer la variable. A redéfinir
+    public int strength = 40;
+    
 
     // Update is called once per frame
     void Update()

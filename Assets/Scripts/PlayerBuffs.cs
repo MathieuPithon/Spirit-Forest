@@ -6,6 +6,7 @@ public class PlayerBuffs : MonoBehaviour
     public PlayerHealth health;
     public PlayerStamina stamina;
     public PlayerMovement movement;
+    public PlayerCombat strength;
     public HealthBar healthBar;
     public StaminaBar staminaBar;
 
@@ -18,6 +19,9 @@ public class PlayerBuffs : MonoBehaviour
 
     private float speedBuffed;
     private float regularSpeed;
+
+    private int strengthBuffed;
+    private int regularStrength;
 
     //HEALTH BUFF
     public void BuffHealth(int healthBuff, float buffTimer)
@@ -78,5 +82,21 @@ public class PlayerBuffs : MonoBehaviour
     {
         yield return new WaitForSeconds(buffTimer);
         movement.moveSpeed = regularSpeed;//Unbuff
+    }
+
+    //Strength Buff 
+    //private int strengthBuffed;
+    //private int regularStrength;
+    public void BuffStrength(int strengthBuff, float buffTimer)
+    {
+        regularStrength = strength.strength;
+        strengthBuffed = regularStrength + strengthBuff;
+        strength.strength = strengthBuffed;
+        StartCoroutine(StrengthBuffTimer(buffTimer));
+    }
+    public IEnumerator StrengthBuffTimer(float buffTimer)
+    {
+        yield return new WaitForSeconds(buffTimer);
+        strength.strength = regularStrength;
     }
 }
