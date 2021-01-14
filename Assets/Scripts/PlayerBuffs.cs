@@ -9,26 +9,21 @@ public class PlayerBuffs : MonoBehaviour
     public PlayerCombat strength;
     public HealthBar healthBar;
     public StaminaBar staminaBar;
-
-    private int healthBuffed;
-    private int maxHealthBeforeBuff;
+    
     public int healthKeeper = 10;
-
-    private int staminaBuffed;
+    private int regularHealth;
     private int maxStaminaBeforeBuff;
-
-    private float speedBuffed;
+    private float regularStaminaRegen;
+    private float regularStaminaRegenSpeed;
     private float regularSpeed;
-
-    private int strengthBuffed;
+    private float regularJumpForce;
     private int regularStrength;
 
     //HEALTH BUFF
     public void BuffHealth(int healthBuff, float buffTimer)
     {
-        maxHealthBeforeBuff = health.maxHealth;
-        healthBuffed = health.maxHealth + healthBuff;
-        health.maxHealth = healthBuffed;
+        regularHealth = health.maxHealth;
+        health.maxHealth += healthBuff;
         health.currentHealth += healthBuff;
         healthBar.SetMaxHealth(health.maxHealth);
         healthBar.SetHealth(health.currentHealth);
@@ -37,7 +32,7 @@ public class PlayerBuffs : MonoBehaviour
     public IEnumerator HealthBuffTimer(int healthBuff, float buffTimer)
     {
         yield return new WaitForSeconds(buffTimer);
-        health.maxHealth = maxHealthBeforeBuff;//Unbuff
+        health.maxHealth = regularHealth;//Unbuff
         health.currentHealth -= (healthBuff / 2);
         if (health.currentHealth > health.maxHealth)
             health.currentHealth = health.maxHealth;
@@ -52,8 +47,7 @@ public class PlayerBuffs : MonoBehaviour
     public void BuffStamina(int staminaBuff, float buffTimer)
     {
         maxStaminaBeforeBuff = stamina.maxStamina;
-        staminaBuffed = stamina.maxStamina + staminaBuff;
-        stamina.maxStamina = staminaBuffed;
+        stamina.maxStamina += staminaBuff;
         stamina.CallStaminaRegen();//Pour lancer la regen
         staminaBar.SetMaxStamina(stamina.maxStamina);
         staminaBar.SetStamina(stamina.currentStamina);
@@ -70,12 +64,27 @@ public class PlayerBuffs : MonoBehaviour
         staminaBar.SetStamina(stamina.currentStamina);
     }
 
-    //MoveSpeed Buff
+    //STAMINA REGEN BUFF
+    public void BuffStaminaRegen(float staminaRegenBuff, float regenSpeedBuff, float buffTimer)
+    {
+        regularStaminaRegen = stamina.staminaRegen;
+        regularStaminaRegenSpeed = stamina.staminaRegenSpeed;
+        stamina.staminaRegen += staminaRegenBuff;
+        stamina.staminaRegenSpeed += regenSpeedBuff;
+        StartCoroutine(RegenBuffTimer(buffTimer));
+    }
+    public IEnumerator RegenBuffTimer(float buffTimer)
+    {
+        yield return new WaitForSeconds(buffTimer);
+        stamina.staminaRegen = regularStaminaRegen;
+        stamina.staminaRegenSpeed = regularStaminaRegenSpeed;
+    }
+
+    //MOVESPEED Buff
     public void BuffSpeed(float speedBuff, float buffTimer)
     {
         regularSpeed = movement.moveSpeed;
-        speedBuffed = movement.moveSpeed + speedBuff;
-        movement.moveSpeed = speedBuffed;
+        movement.moveSpeed += speedBuff;
         StartCoroutine(SpeedBuffTimer(buffTimer));
     }
     public IEnumerator SpeedBuffTimer(float buffTimer)
@@ -84,19 +93,29 @@ public class PlayerBuffs : MonoBehaviour
         movement.moveSpeed = regularSpeed;//Unbuff
     }
 
-    //Strength Buff 
-    //private int strengthBuffed;
-    //private int regularStrength;
+    //STRENGTH BUFF 
     public void BuffStrength(int strengthBuff, float buffTimer)
     {
         regularStrength = strength.strength;
-        strengthBuffed = regularStrength + strengthBuff;
-        strength.strength = strengthBuffed;
+        regularStrength += strengthBuff;
         StartCoroutine(StrengthBuffTimer(buffTimer));
     }
     public IEnumerator StrengthBuffTimer(float buffTimer)
     {
         yield return new WaitForSeconds(buffTimer);
         strength.strength = regularStrength;
+    }
+
+    //JUMP BUFF
+    public void BuffJumpForce(float jumpBuff,float buffTimer)
+    {
+        regularJumpForce = movement.jumpForce;
+        movement.jumpForce += jumpBuff;
+        StartCoroutine(JumpBuffTimer(buffTimer));
+    }
+    public IEnumerator JumpBuffTimer(float buffTimer)
+    {
+        yield return new WaitForSeconds(buffTimer);
+        movement.jumpForce = regularJumpForce;
     }
 }

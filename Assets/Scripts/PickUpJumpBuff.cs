@@ -1,0 +1,19 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PickUpJumpBuff : MonoBehaviour
+{
+    public PlayerBuffs playerBuffs;
+    public int jumpBuff = 300;
+    public float buffTimer = 10f;
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            playerBuffs.BuffJumpForce(jumpBuff, buffTimer);
+            Destroy(gameObject);
+        }
+    }
+}
