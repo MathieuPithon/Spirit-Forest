@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3936220728032627673}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Waypoint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3936220728531844111}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Waypoint1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 3936220728689199492}
   - component: {fileID: 3936220728689199493}
   - component: {fileID: 3936220728689199513}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Snake
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -189,7 +189,10 @@ MonoBehaviour:
   - {fileID: 3936220728531844111}
   - {fileID: 3936220728032627673}
   graphics: {fileID: 3936220728689199495}
+  random: 0
   damageOnCollision: 10
+  lookRadius: 10
+  lookRadius2: 2
 --- !u!95 &3936220728689199513
 Animator:
   serializedVersion: 3
@@ -218,9 +221,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3936220729045666788}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -253,7 +256,7 @@ GameObject:
   - component: {fileID: 3936220729205346794}
   - component: {fileID: 3936220729205346797}
   - component: {fileID: 3936220729205346796}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: WeakSpot
   m_TagString: Untagged
   m_Icon: {fileID: 0}

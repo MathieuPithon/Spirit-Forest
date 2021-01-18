@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour
 {
-
     public Animator animator;
     public LayerMask enemyLayers;
     public GameObject player;
@@ -26,10 +25,9 @@ public class PlayerCombat : MonoBehaviour
     public bool faceRight = true; // Sens dans lequel le personnage est tourné, (true => Droite ; false => Gauche)
     public int strength = 40;
     
-
-    // Update is called once per frame
     void Update()
     {
+        
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             if (Input.GetKey("right"))
@@ -119,9 +117,9 @@ public class PlayerCombat : MonoBehaviour
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackStaticLightUpPoint.position, attackRange, enemyLayers);
 
         // Effectuer les dégats sur les ennemis
-        foreach (Collider2D enemy in hitEnemies)
+        foreach (Collider2D Enemy in hitEnemies)
         {
-            Debug.Log(enemy.name + " a été touché !");
+            Debug.Log(Enemy.name + " a été touché !");
         }
     }
     void AttackStaticLightDown()
@@ -133,9 +131,9 @@ public class PlayerCombat : MonoBehaviour
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackStaticLightDownPoint.position, attackRange, enemyLayers);
 
         // Effectuer les dégats sur les ennemis
-        foreach (Collider2D enemy in hitEnemies)
+        foreach (Collider2D Enemy in hitEnemies)
         {
-            Debug.Log(enemy.name + " a été touché !");
+            Debug.Log(Enemy.name + " a été touché !");
         }
     }
     void AttackForwardLightUp()
@@ -147,9 +145,9 @@ public class PlayerCombat : MonoBehaviour
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackForwardLightUpPoint.position, attackRange, enemyLayers);
 
         // Effectuer les dégats sur les ennemis
-        foreach (Collider2D enemy in hitEnemies)
+        foreach (Collider2D Enemy in hitEnemies)
         {
-            Debug.Log(enemy.name + " a été touché !");
+            Debug.Log(Enemy.name + " a été touché !");
         }
     }
     void AttackForwardLightDown()
@@ -161,9 +159,9 @@ public class PlayerCombat : MonoBehaviour
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackForwardLightDownPoint.position, attackRange, enemyLayers);
 
         // Effectuer les dégats sur les ennemis
-        foreach (Collider2D enemy in hitEnemies)
+        foreach (Collider2D Enemy in hitEnemies)
         {
-            Debug.Log(enemy.name + " a été touché !");
+            Debug.Log(Enemy.name + " a été touché !");
         }
     }
     void AttackBackwardLightUp()
@@ -175,9 +173,9 @@ public class PlayerCombat : MonoBehaviour
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackBackwardLightUpPoint.position, attackRange, enemyLayers);
 
         // Effectuer les dégats sur les ennemis
-        foreach (Collider2D enemy in hitEnemies)
+        foreach (Collider2D Enemy in hitEnemies)
         {
-            Debug.Log(enemy.name + " a été touché !");
+            Debug.Log(Enemy.name + " a été touché !");
         }
     }
     void AttackBackwardLightDown()
@@ -189,9 +187,9 @@ public class PlayerCombat : MonoBehaviour
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackBackwardLightDownPoint.position, attackRange, enemyLayers);
 
         // Effectuer les dégats sur les ennemis
-        foreach (Collider2D enemy in hitEnemies)
+        foreach (Collider2D Enemy in hitEnemies)
         {
-            Debug.Log(enemy.name + " a été touché !");
+            Debug.Log(Enemy.name + " a été touché !");
         }
     }
     void AttackUpLightUp()
@@ -203,9 +201,9 @@ public class PlayerCombat : MonoBehaviour
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackUpLightUpPoint.position, attackRange, enemyLayers);
 
         // Effectuer les dégats sur les ennemis
-        foreach (Collider2D enemy in hitEnemies)
+        foreach (Collider2D Enemy in hitEnemies)
         {
-            Debug.Log(enemy.name + " a été touché !");
+            Debug.Log(Enemy.name + " a été touché !");
         }
     }
     void AttackDownLightDown()
@@ -217,9 +215,9 @@ public class PlayerCombat : MonoBehaviour
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackDownLightDownPoint.position, attackRange, enemyLayers);
 
         // Effectuer les dégats sur les ennemis
-        foreach (Collider2D enemy in hitEnemies)
+        foreach (Collider2D Enemy in hitEnemies)
         {
-            Debug.Log(enemy.name + " a été touché !");
+            Debug.Log(Enemy.name + " a été touché !");
         }
     }
 
