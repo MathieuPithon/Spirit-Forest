@@ -20,14 +20,14 @@ public class PlayerCombat : MonoBehaviour
     public Transform attackUpLightUpPoint;
     public Transform attackDownLightDownPoint;
 
+    public int damageToGive = 40;
     public float attackRange = 0.5f;
     public bool placement = true; // Placement de garde Haute (true) ou Basse (false)
     public bool faceRight = true; // Sens dans lequel le personnage est tourné, (true => Droite ; false => Gauche)
     public int strength = 40;
 
     void Update()
-    {
-        
+    {        
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             if (Input.GetKey("right"))
@@ -90,7 +90,7 @@ public class PlayerCombat : MonoBehaviour
         // Effectuer les dégats sur les ennemis
         foreach (Collider2D Enemy in hitEnemies)
         {
-            Debug.Log(Enemy.name + " a été touché !");
+            Enemy.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(damageToGive);
         }
     }
     void AttackStaticLightDown()
@@ -104,7 +104,7 @@ public class PlayerCombat : MonoBehaviour
         // Effectuer les dégats sur les ennemis
         foreach (Collider2D Enemy in hitEnemies)
         {
-            Debug.Log(Enemy.name + " a été touché !");
+            Enemy.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(damageToGive);
         }
     }
     void AttackForwardLightUp()
@@ -118,7 +118,7 @@ public class PlayerCombat : MonoBehaviour
         // Effectuer les dégats sur les ennemis
         foreach (Collider2D Enemy in hitEnemies)
         {
-            Debug.Log(Enemy.name + " a été touché !");
+            Enemy.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(damageToGive);
         }
     }
     void AttackForwardLightDown()
@@ -132,7 +132,7 @@ public class PlayerCombat : MonoBehaviour
         // Effectuer les dégats sur les ennemis
         foreach (Collider2D Enemy in hitEnemies)
         {
-            Debug.Log(Enemy.name + " a été touché !");
+            Enemy.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(damageToGive);
         }
     }
     void AttackBackwardLightUp()
@@ -146,7 +146,7 @@ public class PlayerCombat : MonoBehaviour
         // Effectuer les dégats sur les ennemis
         foreach (Collider2D Enemy in hitEnemies)
         {
-            Debug.Log(Enemy.name + " a été touché !");
+            Enemy.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(damageToGive);
         }
     }
     void AttackBackwardLightDown()
@@ -160,7 +160,7 @@ public class PlayerCombat : MonoBehaviour
         // Effectuer les dégats sur les ennemis
         foreach (Collider2D Enemy in hitEnemies)
         {
-            Debug.Log(Enemy.name + " a été touché !");
+            Enemy.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(damageToGive);
         }
     }
     void AttackUpLightUp()
@@ -174,8 +174,7 @@ public class PlayerCombat : MonoBehaviour
         // Effectuer les dégats sur les ennemis
         foreach (Collider2D Enemy in hitEnemies)
         {
-            Debug.Log(Enemy.name + " a été touché !");
-            
+            Enemy.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(damageToGive);
         }
     }
     void AttackDownLightDown()
@@ -189,7 +188,7 @@ public class PlayerCombat : MonoBehaviour
         // Effectuer les dégats sur les ennemis
         foreach (Collider2D Enemy in hitEnemies)
         {
-            Debug.Log(Enemy.name + " a été touché !");            
+            Enemy.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(damageToGive);            
         }
     }
 

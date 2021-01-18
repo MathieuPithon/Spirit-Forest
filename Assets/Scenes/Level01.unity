@@ -3213,6 +3213,7 @@ MonoBehaviour:
   attackBackwardLightDownPoint: {fileID: 131978469}
   attackUpLightUpPoint: {fileID: 362294641}
   attackDownLightDownPoint: {fileID: 1258827757}
+  damageToGive: 40
   attackRange: 0.5
   placement: 1
   faceRight: 1
@@ -10786,8 +10787,24 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &1322395192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1322395185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f0dec0e2196d44478ba1856ddef6a35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 0
+  xpEarned: 2
+  xp: {fileID: 382938707}
 --- !u!1 &1350705904
 GameObject:
   m_ObjectHideFlags: 0
