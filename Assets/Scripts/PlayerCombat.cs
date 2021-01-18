@@ -24,7 +24,7 @@ public class PlayerCombat : MonoBehaviour
     public bool placement = true; // Placement de garde Haute (true) ou Basse (false)
     public bool faceRight = true; // Sens dans lequel le personnage est tourné, (true => Droite ; false => Gauche)
     public int strength = 40;
-    
+
     void Update()
     {
         
@@ -34,78 +34,49 @@ public class PlayerCombat : MonoBehaviour
             {
                 if (placement == true)
                 {
-                    if (faceRight == true)
-                    {
-                        AttackForwardLightUp();
-                    }
-                    else
-                    {
-                        AttackBackwardLightUp();
-                    }
+                    if (faceRight == true)                    
+                        AttackForwardLightUp();                   
+                    else                    
+                        AttackBackwardLightUp();                    
                 }
                 else
                 {
-                    if (faceRight == true)
-                    {
-                        AttackForwardLightDown();
-                    }
+                    if (faceRight == true)                    
+                        AttackForwardLightDown();                    
                     else
-                    {
                         AttackBackwardLightDown();
                     }
-                }
             }
             else if (Input.GetKey("left"))
             {
                 if (placement == true)
                 {
-                    if (faceRight == true)
-                    {
-                        AttackBackwardLightUp();
-                    }
-                    else
-                    {
-                        AttackForwardLightUp();
-                    }
+                    if (faceRight == true)                    
+                        AttackBackwardLightUp();                    
+                    else                    
+                        AttackForwardLightUp();                    
                 }
                 else
                 {
-                    if (faceRight == true)
-                    {
-                        AttackBackwardLightDown();
-                    }
-                    else
-                    {
-                        AttackForwardLightDown();
-                    }
+                    if (faceRight == true)                    
+                        AttackBackwardLightDown();                    
+                    else                    
+                        AttackForwardLightDown();                    
                 }
             }
-            else if (Input.GetKey("up"))
-            {
-                AttackUpLightUp();
-            }
-            else if (Input.GetKey("down"))
-            {
-                AttackDownLightDown();
-            }
+            else if (Input.GetKey("up"))            
+                AttackUpLightUp();            
+            else if (Input.GetKey("down"))            
+                AttackDownLightDown();            
             else
             {
-                if (placement == true)
-                {
-                    AttackStaticLightUp();
-                }
-                else
-                {
-                    AttackStaticLightDown();
-                }
+                if (placement == true)                
+                    AttackStaticLightUp();                
+                else                
+                    AttackStaticLightDown();                
             }
         }
-
-
-
         CombatIndicateur();
-
-
     }
 
     void AttackStaticLightUp()
@@ -204,6 +175,7 @@ public class PlayerCombat : MonoBehaviour
         foreach (Collider2D Enemy in hitEnemies)
         {
             Debug.Log(Enemy.name + " a été touché !");
+            
         }
     }
     void AttackDownLightDown()
@@ -217,7 +189,7 @@ public class PlayerCombat : MonoBehaviour
         // Effectuer les dégats sur les ennemis
         foreach (Collider2D Enemy in hitEnemies)
         {
-            Debug.Log(Enemy.name + " a été touché !");
+            Debug.Log(Enemy.name + " a été touché !");            
         }
     }
 
