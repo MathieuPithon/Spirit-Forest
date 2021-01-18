@@ -24,23 +24,23 @@ public class PlayerBuffs : MonoBehaviour
     {
         regularHealth = health.maxHealth;
         health.maxHealth += healthBuff;
-        health.currentHealth += healthBuff;
+        health.CurrentHealth += healthBuff;
         healthBar.SetMaxHealth(health.maxHealth);
-        healthBar.SetHealth(health.currentHealth);
+        healthBar.SetHealth(health.CurrentHealth);
         StartCoroutine(HealthBuffTimer(healthBuff, buffTimer));
     }    
     public IEnumerator HealthBuffTimer(int healthBuff, float buffTimer)
     {
         yield return new WaitForSeconds(buffTimer);
         health.maxHealth = regularHealth;//Unbuff
-        health.currentHealth -= (healthBuff / 2);
-        if (health.currentHealth > health.maxHealth)
-            health.currentHealth = health.maxHealth;
-        else if (health.currentHealth < healthKeeper)//Si le héros meurt a cause de la fin du buff
-            health.currentHealth = healthKeeper;
+        health.CurrentHealth -= (healthBuff / 2);
+        if (health.CurrentHealth > health.maxHealth)
+            health.CurrentHealth = health.maxHealth;
+        else if (health.CurrentHealth < healthKeeper)//Si le héros meurt a cause de la fin du buff
+            health.CurrentHealth = healthKeeper;
 
         healthBar.SetMaxHealth(health.maxHealth);
-        healthBar.SetHealth(health.currentHealth);
+        healthBar.SetHealth(health.CurrentHealth);
     }
 
     //STAMINA BUFF
@@ -50,18 +50,18 @@ public class PlayerBuffs : MonoBehaviour
         stamina.maxStamina += staminaBuff;
         stamina.CallStaminaRegen();//Pour lancer la regen
         staminaBar.SetMaxStamina(stamina.maxStamina);
-        staminaBar.SetStamina(stamina.currentStamina);
+        staminaBar.SetStamina(stamina.CurrentStamina);
         StartCoroutine(StaminaBuffTimer(buffTimer));
     }
     public IEnumerator StaminaBuffTimer(float buffTimer)
     {
         yield return new WaitForSeconds(buffTimer);
         stamina.maxStamina = maxStaminaBeforeBuff; //Unbuff
-        if (stamina.currentStamina > stamina.maxStamina)
-            stamina.currentStamina = stamina.maxStamina;
+        if (stamina.CurrentStamina > stamina.maxStamina)
+            stamina.CurrentStamina = stamina.maxStamina;
 
         staminaBar.SetMaxStamina(stamina.maxStamina);
-        staminaBar.SetStamina(stamina.currentStamina);
+        staminaBar.SetStamina(stamina.CurrentStamina);
     }
 
     //STAMINA REGEN BUFF

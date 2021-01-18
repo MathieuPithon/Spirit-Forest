@@ -5,7 +5,10 @@ using System.Collections;
 public class PlayerHealth : MonoBehaviour
 {
     public int maxHealth = 100;
-    public float currentHealth;
+    private float currentHealth;
+    public float CurrentHealth { get { return currentHealth; }
+                                 set { currentHealth = Mathf.Clamp(value, 0, maxHealth); }
+    }
     private float stillToHeal = 0;
     private bool healingInProgress = false;
     
@@ -17,7 +20,7 @@ public class PlayerHealth : MonoBehaviour
     public HealthBar healthBar;
     void Start()
     {
-        currentHealth = maxHealth;
+        CurrentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
     }
 
@@ -29,9 +32,9 @@ public class PlayerHealth : MonoBehaviour
         }
         if (healingInProgress)
         {
-            currentHealth += 0.1f;
+            CurrentHealth += 0.1f;
             stillToHeal -= 0.1f;
-            healthBar.SetHealth(currentHealth);
+            healthBar.SetHealth(CurrentHealth);
             if (stillToHeal <= 0)
             {
                 healingInProgress = false;
@@ -43,8 +46,8 @@ public class PlayerHealth : MonoBehaviour
     {
         if(!isInvincible)
         {
-            currentHealth -= damage;
-            healthBar.SetHealth(currentHealth);
+            CurrentHealth -= damage;
+            healthBar.SetHealth(CurrentHealth);
             isInvincible = true;
             StartCoroutine(InvincibilityFlash());
             StartCoroutine(HandleInvincibilityDelay());
@@ -52,9 +55,9 @@ public class PlayerHealth : MonoBehaviour
     }
     public void Healing(float heal)
     {
-        if (currentHealth + heal > maxHealth)
+        if (CurrentHealth + heal > maxHealth)
         {
-             heal = maxHealth - currentHealth;
+             heal = maxHealth - CurrentHealth;
         }
         stillToHeal = heal;
         healingInProgress = true;

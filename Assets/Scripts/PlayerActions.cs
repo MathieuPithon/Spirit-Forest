@@ -15,15 +15,15 @@ public class PlayerActions : MonoBehaviour
 
     public void Update()
     { 
-        if(Input.GetMouseButtonDown(0) && playerStamina.currentStamina > 20 && !cooldown)
+        if(Input.GetMouseButtonDown(1) && playerStamina.CurrentStamina > 20 && !cooldown)
         {   
             animator.SetTrigger("Attack");
             playerStamina.LoseStamina(20);
             cooldown = true;
-            playerXp.XpGain(1);
+            playerXp.XpGain(6);
             StartCoroutine(Cooldown(.5f));
         }
-        if (Input.GetButtonDown("powerup") && playerStamina.currentStamina > 20 && !cooldown)
+        if (Input.GetButtonDown("powerup") && playerStamina.CurrentStamina > 20 && !cooldown)
         {
             StartCoroutine(Delay());
             playerStamina.LoseStamina(40);
@@ -36,7 +36,6 @@ public class PlayerActions : MonoBehaviour
     {
         yield return new WaitForSeconds(cool);
         cooldown = false;
-
     }
     IEnumerator Delay()
     {
