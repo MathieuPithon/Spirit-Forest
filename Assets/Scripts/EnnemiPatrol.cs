@@ -52,30 +52,23 @@ public class EnnemiPatrol : MonoBehaviour
             Vector3 dir = cible.position.Y() - transform.position.Y();
             transform.Translate(dir.normalized * 5 * Time.deltaTime, Space.World);
         }
-
         //fixer aux fps , a mettre dans une fonction a part et peut etre dans un fonction collider au lieu de update
         //attaque de l'ennemi
         if (gap <= lookRadius2)
         {
             random = Random.Range(1, 10);
         }
-
-
         if (gap <= lookRadius2 & random == 1)
         {
             Vector3 dur = cible.position.Y() - transform.position.Y();
             transform.Translate(dur.normalized * speed * Time.deltaTime, Space.World);
         }
-
-
-
         //l'ennemi recule si il est trop près du joueur 
         if (gap <= lookRadius2 && damagedPlayer)
         {
             Vector3 dar = transform.position.Y() - cible.position.Y();
             transform.Translate(dar.normalized * speed * Time.deltaTime, Space.World);
-        }
-        
+        }        
         //allez retour de l'ennemi entre les waypoints
         else
         {
