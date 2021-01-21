@@ -54,6 +54,12 @@ public class BoomerangScript : MonoBehaviour
         }            
         if (collision.gameObject.CompareTag("Player") && comeBack)
             Destroy(gameObject);
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            if (comeBack)
+                Destroy(gameObject);
+            ComeBack();
+        }
     }
   
     private void ComeBack()
