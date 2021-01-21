@@ -7,6 +7,8 @@ TagManager:
   - PlayerSpawn
   - Enemy
   - PlayerAttack
+  - Ground
+  - Boomerang
   layers:
   - Default
   - TransparentFX
@@ -19,7 +21,7 @@ TagManager:
   - Player
   - Enemy
   - PlayerAttack
-  - 
+  - Ground
   - 
   - 
   - 

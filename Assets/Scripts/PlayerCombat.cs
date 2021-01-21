@@ -77,6 +77,7 @@ public class PlayerCombat : MonoBehaviour
             }
         }
         CombatIndicateur();
+        
     }
 
     void AttackStaticLightUp()
@@ -100,6 +101,7 @@ public class PlayerCombat : MonoBehaviour
 
         // Detecter les ennemis dans la zonne d'attaque
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackStaticLightDownPoint.position, attackRange, enemyLayers);
+        
 
         // Effectuer les dégats sur les ennemis
         foreach (Collider2D Enemy in hitEnemies)

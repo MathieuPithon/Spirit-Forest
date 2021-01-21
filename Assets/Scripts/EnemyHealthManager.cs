@@ -22,6 +22,8 @@ public class EnemyHealthManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    
     public void HurtEnemy(int damageTaken)
     {
         currentHealth -= damageTaken;

@@ -10,6 +10,7 @@ public class PlayerActions : MonoBehaviour
     public PlayerXp playerXp;
     public PauseMenu pauseMenu;
     
+    
 
     private bool cooldown = false;
 
@@ -31,6 +32,7 @@ public class PlayerActions : MonoBehaviour
             StartCoroutine(Cooldown(1.5f));
         }
         
+
     }
     IEnumerator Cooldown(float cool)
     {
