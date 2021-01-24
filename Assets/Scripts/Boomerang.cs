@@ -14,8 +14,7 @@ public class Boomerang : MonoBehaviour
 
     void Start()
     {
-        boomerangRef = Resources.Load("Boomerang");
-        
+        boomerangRef = Resources.Load("Boomerang");        
         //animator = GetComponent<Animator>();
     }
     
@@ -23,7 +22,7 @@ public class Boomerang : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R) && boomerangAvailable)
         {
-            //Animator.Play("PlayerShoot");
+            //Animator.Play("PlayerBoomerang");
             boomerangAvailable = false;
             GameObject boomerang = (GameObject)Instantiate(boomerangRef);
             if(combat.faceRight)

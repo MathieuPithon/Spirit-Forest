@@ -8,10 +8,12 @@ public class EnemyHealthManager : MonoBehaviour
     public int currentHealth;
     public int xpEarned = 2;
 
+    public EnemyHealthBar healthBar;
     public PlayerXp xp;
     void Start()
     {
         currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
     }
 
     void Update()
@@ -26,6 +28,7 @@ public class EnemyHealthManager : MonoBehaviour
     {
         //animation de l'ennemi qui subit des dégats
         currentHealth -= damageTaken;
+        healthBar.SetHealth(currentHealth);
     }
     public void SetMaxHealth()
     {

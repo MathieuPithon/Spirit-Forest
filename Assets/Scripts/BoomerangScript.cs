@@ -24,8 +24,8 @@ public class BoomerangScript : MonoBehaviour
         else facingRight = true;        
     }
     void FixedUpdate()
-    {//mettre un switch(facingRight) ?
-        if (facingRight)
+    {
+        if (facingRight)//Déplacement du boomerang
         {
             rb2d.velocity = new Vector2(speed, 0);
             if (comeBack)
@@ -36,7 +36,7 @@ public class BoomerangScript : MonoBehaviour
             rb2d.velocity = new Vector2(-speed, 0);
             if (comeBack)
                 rb2d.velocity = new Vector2(speed, 0);
-        }        
+        }  
     }    
     private void OnCollisionEnter2D (Collision2D collision)
     {
