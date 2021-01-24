@@ -15,6 +15,7 @@ public class Boomerang : MonoBehaviour
     void Start()
     {
         boomerangRef = Resources.Load("Boomerang");
+        
         //animator = GetComponent<Animator>();
     }
     
@@ -32,7 +33,8 @@ public class Boomerang : MonoBehaviour
             StartCoroutine(BoomerangCd());
         }
     }
-    private IEnumerator BoomerangCd()//Pour éviter de lancer 10 boomerangs à la suite
+    
+    private IEnumerator BoomerangCd()
     {
         yield return new WaitForSeconds(boomerangCd);
         boomerangAvailable = true;

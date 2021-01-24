@@ -21,11 +21,10 @@ public class EnemyHealthManager : MonoBehaviour
             xp.XpGain(xpEarned);
             Destroy(gameObject);
         }
-    }
-
-    
+    }    
     public void HurtEnemy(int damageTaken)
     {
+        //animation de l'ennemi qui subit des dégats
         currentHealth -= damageTaken;
     }
     public void SetMaxHealth()

@@ -11,22 +11,20 @@ public class BoomerangScript : MonoBehaviour
     public bool comeBack = false;
     private bool facingRight;
     private float comeBackRange;
-    public int boomerangDamage;//les dégats sont multipliés par 2 alors attention à la valeur renseignée dans l'inspector
+    public int boomerangDamage;
+    
     void Start()
-    {
+    {        
         comeBackRange = range * 3/2;
         combat = GameObject.Find("Player").GetComponent<PlayerCombat>();
         rb2d = GetComponent<Rigidbody2D>();
         Invoke("ComeBack", range);
         if (!combat.faceRight)
             facingRight = false;
-        else facingRight = true;
+        else facingRight = true;        
     }
-    
-
-
     void FixedUpdate()
-    {
+    {//mettre un switch(facingRight) ?
         if (facingRight)
         {
             rb2d.velocity = new Vector2(speed, 0);
@@ -38,34 +36,33 @@ public class BoomerangScript : MonoBehaviour
             rb2d.velocity = new Vector2(-speed, 0);
             if (comeBack)
                 rb2d.velocity = new Vector2(speed, 0);
-        }
-        
-    }
-
+        }        
+    }    
     private void OnCollisionEnter2D (Collision2D collision)
     {
-        
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.tag == "Enemy")
         {
             collision.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(boomerangDamage);
-            if (comeBack)
-                Destroy(gameObject);
-            ComeBack();
-        }            
-        if (collision.gameObject.CompareTag("Player") && comeBack)
-            Destroy(gameObject);
+            StartCoroutine(IgnoreColliderCd(9, 12, .5f));
+        }
+        if (collision.gameObject.CompareTag("Player"))
+            Destroy(gameObject);            
         if (collision.gameObject.CompareTag("Ground"))
         {
             if (comeBack)
                 Destroy(gameObject);
             ComeBack();
         }
-    }
-  
+    }  
     private void ComeBack()
     {
         comeBack = true;
-        Destroy(gameObject, comeBackRange);
-        
+        Destroy(gameObject, comeBackRange);        
+    }
+    public IEnumerator IgnoreColliderCd(int layer1, int layer2, float timer)
+    {
+        Physics2D.IgnoreLayerCollision(layer1, layer2, true);
+        yield return new WaitForSeconds(timer);
+        Physics2D.IgnoreLayerCollision(layer1, layer2, false);
     }
 }
