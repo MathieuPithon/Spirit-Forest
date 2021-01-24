@@ -6,9 +6,10 @@ public class BoomerangScript : MonoBehaviour
 {
     Rigidbody2D rb2d;
     PlayerCombat combat;
+    public float colliderCd = 0.2f;
     public float speed;
     public float range;
-    public bool comeBack = false;
+    private bool comeBack;
     private bool facingRight;
     private float comeBackRange;
     public int boomerangDamage;
@@ -43,7 +44,7 @@ public class BoomerangScript : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             collision.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(boomerangDamage);
-            StartCoroutine(IgnoreColliderCd(9, 12, .5f));
+            StartCoroutine(IgnoreColliderCd(9, 12, colliderCd));
         }
         if (collision.gameObject.CompareTag("Player"))
             Destroy(gameObject);            

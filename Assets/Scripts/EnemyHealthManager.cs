@@ -12,8 +12,7 @@ public class EnemyHealthManager : MonoBehaviour
     public PlayerXp xp;
     void Start()
     {
-        currentHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
+        SetMaxHealth();
     }
 
     void Update()
@@ -33,5 +32,6 @@ public class EnemyHealthManager : MonoBehaviour
     public void SetMaxHealth()
     {
         currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
     }
 }

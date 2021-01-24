@@ -155,10 +155,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 287a6691d23268145b226fc7e6605b25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 7
+  colliderCd: 0.2
+  speed: 8
   range: 1
-  comeBack: 0
-  boomerangDamage: 10
+  boomerangDamage: 20
 --- !u!1839735485 &6211081701643351512
 Tilemap:
   m_ObjectHideFlags: 0
