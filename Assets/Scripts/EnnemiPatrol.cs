@@ -99,9 +99,13 @@ public class EnnemiPatrol : MonoBehaviour
         PlayerHealth playerHealth = collision.transform.GetComponent<PlayerHealth>();
         if (collision.transform.CompareTag("Player"))
         {
-            attackPlacement = false;
-            playerHealth.TakeDamage(damageOnCollision, attackPlacement);
-            damagedPlayer = true;
+            PlayerCombat playerCombat = GameObject.Find("Player").GetComponent<PlayerCombat>();
+            if (playerCombat.paradeActive == false)
+            {
+                attackPlacement = false;
+                playerHealth.TakeDamage(damageOnCollision, attackPlacement);
+                damagedPlayer = true;
+            }
         }
     }
     public IEnumerator PlayerDamagedTimer()

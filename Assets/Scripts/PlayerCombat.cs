@@ -22,9 +22,11 @@ public class PlayerCombat : MonoBehaviour
 
     public int damageToGive = 40;
     public float attackRange = 0.5f;
+    public int strength = 40;
     public bool placement = true; // Placement de garde Haute (true) ou Basse (false)
     public bool faceRight = true; // Sens dans lequel le personnage est tourné, (true => Droite ; false => Gauche)
-    public int strength = 40;
+    public bool paradeActive = false;
+    
 
     void Update()
     {        
@@ -76,9 +78,21 @@ public class PlayerCombat : MonoBehaviour
                     AttackStaticLightDown();                
             }
         }
-        CombatIndicateur();
+        if (Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            StartCoroutine(SetParadeActive(0.1f));
+        }
+            CombatIndicateur();
         
     }
+
+    private IEnumerator SetParadeActive(float timer)
+    {
+        paradeActive = true;
+        yield return new WaitForSeconds(timer);
+        paradeActive = false;
+    }
+
 
     void AttackStaticLightUp()
     {
