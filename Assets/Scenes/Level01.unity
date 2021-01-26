@@ -3217,6 +3217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94144c9eed21c414fb584651571b82b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
   spriteRenderer: {fileID: 382938713}
   playerHealth: {fileID: 382938709}
   playerStamina: {fileID: 382938708}
@@ -61062,7 +61063,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1947728163}
   m_Enabled: 1
-  m_Alpha: 0
+  m_Alpha: 1
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
@@ -61135,7 +61136,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764a6f9c9a9acb542a4b87a1caabc22a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  img: {fileID: 1947728163}
 --- !u!1 &1959206427
 GameObject:
   m_ObjectHideFlags: 0
