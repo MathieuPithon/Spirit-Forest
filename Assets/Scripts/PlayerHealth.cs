@@ -49,13 +49,19 @@ public class PlayerHealth : MonoBehaviour
             PlayerCombat playerCombat = GameObject.Find("Player").GetComponent<PlayerCombat>();
             if (playerCombat.placement == attackPlacement)
             {
-                damage = damage / 5;
+                if (playerCombat.paradeActive == true) { 
+                }
+                PlayerStamina playerStamina = GameObject.Find("Player").GetComponent<PlayerStamina>();
+                playerStamina.LoseStamina(damage*3);
             }
-            CurrentHealth -= damage;
-            healthBar.SetHealth(CurrentHealth);
-            isInvincible = true;
-            StartCoroutine(InvincibilityFlash());
-            StartCoroutine(HandleInvincibilityDelay());
+            else
+            {
+                CurrentHealth -= damage;
+                healthBar.SetHealth(CurrentHealth);
+                isInvincible = true;
+                StartCoroutine(InvincibilityFlash());
+                StartCoroutine(HandleInvincibilityDelay());
+            }
         }
     }
     public void Healing(float heal)
