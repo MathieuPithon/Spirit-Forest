@@ -13,13 +13,17 @@ public class BoomerangScript : MonoBehaviour
     private bool facingRight;
     private float comeBackRange;
     public int boomerangDamage;
+    private int enemyLayer = 9;
+    private int boomerangLayer = 12;
     
     void Start()
-    {        
+    {
+        Physics2D.IgnoreLayerCollision(enemyLayer, boomerangLayer, false);
         comeBackRange = range * 3/2;
         combat = GameObject.Find("Player").GetComponent<PlayerCombat>();
         rb2d = GetComponent<Rigidbody2D>();
         Invoke("ComeBack", range);
+        boomerangDamage += (combat.strength / 4);//Degats du boomerang + modificateur de force
         if (!combat.faceRight)
             facingRight = false;
         else facingRight = true;        
@@ -44,7 +48,7 @@ public class BoomerangScript : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             collision.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(boomerangDamage);
-            StartCoroutine(IgnoreColliderCd(9, 12, colliderCd));
+            StartCoroutine(IgnoreColliderCd(enemyLayer, boomerangLayer, colliderCd));
         }
         if (collision.gameObject.CompareTag("Player"))
             Destroy(gameObject);            
