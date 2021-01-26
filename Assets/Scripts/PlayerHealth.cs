@@ -28,7 +28,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.H))//test
         {
-            TakeDamage(20);
+            TakeDamage(20, false);
         }
         if (healingInProgress)
         {
@@ -42,10 +42,15 @@ public class PlayerHealth : MonoBehaviour
         }
         
     }
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage, bool attackPlacement)
     {
         if(!isInvincible)
         {
+            PlayerCombat playerCombat = GameObject.Find("Player").GetComponent<PlayerCombat>();
+            if (playerCombat.placement == attackPlacement)
+            {
+                damage = damage / 5;
+            }
             CurrentHealth -= damage;
             healthBar.SetHealth(CurrentHealth);
             isInvincible = true;
