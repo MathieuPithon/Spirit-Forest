@@ -2,7 +2,7 @@
 
 public class PickUpStaminaRegenBuff : MonoBehaviour
 {
-    public PlayerBuffs playerBuffs;
+    PlayerBuffs playerBuffs;
     public float staminaRegenBuff = 1f;
     public float regenSpeedBuff = 0.05f;
     public float buffTimer = 10f;
@@ -11,6 +11,7 @@ public class PickUpStaminaRegenBuff : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            playerBuffs = GameObject.Find("Player").GetComponent<PlayerBuffs>();
             playerBuffs.BuffStaminaRegen(staminaRegenBuff, regenSpeedBuff, buffTimer);
             Destroy(gameObject);
         }
