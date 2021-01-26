@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - PlayerSpawn
+  - Enemy
+  - PlayerAttack
+  - Ground
+  - Boomerang
   layers:
   - Default
   - TransparentFX
@@ -15,10 +19,10 @@ TagManager:
   - 
   - 
   - Player
-  - 
-  - 
-  - 
-  - 
+  - Enemy
+  - PlayerAttack
+  - Ground
+  - Boomerang
   - 
   - 
   - 

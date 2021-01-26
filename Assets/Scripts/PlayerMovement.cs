@@ -2,6 +2,7 @@
 
 public class PlayerMovement : MonoBehaviour
 {
+    public PlayerStamina playerStamina;
     public float moveSpeed;
     public float jumpForce;
     public float groundCheckRadius;
@@ -55,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
 
         horizontalMovement = Input.GetAxis("Horizontal") * moveSpeed * Time.fixedDeltaTime * facingCoef;
 
-        if (Input.GetButtonDown("Jump") && (isGrounded == true) && (playerStamina.currentStamina >= jumpStamina)) //Jump correspond par defaut à la barre espace
+        if (Input.GetButtonDown("Jump") && (isGrounded == true) && (playerStamina.CurrentStamina >= jumpStamina)) //Jump correspond par defaut à la barre espace
         {
             isJumping = true;
             playerStamina.LoseStamina(jumpStamina);

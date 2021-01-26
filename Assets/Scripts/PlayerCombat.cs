@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour
 {
-
     public Animator animator;
     public LayerMask enemyLayers;
     public GameObject player;
@@ -21,93 +20,64 @@ public class PlayerCombat : MonoBehaviour
     public Transform attackUpLightUpPoint;
     public Transform attackDownLightDownPoint;
 
+    public int damageToGive = 40;
     public float attackRange = 0.5f;
     public bool placement = true; // Placement de garde Haute (true) ou Basse (false)
     public bool faceRight = true; // Sens dans lequel le personnage est tourné, (true => Droite ; false => Gauche)
-    public float currentStrength = 40;
-    public float maxStrength = 40; //Stat arbitraire pour créer la variable. A redéfinir
+    public int strength = 40;
 
-    // Update is called once per frame
     void Update()
-    {
+    {        
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             if (Input.GetKey("right"))
             {
                 if (placement == true)
                 {
-                    if (faceRight == true)
-                    {
-                        AttackForwardLightUp();
-                    }
-                    else
-                    {
-                        AttackBackwardLightUp();
-                    }
+                    if (faceRight == true)                    
+                        AttackForwardLightUp();                   
+                    else                    
+                        AttackBackwardLightUp();                    
                 }
                 else
                 {
-                    if (faceRight == true)
-                    {
-                        AttackForwardLightDown();
-                    }
+                    if (faceRight == true)                    
+                        AttackForwardLightDown();                    
                     else
-                    {
                         AttackBackwardLightDown();
                     }
-                }
             }
             else if (Input.GetKey("left"))
             {
                 if (placement == true)
                 {
-                    if (faceRight == true)
-                    {
-                        AttackBackwardLightUp();
-                    }
-                    else
-                    {
-                        AttackForwardLightUp();
-                    }
+                    if (faceRight == true)                    
+                        AttackBackwardLightUp();                    
+                    else                    
+                        AttackForwardLightUp();                    
                 }
                 else
                 {
-                    if (faceRight == true)
-                    {
-                        AttackBackwardLightDown();
-                    }
-                    else
-                    {
-                        AttackForwardLightDown();
-                    }
+                    if (faceRight == true)                    
+                        AttackBackwardLightDown();                    
+                    else                    
+                        AttackForwardLightDown();                    
                 }
             }
-            else if (Input.GetKey("up"))
-            {
-                AttackUpLightUp();
-            }
-            else if (Input.GetKey("down"))
-            {
-                AttackDownLightDown();
-            }
+            else if (Input.GetKey("up"))            
+                AttackUpLightUp();            
+            else if (Input.GetKey("down"))            
+                AttackDownLightDown();            
             else
             {
-                if (placement == true)
-                {
-                    AttackStaticLightUp();
-                }
-                else
-                {
-                    AttackStaticLightDown();
-                }
+                if (placement == true)                
+                    AttackStaticLightUp();                
+                else                
+                    AttackStaticLightDown();                
             }
         }
-
-
-
         CombatIndicateur();
-
-
+        
     }
 
     void AttackStaticLightUp()
@@ -119,9 +89,9 @@ public class PlayerCombat : MonoBehaviour
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackStaticLightUpPoint.position, attackRange, enemyLayers);
 
         // Effectuer les dégats sur les ennemis
-        foreach (Collider2D enemy in hitEnemies)
+        foreach (Collider2D Enemy in hitEnemies)
         {
-            Debug.Log(enemy.name + " a été touché !");
+            Enemy.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(damageToGive);
         }
     }
     void AttackStaticLightDown()
@@ -131,11 +101,12 @@ public class PlayerCombat : MonoBehaviour
 
         // Detecter les ennemis dans la zonne d'attaque
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackStaticLightDownPoint.position, attackRange, enemyLayers);
+        
 
         // Effectuer les dégats sur les ennemis
-        foreach (Collider2D enemy in hitEnemies)
+        foreach (Collider2D Enemy in hitEnemies)
         {
-            Debug.Log(enemy.name + " a été touché !");
+            Enemy.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(damageToGive);
         }
     }
     void AttackForwardLightUp()
@@ -147,9 +118,9 @@ public class PlayerCombat : MonoBehaviour
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackForwardLightUpPoint.position, attackRange, enemyLayers);
 
         // Effectuer les dégats sur les ennemis
-        foreach (Collider2D enemy in hitEnemies)
+        foreach (Collider2D Enemy in hitEnemies)
         {
-            Debug.Log(enemy.name + " a été touché !");
+            Enemy.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(damageToGive);
         }
     }
     void AttackForwardLightDown()
@@ -161,9 +132,9 @@ public class PlayerCombat : MonoBehaviour
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackForwardLightDownPoint.position, attackRange, enemyLayers);
 
         // Effectuer les dégats sur les ennemis
-        foreach (Collider2D enemy in hitEnemies)
+        foreach (Collider2D Enemy in hitEnemies)
         {
-            Debug.Log(enemy.name + " a été touché !");
+            Enemy.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(damageToGive);
         }
     }
     void AttackBackwardLightUp()
@@ -175,9 +146,9 @@ public class PlayerCombat : MonoBehaviour
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackBackwardLightUpPoint.position, attackRange, enemyLayers);
 
         // Effectuer les dégats sur les ennemis
-        foreach (Collider2D enemy in hitEnemies)
+        foreach (Collider2D Enemy in hitEnemies)
         {
-            Debug.Log(enemy.name + " a été touché !");
+            Enemy.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(damageToGive);
         }
     }
     void AttackBackwardLightDown()
@@ -189,9 +160,9 @@ public class PlayerCombat : MonoBehaviour
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackBackwardLightDownPoint.position, attackRange, enemyLayers);
 
         // Effectuer les dégats sur les ennemis
-        foreach (Collider2D enemy in hitEnemies)
+        foreach (Collider2D Enemy in hitEnemies)
         {
-            Debug.Log(enemy.name + " a été touché !");
+            Enemy.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(damageToGive);
         }
     }
     void AttackUpLightUp()
@@ -203,9 +174,9 @@ public class PlayerCombat : MonoBehaviour
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackUpLightUpPoint.position, attackRange, enemyLayers);
 
         // Effectuer les dégats sur les ennemis
-        foreach (Collider2D enemy in hitEnemies)
+        foreach (Collider2D Enemy in hitEnemies)
         {
-            Debug.Log(enemy.name + " a été touché !");
+            Enemy.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(damageToGive);
         }
     }
     void AttackDownLightDown()
@@ -217,9 +188,9 @@ public class PlayerCombat : MonoBehaviour
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackDownLightDownPoint.position, attackRange, enemyLayers);
 
         // Effectuer les dégats sur les ennemis
-        foreach (Collider2D enemy in hitEnemies)
+        foreach (Collider2D Enemy in hitEnemies)
         {
-            Debug.Log(enemy.name + " a été touché !");
+            Enemy.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(damageToGive);            
         }
     }
 

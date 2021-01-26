@@ -23,7 +23,6 @@ public class CaracteristicsWindow : MonoBehaviour
     public Text staminaValue;
     public Text maxStaminaValue;
     public Text strengthValue;
-    public Text maxStrengthValue;
 
     public Text upHealthValue;
     public Text upStaminaValue;
@@ -31,12 +30,12 @@ public class CaracteristicsWindow : MonoBehaviour
    
     void Update()
     {
-        healthValue.text = playerHealth.currentHealth.ToString();
+        healthValue.text = playerHealth.CurrentHealth.ToString();
         maxHealthValue.text = playerHealth.maxHealth.ToString();
-        staminaValue.text = playerStamina.currentStamina.ToString();
+        staminaValue.text = playerStamina.CurrentStamina.ToString();
         maxStaminaValue.text = playerStamina.maxStamina.ToString();
-        strengthValue.text = playerStrength.currentStrength.ToString();
-        maxStrengthValue.text = playerStrength.maxStrength.ToString();
+        strengthValue.text = playerStrength.strength.ToString();
+        
 
         upHealthValue.text = "+" + upHealth.ToString();
         upStaminaValue.text = "+" + upStamina.ToString();
@@ -63,8 +62,10 @@ public class CaracteristicsWindow : MonoBehaviour
     public void UpHealth()
     {
         playerHealth.maxHealth += upHealth;
+        playerHealth.CurrentHealth += upHealth;
         playerXp.caracteristicsPoints -= 1;
         healthBar.SetMaxHealth(playerHealth.maxHealth); //mise à jour de la barre de vie
+        healthBar.SetHealth(playerHealth.CurrentHealth);
         if(playerXp.caracteristicsPoints == 0)
             levelUpUI.SetActive(false);
     }
@@ -73,15 +74,15 @@ public class CaracteristicsWindow : MonoBehaviour
         playerStamina.maxStamina += upStamina;
         playerXp.caracteristicsPoints -= 1;
         staminaBar.SetMaxStamina(playerStamina.maxStamina);//mise à jour de la barre d'endurance
+        playerStamina.CallStaminaRegen();
         if (playerXp.caracteristicsPoints == 0)
             levelUpUI.SetActive(false);
     }
     public void UpStrength()
     {
-        playerStrength.maxStrength += upStrength;
+        playerStrength.strength += upStrength;
         playerXp.caracteristicsPoints -= 1;
         if (playerXp.caracteristicsPoints == 0)
             levelUpUI.SetActive(false);
-        playerStrength.currentStrength = playerStrength.maxStrength; //mise à jour de la force
     }
 }
