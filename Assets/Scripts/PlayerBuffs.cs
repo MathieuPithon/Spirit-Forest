@@ -13,11 +13,12 @@ public class PlayerBuffs : MonoBehaviour
     public int healthKeeper = 10;
     private int regularHealth;
     private int maxStaminaBeforeBuff;
+    private int regularStrength;
     private float regularStaminaRegen;
     private float regularStaminaRegenSpeed;
     private float regularSpeed;
     private float regularJumpForce;
-    private int regularStrength;
+    
 
     //HEALTH BUFF
     public void BuffHealth(int healthBuff, float buffTimer)

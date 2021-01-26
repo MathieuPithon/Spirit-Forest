@@ -16,8 +16,7 @@ public class EnemyAgro : MonoBehaviour
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
-        
+        animator = GetComponent<Animator>();        
     }
 
     // Update is called once per frame
@@ -46,7 +45,6 @@ public class EnemyAgro : MonoBehaviour
         {
             //L'ennemi est à gauche du player donc va à droite
             rb2d.velocity = new Vector2(moveSpeed, 0);
-
         }
         else
         {

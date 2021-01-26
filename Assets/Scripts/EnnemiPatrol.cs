@@ -11,21 +11,21 @@ static public class VectorExtensions
 public class EnnemiPatrol : MonoBehaviour
 {
     public int enemyHealth = 100;
-    public float speed;
-    public float playerDamagedTimer = 1.5f;
-    public Transform[] waypoints;
-    public SpriteRenderer graphics;
-    public bool damagedPlayer = false;
     public int random;
-
     public int damageOnCollision = 10;
 
-    private Transform target;
-    private int destPoint = 0;
-
+    public float speed;
+    public float playerDamagedTimer = 1.5f;
     public float lookRadius = 10f;
     public float lookRadius2 = 2f;
 
+    public bool damagedPlayer = false;
+    
+    private int destPoint = 0;
+    
+    public Transform[] waypoints;
+    public SpriteRenderer graphics;
+    private Transform target;
     Transform cible;
 
     void Start()
@@ -42,7 +42,7 @@ public class EnnemiPatrol : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, lookRadius2);
     }
 
-    void Update()
+    void FixedUpdate()
     {
         float gap = Vector3.Distance(cible.position, transform.position);
 
