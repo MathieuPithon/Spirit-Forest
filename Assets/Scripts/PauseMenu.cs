@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenuUI;
     public static bool gameIsPaused = false;
+    public string mainMenu;
 
     void Update()
     {
@@ -17,6 +18,11 @@ public class PauseMenu : MonoBehaviour
                 Paused();
             }
         }
+    }
+    public void BackToMainMenu()
+    {
+        SceneManager.LoadScene(mainMenu);
+        Resume();
     }
     public void Paused()
     {
