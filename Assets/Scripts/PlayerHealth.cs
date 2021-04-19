@@ -9,7 +9,7 @@ public class PlayerHealth : MonoBehaviour
     public float CurrentHealth { get { return currentHealth; }
                                  set { currentHealth = Mathf.Clamp(value, 0, maxHealth); }
     }
-    private float stillToHeal = 0;
+    public float stillToHeal;
     private bool healingInProgress = false;
     
     public float invincibilityTimeAfterHit = 2f;
@@ -27,18 +27,17 @@ public class PlayerHealth : MonoBehaviour
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.H))//test
-        {
-            TakeDamage(20);
-        }
+            TakeDamage(40);
         if (healingInProgress)
         {
             CurrentHealth += 0.1f;
             stillToHeal -= 0.1f;
             healthBar.SetHealth(CurrentHealth);
-            if (stillToHeal <= 0)
+            if (stillToHeal < 0)
             {
+                CurrentHealth += 0.01f;
                 healingInProgress = false;
-            }
+            }                
         }
         
     }
@@ -55,10 +54,6 @@ public class PlayerHealth : MonoBehaviour
     }
     public void Healing(float heal)
     {
-        if (CurrentHealth + heal > maxHealth)
-        {
-             heal = maxHealth - CurrentHealth;
-        }
         stillToHeal = heal;
         healingInProgress = true;
     }

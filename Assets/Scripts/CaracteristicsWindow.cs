@@ -17,6 +17,7 @@ public class CaracteristicsWindow : MonoBehaviour
     public int upStamina = 10;
     public int upStrength = 5;
     public bool isOpen = false;
+    decimal health;
 
     public Text healthValue;
     public Text maxHealthValue;
@@ -30,7 +31,8 @@ public class CaracteristicsWindow : MonoBehaviour
    
     void Update()
     {
-        healthValue.text = playerHealth.CurrentHealth.ToString();
+        health = (int) playerHealth.CurrentHealth;
+        healthValue.text = health.ToString();
         maxHealthValue.text = playerHealth.maxHealth.ToString();
         staminaValue.text = playerStamina.CurrentStamina.ToString();
         maxStaminaValue.text = playerStamina.maxStamina.ToString();

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PickUpJumpBuff : MonoBehaviour
 {
-    public PlayerBuffs playerBuffs;
+    PlayerBuffs playerBuffs;
     public int jumpBuff = 300;
     public float buffTimer = 10f;
 
@@ -12,6 +12,7 @@ public class PickUpJumpBuff : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            playerBuffs = GameObject.Find("Player").GetComponent<PlayerBuffs>();
             playerBuffs.BuffJumpForce(jumpBuff, buffTimer);
             Destroy(gameObject);
         }
