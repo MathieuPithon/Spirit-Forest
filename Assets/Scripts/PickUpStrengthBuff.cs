@@ -2,8 +2,7 @@
 
 public class PickUpStrengthBuff : MonoBehaviour
 {
-    //PlayerBuffs playerBuffs;
-    public PlayerBuffs playerBuffs;
+    PlayerBuffs playerBuffs;
     public int strengthBuff = 120;
     public float buffTimer = 10f;
 
@@ -11,7 +10,7 @@ public class PickUpStrengthBuff : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            //playerBuffs = GameObject.Find("Player").GetComponent<PlayerBuffs>();
+            playerBuffs = GameObject.Find("Player").GetComponent<PlayerBuffs>();
             playerBuffs.BuffStrength(strengthBuff, buffTimer);
             Destroy(gameObject);
         }
