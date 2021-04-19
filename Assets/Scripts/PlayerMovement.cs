@@ -40,13 +40,11 @@ public class PlayerMovement : MonoBehaviour
             if (!audioSrc.isPlaying)
             {
                 audioSrc.Play();
-                Debug.Log("isplaying");
             }
         }
         else
         {
             audioSrc.Stop();
-            Debug.Log("not");
         }
 
         horizontalMovement = Input.GetAxis("Horizontal") * moveSpeed * Time.fixedDeltaTime;
