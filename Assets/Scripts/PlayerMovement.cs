@@ -2,17 +2,15 @@
 
 public class PlayerMovement : MonoBehaviour
 {
+    public PlayerStamina playerStamina;
     public float moveSpeed;
     public float jumpForce;
     public float groundCheckRadius;
     private float horizontalMovement;
-    public float facingCoef = 1f;
     public int jumpStamina = 10;
 
     public bool isJumping;
     public bool isGrounded;
-    public bool faceRight = true;
-    public bool combatMode = false;
 
     public Transform groundCheck;
     public LayerMask collisionLayers;
@@ -20,10 +18,9 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
     public SpriteRenderer spriteRenderer;
     public CapsuleCollider2D playerCollider;
-    private Vector3 velocity = Vector3.zero;
+    public Vector3 velocity = Vector3.zero;
     public static PlayerMovement instance;
-    
-
+    public AudioSource audioSrc;
 
     private void Awake()
     {
@@ -35,34 +32,26 @@ public class PlayerMovement : MonoBehaviour
 
         instance = this;
     }
-
     private void Update()
     {
-        combatMode = GameObject.Find("Player").GetComponent<PlayerCombat>().combatMode;
 
-        if (combatMode == true)
+        if(rb.velocity.x > 0.3f && isGrounded == true)
         {
-            faceRight = GameObject.Find("Player").GetComponent<PlayerCombat>().faceRight;
-
-            if (rb.velocity.x > 0.1f && faceRight == false)
+            if (!audioSrc.isPlaying)
             {
-                facingCoef = 0.3f;
-            }
-            else if (rb.velocity.x < -0.1f && faceRight == true)
-            {
-                facingCoef = 0.3f;
-            }
-            else
-            {
-                facingCoef = 1f;
+                audioSrc.Play();
+                Debug.Log("isplaying");
             }
         }
-        PlayerStamina playerStamina = GetComponent<PlayerStamina>();
-        
+        else
+        {
+            audioSrc.Stop();
+            Debug.Log("not");
+        }
 
-        horizontalMovement = Input.GetAxis("Horizontal") * moveSpeed * Time.fixedDeltaTime * facingCoef;
+        horizontalMovement = Input.GetAxis("Horizontal") * moveSpeed * Time.fixedDeltaTime;
 
-        if (Input.GetButtonDown("Jump") && (isGrounded == true) && (playerStamina.currentStamina >= jumpStamina)) //Jump correspond par defaut à la barre espace
+        if (Input.GetButtonDown("Jump") && (isGrounded == true) && (playerStamina.CurrentStamina >= jumpStamina)) //Jump correspond par defaut à la barre espace
         {
             isJumping = true;
             playerStamina.LoseStamina(jumpStamina);
@@ -84,7 +73,7 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    void MovePlayer(float _horizontalMovement)
+    public void MovePlayer(float _horizontalMovement)
     {
         Vector3 targetVelocity = new Vector2(_horizontalMovement, rb.velocity.y);
         rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref velocity, .05f);
