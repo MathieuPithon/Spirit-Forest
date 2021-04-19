@@ -2,8 +2,7 @@
 
 public class PickUpSpeedBuff : MonoBehaviour
 {
-    //PlayerBuffs playerBuffs;
-    public PlayerBuffs playerBuffs;
+    PlayerBuffs playerBuffs;
     public float speedBuff = 120;
     public float buffTimer = 10f;
 
@@ -11,7 +10,7 @@ public class PickUpSpeedBuff : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            //playerBuffs = GameObject.Find("Player").GetComponent<PlayerBuffs>();
+            playerBuffs = GameObject.Find("Player").GetComponent<PlayerBuffs>();
             playerBuffs.BuffSpeed(speedBuff, buffTimer);
             Destroy(gameObject);
         }
