@@ -31,6 +31,7 @@ public class PauseMenu : MonoBehaviour
         player.GetComponent<PlayerActions>().enabled = false;
         player.GetComponent<PlayerMovement>().enabled = false;
         player.GetComponent<PlayerCombat>().enabled = false;
+        player.GetComponent<AudioSource>().enabled = false;
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0;
         gameIsPaused = true;
@@ -41,6 +42,7 @@ public class PauseMenu : MonoBehaviour
         player.GetComponent<PlayerActions>().enabled = true;
         player.GetComponent<PlayerMovement>().enabled = true;
         player.GetComponent<PlayerCombat>().enabled = true;
+        player.GetComponent<AudioSource>().enabled = true;
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1;
         gameIsPaused = false;
