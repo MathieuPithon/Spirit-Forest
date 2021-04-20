@@ -2,7 +2,7 @@
 
 public class PlayerMovement : MonoBehaviour
 {
-    public PlayerStamina playerStamina;
+    
     public float moveSpeed;
     public float jumpForce;
     public float groundCheckRadius;
@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     //public bool faceRight = true;
     //public bool combatMode = false;
 
-    
+    public PlayerStamina playerStamina;
     public PlayerCombat combat;
     public Transform groundCheck;
     public LayerMask collisionLayers;
@@ -42,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
     {
         //combatMode = GameObject.Find("Player").GetComponent<PlayerCombat>().combatMode;
 
-        if (combat.combatMode == true)
+        /*if (combat.combatMode == true)
         {
             //faceRight = GameObject.Find("Player").GetComponent<PlayerCombat>().faceRight;
 
@@ -58,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 facingCoef = 1f;
             }
-        }
+        }*/
         //PlayerStamina playerStamina = GetComponent<PlayerStamina>();
         
 
