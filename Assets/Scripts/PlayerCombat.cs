@@ -54,7 +54,7 @@ public class PlayerCombat : MonoBehaviour
 
             if (topBar.transform.position.y >= Screen.height * 1.37f)
                 topBar.transform.position = new Vector2(topBar.transform.position.x, topBar.transform.position.y - 5f);
-                Debug.Log(Screen.height * 0.9);
+                //Debug.Log(Screen.height * 0.9);
             if (bottomBar.transform.position.y <= Screen.height * -0.37f)
                 bottomBar.transform.position = new Vector2(bottomBar.transform.position.x, bottomBar.transform.position.y + 5f);
 
