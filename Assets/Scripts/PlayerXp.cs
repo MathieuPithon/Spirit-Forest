@@ -35,10 +35,7 @@ public class PlayerXp : MonoBehaviour
         }        
         else levelUpAlarmUI.SetActive(false);
 
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            XpGain(10);
-        }
+        
     }
     public void XpGain(int gain)
     {

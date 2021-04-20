@@ -9,10 +9,12 @@ public class EnemyHealthManager : MonoBehaviour
     public int xpEarned = 4;
 
     public EnemyHealthBar healthBar;
-    public PlayerXp xp;
+    PlayerXp xp;
+    public GameObject player;
     void Start()
     {
         SetMaxHealth();
+        xp = player.GetComponent<PlayerXp>();
     }
 
     void Update()
@@ -22,6 +24,7 @@ public class EnemyHealthManager : MonoBehaviour
             xp.XpGain(xpEarned);
             Destroy(gameObject);
         }
+        
     }    
     public void HurtEnemy(int damageTaken)
     {
