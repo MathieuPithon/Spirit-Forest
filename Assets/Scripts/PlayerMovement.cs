@@ -7,10 +7,13 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce;
     public float groundCheckRadius;
     private float horizontalMovement;
+    public float facingCoef = 1f;
     public int jumpStamina = 10;
 
     public bool isJumping;
     public bool isGrounded;
+    public bool faceRight = true;
+    public bool combatMode = false;
 
     public Transform groundCheck;
     public LayerMask collisionLayers;
@@ -20,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
     public CapsuleCollider2D playerCollider;
     public Vector3 velocity = Vector3.zero;
     public static PlayerMovement instance;
+    public AudioSource audioSrc;
 
     private void Awake()
     {
@@ -31,11 +35,44 @@ public class PlayerMovement : MonoBehaviour
 
         instance = this;
     }
+
     private void Update()
     {
+        combatMode = GameObject.Find("Player").GetComponent<PlayerCombat>().combatMode;
+
+        if (combatMode == true)
+        {
+            faceRight = GameObject.Find("Player").GetComponent<PlayerCombat>().faceRight;
+
+            if (rb.velocity.x > 0.1f && faceRight == false)
+            {
+                facingCoef = 0.3f;
+            }
+            else if (rb.velocity.x < -0.1f && faceRight == true)
+            {
+                facingCoef = 0.3f;
+            }
+            else
+            {
+                facingCoef = 1f;
+            }
+        }
+        PlayerStamina playerStamina = GetComponent<PlayerStamina>();
         
 
-        horizontalMovement = Input.GetAxis("Horizontal") * moveSpeed * Time.fixedDeltaTime;
+        if(rb.velocity.x > 0.3f && isGrounded == true)
+        {
+            if (!audioSrc.isPlaying)
+            {
+                audioSrc.Play();
+            }
+        }
+        else
+        {
+            audioSrc.Stop();
+        }
+
+        horizontalMovement = Input.GetAxis("Horizontal") * moveSpeed * Time.fixedDeltaTime * facingCoef;
 
         if (Input.GetButtonDown("Jump") && (isGrounded == true) && (playerStamina.CurrentStamina >= jumpStamina)) //Jump correspond par defaut à la barre espace
         {

@@ -28,6 +28,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.H))//test
             TakeDamage(40);
+
         if (healingInProgress)
         {
             CurrentHealth += 0.1f;
@@ -41,15 +42,26 @@ public class PlayerHealth : MonoBehaviour
         }
         
     }
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage, bool attackPlacement)
     {
         if(!isInvincible)
         {
-            CurrentHealth -= damage;
-            healthBar.SetHealth(CurrentHealth);
-            isInvincible = true;
-            StartCoroutine(InvincibilityFlash());
-            StartCoroutine(HandleInvincibilityDelay());
+            PlayerCombat playerCombat = GameObject.Find("Player").GetComponent<PlayerCombat>();
+            if (playerCombat.placement == attackPlacement)
+            {
+                if (playerCombat.paradeActive == true) { 
+                }
+                PlayerStamina playerStamina = GameObject.Find("Player").GetComponent<PlayerStamina>();
+                playerStamina.LoseStamina(damage*3);
+            }
+            else
+            {
+                CurrentHealth -= damage;
+                healthBar.SetHealth(CurrentHealth);
+                isInvincible = true;
+                StartCoroutine(InvincibilityFlash());
+                StartCoroutine(HandleInvincibilityDelay());
+            }
         }
     }
     public void Healing(float heal)
