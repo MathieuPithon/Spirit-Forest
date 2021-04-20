@@ -56,15 +56,16 @@ public class PlayerCombat : MonoBehaviour
             {
                 combatMode = true;
                 disengagingCombat.Play();
-                combatMusic.Stop();
-                baseMusic.Play(); 
+                combatMusic.Play();
+                baseMusic.Stop(); 
             }
             else
             {
                 combatMode = false;
                 engagingCombat.Play();
-                combatMusic.Play();
-                baseMusic.Stop(); 
+                combatMusic.Stop();
+                baseMusic.Play(); 
+
             }
         }
 
