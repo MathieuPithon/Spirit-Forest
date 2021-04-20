@@ -38,6 +38,11 @@ public class PlayerCombat : MonoBehaviour
     public AudioSource sound3;
     public AudioSource sound4;
 
+    public AudioSource combatMusic;
+    public AudioSource baseMusic;
+    public AudioSource disengagingCombat;
+    public AudioSource engagingCombat;
+
     private int compteur = 0 ;
 
     
@@ -50,10 +55,16 @@ public class PlayerCombat : MonoBehaviour
             if (combatMode == false)
             {
                 combatMode = true;
+                disengagingCombat.Play();
+                combatMusic.Stop();
+                baseMusic.Play(); 
             }
             else
             {
                 combatMode = false;
+                engagingCombat.Play();
+                combatMusic.Play();
+                baseMusic.Stop(); 
             }
         }
 
