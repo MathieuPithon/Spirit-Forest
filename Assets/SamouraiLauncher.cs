@@ -134,7 +134,7 @@ public class SamouraiLauncher : MonoBehaviour
         if (attackArea.inRange == true && inCoolDown == false)
         {
             attack();
-            Debug.Log("attaque");
+            
         }
 
         //if mouvement
@@ -142,14 +142,14 @@ public class SamouraiLauncher : MonoBehaviour
         {
 
             mouvement();
-            Debug.Log("mouvement");
+            
         }
 
         //if retour a la base
         if (agro.seePlayer == false && isAttacking == false && ecareGate > 1)
         {
             backToBase();
-            Debug.Log("back to base");
+            
         }
 
         //if recul
@@ -157,7 +157,7 @@ public class SamouraiLauncher : MonoBehaviour
         {
 
             goBackward();
-            Debug.Log("recule");
+            
         }
 
         //if rotation player
