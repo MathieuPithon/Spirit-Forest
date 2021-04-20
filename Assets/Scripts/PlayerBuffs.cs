@@ -19,6 +19,7 @@ public class PlayerBuffs : MonoBehaviour
     private float regularJumpForce;
     private int regularStrength;
 
+    
     //HEALTH BUFF
     public void BuffHealth(int healthBuff, float buffTimer)
     {
@@ -97,7 +98,7 @@ public class PlayerBuffs : MonoBehaviour
     public void BuffStrength(int strengthBuff, float buffTimer)
     {
         regularStrength = strength.strength;
-        regularStrength += strengthBuff;
+        strength.strength += strengthBuff;
         StartCoroutine(StrengthBuffTimer(buffTimer));
     }
     public IEnumerator StrengthBuffTimer(float buffTimer)

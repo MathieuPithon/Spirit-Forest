@@ -23,8 +23,7 @@ public class PlayerMovement : MonoBehaviour
     public CapsuleCollider2D playerCollider;
     public Vector3 velocity = Vector3.zero;
     public static PlayerMovement instance;
-    
-
+    public AudioSource audioSrc;
 
     private void Awake()
     {
@@ -60,6 +59,18 @@ public class PlayerMovement : MonoBehaviour
         }
         PlayerStamina playerStamina = GetComponent<PlayerStamina>();
         
+
+        if(rb.velocity.x > 0.3f && isGrounded == true)
+        {
+            if (!audioSrc.isPlaying)
+            {
+                audioSrc.Play();
+            }
+        }
+        else
+        {
+            audioSrc.Stop();
+        }
 
         horizontalMovement = Input.GetAxis("Horizontal") * moveSpeed * Time.fixedDeltaTime * facingCoef;
 
