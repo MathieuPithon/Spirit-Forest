@@ -1,29 +1,24 @@
 ﻿
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class SoundMenu : MonoBehaviour
 {
     public Slider mainVolume;
     public Text mainTxt;
-    public Slider musicVolume;
-    public Text musicTxt;
-    public Slider soundVolume;
-    public Text soundTxt;
-    public Slider voiceVolume;
-    public Text voiceTxt;
+    public AudioMixer audioMixer;
 
     public GameObject player;
         
 
     void Update()
     {
-        mainTxt.text = mainVolume.value.ToString();
-        musicTxt.text = musicVolume.value.ToString();
-        soundTxt.text = soundVolume.value.ToString();
-        voiceTxt.text = voiceVolume.value.ToString();
+        mainTxt.text = ((mainVolume.value+80)*1.25).ToString();
+
     }
-    public void SetVolume(float Volume){
-        // player.GetComponent<AudioSource>
+    public void SetVolume(float volume)
+    {
+        audioMixer.SetFloat("volume", volume);
     }
 }
