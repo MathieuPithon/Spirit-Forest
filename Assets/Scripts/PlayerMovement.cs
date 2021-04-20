@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public bool isJumping;
     public bool isGrounded;
     public bool faceRight = true;
+    public bool combatMode = false;
 
     public Transform groundCheck;
     public LayerMask collisionLayers;
@@ -37,21 +38,27 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        PlayerStamina playerStamina = GetComponent<PlayerStamina>();
-        faceRight = GameObject.Find("Player").GetComponent<PlayerCombat>().faceRight;
+        combatMode = GameObject.Find("Player").GetComponent<PlayerCombat>().combatMode;
 
-        if (rb.velocity.x > 0.1f && faceRight == false)
+        if (combatMode == true)
         {
-            facingCoef = 0.3f;
+            faceRight = GameObject.Find("Player").GetComponent<PlayerCombat>().faceRight;
+
+            if (rb.velocity.x > 0.1f && faceRight == false)
+            {
+                facingCoef = 0.3f;
+            }
+            else if (rb.velocity.x < -0.1f && faceRight == true)
+            {
+                facingCoef = 0.3f;
+            }
+            else
+            {
+                facingCoef = 1f;
+            }
         }
-        else if (rb.velocity.x < -0.1f && faceRight == true)
-        {
-            facingCoef = 0.3f;
-        }
-        else
-        {
-            facingCoef = 1f;
-        }
+        PlayerStamina playerStamina = GetComponent<PlayerStamina>();
+        
 
         horizontalMovement = Input.GetAxis("Horizontal") * moveSpeed * Time.fixedDeltaTime * facingCoef;
 
