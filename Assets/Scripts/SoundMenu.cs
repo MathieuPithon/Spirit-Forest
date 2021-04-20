@@ -14,7 +14,7 @@ public class SoundMenu : MonoBehaviour
 
     void Update()
     {
-        mainTxt.text = ((mainVolume.value+80)*1.25).ToString();
+        mainTxt.text = ((int)(mainVolume.value+80)*1.25).ToString();
 
     }
     public void SetVolume(float volume)
