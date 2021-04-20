@@ -62,7 +62,7 @@ public class PlayerMovement : MonoBehaviour
         //PlayerStamina playerStamina = GetComponent<PlayerStamina>();
         
 
-        if(rb.velocity.x > 0.3f && isGrounded == true)
+        if((rb.velocity.x > 0.3f && isGrounded == true) || (rb.velocity.x < -0.3f && isGrounded == true))
         {
             if (!audioSrc.isPlaying)
             {
