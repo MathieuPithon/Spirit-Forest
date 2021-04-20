@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 332269679414954999}
   - component: {fileID: 332269678527962484}
   - component: {fileID: 332269679414955003}
+  - component: {fileID: 2792687014557093884}
   m_Layer: 0
   m_Name: samourai
   m_TagString: Untagged
@@ -184,7 +185,7 @@ Animator:
   m_GameObject: {fileID: 332269679414955000}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 834f62c62bf48a8469efadbf6d91cb6e, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -202,11 +203,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 332269679414955000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b2c812515fb5d546adbbced85a4609e, type: 3}
+  m_Script: {fileID: 11500000, guid: 16f85d886b3c9064fa2de68bd4cb31aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CoolDown: 3
-  CDAttacking: 1
+  CoolDown: 0
+  CDAttacking: 0
   goBack: {fileID: 332269678929306819}
   agro: {fileID: 3560427847621902397}
   turn: {fileID: 332269680030137991}
@@ -266,6 +267,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2792687014557093884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 332269679414955000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f0dec0e2196d44478ba1856ddef6a35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 0
+  currentHealth: 0
+  xpEarned: 2
+  healthBar: {fileID: 0}
+  xp: {fileID: 0}
 --- !u!1 &332269679674497092
 GameObject:
   m_ObjectHideFlags: 0
@@ -390,7 +408,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 332269679999054664}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 433d592734fbf7e4e9697e48ee0d9ae2, type: 3}
+  m_Script: {fileID: 11500000, guid: c55b595dc79093649a9842778421f2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   inRange: 0
@@ -537,7 +555,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 332269680081499674}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69be62859cfbb054e881a5ddd5c374ee, type: 3}
+  m_Script: {fileID: 11500000, guid: 09df146ea55713e449145f3b1a58f376, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   seePlayer: 0
