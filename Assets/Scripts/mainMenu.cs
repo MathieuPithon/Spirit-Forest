@@ -7,8 +7,12 @@ public class mainMenu : MonoBehaviour
 {
     public string MainLevel1;
     public string levelTutorial;
+    public AudioSource startGameSound;
+    public AudioSource mainMenuMusic;
     public void StartGame()
-    {
+    {   
+        startGameSound.Play();
+        mainMenuMusic.Stop();
         SceneManager.LoadScene(MainLevel1);
     }
     public void StartTutorial()
