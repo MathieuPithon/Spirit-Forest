@@ -192,6 +192,7 @@ public class PlayerCombat : MonoBehaviour
         foreach (Collider2D Enemy in hitEnemies)
         {
             Enemy.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(damageToGive);
+            Debug.Log("Hit");
         }
     }
     void AttackStaticLightDown()
@@ -305,6 +306,7 @@ public class PlayerCombat : MonoBehaviour
         foreach (Collider2D Enemy in hitEnemies)
         {
             Enemy.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(damageToGive);
+            Debug.Log("Hit");
         }
     }
 

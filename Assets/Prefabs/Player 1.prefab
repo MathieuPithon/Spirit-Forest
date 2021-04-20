@@ -907,7 +907,6 @@ GameObject:
   - component: {fileID: 8614258085987808550}
   - component: {fileID: 3437308333761515919}
   - component: {fileID: 7740850819667362058}
-  - component: {fileID: 8614258085987808546}
   - component: {fileID: 8614258085987808551}
   - component: {fileID: 8412577261133269315}
   - component: {fileID: 8987121174867737947}
@@ -1092,13 +1091,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49d7fdfee23fbe34caeb5d8be25d81e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStamina: {fileID: 8614258085987808550}
   moveSpeed: 350
   jumpForce: 550
   groundCheckRadius: 0.5
+  facingCoef: 1
   jumpStamina: 10
   isJumping: 0
   isGrounded: 0
+  playerStamina: {fileID: 8614258085987808550}
+  combat: {fileID: 0}
   groundCheck: {fileID: 1517007549998430642}
   collisionLayers:
     serializedVersion: 2
@@ -1108,6 +1109,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 699785122464956145}
   playerCollider: {fileID: 7368084280904191058}
   velocity: {x: 0, y: 0, z: 0}
+  audioSrc: {fileID: 0}
 --- !u!114 &7740850819667362058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1124,28 +1126,8 @@ MonoBehaviour:
   spriteRenderer: {fileID: 699785122464956145}
   playerHealth: {fileID: 8614258085987808552}
   playerStamina: {fileID: 8614258085987808550}
-  playerXp: {fileID: 8614258085987808546}
+  playerXp: {fileID: 0}
   pauseMenu: {fileID: 0}
---- !u!114 &8614258085987808546
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8614258085987808544}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a5359ffe89240d4e91b33fe0ace10b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  levelUpAlarmUI: {fileID: 0}
-  levelUpAlarm: {fileID: 0}
-  xpBar: {fileID: 0}
-  levelUpSideUI: {fileID: 0}
-  currentXp: 9
-  maxXp: 10
-  caracteristicsPoints: 0
-  fadeSystem: {fileID: 0}
 --- !u!114 &8614258085987808551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1165,7 +1147,10 @@ MonoBehaviour:
   player: {fileID: 8614258085987808544}
   indicateurHaut: {fileID: 6157344736879084841}
   indicateurBas: {fileID: 7423213591717874261}
+  topBar: {fileID: 0}
+  bottomBar: {fileID: 0}
   spriteRenderer: {fileID: 699785122464956145}
+  mainCamera: {fileID: 0}
   attackStaticLightUpPoint: {fileID: 9107751431995730380}
   attackStaticLightDownPoint: {fileID: 6911032252249047870}
   attackForwardLightUpPoint: {fileID: 6687624955862940572}
@@ -1176,9 +1161,15 @@ MonoBehaviour:
   attackDownLightDownPoint: {fileID: 9217338804510637209}
   damageToGive: 40
   attackRange: 0.5
+  strength: 40
+  combatMode: 0
   placement: 1
   faceRight: 1
-  strength: 40
+  paradeActive: 0
+  sound1: {fileID: 0}
+  sound2: {fileID: 0}
+  sound3: {fileID: 0}
+  sound4: {fileID: 0}
 --- !u!114 &8412577261133269315
 MonoBehaviour:
   m_ObjectHideFlags: 0
