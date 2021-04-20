@@ -4,7 +4,8 @@ public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenuUI;
     public static bool gameIsPaused = false;
-    public string mainMenu;
+    private string mainMenu;
+    public PlayerActions action;
 
     void Update()
     {

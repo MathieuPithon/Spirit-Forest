@@ -34,6 +34,11 @@ public class PlayerXp : MonoBehaviour
                     $" Appuyez sur 'C' pour améliorer une de vos statistiques";
         }        
         else levelUpAlarmUI.SetActive(false);
+
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            XpGain(10);
+        }
     }
     public void XpGain(int gain)
     {
