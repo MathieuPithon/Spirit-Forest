@@ -9,7 +9,10 @@ public class PlayerCombat : MonoBehaviour
     public GameObject player;
     public GameObject indicateurHaut;
     public GameObject indicateurBas;
+    public GameObject topBar;
+    public GameObject bottomBar;
     public SpriteRenderer spriteRenderer;
+    public Camera mainCamera;
 
     public Transform attackStaticLightUpPoint;
     public Transform attackStaticLightDownPoint;
@@ -23,67 +26,107 @@ public class PlayerCombat : MonoBehaviour
     public int damageToGive = 40;
     public float attackRange = 0.5f;
     public int strength = 40;
+    public bool combatMode = false;
     public bool placement = true; // Placement de garde Haute (true) ou Basse (false)
     public bool faceRight = true; // Sens dans lequel le personnage est tourné, (true => Droite ; false => Gauche)
     public bool paradeActive = false;
-    
+
 
     void Update()
-    {        
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+    {
+        if (Input.GetKeyDown(KeyCode.LeftControl))
         {
-            if (Input.GetKey("right"))
+            if (combatMode == false)
             {
-                if (placement == true)
-                {
-                    if (faceRight == true)                    
-                        AttackForwardLightUp();                   
-                    else                    
-                        AttackBackwardLightUp();                    
-                }
-                else
-                {
-                    if (faceRight == true)                    
-                        AttackForwardLightDown();                    
-                    else
-                        AttackBackwardLightDown();
-                    }
+                combatMode = true;
             }
-            else if (Input.GetKey("left"))
-            {
-                if (placement == true)
-                {
-                    if (faceRight == true)                    
-                        AttackBackwardLightUp();                    
-                    else                    
-                        AttackForwardLightUp();                    
-                }
-                else
-                {
-                    if (faceRight == true)                    
-                        AttackBackwardLightDown();                    
-                    else                    
-                        AttackForwardLightDown();                    
-                }
-            }
-            else if (Input.GetKey("up"))            
-                AttackUpLightUp();            
-            else if (Input.GetKey("down"))            
-                AttackDownLightDown();            
             else
             {
-                if (placement == true)                
-                    AttackStaticLightUp();                
-                else                
-                    AttackStaticLightDown();                
+                combatMode = false;
             }
         }
-        if (Input.GetKeyDown(KeyCode.Mouse1))
+
+        if (combatMode == true)
         {
-            StartCoroutine(SetParadeActive(0.1f));
-        }
+
+            if (mainCamera.orthographicSize >= 3f)
+                mainCamera.orthographicSize -= 0.03f;
+
+            if (topBar.transform.position.y >= Screen.height * 1.37f)
+                topBar.transform.position = new Vector2(topBar.transform.position.x, topBar.transform.position.y - 5f);
+                Debug.Log(Screen.height * 0.9);
+            if (bottomBar.transform.position.y <= Screen.height * -0.37f)
+                bottomBar.transform.position = new Vector2(bottomBar.transform.position.x, bottomBar.transform.position.y + 5f);
+
+
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                if (Input.GetKey("right"))
+                {
+                    if (placement == true)
+                    {
+                        if (faceRight == true)
+                            AttackForwardLightUp();
+                        else
+                            AttackBackwardLightUp();
+                    }
+                    else
+                    {
+                        if (faceRight == true)
+                            AttackForwardLightDown();
+                        else
+                            AttackBackwardLightDown();
+                    }
+                }
+                else if (Input.GetKey("left"))
+                {
+                    if (placement == true)
+                    {
+                        if (faceRight == true)
+                            AttackBackwardLightUp();
+                        else
+                            AttackForwardLightUp();
+                    }
+                    else
+                    {
+                        if (faceRight == true)
+                            AttackBackwardLightDown();
+                        else
+                            AttackForwardLightDown();
+                    }
+                }
+                else if (Input.GetKey("up"))
+                    AttackUpLightUp();
+                else if (Input.GetKey("down"))
+                    AttackDownLightDown();
+                else
+                {
+                    if (placement == true)
+                        AttackStaticLightUp();
+                    else
+                        AttackStaticLightDown();
+                }
+            }
+            if (Input.GetKeyDown(KeyCode.Mouse1))
+            {
+                StartCoroutine(SetParadeActive(0.1f));
+            }
             CombatIndicateur();
-        
+        }
+        else
+        {
+            indicateurBas.SetActive(false);
+            indicateurHaut.SetActive(false);
+
+            if (mainCamera.orthographicSize <= 6.2f)
+                mainCamera.orthographicSize += 0.03f;
+           
+            if (topBar.transform.position.y <= Screen.height * 1.7f)
+                topBar.transform.position = new Vector2(topBar.transform.position.x, topBar.transform.position.y + 5f);
+            Debug.Log(Screen.height * 0.9);
+            if (bottomBar.transform.position.y >= Screen.height * -0.7f)
+                bottomBar.transform.position = new Vector2(bottomBar.transform.position.x, bottomBar.transform.position.y - 5f);
+        }
     }
 
     private IEnumerator SetParadeActive(float timer)
@@ -115,7 +158,7 @@ public class PlayerCombat : MonoBehaviour
 
         // Detecter les ennemis dans la zonne d'attaque
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackStaticLightDownPoint.position, attackRange, enemyLayers);
-        
+
 
         // Effectuer les dégats sur les ennemis
         foreach (Collider2D Enemy in hitEnemies)
@@ -204,7 +247,7 @@ public class PlayerCombat : MonoBehaviour
         // Effectuer les dégats sur les ennemis
         foreach (Collider2D Enemy in hitEnemies)
         {
-            Enemy.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(damageToGive);            
+            Enemy.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(damageToGive);
         }
     }
 
@@ -245,7 +288,7 @@ public class PlayerCombat : MonoBehaviour
 
     }
 
-     public void CombatIndicateur()
+    public void CombatIndicateur()
     {
         if (Input.GetKey("down"))
         {
@@ -253,20 +296,20 @@ public class PlayerCombat : MonoBehaviour
             indicateurHaut.SetActive(false);
             placement = false;
         }
-        else if (Input.GetKey("up") || Input.mousePosition.y > player.transform.position.y + 330)
+        else if (Input.GetKey("up") || Input.mousePosition.y > Screen.height * 0.5f)
         {
             indicateurHaut.SetActive(true);
             indicateurBas.SetActive(false);
             placement = true;
         }
-        else if (Input.mousePosition.y < player.transform.position.y + 330)
+        else if (Input.mousePosition.y < Screen.height * 0.5f)
         {
             indicateurBas.SetActive(true);
             indicateurHaut.SetActive(false);
             placement = false;
         }
 
-        if (Input.mousePosition.x > player.transform.position.x + 480)
+        if (Input.mousePosition.x > Screen.width * 0.5f)
         {
             faceRight = true;
             spriteRenderer.transform.localScale = new Vector3(0.21f, 0.17f, 1);
