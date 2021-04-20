@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
 
-        if(rb.velocity.x > 0.3f && isGrounded == true)
+        if((rb.velocity.x > 0.3f && isGrounded == true) || (rb.velocity.x < -0.3f && isGrounded == true))
         {
             if (!audioSrc.isPlaying)
             {
