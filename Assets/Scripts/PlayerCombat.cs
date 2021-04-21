@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerCombat : MonoBehaviour
 {
     public Animator animator;
+    public Animator attackUpAnimator;
+    public Animator attackDownAnimator;
     public LayerMask enemyLayers;
     public GameObject player;
     public GameObject indicateurHaut;
@@ -194,6 +196,7 @@ public class PlayerCombat : MonoBehaviour
     {
         // Jouer l'animation d'attaque
         animator.SetTrigger("Attack");
+        attackUpAnimator.SetTrigger("Attack");
 
         sound();
 
@@ -211,6 +214,7 @@ public class PlayerCombat : MonoBehaviour
     {
         // Jouer l'animation d'attaque
         animator.SetTrigger("Attack");
+        attackDownAnimator.SetTrigger("Attack");
 
         sound();
 
@@ -228,6 +232,7 @@ public class PlayerCombat : MonoBehaviour
     {
         // Jouer l'animation d'attaque
         animator.SetTrigger("Attack");
+        attackUpAnimator.SetTrigger("Attack");
 
         sound();
 
@@ -244,6 +249,7 @@ public class PlayerCombat : MonoBehaviour
     {
         // Jouer l'animation d'attaque
         animator.SetTrigger("Attack");
+        attackDownAnimator.SetTrigger("Attack");
 
         sound();
 
@@ -260,6 +266,7 @@ public class PlayerCombat : MonoBehaviour
     {
         // Jouer l'animation d'attaque
         animator.SetTrigger("Attack");
+        attackUpAnimator.SetTrigger("Attack");
 
         sound();
 
@@ -276,6 +283,7 @@ public class PlayerCombat : MonoBehaviour
     {
         // Jouer l'animation d'attaque
         animator.SetTrigger("Attack");
+        attackDownAnimator.SetTrigger("Attack");
 
         sound();
 
@@ -292,6 +300,7 @@ public class PlayerCombat : MonoBehaviour
     {
         // Jouer l'animation d'attaque
         animator.SetTrigger("Attack");
+        attackUpAnimator.SetTrigger("Attack");
 
         sound();
 
@@ -308,6 +317,7 @@ public class PlayerCombat : MonoBehaviour
     {
         // Jouer l'animation d'attaque
         animator.SetTrigger("Attack");
+        attackDownAnimator.SetTrigger("Attack");
 
         sound();
 

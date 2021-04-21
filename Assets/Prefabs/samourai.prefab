@@ -885,7 +885,7 @@ MonoBehaviour:
   currentHealth: 0
   xpEarned: 2
   healthBar: {fileID: 7922089135354018309}
-  xp: {fileID: 0}
+  player: {fileID: 0}
 --- !u!114 &7922089135354018309
 MonoBehaviour:
   m_ObjectHideFlags: 0
