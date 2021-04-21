@@ -129,7 +129,7 @@ public class SamouraiLauncher : MonoBehaviour
     void Update()
     {
         float characterVelocity = Mathf.Abs(rb.velocity.x);             //rb.velocity.x = vitesse du personnage sur axe X
-        animator.SetFloat("Speed", characterVelocity);
+        animator.SetFloat("speed", characterVelocity);
 
         float ecareGate = Vector2.Distance(gate.position, transform.position);
         if (isAttacking)
