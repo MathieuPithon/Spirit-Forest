@@ -14,7 +14,7 @@ public class PlayerCombat : MonoBehaviour
     public GameObject topBar;
     public GameObject bottomBar;
     public SpriteRenderer spriteRenderer;
-    public Camera mainCamera;
+    public Camera mainCamera; 
 
     public Transform attackStaticLightUpPoint;
     public Transform attackStaticLightDownPoint;
