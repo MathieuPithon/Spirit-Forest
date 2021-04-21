@@ -4096,6 +4096,10 @@ PrefabInstance:
       propertyPath: audioSrc
       value: 
       objectReference: {fileID: 2044014186}
+    - target: {fileID: 3437308333761515919, guid: af5ff4938045f2a4da69c23494bb3197, type: 3}
+      propertyPath: combat
+      value: 
+      objectReference: {fileID: 2044014185}
     - target: {fileID: 3639590674104570349, guid: af5ff4938045f2a4da69c23494bb3197, type: 3}
       propertyPath: healthBar
       value: 
