@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class TestScriptCombat : MonoBehaviour
 {
+
+    public int damageToTake;
     // Start is called before the first frame update
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
 
-            collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(20, false);
+            collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(damageToTake, false);
 
         }
     }
