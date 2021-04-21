@@ -10,7 +10,10 @@ public class PlayerHealth : MonoBehaviour
                                  set { currentHealth = Mathf.Clamp(value, 0, maxHealth); }
     }
     public float stillToHeal;
+    public float stillToDmg;
     private bool healingInProgress = false;
+    private bool damageInProgress = false;
+    
     public float invincibilityTimeAfterHit = 2f;
     public bool isInvincible = false;
     public float invincibilityFlashDelay = 0.2f;
@@ -29,7 +32,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.H))
         {//test
-            TakeDamage(10, false);
+            TakeDamage(19, false);
             Debug.Log("take damage");
         }
         if (healingInProgress)
@@ -41,6 +44,17 @@ public class PlayerHealth : MonoBehaviour
             {
                 CurrentHealth += 0.01f;
                 healingInProgress = false;
+            }                
+        }
+        if (damageInProgress)
+        {
+            CurrentHealth -= 0.2f;
+            stillToDmg -= 0.2f;
+            healthBar.SetHealth(CurrentHealth);
+            if (stillToDmg < 0)
+            {
+                CurrentHealth -= 0.01f;
+                damageInProgress = false;
             }                
         }
         
@@ -58,8 +72,8 @@ public class PlayerHealth : MonoBehaviour
             }
             else
             {
-                CurrentHealth -= damage;
-                healthBar.SetHealth(CurrentHealth);
+                stillToDmg = damage;
+                damageInProgress = true;
                 isInvincible = true;
                 StartCoroutine(InvincibilityFlash());
                 StartCoroutine(HandleInvincibilityDelay());
