@@ -47,6 +47,7 @@ public class BoomerangScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
+            
             collision.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(boomerangDamage);
             StartCoroutine(IgnoreColliderCd(enemyLayer, boomerangLayer, colliderCd));
         }

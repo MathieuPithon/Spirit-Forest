@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class mainMenu : MonoBehaviour
 {
     public string MainLevel1;
+    public string MainLevel2;
     public string levelTutorial;
     public AudioSource startGameSound;
     public AudioSource mainMenuMusic;
@@ -17,6 +18,13 @@ public class mainMenu : MonoBehaviour
         startGameSound.Play();
         mainMenuMusic.Stop();
         SceneManager.LoadScene(MainLevel1);
+    }
+       public void StartLevel2()
+    {   
+        fade.SetBool("Start", true);
+        startGameSound.Play();
+        mainMenuMusic.Stop();
+        SceneManager.LoadScene(MainLevel2);
     }
     public void StartTutorial()
     {
