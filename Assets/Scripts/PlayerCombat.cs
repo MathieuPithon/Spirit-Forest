@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerCombat : MonoBehaviour
 {
     public Animator animator;
+    public Animator attackUpAnimator;
+    public Animator attackDownAnimator;
     public LayerMask enemyLayers;
     public GameObject player;
     public GameObject indicateurHaut;
@@ -38,6 +40,11 @@ public class PlayerCombat : MonoBehaviour
     public AudioSource sound3;
     public AudioSource sound4;
 
+    public AudioSource combatMusic;
+    public AudioSource baseMusic;
+    public AudioSource disengagingCombat;
+    public AudioSource engagingCombat;
+
     private int compteur = 0 ;
 
     
@@ -50,10 +57,17 @@ public class PlayerCombat : MonoBehaviour
             if (combatMode == false)
             {
                 combatMode = true;
+                disengagingCombat.Play();
+                combatMusic.Play();
+                baseMusic.Stop(); 
             }
             else
             {
                 combatMode = false;
+                engagingCombat.Play();
+                combatMusic.Stop();
+                baseMusic.Play(); 
+
             }
         }
 
@@ -182,6 +196,7 @@ public class PlayerCombat : MonoBehaviour
     {
         // Jouer l'animation d'attaque
         animator.SetTrigger("Attack");
+        attackUpAnimator.SetTrigger("Attack");
 
         sound();
 
@@ -204,6 +219,7 @@ public class PlayerCombat : MonoBehaviour
     {
         // Jouer l'animation d'attaque
         animator.SetTrigger("Attack");
+        attackDownAnimator.SetTrigger("Attack");
 
         sound();
 
@@ -222,6 +238,7 @@ public class PlayerCombat : MonoBehaviour
     {
         // Jouer l'animation d'attaque
         animator.SetTrigger("Attack");
+        attackUpAnimator.SetTrigger("Attack");
 
         sound();
 
@@ -239,6 +256,7 @@ public class PlayerCombat : MonoBehaviour
     {
         // Jouer l'animation d'attaque
         animator.SetTrigger("Attack");
+        attackDownAnimator.SetTrigger("Attack");
 
         sound();
 
@@ -256,6 +274,7 @@ public class PlayerCombat : MonoBehaviour
     {
         // Jouer l'animation d'attaque
         animator.SetTrigger("Attack");
+        attackUpAnimator.SetTrigger("Attack");
 
         sound();
 
@@ -273,6 +292,7 @@ public class PlayerCombat : MonoBehaviour
     {
         // Jouer l'animation d'attaque
         animator.SetTrigger("Attack");
+        attackDownAnimator.SetTrigger("Attack");
 
         sound();
 
@@ -290,6 +310,7 @@ public class PlayerCombat : MonoBehaviour
     {
         // Jouer l'animation d'attaque
         animator.SetTrigger("Attack");
+        attackUpAnimator.SetTrigger("Attack");
 
         sound();
 
@@ -307,6 +328,7 @@ public class PlayerCombat : MonoBehaviour
     {
         // Jouer l'animation d'attaque
         animator.SetTrigger("Attack");
+        attackDownAnimator.SetTrigger("Attack");
 
         sound();
 
