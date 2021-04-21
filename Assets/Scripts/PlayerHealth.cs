@@ -11,14 +11,12 @@ public class PlayerHealth : MonoBehaviour
     }
     public float stillToHeal;
     private bool healingInProgress = false;
-    
     public float invincibilityTimeAfterHit = 2f;
     public bool isInvincible = false;
     public float invincibilityFlashDelay = 0.2f;
-
     public PlayerStamina stamina;
     public PlayerCombat combat;
-
+    
     public SpriteRenderer graphics;
     public HealthBar healthBar;
     void Start()

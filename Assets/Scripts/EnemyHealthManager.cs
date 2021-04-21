@@ -10,7 +10,6 @@ public class EnemyHealthManager : MonoBehaviour
 
     public EnemyHealthBar healthBar;
     public PlayerXp xp;
-    public GameObject player;
     void Start()
     {
         SetMaxHealth();

@@ -230,12 +230,14 @@ public class PlayerCombat : MonoBehaviour
         // Effectuer les dégats sur les ennemis
         foreach (Collider2D Enemy in hitEnemies)
         {
+            Enemy.GetComponent<EnemyHealthManager>().HurtEnemy(damageToGive);
+            Debug.Log("HIT");
             if (Enemy.gameObject.tag == "Enemy")
             {
                 Debug.Log("Hit Enemy");
             }
-            Enemy.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(damageToGive);
-            Debug.Log("Hit");
+            
+            
         }
     }
     void AttackForwardLightUp()
@@ -416,4 +418,6 @@ public class PlayerCombat : MonoBehaviour
             spriteRenderer.transform.localScale = new Vector3(-0.21f, 0.17f, 1);
         }
     }
+
+    
 }
