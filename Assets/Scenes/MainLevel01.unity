@@ -3550,8 +3550,7 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -1
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 7922089135354018330, guid: 18a573116d8e844429fe7a2aeb388c33, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18a573116d8e844429fe7a2aeb388c33, type: 3}
 --- !u!1001 &694667685
 PrefabInstance:
@@ -4459,11 +4458,20 @@ PrefabInstance:
       propertyPath: playerXp
       value: 
       objectReference: {fileID: 2044014199}
+    - target: {fileID: 8614258085987808552, guid: af5ff4938045f2a4da69c23494bb3197, type: 3}
+      propertyPath: hurtSound
+      value: 
+      objectReference: {fileID: 767214799}
     m_RemovedComponents:
     - {fileID: 8614258085987808546, guid: af5ff4938045f2a4da69c23494bb3197, type: 3}
     - {fileID: 8073313470511287212, guid: af5ff4938045f2a4da69c23494bb3197, type: 3}
     - {fileID: 4343844574778448674, guid: af5ff4938045f2a4da69c23494bb3197, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: af5ff4938045f2a4da69c23494bb3197, type: 3}
+--- !u!82 &767214799 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 24637721866452953, guid: af5ff4938045f2a4da69c23494bb3197, type: 3}
+  m_PrefabInstance: {fileID: 767214798}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &768747817
 GameObject:
   m_ObjectHideFlags: 0
@@ -8201,6 +8209,7 @@ MonoBehaviour:
   xpEarned: 4
   healthBar: {fileID: 1202248992}
   xp: {fileID: 2044014199}
+  deathSound: {fileID: 0}
 --- !u!1 &1328805922 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 194261354054240131, guid: 83725ee394eae584082e91cfdde2c954, type: 3}

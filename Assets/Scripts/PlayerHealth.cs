@@ -22,6 +22,7 @@ public class PlayerHealth : MonoBehaviour
     
     public SpriteRenderer graphics;
     public HealthBar healthBar;
+    public AudioSource hurtSound;
     void Start()
     {
         CurrentHealth = maxHealth;
@@ -72,6 +73,7 @@ public class PlayerHealth : MonoBehaviour
             }
             else
             {
+                hurtSound.Play();
                 stillToDmg = damage;
                 damageInProgress = true;
                 isInvincible = true;
