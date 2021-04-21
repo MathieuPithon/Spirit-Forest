@@ -16,6 +16,9 @@ public class PlayerHealth : MonoBehaviour
     public bool isInvincible = false;
     public float invincibilityFlashDelay = 0.2f;
 
+    public PlayerStamina stamina;
+    public PlayerCombat combat;
+
     public SpriteRenderer graphics;
     public HealthBar healthBar;
     void Start()
@@ -26,9 +29,11 @@ public class PlayerHealth : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.H))//test
-            TakeDamage(40, false);
-
+        if (Input.GetKeyDown(KeyCode.H))
+        {//test
+            TakeDamage(10, false);
+            Debug.Log("take damage");
+        }
         if (healingInProgress)
         {
             CurrentHealth += 0.1f;
@@ -44,7 +49,7 @@ public class PlayerHealth : MonoBehaviour
     }
     public void TakeDamage(int damage, bool attackPlacement)
     {
-        if(!isInvincible)
+        /*if(!isInvincible)
         {
             PlayerCombat playerCombat = GameObject.Find("Player").GetComponent<PlayerCombat>();
             if (playerCombat.placement == attackPlacement)
@@ -62,7 +67,27 @@ public class PlayerHealth : MonoBehaviour
                 StartCoroutine(InvincibilityFlash());
                 StartCoroutine(HandleInvincibilityDelay());
             }
+        }*/
+
+        if (!isInvincible)
+        {
+            if (combat.placement == attackPlacement)
+            {
+                if (combat.paradeActive == true)
+                {
+                }
+                stamina.LoseStamina(damage * 3);
+            }
+            else
+            {
+                CurrentHealth -= damage;
+                healthBar.SetHealth(CurrentHealth);
+                isInvincible = true;
+                StartCoroutine(InvincibilityFlash());
+                StartCoroutine(HandleInvincibilityDelay());
+            }
         }
+
     }
     public void Healing(float heal)
     {

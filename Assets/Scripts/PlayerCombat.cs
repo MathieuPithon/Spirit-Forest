@@ -188,9 +188,14 @@ public class PlayerCombat : MonoBehaviour
         // Detecter les ennemis dans la zonne d'attaque
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackStaticLightUpPoint.position, attackRange, enemyLayers);
 
+        
         // Effectuer les dégats sur les ennemis
         foreach (Collider2D Enemy in hitEnemies)
         {
+            /*if(Enemy.gameObject.tag == "Enemy")
+            {
+                Debug.Log("Hit Enemy");
+            }*/
             Enemy.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(damageToGive);
             Debug.Log("Hit");
         }
@@ -210,6 +215,7 @@ public class PlayerCombat : MonoBehaviour
         foreach (Collider2D Enemy in hitEnemies)
         {
             Enemy.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(damageToGive);
+            Debug.Log("Hit");
         }
     }
     void AttackForwardLightUp()
@@ -226,6 +232,7 @@ public class PlayerCombat : MonoBehaviour
         foreach (Collider2D Enemy in hitEnemies)
         {
             Enemy.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(damageToGive);
+            Debug.Log("Hit");
         }
     }
     void AttackForwardLightDown()
@@ -242,6 +249,7 @@ public class PlayerCombat : MonoBehaviour
         foreach (Collider2D Enemy in hitEnemies)
         {
             Enemy.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(damageToGive);
+            Debug.Log("Hit");
         }
     }
     void AttackBackwardLightUp()
@@ -258,6 +266,7 @@ public class PlayerCombat : MonoBehaviour
         foreach (Collider2D Enemy in hitEnemies)
         {
             Enemy.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(damageToGive);
+            Debug.Log("Hit");
         }
     }
     void AttackBackwardLightDown()
@@ -274,6 +283,7 @@ public class PlayerCombat : MonoBehaviour
         foreach (Collider2D Enemy in hitEnemies)
         {
             Enemy.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(damageToGive);
+            Debug.Log("Hit");
         }
     }
     void AttackUpLightUp()
@@ -290,6 +300,7 @@ public class PlayerCombat : MonoBehaviour
         foreach (Collider2D Enemy in hitEnemies)
         {
             Enemy.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(damageToGive);
+            Debug.Log("Hit");
         }
     }
     void AttackDownLightDown()
