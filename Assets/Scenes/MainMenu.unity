@@ -590,8 +590,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 163, y: -0.000014424}
-  m_SizeDelta: {x: 223.26636, y: 66.37814}
+  m_AnchoredPosition: {x: 163, y: -25.86}
+  m_SizeDelta: {x: 223.26636, y: 118.09439}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &263486685
 MonoBehaviour:
@@ -627,6 +627,8 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'R : boomerang
+
+    K : gain xp
 
 '
 --- !u!222 &263486686
@@ -1479,7 +1481,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &650362393
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5440,7 +5442,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2070756933
 RectTransform:
   m_ObjectHideFlags: 0
