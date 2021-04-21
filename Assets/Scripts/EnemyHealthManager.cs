@@ -10,6 +10,7 @@ public class EnemyHealthManager : MonoBehaviour
 
     public EnemyHealthBar healthBar;
     public PlayerXp xp;
+    public AudioSource deathSound;
     void Start()
     {
         SetMaxHealth();
@@ -20,6 +21,7 @@ public class EnemyHealthManager : MonoBehaviour
     {
        if (currentHealth <= 0)
         {
+            deathSound.Play();
             xp.XpGain(xpEarned);
             Destroy(gameObject);
         }
