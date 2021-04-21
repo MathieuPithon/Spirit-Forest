@@ -89,12 +89,12 @@ public class SamouraiLauncher : MonoBehaviour
     {
         if (faceLeft == true)
         {
-            scaleChange = new Vector3(-0.4f, 0f, 0f);
+            scaleChange = new Vector3(0.4f, 0f, 0f);
             faceLeft = false;
         }
         else
         {
-            scaleChange = new Vector3(0.4f, 0f, 0f);
+            scaleChange = new Vector3(-0.4f, 0f, 0f);
             faceLeft = true;
         }
 
