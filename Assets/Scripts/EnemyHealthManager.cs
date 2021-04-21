@@ -9,12 +9,11 @@ public class EnemyHealthManager : MonoBehaviour
     public int xpEarned = 4;
 
     public EnemyHealthBar healthBar;
-    PlayerXp xp;
-    public GameObject player;
+    public PlayerXp xp;
     void Start()
     {
         SetMaxHealth();
-        xp = player.GetComponent<PlayerXp>();
+        
     }
 
     void Update()

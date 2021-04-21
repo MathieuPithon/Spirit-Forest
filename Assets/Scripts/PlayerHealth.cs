@@ -10,12 +10,16 @@ public class PlayerHealth : MonoBehaviour
                                  set { currentHealth = Mathf.Clamp(value, 0, maxHealth); }
     }
     public float stillToHeal;
+    public float stillToDmg;
     private bool healingInProgress = false;
+    private bool damageInProgress = false;
     
     public float invincibilityTimeAfterHit = 2f;
     public bool isInvincible = false;
     public float invincibilityFlashDelay = 0.2f;
-
+    public PlayerStamina stamina;
+    public PlayerCombat combat;
+    
     public SpriteRenderer graphics;
     public HealthBar healthBar;
     void Start()
@@ -26,9 +30,11 @@ public class PlayerHealth : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.H))//test
-            TakeDamage(40, false);
-
+        if (Input.GetKeyDown(KeyCode.H))
+        {//test
+            TakeDamage(19, false);
+            Debug.Log("take damage");
+        }
         if (healingInProgress)
         {
             CurrentHealth += 0.1f;
@@ -40,29 +46,40 @@ public class PlayerHealth : MonoBehaviour
                 healingInProgress = false;
             }                
         }
+        if (damageInProgress)
+        {
+            CurrentHealth -= 0.2f;
+            stillToDmg -= 0.2f;
+            healthBar.SetHealth(CurrentHealth);
+            if (stillToDmg < 0)
+            {
+                CurrentHealth -= 0.01f;
+                damageInProgress = false;
+            }                
+        }
         
     }
     public void TakeDamage(int damage, bool attackPlacement)
     {
-        if(!isInvincible)
+        if (!isInvincible)
         {
-            PlayerCombat playerCombat = GameObject.Find("Player").GetComponent<PlayerCombat>();
-            if (playerCombat.placement == attackPlacement)
+            if (combat.placement == attackPlacement)
             {
-                if (playerCombat.paradeActive == true) { 
+                if (combat.paradeActive == true)
+                {
                 }
-                PlayerStamina playerStamina = GameObject.Find("Player").GetComponent<PlayerStamina>();
-                playerStamina.LoseStamina(damage*3);
+                stamina.LoseStamina(damage * 3);
             }
             else
             {
-                CurrentHealth -= damage;
-                healthBar.SetHealth(CurrentHealth);
+                stillToDmg = damage;
+                damageInProgress = true;
                 isInvincible = true;
                 StartCoroutine(InvincibilityFlash());
                 StartCoroutine(HandleInvincibilityDelay());
             }
         }
+
     }
     public void Healing(float heal)
     {

@@ -14,7 +14,7 @@ public class PlayerCombat : MonoBehaviour
     public GameObject topBar;
     public GameObject bottomBar;
     public SpriteRenderer spriteRenderer;
-    public Camera mainCamera;
+    public Camera mainCamera; 
 
     public Transform attackStaticLightUpPoint;
     public Transform attackStaticLightDownPoint;
@@ -203,9 +203,14 @@ public class PlayerCombat : MonoBehaviour
         // Detecter les ennemis dans la zonne d'attaque
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackStaticLightUpPoint.position, attackRange, enemyLayers);
 
+        
         // Effectuer les dégats sur les ennemis
         foreach (Collider2D Enemy in hitEnemies)
         {
+            if(Enemy.gameObject.tag == "Enemy")
+            {
+                Debug.Log("Hit Enemy");
+            }
             Enemy.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(damageToGive);
             Debug.Log("Hit");
         }
@@ -225,7 +230,14 @@ public class PlayerCombat : MonoBehaviour
         // Effectuer les dégats sur les ennemis
         foreach (Collider2D Enemy in hitEnemies)
         {
-            Enemy.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(damageToGive);
+            Enemy.GetComponent<EnemyHealthManager>().HurtEnemy(damageToGive);
+            Debug.Log("HIT");
+            if (Enemy.gameObject.tag == "Enemy")
+            {
+                Debug.Log("Hit Enemy");
+            }
+            
+            
         }
     }
     void AttackForwardLightUp()
@@ -243,6 +255,7 @@ public class PlayerCombat : MonoBehaviour
         foreach (Collider2D Enemy in hitEnemies)
         {
             Enemy.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(damageToGive);
+            Debug.Log("Hit");
         }
     }
     void AttackForwardLightDown()
@@ -260,6 +273,7 @@ public class PlayerCombat : MonoBehaviour
         foreach (Collider2D Enemy in hitEnemies)
         {
             Enemy.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(damageToGive);
+            Debug.Log("Hit");
         }
     }
     void AttackBackwardLightUp()
@@ -277,6 +291,7 @@ public class PlayerCombat : MonoBehaviour
         foreach (Collider2D Enemy in hitEnemies)
         {
             Enemy.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(damageToGive);
+            Debug.Log("Hit");
         }
     }
     void AttackBackwardLightDown()
@@ -294,6 +309,7 @@ public class PlayerCombat : MonoBehaviour
         foreach (Collider2D Enemy in hitEnemies)
         {
             Enemy.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(damageToGive);
+            Debug.Log("Hit");
         }
     }
     void AttackUpLightUp()
@@ -311,6 +327,7 @@ public class PlayerCombat : MonoBehaviour
         foreach (Collider2D Enemy in hitEnemies)
         {
             Enemy.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(damageToGive);
+            Debug.Log("Hit");
         }
     }
     void AttackDownLightDown()
@@ -401,4 +418,6 @@ public class PlayerCombat : MonoBehaviour
             spriteRenderer.transform.localScale = new Vector3(-0.21f, 0.17f, 1);
         }
     }
+
+    
 }
