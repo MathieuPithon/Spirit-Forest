@@ -957,6 +957,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 379a1d41d890a0b45b59f3de65392f8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageToTake: 0
 --- !u!58 &106801431
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3472,6 +3473,26 @@ PrefabInstance:
     - target: {fileID: 7922089133580919660, guid: 18a573116d8e844429fe7a2aeb388c33, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 6.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 7922089133693590646, guid: 18a573116d8e844429fe7a2aeb388c33, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7922089134325421988, guid: 18a573116d8e844429fe7a2aeb388c33, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7922089134570658345, guid: 18a573116d8e844429fe7a2aeb388c33, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7922089134945196838, guid: 18a573116d8e844429fe7a2aeb388c33, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7922089135180874168, guid: 18a573116d8e844429fe7a2aeb388c33, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7922089135342531460, guid: 18a573116d8e844429fe7a2aeb388c33, type: 3}
       propertyPath: m_AnchorMax.x
@@ -9165,6 +9186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 379a1d41d890a0b45b59f3de65392f8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageToTake: 0
 --- !u!1 &1574575142
 GameObject:
   m_ObjectHideFlags: 0
