@@ -3396,6 +3396,10 @@ PrefabInstance:
       propertyPath: gate
       value: 
       objectReference: {fileID: 302151940}
+    - target: {fileID: 7922089135354018329, guid: 18a573116d8e844429fe7a2aeb388c33, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: ff7df080b4460404abe377e71be3160b, type: 2}
     - target: {fileID: 7922089135354018330, guid: 18a573116d8e844429fe7a2aeb388c33, type: 3}
       propertyPath: player
       value: 
@@ -4753,7 +4757,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 795957127048970979, guid: 83725ee394eae584082e91cfdde2c954, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1335983544918752745, guid: 83725ee394eae584082e91cfdde2c954, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
