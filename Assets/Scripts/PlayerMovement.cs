@@ -39,28 +39,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void Update()
-    {
-        //combatMode = GameObject.Find("Player").GetComponent<PlayerCombat>().combatMode;
-
-        /*if (combat.combatMode == true)
-        {
-            //faceRight = GameObject.Find("Player").GetComponent<PlayerCombat>().faceRight;
-
-            if (rb.velocity.x > 0.1f && combat.faceRight == false)
-            {
-                facingCoef = 0.3f;
-            }
-            else if (rb.velocity.x < -0.1f && combat.faceRight == true)
-            {
-                facingCoef = 0.3f;
-            }
-            else
-            {
-                facingCoef = 1f;
-            }
-        }*/
-        //PlayerStamina playerStamina = GetComponent<PlayerStamina>();
-        
+    {       
 
         if((rb.velocity.x > 0.3f && isGrounded == true) || (rb.velocity.x < -0.3f && isGrounded == true))
         {
