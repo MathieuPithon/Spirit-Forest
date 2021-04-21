@@ -52,6 +52,7 @@ public class SamouraiLauncher : MonoBehaviour
     {
         Vector3 vecAgro = cible.position.Y() - transform.position.Y();
         transform.Translate(vecAgro.normalized * 4 * Time.deltaTime, Space.World);
+        anim.SetFloat("Speed", 1.0f);
 
     }
 
@@ -62,11 +63,13 @@ public class SamouraiLauncher : MonoBehaviour
         {
             Vector3 vecGate = gate.position.Y() - transform.position.Y();
             transform.Translate(vecGate.normalized * 2 * Time.deltaTime, Space.World);
+            anim.SetFloat("Speed", 1.0f);
         }
         else
         {
             Vector3 vecGate = gate.position.Y() - transform.position.Y();
             transform.Translate(vecGate.normalized * 2 * Time.deltaTime, Space.World);
+            anim.SetFloat("Speed", 1.0f);
         }
     }
 
@@ -77,11 +80,13 @@ public class SamouraiLauncher : MonoBehaviour
         {
             Vector3 vecGoBack = transform.position.Y() - cible.position.Y();
             transform.Translate(vecGoBack.normalized * 2 * Time.deltaTime, Space.World);
+            anim.SetFloat("Speed", 1.0f);
         }
         else
         {
             Vector3 vecGoBack = cible.position.Y() + transform.position.Y();
             transform.Translate(vecGoBack.normalized * 2 * Time.deltaTime, Space.World);
+            anim.SetFloat("Speed", 1.0f);
         }
     }
 
