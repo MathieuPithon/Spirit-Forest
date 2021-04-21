@@ -3599,6 +3599,14 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 610868816}
+    - target: {fileID: 7922089135354018328, guid: 18a573116d8e844429fe7a2aeb388c33, type: 3}
+      propertyPath: CoolDown
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7922089135354018328, guid: 18a573116d8e844429fe7a2aeb388c33, type: 3}
+      propertyPath: CDAttacking
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7922089135354018329, guid: 18a573116d8e844429fe7a2aeb388c33, type: 3}
       propertyPath: m_Controller
       value: 
