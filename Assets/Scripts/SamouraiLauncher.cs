@@ -11,7 +11,7 @@ public class SamouraiLauncher : MonoBehaviour
     public turn turn;
     public Transform gate;
     public attackArea attackArea;
-
+    public Rigidbody2D rb;
 
     private Animator anim;
     public Transform cible;
@@ -21,6 +21,7 @@ public class SamouraiLauncher : MonoBehaviour
     public bool inCoolDown = false;
     public bool isAttacking = false;
     private bool faceLeft;
+    public Animator animator;
 
 
     //fonction attaque
@@ -127,8 +128,19 @@ public class SamouraiLauncher : MonoBehaviour
 
     void Update()
     {
-        anim.SetBool("attack", true);
+        float characterVelocity = Mathf.Abs(rb.velocity.x);             //rb.velocity.x = vitesse du personnage sur axe X
+        animator.SetFloat("Speed", characterVelocity);
+
         float ecareGate = Vector2.Distance(gate.position, transform.position);
+        if (isAttacking)
+        {
+            animator.SetBool("attacking", true);
+        }
+        else
+        {
+            animator.SetBool("attacking", false);
+        }
+
 
         //if attack
         if (attackArea.inRange == true && inCoolDown == false)
