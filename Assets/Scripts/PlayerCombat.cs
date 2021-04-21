@@ -152,10 +152,10 @@ public class PlayerCombat : MonoBehaviour
         // Effectuer les dégats sur les ennemis
         foreach (Collider2D Enemy in hitEnemies)
         {
-            /*if(Enemy.gameObject.tag == "Enemy")
+            if(Enemy.gameObject.tag == "Enemy")
             {
                 Debug.Log("Hit Enemy");
-            }*/
+            }
             Enemy.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(damageToGive);
             Debug.Log("Hit");
         }
@@ -173,6 +173,10 @@ public class PlayerCombat : MonoBehaviour
         // Effectuer les dégats sur les ennemis
         foreach (Collider2D Enemy in hitEnemies)
         {
+            if (Enemy.gameObject.tag == "Enemy")
+            {
+                Debug.Log("Hit Enemy");
+            }
             Enemy.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(damageToGive);
             Debug.Log("Hit");
         }

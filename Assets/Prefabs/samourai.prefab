@@ -205,7 +205,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7922089134325421989}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &7922089133693590644
 BoxCollider2D:
@@ -276,7 +276,6 @@ Transform:
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children:
   - {fileID: 7922089134570658348}
-  - {fileID: 7922089135054878074}
   - {fileID: 7922089134945196839}
   - {fileID: 7922089135180874169}
   - {fileID: 7922089133693590647}
@@ -497,7 +496,7 @@ Transform:
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7922089134325421989}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &7922089134945196836
 BoxCollider2D:
@@ -525,53 +524,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.772668, y: 2.9784927}
   m_EdgeRadius: 0
---- !u!1 &7922089135054878053
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7922089135054878074}
-  - component: {fileID: 7922089135054878075}
-  m_Layer: 9
-  m_Name: Skeleton_collider
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7922089135054878074
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7922089135054878053}
-  m_LocalRotation: {x: -0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.22448349, y: 0.9252548, z: 0.7798193}
-  m_LocalScale: {x: -1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 7922089134325421989}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!70 &7922089135054878075
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7922089135054878053}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -1.4063711, y: -0.08654404}
-  m_Size: {x: 3.3127422, y: 9.130486}
-  m_Direction: 0
 --- !u!1 &7922089135180874168
 GameObject:
   m_ObjectHideFlags: 0
@@ -602,7 +554,7 @@ Transform:
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7922089134325421989}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &7922089135180874174
 BoxCollider2D:
@@ -733,6 +685,7 @@ GameObject:
   - component: {fileID: 7922089135354018331}
   - component: {fileID: 7922089135354018330}
   - component: {fileID: 7922089135354018309}
+  - component: {fileID: 5973862378117745640}
   m_Layer: 9
   m_Name: samourai
   m_TagString: Enemy
@@ -885,6 +838,7 @@ MonoBehaviour:
   currentHealth: 0
   xpEarned: 2
   healthBar: {fileID: 7922089135354018309}
+  xp: {fileID: 0}
   player: {fileID: 0}
 --- !u!114 &7922089135354018309
 MonoBehaviour:
@@ -900,3 +854,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 7922089133580919654}
   fill: {fileID: 7922089135342531462}
+--- !u!70 &5973862378117745640
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7922089135354018308}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 2.7053118, y: 0.80016136}
+  m_Size: {x: 4.8437405, y: 12.3119545}
+  m_Direction: 0
