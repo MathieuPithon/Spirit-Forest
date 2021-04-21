@@ -11,9 +11,7 @@ public class TestScriptCombat : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-
             collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(damageToTake, false);
-
         }
     }
 }
