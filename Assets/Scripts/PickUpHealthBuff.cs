@@ -2,7 +2,8 @@
 
 public class PickUpHealthBuff : MonoBehaviour
 {
-    PlayerBuffs playerBuffs;
+    //PlayerBuffs playerBuffs;
+    public PlayerBuffs playerBuffs;
     public int healthBuff = 40;
     public float buffTimer = 2f;
 
@@ -10,7 +11,7 @@ public class PickUpHealthBuff : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            playerBuffs = GameObject.Find("Player").GetComponent<PlayerBuffs>();
+            //playerBuffs = GameObject.Find("Player").GetComponent<PlayerBuffs>();
             playerBuffs.BuffHealth(healthBuff, buffTimer);
             Destroy(gameObject);
         }

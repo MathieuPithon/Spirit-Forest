@@ -10,14 +10,19 @@ public class PlayerHealth : MonoBehaviour
                                  set { currentHealth = Mathf.Clamp(value, 0, maxHealth); }
     }
     public float stillToHeal;
+    public float stillToDmg;
     private bool healingInProgress = false;
+    private bool damageInProgress = false;
     
     public float invincibilityTimeAfterHit = 2f;
     public bool isInvincible = false;
     public float invincibilityFlashDelay = 0.2f;
-
+    public PlayerStamina stamina;
+    public PlayerCombat combat;
+    
     public SpriteRenderer graphics;
     public HealthBar healthBar;
+    public AudioSource hurtSound;
     void Start()
     {
         CurrentHealth = maxHealth;
@@ -26,8 +31,11 @@ public class PlayerHealth : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.H))//test
-            TakeDamage(40);
+        if (Input.GetKeyDown(KeyCode.H))
+        {//test
+            TakeDamage(19, false);
+            Debug.Log("take damage");
+        }
         if (healingInProgress)
         {
             CurrentHealth += 0.1f;
@@ -39,18 +47,41 @@ public class PlayerHealth : MonoBehaviour
                 healingInProgress = false;
             }                
         }
+        if (damageInProgress)
+        {
+            CurrentHealth -= 0.2f;
+            stillToDmg -= 0.2f;
+            healthBar.SetHealth(CurrentHealth);
+            if (stillToDmg < 0)
+            {
+                CurrentHealth -= 0.01f;
+                damageInProgress = false;
+            }                
+        }
         
     }
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage, bool attackPlacement)
     {
-        if(!isInvincible)
+        if (!isInvincible)
         {
-            CurrentHealth -= damage;
-            healthBar.SetHealth(CurrentHealth);
-            isInvincible = true;
-            StartCoroutine(InvincibilityFlash());
-            StartCoroutine(HandleInvincibilityDelay());
+            if (combat.placement == attackPlacement)
+            {
+                if (combat.paradeActive == true)
+                {
+                }
+                stamina.LoseStamina(damage * 3);
+            }
+            else
+            {
+                hurtSound.Play();
+                stillToDmg = damage;
+                damageInProgress = true;
+                isInvincible = true;
+                StartCoroutine(InvincibilityFlash());
+                StartCoroutine(HandleInvincibilityDelay());
+            }
         }
+
     }
     public void Healing(float heal)
     {

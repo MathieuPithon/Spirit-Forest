@@ -26,6 +26,8 @@ public class EnnemiPatrol : MonoBehaviour
     public float lookRadius = 10f;
     public float lookRadius2 = 2f;
 
+    private bool attackPlacement = true;
+
     Transform cible;
 
     void Start()
@@ -96,9 +98,14 @@ public class EnnemiPatrol : MonoBehaviour
     {
         PlayerHealth playerHealth = collision.transform.GetComponent<PlayerHealth>();
         if (collision.transform.CompareTag("Player"))
-        {            
-            playerHealth.TakeDamage(damageOnCollision);
-            damagedPlayer = true;
+        {
+            PlayerCombat playerCombat = GameObject.Find("Player").GetComponent<PlayerCombat>();
+            if (playerCombat.paradeActive == false)
+            {
+                attackPlacement = false;
+                playerHealth.TakeDamage(damageOnCollision, attackPlacement);
+                damagedPlayer = true;
+            }
         }
     }
     public IEnumerator PlayerDamagedTimer()

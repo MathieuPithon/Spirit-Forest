@@ -25,9 +25,9 @@ public class Dodge : MonoBehaviour
         if (direction == 0)
         {
             if (Input.GetKeyDown(KeyCode.LeftAlt) && !combat.faceRight)
-                direction = 1;
-            else if (Input.GetKeyDown(KeyCode.LeftAlt) && combat.faceRight)
                 direction = 2;
+            else if (Input.GetKeyDown(KeyCode.LeftAlt) && combat.faceRight)
+                direction = 1;
         } else
         {
             if (dashTime <= 0)

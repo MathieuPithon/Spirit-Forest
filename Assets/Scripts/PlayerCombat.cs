@@ -5,11 +5,16 @@ using UnityEngine;
 public class PlayerCombat : MonoBehaviour
 {
     public Animator animator;
+    public Animator attackUpAnimator;
+    public Animator attackDownAnimator;
     public LayerMask enemyLayers;
     public GameObject player;
     public GameObject indicateurHaut;
     public GameObject indicateurBas;
+    public GameObject topBar;
+    public GameObject bottomBar;
     public SpriteRenderer spriteRenderer;
+    public Camera mainCamera; 
 
     public Transform attackStaticLightUpPoint;
     public Transform attackStaticLightDownPoint;
@@ -22,97 +27,226 @@ public class PlayerCombat : MonoBehaviour
 
     public int damageToGive = 40;
     public float attackRange = 0.5f;
+    public int strength = 40;
+    public bool combatMode = false;
     public bool placement = true; // Placement de garde Haute (true) ou Basse (false)
     public bool faceRight = true; // Sens dans lequel le personnage est tourné, (true => Droite ; false => Gauche)
-    public int strength = 40;
+    public bool paradeActive = false;
+
+
+    
+    public AudioSource sound1;
+    public AudioSource sound2;
+    public AudioSource sound3;
+    public AudioSource sound4;
+
+    public AudioSource combatMusic;
+    public AudioSource baseMusic;
+    public AudioSource disengagingCombat;
+    public AudioSource engagingCombat;
+
+    private int compteur = 0 ;
+
+    
+
 
     void Update()
-    {        
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+    {
+        if (Input.GetKeyDown(KeyCode.LeftControl))
         {
-            if (Input.GetKey("right"))
+            if (combatMode == false)
             {
-                if (placement == true)
-                {
-                    if (faceRight == true)                    
-                        AttackForwardLightUp();                   
-                    else                    
-                        AttackBackwardLightUp();                    
-                }
-                else
-                {
-                    if (faceRight == true)                    
-                        AttackForwardLightDown();                    
-                    else
-                        AttackBackwardLightDown();
-                    }
+                combatMode = true;
+                disengagingCombat.Play();
+                combatMusic.Play();
+                baseMusic.Stop(); 
             }
-            else if (Input.GetKey("left"))
-            {
-                if (placement == true)
-                {
-                    if (faceRight == true)                    
-                        AttackBackwardLightUp();                    
-                    else                    
-                        AttackForwardLightUp();                    
-                }
-                else
-                {
-                    if (faceRight == true)                    
-                        AttackBackwardLightDown();                    
-                    else                    
-                        AttackForwardLightDown();                    
-                }
-            }
-            else if (Input.GetKey("up"))            
-                AttackUpLightUp();            
-            else if (Input.GetKey("down"))            
-                AttackDownLightDown();            
             else
             {
-                if (placement == true)                
-                    AttackStaticLightUp();                
-                else                
-                    AttackStaticLightDown();                
+                combatMode = false;
+                engagingCombat.Play();
+                combatMusic.Stop();
+                baseMusic.Play(); 
+
             }
         }
-        CombatIndicateur();
-        
+
+        if (combatMode == true)
+        {
+
+            if (mainCamera.orthographicSize >= 3f)
+                mainCamera.orthographicSize -= 0.03f;
+
+            if (topBar.transform.position.y >= Screen.height * 1.37f)
+                topBar.transform.position = new Vector2(topBar.transform.position.x, topBar.transform.position.y - 5f);
+                //Debug.Log(Screen.height * 0.9);
+            if (bottomBar.transform.position.y <= Screen.height * -0.37f)
+                bottomBar.transform.position = new Vector2(bottomBar.transform.position.x, bottomBar.transform.position.y + 5f);
+
+
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                if (Input.GetKey("right"))
+                {
+                    if (placement == true)
+                    {
+                        if (faceRight == true)
+                            AttackForwardLightUp();
+                        else
+                            AttackBackwardLightUp();
+                    }
+                    else
+                    {
+                        if (faceRight == true)
+                            AttackForwardLightDown();
+                        else
+                            AttackBackwardLightDown();
+                    }
+                }
+                else if (Input.GetKey("left"))
+                {
+                    if (placement == true)
+                    {
+                        if (faceRight == true)
+                            AttackBackwardLightUp();
+                        else
+                            AttackForwardLightUp();
+                    }
+                    else
+                    {
+                        if (faceRight == true)
+                            AttackBackwardLightDown();
+                        else
+                            AttackForwardLightDown();
+                    }
+                }
+                else if (Input.GetKey("up"))
+                    AttackUpLightUp();
+                else if (Input.GetKey("down"))
+                    AttackDownLightDown();
+                else
+                {
+                    if (placement == true)
+                        AttackStaticLightUp();
+                    else
+                        AttackStaticLightDown();
+                }
+            }
+            if (Input.GetKeyDown(KeyCode.Mouse1))
+            {
+                StartCoroutine(SetParadeActive(0.1f));
+            }
+            CombatIndicateur();
+        }
+        else
+        {
+            indicateurBas.SetActive(false);
+            indicateurHaut.SetActive(false);
+
+            if (mainCamera.orthographicSize <= 6.2f)
+                mainCamera.orthographicSize += 0.03f;
+           
+            if (topBar.transform.position.y <= Screen.height * 1.7f)
+                topBar.transform.position = new Vector2(topBar.transform.position.x, topBar.transform.position.y + 5f);
+            //Debug.Log(Screen.height * 0.9);
+            if (bottomBar.transform.position.y >= Screen.height * -0.7f)
+                bottomBar.transform.position = new Vector2(bottomBar.transform.position.x, bottomBar.transform.position.y - 5f);
+        }
+    }
+
+    private IEnumerator SetParadeActive(float timer)
+    {
+        paradeActive = true;
+        yield return new WaitForSeconds(timer);
+        paradeActive = false;
+    }
+
+
+    void sound()
+    {
+        compteur++;
+        if (compteur == 5)
+        {
+            compteur = 1;
+        }
+
+        if(compteur == 1)
+        {
+            sound1.Play();
+
+        }
+        if (compteur == 2)
+        {
+            sound2.Play();
+           
+        }
+        if (compteur == 3)
+        {
+            sound3.Play();
+            
+        }
+        else
+        {
+            sound4.Play();
+            
+        }
     }
 
     void AttackStaticLightUp()
     {
         // Jouer l'animation d'attaque
         animator.SetTrigger("Attack");
+        attackUpAnimator.SetTrigger("Attack");
+
+        sound();
 
         // Detecter les ennemis dans la zonne d'attaque
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackStaticLightUpPoint.position, attackRange, enemyLayers);
 
+        
         // Effectuer les dégats sur les ennemis
         foreach (Collider2D Enemy in hitEnemies)
         {
+            if(Enemy.gameObject.tag == "Enemy")
+            {
+                Debug.Log("Hit Enemy");
+            }
             Enemy.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(damageToGive);
+            Debug.Log("Hit");
         }
     }
     void AttackStaticLightDown()
     {
         // Jouer l'animation d'attaque
         animator.SetTrigger("Attack");
+        attackDownAnimator.SetTrigger("Attack");
+
+        sound();
 
         // Detecter les ennemis dans la zonne d'attaque
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackStaticLightDownPoint.position, attackRange, enemyLayers);
-        
+
 
         // Effectuer les dégats sur les ennemis
         foreach (Collider2D Enemy in hitEnemies)
         {
-            Enemy.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(damageToGive);
+            Enemy.GetComponent<EnemyHealthManager>().HurtEnemy(damageToGive);
+            Debug.Log("HIT");
+            if (Enemy.gameObject.tag == "Enemy")
+            {
+                Debug.Log("Hit Enemy");
+            }
+            
+            
         }
     }
     void AttackForwardLightUp()
     {
         // Jouer l'animation d'attaque
         animator.SetTrigger("Attack");
+        attackUpAnimator.SetTrigger("Attack");
+
+        sound();
 
         // Detecter les ennemis dans la zonne d'attaque
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackForwardLightUpPoint.position, attackRange, enemyLayers);
@@ -121,12 +255,16 @@ public class PlayerCombat : MonoBehaviour
         foreach (Collider2D Enemy in hitEnemies)
         {
             Enemy.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(damageToGive);
+            Debug.Log("Hit");
         }
     }
     void AttackForwardLightDown()
     {
         // Jouer l'animation d'attaque
         animator.SetTrigger("Attack");
+        attackDownAnimator.SetTrigger("Attack");
+
+        sound();
 
         // Detecter les ennemis dans la zonne d'attaque
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackForwardLightDownPoint.position, attackRange, enemyLayers);
@@ -135,12 +273,16 @@ public class PlayerCombat : MonoBehaviour
         foreach (Collider2D Enemy in hitEnemies)
         {
             Enemy.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(damageToGive);
+            Debug.Log("Hit");
         }
     }
     void AttackBackwardLightUp()
     {
         // Jouer l'animation d'attaque
         animator.SetTrigger("Attack");
+        attackUpAnimator.SetTrigger("Attack");
+
+        sound();
 
         // Detecter les ennemis dans la zonne d'attaque
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackBackwardLightUpPoint.position, attackRange, enemyLayers);
@@ -149,12 +291,16 @@ public class PlayerCombat : MonoBehaviour
         foreach (Collider2D Enemy in hitEnemies)
         {
             Enemy.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(damageToGive);
+            Debug.Log("Hit");
         }
     }
     void AttackBackwardLightDown()
     {
         // Jouer l'animation d'attaque
         animator.SetTrigger("Attack");
+        attackDownAnimator.SetTrigger("Attack");
+
+        sound();
 
         // Detecter les ennemis dans la zonne d'attaque
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackBackwardLightDownPoint.position, attackRange, enemyLayers);
@@ -163,12 +309,16 @@ public class PlayerCombat : MonoBehaviour
         foreach (Collider2D Enemy in hitEnemies)
         {
             Enemy.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(damageToGive);
+            Debug.Log("Hit");
         }
     }
     void AttackUpLightUp()
     {
         // Jouer l'animation d'attaque
         animator.SetTrigger("Attack");
+        attackUpAnimator.SetTrigger("Attack");
+
+        sound();
 
         // Detecter les ennemis dans la zonne d'attaque
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackUpLightUpPoint.position, attackRange, enemyLayers);
@@ -177,12 +327,16 @@ public class PlayerCombat : MonoBehaviour
         foreach (Collider2D Enemy in hitEnemies)
         {
             Enemy.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(damageToGive);
+            Debug.Log("Hit");
         }
     }
     void AttackDownLightDown()
     {
         // Jouer l'animation d'attaque
         animator.SetTrigger("Attack");
+        attackDownAnimator.SetTrigger("Attack");
+
+        sound();
 
         // Detecter les ennemis dans la zonne d'attaque
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackDownLightDownPoint.position, attackRange, enemyLayers);
@@ -190,7 +344,8 @@ public class PlayerCombat : MonoBehaviour
         // Effectuer les dégats sur les ennemis
         foreach (Collider2D Enemy in hitEnemies)
         {
-            Enemy.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(damageToGive);            
+            Enemy.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(damageToGive);
+            Debug.Log("Hit");
         }
     }
 
@@ -231,7 +386,7 @@ public class PlayerCombat : MonoBehaviour
 
     }
 
-     public void CombatIndicateur()
+    public void CombatIndicateur()
     {
         if (Input.GetKey("down"))
         {
@@ -239,20 +394,20 @@ public class PlayerCombat : MonoBehaviour
             indicateurHaut.SetActive(false);
             placement = false;
         }
-        else if (Input.GetKey("up") || Input.mousePosition.y > player.transform.position.y + 330)
+        else if (Input.GetKey("up") || Input.mousePosition.y > Screen.height * 0.5f)
         {
             indicateurHaut.SetActive(true);
             indicateurBas.SetActive(false);
             placement = true;
         }
-        else if (Input.mousePosition.y < player.transform.position.y + 330)
+        else if (Input.mousePosition.y < Screen.height * 0.5f)
         {
             indicateurBas.SetActive(true);
             indicateurHaut.SetActive(false);
             placement = false;
         }
 
-        if (Input.mousePosition.x > player.transform.position.x + 480)
+        if (Input.mousePosition.x > Screen.width * 0.5f)
         {
             faceRight = true;
             spriteRenderer.transform.localScale = new Vector3(0.21f, 0.17f, 1);
@@ -263,4 +418,6 @@ public class PlayerCombat : MonoBehaviour
             spriteRenderer.transform.localScale = new Vector3(-0.21f, 0.17f, 1);
         }
     }
+
+    
 }

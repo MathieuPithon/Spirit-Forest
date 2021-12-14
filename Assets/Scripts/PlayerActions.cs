@@ -21,7 +21,7 @@ public class PlayerActions : MonoBehaviour
             animator.SetTrigger("Attack");
             playerStamina.LoseStamina(20);
             cooldown = true;
-            playerXp.XpGain(6);
+            //playerXp.XpGain(6);
             StartCoroutine(Cooldown(.5f));
         }
         if (Input.GetButtonDown("powerup") && playerStamina.CurrentStamina > 20 && !cooldown)
