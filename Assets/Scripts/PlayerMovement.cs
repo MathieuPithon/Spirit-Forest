@@ -2,16 +2,21 @@
 
 public class PlayerMovement : MonoBehaviour
 {
-    public PlayerStamina playerStamina;
+    
     public float moveSpeed;
     public float jumpForce;
     public float groundCheckRadius;
     private float horizontalMovement;
+    public float facingCoef = 1f;
     public int jumpStamina = 10;
 
     public bool isJumping;
     public bool isGrounded;
+    //public bool faceRight = true;
+    //public bool combatMode = false;
 
+    public PlayerStamina playerStamina;
+    public PlayerCombat combat;
     public Transform groundCheck;
     public LayerMask collisionLayers;
     public Rigidbody2D rb;
@@ -32,8 +37,9 @@ public class PlayerMovement : MonoBehaviour
 
         instance = this;
     }
+
     private void Update()
-    {
+    {       
 
         if((rb.velocity.x > 0.3f && isGrounded == true) || (rb.velocity.x < -0.3f && isGrounded == true))
         {
@@ -47,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
             audioSrc.Stop();
         }
 
-        horizontalMovement = Input.GetAxis("Horizontal") * moveSpeed * Time.fixedDeltaTime;
+        horizontalMovement = Input.GetAxis("Horizontal") * moveSpeed * Time.fixedDeltaTime * facingCoef;
 
         if (Input.GetButtonDown("Jump") && (isGrounded == true) && (playerStamina.CurrentStamina >= jumpStamina)) //Jump correspond par defaut à la barre espace
         {

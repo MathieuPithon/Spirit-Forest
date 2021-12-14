@@ -34,6 +34,22 @@ public class PlayerCombat : MonoBehaviour
     public bool paradeActive = false;
 
 
+    
+    public AudioSource sound1;
+    public AudioSource sound2;
+    public AudioSource sound3;
+    public AudioSource sound4;
+
+    public AudioSource combatMusic;
+    public AudioSource baseMusic;
+    public AudioSource disengagingCombat;
+    public AudioSource engagingCombat;
+
+    private int compteur = 0 ;
+
+    
+
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.LeftControl))
@@ -41,10 +57,17 @@ public class PlayerCombat : MonoBehaviour
             if (combatMode == false)
             {
                 combatMode = true;
+                disengagingCombat.Play();
+                combatMusic.Play();
+                baseMusic.Stop(); 
             }
             else
             {
                 combatMode = false;
+                engagingCombat.Play();
+                combatMusic.Stop();
+                baseMusic.Play(); 
+
             }
         }
 
@@ -139,11 +162,43 @@ public class PlayerCombat : MonoBehaviour
     }
 
 
+    void sound()
+    {
+        compteur++;
+        if (compteur == 5)
+        {
+            compteur = 1;
+        }
+
+        if(compteur == 1)
+        {
+            sound1.Play();
+
+        }
+        if (compteur == 2)
+        {
+            sound2.Play();
+           
+        }
+        if (compteur == 3)
+        {
+            sound3.Play();
+            
+        }
+        else
+        {
+            sound4.Play();
+            
+        }
+    }
+
     void AttackStaticLightUp()
     {
         // Jouer l'animation d'attaque
         animator.SetTrigger("Attack");
         attackUpAnimator.SetTrigger("Attack");
+
+        sound();
 
         // Detecter les ennemis dans la zonne d'attaque
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackStaticLightUpPoint.position, attackRange, enemyLayers);
@@ -165,6 +220,8 @@ public class PlayerCombat : MonoBehaviour
         // Jouer l'animation d'attaque
         animator.SetTrigger("Attack");
         attackDownAnimator.SetTrigger("Attack");
+
+        sound();
 
         // Detecter les ennemis dans la zonne d'attaque
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackStaticLightDownPoint.position, attackRange, enemyLayers);
@@ -189,6 +246,8 @@ public class PlayerCombat : MonoBehaviour
         animator.SetTrigger("Attack");
         attackUpAnimator.SetTrigger("Attack");
 
+        sound();
+
         // Detecter les ennemis dans la zonne d'attaque
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackForwardLightUpPoint.position, attackRange, enemyLayers);
 
@@ -204,6 +263,8 @@ public class PlayerCombat : MonoBehaviour
         // Jouer l'animation d'attaque
         animator.SetTrigger("Attack");
         attackDownAnimator.SetTrigger("Attack");
+
+        sound();
 
         // Detecter les ennemis dans la zonne d'attaque
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackForwardLightDownPoint.position, attackRange, enemyLayers);
@@ -221,6 +282,8 @@ public class PlayerCombat : MonoBehaviour
         animator.SetTrigger("Attack");
         attackUpAnimator.SetTrigger("Attack");
 
+        sound();
+
         // Detecter les ennemis dans la zonne d'attaque
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackBackwardLightUpPoint.position, attackRange, enemyLayers);
 
@@ -236,6 +299,8 @@ public class PlayerCombat : MonoBehaviour
         // Jouer l'animation d'attaque
         animator.SetTrigger("Attack");
         attackDownAnimator.SetTrigger("Attack");
+
+        sound();
 
         // Detecter les ennemis dans la zonne d'attaque
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackBackwardLightDownPoint.position, attackRange, enemyLayers);
@@ -253,6 +318,8 @@ public class PlayerCombat : MonoBehaviour
         animator.SetTrigger("Attack");
         attackUpAnimator.SetTrigger("Attack");
 
+        sound();
+
         // Detecter les ennemis dans la zonne d'attaque
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackUpLightUpPoint.position, attackRange, enemyLayers);
 
@@ -268,6 +335,8 @@ public class PlayerCombat : MonoBehaviour
         // Jouer l'animation d'attaque
         animator.SetTrigger("Attack");
         attackDownAnimator.SetTrigger("Attack");
+
+        sound();
 
         // Detecter les ennemis dans la zonne d'attaque
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackDownLightDownPoint.position, attackRange, enemyLayers);
