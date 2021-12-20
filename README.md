@@ -6,6 +6,10 @@
 
 
 Convention de nommage : 
+
+TOUS EN ANGLAIS 
+
+
 1 - Scripts :
 
 Syntax :

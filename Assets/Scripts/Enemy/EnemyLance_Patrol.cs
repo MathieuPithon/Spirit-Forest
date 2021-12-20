@@ -1,5 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
+
+// Cyriaque - Vieux script , surrement tous cassée et qui utilise des variables qui existent plus . 
+//            Fait faire des aller retour entre deux points a l'ennemie 
+
 //fonction qui retire le YZ d'un vecteur
 static public class VectorExtensions
 {
@@ -49,7 +53,7 @@ public class EnnemiPatrol : MonoBehaviour
         float gap = Vector3.Distance(cible.position, transform.position);
 
         //l'ennemi avance vers le joueur si il est a proximité
-        if (gap <= lookRadius /*& gap > lookRadius2*/) 
+        if (gap <= lookRadius /*& gap > lookRadius2*/)
         {
             Vector3 dir = cible.position.Y() - transform.position.Y();
             transform.Translate(dir.normalized * 5 * Time.deltaTime, Space.World);
@@ -77,7 +81,7 @@ public class EnnemiPatrol : MonoBehaviour
             Vector3 dar = transform.position.Y() - cible.position.Y();
             transform.Translate(dar.normalized * speed * Time.deltaTime, Space.World);
         }
-        
+
         //allez retour de l'ennemi entre les waypoints
         else
         {

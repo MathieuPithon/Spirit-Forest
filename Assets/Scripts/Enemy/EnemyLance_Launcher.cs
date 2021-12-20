@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SamouraiLauncher : MonoBehaviour
+// Cyriaque - Utilise touts les booléens renvoyer par les scripts hitbox pour gerer les déplacments de l'ennemie
+
+public class EnemyLanceLauncher : MonoBehaviour
 {
     public int CoolDown;
     public int CDAttacking;
-    public goBack goBack;
-    public agro agro;
-    public turn turn;
+    public EnemyLance_WalkBackward goBack;
+    public EnemyLance_Agro agro;
+    public EnemyLance_TurnAround turn;
     public Transform gate;
     public attackArea attackArea;
     public Rigidbody2D rb;
@@ -151,7 +153,7 @@ public class SamouraiLauncher : MonoBehaviour
         if (attackArea.inRange == true && inCoolDown == false)
         {
             attack();
-            
+
         }
 
         //if mouvement
@@ -159,14 +161,14 @@ public class SamouraiLauncher : MonoBehaviour
         {
 
             mouvement();
-            
+
         }
 
         //if retour a la base
         if (agro.seePlayer == false && isAttacking == false && ecareGate > 1)
         {
             backToBase();
-            
+
         }
 
         //if recul
@@ -174,7 +176,7 @@ public class SamouraiLauncher : MonoBehaviour
         {
 
             goBackward();
-            
+
         }
 
         //if rotation player

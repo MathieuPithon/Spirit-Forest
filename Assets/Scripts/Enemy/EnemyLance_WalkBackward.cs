@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class turn : MonoBehaviour
+// Cyriaque - Des que le joueur rentre dans cette zone le bool renvoie vrai 
+
+public class GoBack : MonoBehaviour
 {
 
-    public bool needTurn = false;
+    public bool needBack = false;
 
 
 
@@ -13,16 +15,16 @@ public class turn : MonoBehaviour
     {
         if (Player.gameObject.tag == "Player")
         {
-            needTurn = true;
-            
+            needBack = true;
+
         }
     }
     void OnTriggerExit2D(Collider2D Player)
     {
         if (Player.gameObject.tag == "Player")
         {
-            needTurn = false;
-            
+            needBack = false;
+
         }
     }
 }

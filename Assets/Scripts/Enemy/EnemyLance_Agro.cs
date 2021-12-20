@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class attackArea : MonoBehaviour
+//Cyriaque - Des que le joueur rentre dans cette zone le bool renvoie vrai 
+public class agro : MonoBehaviour
 {
 
-    public bool inRange = false;
+    public bool seePlayer = false;
 
 
 
@@ -13,17 +14,17 @@ public class attackArea : MonoBehaviour
     {
         if (Player.gameObject.tag == "Player")
         {
-            inRange = true;
-
+            seePlayer = true;
+           
         }
     }
     void OnTriggerExit2D(Collider2D Player)
     {
         if (Player.gameObject.tag == "Player")
         {
-            inRange = false;
-
+            seePlayer = false;
+            
         }
     }
-
 }
+
