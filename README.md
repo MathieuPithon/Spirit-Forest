@@ -10,7 +10,7 @@ Convention de nommage :
 TOUS EN ANGLAIS 
 
 
-1 - Scripts :
+ Nom des scripts :
 
 Syntax :
 "GameObject_Utilité"
@@ -26,15 +26,4 @@ Exemple :
 //Suis le joueur principale en ajoutant un effet pour que le mouvement sois fluide
 
 
-2 - Variable	
-
-Camel case
-
-Syntax :
-"nomDeVariable"
-
-Description :
-Les mots sont liés sans espace. Chaque mot commence par une majuscule à l'exception du premier.
-
-Exemple :
-"fautVraimentUnExemple"
+Pour le reste : https://docs.microsoft.com/fr-fr/dotnet/csharp/fundamentals/coding-style/coding-conventions

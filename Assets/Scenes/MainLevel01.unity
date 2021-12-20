@@ -3402,6 +3402,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7922089133693590646, guid: 18a573116d8e844429fe7a2aeb388c33, type: 3}
+      propertyPath: m_Name
+      value: turnAroundTrigger
+      objectReference: {fileID: 0}
     - target: {fileID: 7922089134325421988, guid: 18a573116d8e844429fe7a2aeb388c33, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -3414,9 +3418,17 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7922089134945196838, guid: 18a573116d8e844429fe7a2aeb388c33, type: 3}
+      propertyPath: m_Name
+      value: lanceHitBox
+      objectReference: {fileID: 0}
     - target: {fileID: 7922089135180874168, guid: 18a573116d8e844429fe7a2aeb388c33, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7922089135180874168, guid: 18a573116d8e844429fe7a2aeb388c33, type: 3}
+      propertyPath: m_Name
+      value: walkBackwardTrigger
       objectReference: {fileID: 0}
     - target: {fileID: 7922089135342531460, guid: 18a573116d8e844429fe7a2aeb388c33, type: 3}
       propertyPath: m_AnchorMax.x
@@ -3468,7 +3480,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7922089135354018335, guid: 18a573116d8e844429fe7a2aeb388c33, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -45.3
+      value: -45.33
       objectReference: {fileID: 0}
     - target: {fileID: 7922089135354018335, guid: 18a573116d8e844429fe7a2aeb388c33, type: 3}
       propertyPath: m_LocalPosition.z
