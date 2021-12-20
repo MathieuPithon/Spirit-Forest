@@ -4,10 +4,10 @@ using UnityEngine;
 
 // Cyriaque - Des que le joueur rentre dans cette zone le bool renvoie vrai 
 
-public class EnemyLance_TurnAround : MonoBehaviour
+public class EnemyLance_AttackArea : MonoBehaviour
 {
 
-    public bool needTurn = false;
+    public bool inRange = false;
 
 
 
@@ -15,7 +15,7 @@ public class EnemyLance_TurnAround : MonoBehaviour
     {
         if (Player.gameObject.tag == "Player")
         {
-            needTurn = true;
+            inRange = true;
 
         }
     }
@@ -23,9 +23,9 @@ public class EnemyLance_TurnAround : MonoBehaviour
     {
         if (Player.gameObject.tag == "Player")
         {
-            needTurn = false;
+            inRange = false;
 
         }
     }
-}
 
+}

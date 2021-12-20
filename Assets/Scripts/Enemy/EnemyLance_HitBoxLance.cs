@@ -2,30 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Cyriaque - Des que le joueur rentre dans cette zone le bool renvoie vrai 
-
-public class AttackArea : MonoBehaviour
+public class EnemyLance_HitBoxLance : MonoBehaviour
 {
 
-    public bool inRange = false;
-
-
-
-    void OnTriggerEnter2D(Collider2D Player)
+    public int damageToTake;
+    // Start is called before the first frame update
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (Player.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player")
         {
-            inRange = true;
-
+            collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(damageToTake, false);
         }
     }
-    void OnTriggerExit2D(Collider2D Player)
-    {
-        if (Player.gameObject.tag == "Player")
-        {
-            inRange = false;
-
-        }
-    }
-
 }

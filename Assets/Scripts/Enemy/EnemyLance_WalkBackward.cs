@@ -4,7 +4,7 @@ using UnityEngine;
 
 // Cyriaque - Des que le joueur rentre dans cette zone le bool renvoie vrai 
 
-public class GoBack : MonoBehaviour
+public class EnemyLance_WalkBackward : MonoBehaviour
 {
 
     public bool needBack = false;

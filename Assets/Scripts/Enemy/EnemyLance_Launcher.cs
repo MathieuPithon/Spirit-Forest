@@ -4,7 +4,7 @@ using UnityEngine;
 
 // Cyriaque - Utilise touts les booléens renvoyer par les scripts hitbox pour gerer les déplacments de l'ennemie
 
-public class EnemyLanceLauncher : MonoBehaviour
+public class EnemyLance_Launcher : MonoBehaviour
 {
     public int CoolDown;
     public int CDAttacking;
@@ -12,7 +12,7 @@ public class EnemyLanceLauncher : MonoBehaviour
     public EnemyLance_Agro agro;
     public EnemyLance_TurnAround turn;
     public Transform gate;
-    public attackArea attackArea;
+    public EnemyLance_AttackArea attackArea;
     public Rigidbody2D rb;
 
     private Animator anim;

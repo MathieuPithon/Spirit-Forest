@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //Cyriaque - Des que le joueur rentre dans cette zone le bool renvoie vrai 
-public class agro : MonoBehaviour
+public class EnemyLance_Agro : MonoBehaviour
 {
 
     public bool seePlayer = false;
