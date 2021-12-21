@@ -911,7 +911,6 @@ GameObject:
   - component: {fileID: 8412577261133269315}
   - component: {fileID: 8987121174867737947}
   - component: {fileID: 3639590674104570349}
-  - component: {fileID: 8073313470511287212}
   - component: {fileID: 24637721866452953}
   m_Layer: 8
   m_Name: Player 1
@@ -1066,6 +1065,7 @@ MonoBehaviour:
   combat: {fileID: 0}
   graphics: {fileID: 699785122464956145}
   healthBar: {fileID: 0}
+  hurtSound: {fileID: 0}
 --- !u!114 &8614258085987808550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1230,25 +1230,6 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   staminaBar: {fileID: 0}
   healthKeeper: 10
---- !u!114 &8073313470511287212
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8614258085987808544}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de90f9a537c5208449aac2f156141d1e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  combat: {fileID: 8614258085987808551}
-  range: 1
-  enemyLayers:
-    serializedVersion: 2
-    m_Bits: 512
-  boomerangCd: 3
-  boomerangAvailable: 1
 --- !u!82 &24637721866452953
 AudioSource:
   m_ObjectHideFlags: 0
