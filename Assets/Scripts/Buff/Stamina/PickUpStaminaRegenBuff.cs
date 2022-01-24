@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
-
+/**
+    Augmente temporairement la régénération de l'énergie de base du personnage
+    L'énergie se regenère de base de 1 point par frame
+**/
 public class PickUpStaminaRegenBuff : MonoBehaviour
 {
     //PlayerBuffs playerBuffs;

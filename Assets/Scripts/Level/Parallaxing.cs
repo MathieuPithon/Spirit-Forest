@@ -2,6 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/**
+    Wikipédia : 
+        La parallaxe est l’impact d'un changement d'incidence d'observation, 
+    c'est-à-dire du changement de position de l'observateur, sur l'observation d'un objet. 
+    La parallaxe est l'effet du changement de position de l'observateur sur ce qu'il perçoit.
+
+    En des mots plus simples, la parallaxe est le fait qu'on perçoit différemment les objets plus loin que ceux qu'ils sont proches. 
+    Ils défilent plus lentement que ceux qui sont proches (comme en voiture). 
+
+    Cette classe mets en place ce mécanisme. 
+**/
+
 public class Parallaxing : MonoBehaviour
 {
     public Transform[] backgrounds;

@@ -1,5 +1,9 @@
 ﻿using UnityEngine;
 
+/**
+    Augmente temporairement l'énergie de base du personnage
+    L'énergie permet de sauter et de taper
+**/
 public class PickUpStaminaBuff : MonoBehaviour
 {
     //PlayerBuffs playerBuffs;

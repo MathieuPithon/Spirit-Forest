@@ -2,7 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Cyriaque - Utilise touts les booléens renvoyer par les scripts hitbox pour gerer les déplacments de l'ennemie
+/** 
+    Cyriaque - Utilise touts les booléens renvoyer par les scripts hitbox pour gerer les déplacments de l'ennemie
+    Le comportement de l'ennemi est décrit par le fait que le personnage se trouve ou non dans es différentes hitbox de l'ennemi
+    L'ennemi peut avoir plusieurs comportements suivant la position du joueur autour de lui, il peut reculer, frapper,
+        se retourner ou avancer. 
+    De plus, comme expliqés dans un précédent script, si en attaquant la lance touche le joueur, alors l'ennemi inflige des dégàts. 
+**/
 
 public class EnemyLance_Launcher : MonoBehaviour
 {

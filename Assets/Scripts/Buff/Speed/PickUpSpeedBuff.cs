@@ -1,5 +1,9 @@
 ﻿using UnityEngine;
 
+
+/**
+    Augmente temporairement la vitesse de base du personnage
+**/
 public class PickUpSpeedBuff : MonoBehaviour
 {
     //PlayerBuffs playerBuffs;

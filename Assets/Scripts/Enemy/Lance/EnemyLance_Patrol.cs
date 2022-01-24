@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-// Cyriaque - Vieux script , surrement tous cassée et qui utilise des variables qui existent plus . 
-//            Fait faire des aller retour entre deux points a l'ennemie 
-
-//fonction qui retire le YZ d'un vecteur
+/**
+ Cyriaque - Vieux script , sûrement tous cassée et qui utilise des variables qui existent plus . 
+            Fait faire des aller retour entre deux points a l'ennemie 
+    fonction qui retire le YZ d'un vecteur
+**/
 static public class VectorExtensions
 {
     static public Vector3 Y(this Vector3 vec)

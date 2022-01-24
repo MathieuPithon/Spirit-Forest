@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/**
+    Permet d'afficher en appuyant sur Tab (non implémenté) pour le moment
+**/
 public class DisplayMinimap : MonoBehaviour
 {
     public GameObject minimapCanvas;

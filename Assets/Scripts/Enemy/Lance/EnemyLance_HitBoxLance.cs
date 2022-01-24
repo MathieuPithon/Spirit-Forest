@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/**
+    Si la lance touche le personnage alors il prends des dégats
+**/
 public class EnemyLance_HitBoxLance : MonoBehaviour
 {
 

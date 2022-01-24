@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/**
+    Initialise les variables qui sont mises dans la barre de vie, ainsi que l'évènement quand HP = 0
+**/
 public class EnemyHealthManager : MonoBehaviour
 {    
     public int maxHealth;

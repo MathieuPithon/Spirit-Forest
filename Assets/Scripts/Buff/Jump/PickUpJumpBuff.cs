@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/**
+    Augmente temporairement la hauteur du saut de base du personnage
+**/
 public class PickUpJumpBuff : MonoBehaviour
 {
     public PlayerBuffs playerBuffs;
