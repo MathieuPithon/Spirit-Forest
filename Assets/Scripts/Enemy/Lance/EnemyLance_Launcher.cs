@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /** 
-    Cyriaque - Utilise touts les booléens renvoyer par les scripts hitbox pour gerer les déplacments de l'ennemie
+    // Cyriaque - Utilise tous les booléens renvoyé par les scripts hitbox pour gerer les déplacements de l'ennemie
     Le comportement de l'ennemi est décrit par le fait que le personnage se trouve ou non dans es différentes hitbox de l'ennemi
     L'ennemi peut avoir plusieurs comportements suivant la position du joueur autour de lui, il peut reculer, frapper,
         se retourner ou avancer. 
@@ -84,18 +84,11 @@ public class EnemyLance_Launcher : MonoBehaviour
     //fonction recule si joueur trop proche
     void goBackward()
     {
-        if (faceLeft == true)
-        {
-            Vector3 vecGoBack = transform.position.Y() - cible.position.Y();
-            transform.Translate(vecGoBack.normalized * 2 * Time.deltaTime, Space.World);
-            anim.SetFloat("speed", 1.0f);
-        }
-        else
-        {
-            Vector3 vecGoBack = cible.position.Y() + transform.position.Y();
-            transform.Translate(vecGoBack.normalized * 2 * Time.deltaTime, Space.World);
-            anim.SetFloat("speed", 1.0f);
-        }
+        Vector3 vecAgro = transform.position.Y() - cible.position.Y();
+        Debug.Log(vecAgro);
+        transform.Translate(vecAgro.normalized * 4 * Time.deltaTime, Space.World);
+        anim.SetFloat("speed", 1.0f);
+
     }
 
     //fonction rotation vers le joueur
@@ -141,9 +134,9 @@ public class EnemyLance_Launcher : MonoBehaviour
 
     void Update()
     {
-        float characterVelocity = Mathf.Abs(rb.velocity.x);             //rb.velocity.x = vitesse du personnage sur axe X
+        //rb.velocity.x = vitesse du personnage sur axe X
+        float characterVelocity = Mathf.Abs(rb.velocity.x);            
         animator.SetFloat("speed", characterVelocity);
-
         float ecareGate = Vector2.Distance(gate.position, transform.position);
         if (isAttacking)
         {

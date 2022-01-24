@@ -8227,8 +8227,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a914d52e0225d4c9503c9e24ad96d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CoolDown: 0
-  CDAttacking: 0
+  CoolDown: 5
+  CDAttacking: 1
   goBack: {fileID: 1820196075}
   agro: {fileID: 495595967}
   turn: {fileID: 2115036592}

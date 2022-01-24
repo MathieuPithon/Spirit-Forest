@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
 
+// Thomas - Fait les déplacement du joueurs 
+
 public class PlayerMovement : MonoBehaviour
 {
-    
+
     public float moveSpeed;
     public float jumpForce;
     public float groundCheckRadius;
@@ -39,9 +41,9 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void Update()
-    {       
+    {
 
-        if((rb.velocity.x > 0.3f && isGrounded == true) || (rb.velocity.x < -0.3f && isGrounded == true))
+        if ((rb.velocity.x > 0.3f && isGrounded == true) || (rb.velocity.x < -0.3f && isGrounded == true))
         {
             if (!audioSrc.isPlaying)
             {
@@ -118,6 +120,6 @@ public class PlayerMovement : MonoBehaviour
     }
 }
 
-    
+
 
 
