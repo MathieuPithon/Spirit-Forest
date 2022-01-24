@@ -78,18 +78,11 @@ public class EnemyLance_Launcher : MonoBehaviour
     //fonction recule si joueur trop proche
     void goBackward()
     {
-        if (faceLeft == true)
-        {
-            Vector3 vecGoBack = transform.position.Y() - cible.position.Y();
-            transform.Translate(vecGoBack.normalized * 2 * Time.deltaTime, Space.World);
-            anim.SetFloat("speed", 1.0f);
-        }
-        else
-        {
-            Vector3 vecGoBack = cible.position.Y() + transform.position.Y();
-            transform.Translate(vecGoBack.normalized * 2 * Time.deltaTime, Space.World);
-            anim.SetFloat("speed", 1.0f);
-        }
+        Vector3 vecAgro = transform.position.Y() - cible.position.Y();
+        Debug.Log(vecAgro);
+        transform.Translate(vecAgro.normalized * 4 * Time.deltaTime, Space.World);
+        anim.SetFloat("speed", 1.0f);
+
     }
 
     //fonction rotation vers le joueur

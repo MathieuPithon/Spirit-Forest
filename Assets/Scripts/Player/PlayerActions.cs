@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
+// Thomas - Player controleur ( je crois ?)
 public class PlayerActions : MonoBehaviour
 {
     public Animator animator;
@@ -9,15 +10,15 @@ public class PlayerActions : MonoBehaviour
     public PlayerStamina playerStamina;
     public PlayerXp playerXp;
     public PauseMenu pauseMenu;
-    
-    
+
+
 
     private bool cooldown = false;
 
     public void Update()
-    { 
-        if(Input.GetMouseButtonDown(1) && playerStamina.CurrentStamina > 20 && !cooldown)
-        {   
+    {
+        if (Input.GetMouseButtonDown(1) && playerStamina.CurrentStamina > 20 && !cooldown)
+        {
             animator.SetTrigger("Attack");
             playerStamina.LoseStamina(20);
             cooldown = true;
@@ -31,7 +32,7 @@ public class PlayerActions : MonoBehaviour
             cooldown = true;
             StartCoroutine(Cooldown(1.5f));
         }
-        
+
 
     }
     IEnumerator Cooldown(float cool)
