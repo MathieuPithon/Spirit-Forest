@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Cyriaque - Utilise touts les booléens renvoyer par les scripts hitbox pour gerer les déplacments de l'ennemie
+// Cyriaque - Utilise tous les booléens renvoyé par les scripts hitbox pour gerer les déplacements de l'ennemie
 
 public class EnemyLance_Launcher : MonoBehaviour
 {
