@@ -191,7 +191,6 @@ public class PlayerCombat : MonoBehaviour
 
         }
     }
-
     void AttackStaticLightUp()
     {
         // Jouer l'animation d'attaque
