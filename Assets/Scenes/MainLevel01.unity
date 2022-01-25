@@ -3636,7 +3636,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: MainCamera
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7145240358054539964, guid: 05de4a65476180246a9575c412431b51, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 05de4a65476180246a9575c412431b51, type: 3}
 --- !u!1001 &698135244
 PrefabInstance:
