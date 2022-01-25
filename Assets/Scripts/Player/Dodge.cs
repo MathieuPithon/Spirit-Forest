@@ -4,59 +4,68 @@ using UnityEngine;
 
 public class Dodge : MonoBehaviour
 {
-    private bool isDashing;
     public float dashSpeed;
     private float dashTime;
     public float startDashTime;
     private int direction;
     public int dashCost = 50;
-    
+
     private Rigidbody2D rb;
-    public PlayerCombat combat;
     public PlayerStamina stamina;
-    
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         dashTime = startDashTime;
-    }    
+    }
     void Update()
     {
         if (direction == 0)
         {
-            if (Input.GetKeyDown(KeyCode.LeftAlt) && !combat.faceRight)
-                direction = 2;
-            else if (Input.GetKeyDown(KeyCode.LeftAlt) && combat.faceRight)
-                direction = 1;
-        } else
+            if (Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                if (Input.GetKey(KeyCode.Q))
+                {
+                    direction = 1;
+                    Debug.Log("gauche");
+                }
+
+            }
+
+            else if (Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                if (Input.GetKey(KeyCode.D))
+                {
+                    direction = 2;
+                    Debug.Log("droite");
+                }
+
+            }
+        }
+        else
         {
             if (dashTime <= 0)
             {
                 direction = 0;
-                isDashing = false;
                 dashTime = startDashTime;
                 rb.velocity = Vector2.zero;
-            } else
+            }
+            else
             {
                 dashTime -= Time.deltaTime;
-                if (!isDashing && stamina.CurrentStamina > dashCost)
+
+                if (direction == 1 && stamina.CurrentStamina > dashCost)
                 {
-                    switch (direction)
-                    {
-                        case 1:
-                            rb.velocity = Vector2.left * dashSpeed;
-                            stamina.LoseStamina(dashCost);
-                            stamina.CallStaminaRegen();
-                            isDashing = true;
-                            break;
-                        case 2:
-                            rb.velocity = Vector2.right * dashSpeed;
-                            stamina.LoseStamina(dashCost);
-                            stamina.CallStaminaRegen();
-                            isDashing = true;
-                            break;
-                    }
-                }                
+                    rb.velocity = Vector2.left * dashSpeed;
+                    stamina.LoseStamina(dashCost);
+                    stamina.CallStaminaRegen();
+                }
+                else if (direction == 2 && stamina.CurrentStamina > dashCost)
+                {
+                    rb.velocity = Vector2.right * dashSpeed;
+                    stamina.LoseStamina(dashCost);
+                    stamina.CallStaminaRegen();
+                }
             }
         }
     }
