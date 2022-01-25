@@ -3,17 +3,19 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
+    public const float V = 0.3f;
     public GameObject player;
     public float timeOffSet;
     private Vector3 posOffSet; // ??? le Y c'est posOffSetGrounded -1 (la variable d'en dessous)
     public Vector3 posOffSetGrounded;
     public PlayerMovement movement;
     private Vector3 velocity = Vector3.zero;
-    public Rigidbody rb;
+
+    public Rigidbody2D rb;
 
     void Update()
     {
-        directionCameraDeplacement(velocity.x);
+        directionCameraDeplacement(rb.velocity.x, rb.velocity.y);
 
         if (movement.isGrounded)
         {
@@ -24,23 +26,34 @@ public class CameraFollow : MonoBehaviour
 
 
     }
-
-    void directionCameraDeplacement(float velocity)
+    void directionCameraDeplacement(float velocityX, float velocityY)
     {
-
-        rb = player.GetComponent<Rigidbody>();
-        print(rb.velocity);
-
-        if (velocity > 1f)
+        //si le personnage va en haut à droite
+        if (velocityX > -V && velocityY > V)
         {
-            posOffSet = new Vector3(2f, 0f, -10f);
-            posOffSetGrounded = new Vector3(2f, 0f, -10f);
+            posOffSet = new Vector3(3f, 2f, -10f);
+            posOffSetGrounded = new Vector3(3f, 2f, -10f);
+
         }
-        else if (velocity < -1f)
+        //si le personnage va en haut à gauche
+        else if (velocityX < -V && velocityY > V)
         {
-            posOffSet = new Vector3(-2f, 0f, -10f);
-            posOffSetGrounded = new Vector3(-2f, 0f, -10f);
+            posOffSet = new Vector3(-3f, 2f, -10f);
+            posOffSetGrounded = new Vector3(-3f, 2f, -10f);
         }
+        //si le personnage va en bas à droite
+        else if (velocityX > V && velocityY < -V)
+        {
+            posOffSet = new Vector3(3f, -2f, -10f);
+            posOffSetGrounded = new Vector3(-3f, -2f, -10f);
+        }
+        //si le personnage se va en bas à gauche
+        else if (velocityX < -V && velocityY < -V)
+        {
+            posOffSet = new Vector3(-3f, -2f, -10f);
+            posOffSetGrounded = new Vector3(0f, -2f, -10f);
+        }
+        //si le personnage ne bouge pas
         else
         {
             posOffSet = new Vector3(0f, 0f, -10f);
