@@ -196,6 +196,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorCave1 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6943524281970599843, guid: fa787e5c40cbfc74399fbe52ed52a71f, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa787e5c40cbfc74399fbe52ed52a71f, type: 3}
 --- !u!1001 &95331132
@@ -264,6 +268,10 @@ PrefabInstance:
     - target: {fileID: 5326162515257910893, guid: 5d5ff899ea0acb347b3fb49ce9f2080b, type: 3}
       propertyPath: m_Name
       value: MediumPlatform2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5326162515257910893, guid: 5d5ff899ea0acb347b3fb49ce9f2080b, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d5ff899ea0acb347b3fb49ce9f2080b, type: 3}
@@ -602,6 +610,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SmallPlateform (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2078335524157096409, guid: cbf83a93e0ba86b41b32b1faf3bd0de0, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 8198658136505267626, guid: cbf83a93e0ba86b41b32b1faf3bd0de0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 26.302221
@@ -886,6 +898,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallCave (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 8599328716377639882, guid: 9909a357db9580b4b859df7904cef391, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9909a357db9580b4b859df7904cef391, type: 3}
 --- !u!1 &209556721
@@ -1036,6 +1052,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallCave (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8599328716377639882, guid: 9909a357db9580b4b859df7904cef391, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9909a357db9580b4b859df7904cef391, type: 3}
 --- !u!4 &266732182 stripped
@@ -1124,6 +1144,10 @@ PrefabInstance:
     - target: {fileID: 2078335524157096409, guid: cbf83a93e0ba86b41b32b1faf3bd0de0, type: 3}
       propertyPath: m_Name
       value: SmallPlateform (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2078335524157096409, guid: cbf83a93e0ba86b41b32b1faf3bd0de0, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8198658136505267626, guid: cbf83a93e0ba86b41b32b1faf3bd0de0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1391,6 +1415,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallCave (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 8599328716377639882, guid: 9909a357db9580b4b859df7904cef391, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9909a357db9580b4b859df7904cef391, type: 3}
 --- !u!114 &456278890 stripped
@@ -1423,7 +1451,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 499082613}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Plateforms
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1616,6 +1644,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallCave (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 8599328716377639882, guid: 9909a357db9580b4b859df7904cef391, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9909a357db9580b4b859df7904cef391, type: 3}
 --- !u!1 &582629591
@@ -1795,6 +1827,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallCave (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 8599328716377639882, guid: 9909a357db9580b4b859df7904cef391, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9909a357db9580b4b859df7904cef391, type: 3}
 --- !u!1 &624190395 stripped
@@ -1951,6 +1987,10 @@ PrefabInstance:
     - target: {fileID: 8599328716377639882, guid: 9909a357db9580b4b859df7904cef391, type: 3}
       propertyPath: m_Name
       value: WallCave (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8599328716377639882, guid: 9909a357db9580b4b859df7904cef391, type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9909a357db9580b4b859df7904cef391, type: 3}
@@ -2163,6 +2203,10 @@ PrefabInstance:
       propertyPath: posOffSetGrounded.z
       value: -10
       objectReference: {fileID: 0}
+    - target: {fileID: 7145240358054539964, guid: 05de4a65476180246a9575c412431b51, type: 3}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 1902282537}
     - target: {fileID: 7145240358054539965, guid: 05de4a65476180246a9575c412431b51, type: 3}
       propertyPath: orthographic size
       value: 5.5
@@ -2366,6 +2410,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallCave (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 8599328716377639882, guid: 9909a357db9580b4b859df7904cef391, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9909a357db9580b4b859df7904cef391, type: 3}
 --- !u!114 &755186084 stripped
@@ -2389,6 +2437,10 @@ PrefabInstance:
     - target: {fileID: 2078335524157096409, guid: cbf83a93e0ba86b41b32b1faf3bd0de0, type: 3}
       propertyPath: m_Name
       value: SmallPlateform (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2078335524157096409, guid: cbf83a93e0ba86b41b32b1faf3bd0de0, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8198658136505267626, guid: cbf83a93e0ba86b41b32b1faf3bd0de0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2676,7 +2728,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 194261355736060302, guid: 83725ee394eae584082e91cfdde2c954, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 194261355747554995, guid: 83725ee394eae584082e91cfdde2c954, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2951,6 +3003,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SmallPlateform (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 3415500902796472164, guid: 3b80d9b4254741546b149c6c37054edf, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 3415500902796472166, guid: 3b80d9b4254741546b149c6c37054edf, type: 3}
       propertyPath: m_LocalPosition.x
       value: 49.970825
@@ -3051,6 +3107,10 @@ PrefabInstance:
     - target: {fileID: 8599328716377639882, guid: 9909a357db9580b4b859df7904cef391, type: 3}
       propertyPath: m_Name
       value: WallCave (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8599328716377639882, guid: 9909a357db9580b4b859df7904cef391, type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9909a357db9580b4b859df7904cef391, type: 3}
@@ -3310,6 +3370,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorCave2 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4898987082232548738, guid: 18be87d1cce36764788e4319c6f9a20d, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 5347224113824686988, guid: 18be87d1cce36764788e4319c6f9a20d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 28.470823
@@ -3524,6 +3588,10 @@ PrefabInstance:
     - target: {fileID: 2078335524157096409, guid: cbf83a93e0ba86b41b32b1faf3bd0de0, type: 3}
       propertyPath: m_Name
       value: SmallPlateform (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2078335524157096409, guid: cbf83a93e0ba86b41b32b1faf3bd0de0, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8198658136505267626, guid: cbf83a93e0ba86b41b32b1faf3bd0de0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4178,6 +4246,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorCave1
       objectReference: {fileID: 0}
+    - target: {fileID: 6943524281970599843, guid: fa787e5c40cbfc74399fbe52ed52a71f, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa787e5c40cbfc74399fbe52ed52a71f, type: 3}
 --- !u!4 &1449110691 stripped
@@ -4268,6 +4340,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallCave (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 8599328716377639882, guid: 9909a357db9580b4b859df7904cef391, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9909a357db9580b4b859df7904cef391, type: 3}
 --- !u!4 &1473802518 stripped
@@ -4357,6 +4433,10 @@ PrefabInstance:
     - target: {fileID: 8599328716377639882, guid: 9909a357db9580b4b859df7904cef391, type: 3}
       propertyPath: m_Name
       value: WallCave (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8599328716377639882, guid: 9909a357db9580b4b859df7904cef391, type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9909a357db9580b4b859df7904cef391, type: 3}
@@ -4564,6 +4644,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorCave1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6943524281970599843, guid: fa787e5c40cbfc74399fbe52ed52a71f, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa787e5c40cbfc74399fbe52ed52a71f, type: 3}
 --- !u!114 &1546710023 stripped
@@ -4631,6 +4715,10 @@ PrefabInstance:
     - target: {fileID: 5326162515257910893, guid: 5d5ff899ea0acb347b3fb49ce9f2080b, type: 3}
       propertyPath: m_Name
       value: BigPlateform (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5326162515257910893, guid: 5d5ff899ea0acb347b3fb49ce9f2080b, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d5ff899ea0acb347b3fb49ce9f2080b, type: 3}
@@ -4931,6 +5019,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallCave (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 8599328716377639882, guid: 9909a357db9580b4b859df7904cef391, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9909a357db9580b4b859df7904cef391, type: 3}
 --- !u!1 &1623586925 stripped
@@ -5046,6 +5138,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SmallPlateform (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2078335524157096409, guid: cbf83a93e0ba86b41b32b1faf3bd0de0, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 8198658136505267626, guid: cbf83a93e0ba86b41b32b1faf3bd0de0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 24.070824
@@ -5113,7 +5209,7 @@ GameObject:
   - component: {fileID: 1778552456}
   - component: {fileID: 1778552455}
   - component: {fileID: 1778552454}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: CircleAngleCave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5242,6 +5338,10 @@ PrefabInstance:
     - target: {fileID: 4898987082232548738, guid: 18be87d1cce36764788e4319c6f9a20d, type: 3}
       propertyPath: m_Name
       value: FloorCave2 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898987082232548738, guid: 18be87d1cce36764788e4319c6f9a20d, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5347224113824686988, guid: 18be87d1cce36764788e4319c6f9a20d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5836,6 +5936,11 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!50 &1902282537 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 5139079182589413464, guid: af5ff4938045f2a4da69c23494bb3197, type: 3}
+  m_PrefabInstance: {fileID: 98297801}
+  m_PrefabAsset: {fileID: 0}
 --- !u!95 &1902282538 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 6061494576707553760, guid: af5ff4938045f2a4da69c23494bb3197, type: 3}
@@ -6320,7 +6425,7 @@ GameObject:
   - component: {fileID: 2004159770}
   - component: {fileID: 2004159769}
   - component: {fileID: 2004159768}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: CircleAngleCave (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6506,6 +6611,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallCave (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 8599328716377639882, guid: 9909a357db9580b4b859df7904cef391, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9909a357db9580b4b859df7904cef391, type: 3}
 --- !u!4 &2135997558 stripped
@@ -6568,6 +6677,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BigPlateform
       objectReference: {fileID: 0}
+    - target: {fileID: 5326162515257910893, guid: 5d5ff899ea0acb347b3fb49ce9f2080b, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d5ff899ea0acb347b3fb49ce9f2080b, type: 3}
 --- !u!1001 &1485398073611313339
@@ -6625,6 +6738,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MediumPlateform
       objectReference: {fileID: 0}
+    - target: {fileID: 1485398074543575739, guid: 496ba4c33fef7c447a7e10ff48f744ed, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 496ba4c33fef7c447a7e10ff48f744ed, type: 3}
 --- !u!1001 &3223246122477037591
@@ -6637,6 +6754,10 @@ PrefabInstance:
     - target: {fileID: 3415500902796472164, guid: 3b80d9b4254741546b149c6c37054edf, type: 3}
       propertyPath: m_Name
       value: SmallPlateform
+      objectReference: {fileID: 0}
+    - target: {fileID: 3415500902796472164, guid: 3b80d9b4254741546b149c6c37054edf, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 3415500902796472166, guid: 3b80d9b4254741546b149c6c37054edf, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6739,6 +6860,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorCave1
       objectReference: {fileID: 0}
+    - target: {fileID: 6943524281970599843, guid: fa787e5c40cbfc74399fbe52ed52a71f, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa787e5c40cbfc74399fbe52ed52a71f, type: 3}
 --- !u!1001 &4366422935986556034
@@ -6751,6 +6876,10 @@ PrefabInstance:
     - target: {fileID: 4898987082232548738, guid: 18be87d1cce36764788e4319c6f9a20d, type: 3}
       propertyPath: m_Name
       value: FloorCave2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898987082232548738, guid: 18be87d1cce36764788e4319c6f9a20d, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5347224113824686988, guid: 18be87d1cce36764788e4319c6f9a20d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6852,6 +6981,10 @@ PrefabInstance:
     - target: {fileID: 8599328716377639882, guid: 9909a357db9580b4b859df7904cef391, type: 3}
       propertyPath: m_Name
       value: WallCave
+      objectReference: {fileID: 0}
+    - target: {fileID: 8599328716377639882, guid: 9909a357db9580b4b859df7904cef391, type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9909a357db9580b4b859df7904cef391, type: 3}

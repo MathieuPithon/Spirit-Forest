@@ -1102,12 +1102,17 @@ MonoBehaviour:
   jumpStamina: 10
   isJumping: 0
   isGrounded: 0
+  isNearWall: 0
+  wallJump: 0
   playerStamina: {fileID: 8614258085987808550}
   combat: {fileID: 0}
   groundCheck: {fileID: 1517007549998430642}
-  collisionLayers:
+  collisionGroundLayers:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 2048
+  collisionWallLayers:
+    serializedVersion: 2
+    m_Bits: 8192
   rb: {fileID: 5139079182589413464}
   animator: {fileID: 6061494576707553760}
   spriteRenderer: {fileID: 699785122464956145}
@@ -1206,11 +1211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04936aa95ed1bb54bbd7696b3240b754, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashSpeed: 30
-  startDashTime: 0.1
-  dashCost: 50
-  combat: {fileID: 8614258085987808551}
-  stamina: {fileID: 8614258085987808550}
+  dashLenght: 0
 --- !u!114 &3639590674104570349
 MonoBehaviour:
   m_ObjectHideFlags: 0
