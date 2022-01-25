@@ -15,40 +15,40 @@ public class CameraFollow : MonoBehaviour
 
     void Update()
     {
-        directionCameraDeplacement(rb.velocity.x,rb.velocity.y);
+        directionCameraDeplacement(rb.velocity.x, rb.velocity.y);
 
         if (movement.isGrounded)
         {
-            
-            transform.position = Vector3.SmoothDamp(transform.position, player.transform.position + posOffSetGrounded , ref velocity, timeOffSet);
+
+            transform.position = Vector3.SmoothDamp(transform.position, player.transform.position + posOffSetGrounded, ref velocity, timeOffSet);
         }
         else transform.position = Vector3.SmoothDamp(transform.position, player.transform.position + posOffSet, ref velocity, timeOffSet);
 
-        
+
     }
     void directionCameraDeplacement(float velocityX, float velocityY)
     {
         //si le personnage va en haut à droite
-        if(velocityX > -V && velocityY >V)
+        if (velocityX > -V && velocityY > V)
         {
             posOffSet=new Vector3(1f, 0.5f, -10f);
             posOffSetGrounded=new Vector3(1f, 0.5f, -10f);
             
         }
         //si le personnage va en haut à gauche
-        else if (velocityX < -V && velocityY >V )
+        else if (velocityX < -V && velocityY > V)
         {
             posOffSet=new Vector3(-1f, 0.5f, -10f);d
             posOffSetGrounded=new Vector3(-1f, 0.5f, -10f);
         }
         //si le personnage va en bas à droite
-        else if (velocityX >V && velocityY <-V)
+        else if (velocityX > V && velocityY < -V)
         {
             posOffSet=new Vector3(1f, -0.5f, -10f);
             posOffSetGrounded=new Vector3(-1f, -0.5f, -10f);
         }
         //si le personnage se va en bas à gauche
-        else if (velocityX < -V && velocityY <-V)
+        else if (velocityX < -V && velocityY < -V)
         {
             posOffSet=new Vector3(-1f, -0.5f, -10f);
             posOffSetGrounded=new Vector3(-1f, -0.5f, -10f);
@@ -60,10 +60,10 @@ public class CameraFollow : MonoBehaviour
             posOffSetGrounded=new Vector3(2f, 0f, -10f);
         }
         //si le personnage ne bouge pas
-        else 
+        else
         {
-            posOffSet=new Vector3(0f, 0f, -10f);
-            posOffSetGrounded=new Vector3(0f, 0f, -10f);
+            posOffSet = new Vector3(0f, 0f, -10f);
+            posOffSetGrounded = new Vector3(0f, 0f, -10f);
         }
         
 

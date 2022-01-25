@@ -461,7 +461,7 @@ GameObject:
   - component: {fileID: 58102471}
   - component: {fileID: 58102470}
   - component: {fileID: 58102469}
-  m_Layer: 11
+  m_Layer: 13
   m_Name: forest_wall_right (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -859,40 +859,6 @@ Transform:
   m_Father: {fileID: 1069416823}
   m_RootOrder: 38
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
---- !u!1 &106801427 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8764268654562216148, guid: af5ff4938045f2a4da69c23494bb3197, type: 3}
-  m_PrefabInstance: {fileID: 767214798}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &106801430
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 106801427}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 379a1d41d890a0b45b59f3de65392f8d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageToTake: 0
---- !u!58 &106801431
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 106801427}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
 --- !u!4 &109986883 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8585939345247523113, guid: 83496bd34c74ceb4e9165e99142e2432, type: 3}
@@ -1248,7 +1214,7 @@ GameObject:
   - component: {fileID: 275674937}
   - component: {fileID: 275674936}
   - component: {fileID: 275674935}
-  m_Layer: 11
+  m_Layer: 13
   m_Name: plateforme foret3_Plan de travail 1 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1466,7 +1432,7 @@ GameObject:
   - component: {fileID: 288523448}
   - component: {fileID: 288523447}
   - component: {fileID: 288523446}
-  m_Layer: 11
+  m_Layer: 13
   m_Name: forest_wall_right (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1630,7 +1596,7 @@ GameObject:
   - component: {fileID: 327091243}
   - component: {fileID: 327091242}
   - component: {fileID: 327091241}
-  m_Layer: 11
+  m_Layer: 13
   m_Name: plateforme foret3_Plan de travail 1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2245,7 +2211,7 @@ GameObject:
   - component: {fileID: 502110792}
   - component: {fileID: 502110791}
   - component: {fileID: 502110790}
-  m_Layer: 11
+  m_Layer: 13
   m_Name: forest_wall_right (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4436,6 +4402,18 @@ PrefabInstance:
       propertyPath: startDashTime
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8987121174867737947, guid: af5ff4938045f2a4da69c23494bb3197, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2044014184}
+    - target: {fileID: 8987121174867737947, guid: af5ff4938045f2a4da69c23494bb3197, type: 3}
+      propertyPath: dashLenght
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8987121174867737947, guid: af5ff4938045f2a4da69c23494bb3197, type: 3}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 2044014192}
     m_RemovedComponents:
     - {fileID: 8614258085987808546, guid: af5ff4938045f2a4da69c23494bb3197, type: 3}
     - {fileID: 8073313470511287212, guid: af5ff4938045f2a4da69c23494bb3197, type: 3}
@@ -7000,7 +6978,7 @@ GameObject:
   - component: {fileID: 1073353056}
   - component: {fileID: 1073353055}
   - component: {fileID: 1073353057}
-  m_Layer: 11
+  m_Layer: 13
   m_Name: forest_wall_bothSides_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8819,7 +8797,7 @@ GameObject:
   - component: {fileID: 1459942193}
   - component: {fileID: 1459942192}
   - component: {fileID: 1459942194}
-  m_Layer: 11
+  m_Layer: 13
   m_Name: plateforme foret3_Plan de travail 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8928,7 +8906,7 @@ GameObject:
   - component: {fileID: 1478282067}
   - component: {fileID: 1478282066}
   - component: {fileID: 1478282065}
-  m_Layer: 11
+  m_Layer: 13
   m_Name: plateforme foret3_Plan de travail 1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9542,7 +9520,7 @@ GameObject:
   - component: {fileID: 1761796715}
   - component: {fileID: 1761796714}
   - component: {fileID: 1761796713}
-  m_Layer: 11
+  m_Layer: 13
   m_Name: forest_wall_right (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9907,7 +9885,7 @@ GameObject:
   - component: {fileID: 1830873939}
   - component: {fileID: 1830873938}
   - component: {fileID: 1830873937}
-  m_Layer: 11
+  m_Layer: 13
   m_Name: forest_wall_right (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10016,7 +9994,7 @@ GameObject:
   - component: {fileID: 1832872190}
   - component: {fileID: 1832872189}
   - component: {fileID: 1832872188}
-  m_Layer: 11
+  m_Layer: 13
   m_Name: forest_wall_right (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11823,7 +11801,7 @@ GameObject:
   - component: {fileID: 2111716706}
   - component: {fileID: 2111716705}
   - component: {fileID: 2111716704}
-  m_Layer: 11
+  m_Layer: 13
   m_Name: forest_wall_right (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12173,7 +12151,7 @@ GameObject:
   - component: {fileID: 2142065142}
   - component: {fileID: 2142065141}
   - component: {fileID: 2142065143}
-  m_Layer: 11
+  m_Layer: 13
   m_Name: forest_wall_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}

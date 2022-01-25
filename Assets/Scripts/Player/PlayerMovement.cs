@@ -1,6 +1,6 @@
-﻿using UnityEngine;
+using UnityEngine;
 
-// Thomas - Fait les déplacement du joueurs 
+// Thomas - Fait les déplacement du joueurs
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -14,13 +14,16 @@ public class PlayerMovement : MonoBehaviour
 
     public bool isJumping;
     public bool isGrounded;
+    public bool isNearWall;
+    public int wallJump = 0;
     //public bool faceRight = true;
     //public bool combatMode = false;
 
     public PlayerStamina playerStamina;
     public PlayerCombat combat;
     public Transform groundCheck;
-    public LayerMask collisionLayers;
+    public LayerMask collisionGroundLayers;
+    public LayerMask collisionWallLayers;
     public Rigidbody2D rb;
     public Animator animator;
     public SpriteRenderer spriteRenderer;
@@ -42,6 +45,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        if (isGrounded == true)
+        {
+            wallJump = 0;
+        }
+
 
         if ((rb.velocity.x > 0.3f && isGrounded == true) || (rb.velocity.x < -0.3f && isGrounded == true))
         {
@@ -57,9 +65,13 @@ public class PlayerMovement : MonoBehaviour
 
         horizontalMovement = Input.GetAxis("Horizontal") * moveSpeed * Time.fixedDeltaTime * facingCoef;
 
-        if (Input.GetButtonDown("Jump") && (isGrounded == true) && (playerStamina.CurrentStamina >= jumpStamina)) //Jump correspond par defaut à la barre espace
+        if (Input.GetButtonDown("Jump") && ((isGrounded == true) || (isNearWall && wallJump < 1)) && (playerStamina.CurrentStamina >= jumpStamina)) //Jump correspond par defaut à la barre espace
         {
             isJumping = true;
+            if(isNearWall == true)
+            {
+              wallJump ++;
+            }
             playerStamina.LoseStamina(jumpStamina);
         }
 
@@ -92,9 +104,10 @@ public class PlayerMovement : MonoBehaviour
     }
     void FixedUpdate()//FIXED UPDATE S'UTILISE SEULEMENT POUR LES OPERATIONS DE PHYSIQUE (pas d'input ou quoi que ce soit d'autre)
     {
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, collisionLayers);
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, collisionGroundLayers);
         MovePlayer(horizontalMovement);                                 //Si pb de déplacement remettre cette ligne dans fixedUpdate
 
+        isNearWall = playerCollider.IsTouchingLayers(collisionWallLayers);
     }
 
     void Flip(float _velocity)
@@ -109,7 +122,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void SlowPlayer(float slow)//Pas encore testé   
+    public void SlowPlayer(float slow)//Pas encore testé
     {
         moveSpeed *= (1 / slow);
     }
@@ -119,7 +132,3 @@ public class PlayerMovement : MonoBehaviour
         moveSpeed *= speed;
     }
 }
-
-
-
-
