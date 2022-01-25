@@ -4156,7 +4156,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 542535724142451990, guid: af5ff4938045f2a4da69c23494bb3197, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 713577182054399107, guid: af5ff4938045f2a4da69c23494bb3197, type: 3}
       propertyPath: m_Enabled
@@ -4422,10 +4422,15 @@ PrefabInstance:
       propertyPath: rb
       value: 
       objectReference: {fileID: 2044014192}
+    - target: {fileID: 8987121174867737947, guid: af5ff4938045f2a4da69c23494bb3197, type: 3}
+      propertyPath: theplayer
+      value: 
+      objectReference: {fileID: 2044014184}
     m_RemovedComponents:
     - {fileID: 8614258085987808546, guid: af5ff4938045f2a4da69c23494bb3197, type: 3}
     - {fileID: 8073313470511287212, guid: af5ff4938045f2a4da69c23494bb3197, type: 3}
     - {fileID: 4343844574778448674, guid: af5ff4938045f2a4da69c23494bb3197, type: 3}
+    - {fileID: 8987121174867737947, guid: af5ff4938045f2a4da69c23494bb3197, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: af5ff4938045f2a4da69c23494bb3197, type: 3}
 --- !u!82 &767214799 stripped
 AudioSource:
@@ -4704,7 +4709,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 194261353683067291, guid: 83725ee394eae584082e91cfdde2c954, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 194261353693514476, guid: 83725ee394eae584082e91cfdde2c954, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -11016,6 +11021,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49d7fdfee23fbe34caeb5d8be25d81e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2044014197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2044014184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c1c0846d31d6354e92a19970688e3de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dashLenght: 100
+  dashSpeed: 0
+  rb: {fileID: 2044014192}
 --- !u!114 &2044014199
 MonoBehaviour:
   m_ObjectHideFlags: 0
