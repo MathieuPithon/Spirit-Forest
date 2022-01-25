@@ -859,40 +859,6 @@ Transform:
   m_Father: {fileID: 1069416823}
   m_RootOrder: 38
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
---- !u!1 &106801427 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8764268654562216148, guid: af5ff4938045f2a4da69c23494bb3197, type: 3}
-  m_PrefabInstance: {fileID: 767214798}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &106801430
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 106801427}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 379a1d41d890a0b45b59f3de65392f8d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageToTake: 0
---- !u!58 &106801431
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 106801427}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
 --- !u!4 &109986883 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8585939345247523113, guid: 83496bd34c74ceb4e9165e99142e2432, type: 3}
@@ -4436,6 +4402,18 @@ PrefabInstance:
       propertyPath: startDashTime
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8987121174867737947, guid: af5ff4938045f2a4da69c23494bb3197, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2044014184}
+    - target: {fileID: 8987121174867737947, guid: af5ff4938045f2a4da69c23494bb3197, type: 3}
+      propertyPath: dashLenght
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8987121174867737947, guid: af5ff4938045f2a4da69c23494bb3197, type: 3}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 2044014192}
     m_RemovedComponents:
     - {fileID: 8614258085987808546, guid: af5ff4938045f2a4da69c23494bb3197, type: 3}
     - {fileID: 8073313470511287212, guid: af5ff4938045f2a4da69c23494bb3197, type: 3}
@@ -10962,6 +10940,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11c691c745acf0642a3506784fc3dd85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &2044014192 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 5139079182589413464, guid: af5ff4938045f2a4da69c23494bb3197, type: 3}
+  m_PrefabInstance: {fileID: 767214798}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2044014193
 MonoBehaviour:
   m_ObjectHideFlags: 0

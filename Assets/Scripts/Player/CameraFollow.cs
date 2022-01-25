@@ -17,34 +17,34 @@ public class CameraFollow : MonoBehaviour
 
         if (movement.isGrounded)
         {
-            
-            transform.position = Vector3.SmoothDamp(transform.position, player.transform.position + posOffSetGrounded , ref velocity, timeOffSet);
+
+            transform.position = Vector3.SmoothDamp(transform.position, player.transform.position + posOffSetGrounded, ref velocity, timeOffSet);
         }
         else transform.position = Vector3.SmoothDamp(transform.position, player.transform.position + posOffSet, ref velocity, timeOffSet);
 
-        
+
     }
 
     void directionCameraDeplacement(float velocity)
     {
 
-        rb = player.GetComponent<RigidBody>();
+        rb = player.GetComponent<Rigidbody>();
         print(rb.velocity);
 
-        if(velocity > 1f)
+        if (velocity > 1f)
         {
-            posOffSet=new Vector3(2f, 0f, -10f);
-            posOffSetGrounded=new Vector3(2f, 0f, -10f);
+            posOffSet = new Vector3(2f, 0f, -10f);
+            posOffSetGrounded = new Vector3(2f, 0f, -10f);
         }
-        else if (velocity<-1f)
+        else if (velocity < -1f)
         {
-            posOffSet=new Vector3(-2f, 0f, -10f);
-            posOffSetGrounded=new Vector3(-2f, 0f, -10f);
+            posOffSet = new Vector3(-2f, 0f, -10f);
+            posOffSetGrounded = new Vector3(-2f, 0f, -10f);
         }
-        else 
+        else
         {
-            posOffSet=new Vector3(0f, 0f, -10f);
-            posOffSetGrounded=new Vector3(0f, 0f, -10f);
+            posOffSet = new Vector3(0f, 0f, -10f);
+            posOffSetGrounded = new Vector3(0f, 0f, -10f);
         }
     }
 }
