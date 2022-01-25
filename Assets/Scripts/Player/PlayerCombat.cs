@@ -53,7 +53,6 @@ public class PlayerCombat : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.LeftControl))
-        //condition qui permet d'entrer ou de sortir du mode combat si on aption sur ctrlGauche
         {
             if (combatMode == false)
             {
@@ -73,7 +72,6 @@ public class PlayerCombat : MonoBehaviour
         }
 
         if (combatMode == true)
-
         {
 
             if (mainCamera.orthographicSize >= 3f)
@@ -194,7 +192,7 @@ public class PlayerCombat : MonoBehaviour
         }
     }
 
-    void AttackLight()
+    void AttackStaticLightUp()
     {
         // Jouer l'animation d'attaque
         animator.SetTrigger("Attack");
@@ -203,7 +201,7 @@ public class PlayerCombat : MonoBehaviour
         sound();
 
         // Detecter les ennemis dans la zonne d'attaque
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackLight.position, attackRange, enemyLayers);
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackStaticLightUpPoint.position, attackRange, enemyLayers);
 
 
         // Effectuer les dégats sur les ennemis
@@ -217,7 +215,7 @@ public class PlayerCombat : MonoBehaviour
             Debug.Log("Hit");
         }
     }
-    void AttackHeavy()
+    void AttackStaticLightDown()
     {
         // Jouer l'animation d'attaque
         animator.SetTrigger("Attack");
@@ -226,7 +224,7 @@ public class PlayerCombat : MonoBehaviour
         sound();
 
         // Detecter les ennemis dans la zonne d'attaque
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackHeavy.position, attackRange, enemyLayers);
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackStaticLightDownPoint.position, attackRange, enemyLayers);
 
 
         // Effectuer les dégats sur les ennemis
@@ -242,17 +240,184 @@ public class PlayerCombat : MonoBehaviour
 
         }
     }
+    void AttackForwardLightUp()
+    {
+        // Jouer l'animation d'attaque
+        animator.SetTrigger("Attack");
+        attackUpAnimator.SetTrigger("Attack");
+
+        sound();
+
+        // Detecter les ennemis dans la zonne d'attaque
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackForwardLightUpPoint.position, attackRange, enemyLayers);
+
+        // Effectuer les dégats sur les ennemis
+        foreach (Collider2D Enemy in hitEnemies)
+        {
+            Enemy.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(damageToGive);
+            Debug.Log("Hit");
+        }
+    }
+    void AttackForwardLightDown()
+    {
+        // Jouer l'animation d'attaque
+        animator.SetTrigger("Attack");
+        attackDownAnimator.SetTrigger("Attack");
+
+        sound();
+
+        // Detecter les ennemis dans la zonne d'attaque
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackForwardLightDownPoint.position, attackRange, enemyLayers);
+
+        // Effectuer les dégats sur les ennemis
+        foreach (Collider2D Enemy in hitEnemies)
+        {
+            Enemy.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(damageToGive);
+            Debug.Log("Hit");
+        }
+    }
+    void AttackBackwardLightUp()
+    {
+        // Jouer l'animation d'attaque
+        animator.SetTrigger("Attack");
+        attackUpAnimator.SetTrigger("Attack");
+
+        sound();
+
+        // Detecter les ennemis dans la zonne d'attaque
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackBackwardLightUpPoint.position, attackRange, enemyLayers);
+
+        // Effectuer les dégats sur les ennemis
+        foreach (Collider2D Enemy in hitEnemies)
+        {
+            Enemy.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(damageToGive);
+            Debug.Log("Hit");
+        }
+    }
+    void AttackBackwardLightDown()
+    {
+        // Jouer l'animation d'attaque
+        animator.SetTrigger("Attack");
+        attackDownAnimator.SetTrigger("Attack");
+
+        sound();
+
+        // Detecter les ennemis dans la zonne d'attaque
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackBackwardLightDownPoint.position, attackRange, enemyLayers);
+
+        // Effectuer les dégats sur les ennemis
+        foreach (Collider2D Enemy in hitEnemies)
+        {
+            Enemy.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(damageToGive);
+            Debug.Log("Hit");
+        }
+    }
+    void AttackUpLightUp()
+    {
+        // Jouer l'animation d'attaque
+        animator.SetTrigger("Attack");
+        attackUpAnimator.SetTrigger("Attack");
+
+        sound();
+
+        // Detecter les ennemis dans la zonne d'attaque
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackUpLightUpPoint.position, attackRange, enemyLayers);
+
+        // Effectuer les dégats sur les ennemis
+        foreach (Collider2D Enemy in hitEnemies)
+        {
+            Enemy.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(damageToGive);
+            Debug.Log("Hit");
+        }
+    }
+    void AttackDownLightDown()
+    {
+        // Jouer l'animation d'attaque
+        animator.SetTrigger("Attack");
+        attackDownAnimator.SetTrigger("Attack");
+
+        sound();
+
+        // Detecter les ennemis dans la zonne d'attaque
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackDownLightDownPoint.position, attackRange, enemyLayers);
+
+        // Effectuer les dégats sur les ennemis
+        foreach (Collider2D Enemy in hitEnemies)
+        {
+            Enemy.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(damageToGive);
+            Debug.Log("Hit");
+        }
+    }
 
 
     void OnDrawGizmosSelected()
     {
-        if (attackLight == null)
+        if (attackStaticLightUpPoint == null)
             return;
-        Gizmos.DrawWireSphere(attackLight.position, attackRange);
+        Gizmos.DrawWireSphere(attackStaticLightUpPoint.position, attackRange);
 
-        if (attackHeavy == null)
+        if (attackStaticLightDownPoint == null)
             return;
-        Gizmos.DrawWireSphere(attackHeavy.position, attackRange);
+        Gizmos.DrawWireSphere(attackStaticLightDownPoint.position, attackRange);
+
+        if (attackForwardLightUpPoint == null)
+            return;
+        Gizmos.DrawWireSphere(attackForwardLightUpPoint.position, attackRange);
+
+        if (attackForwardLightDownPoint == null)
+            return;
+        Gizmos.DrawWireSphere(attackForwardLightDownPoint.position, attackRange);
+
+        if (attackBackwardLightUpPoint == null)
+            return;
+        Gizmos.DrawWireSphere(attackBackwardLightUpPoint.position, attackRange);
+
+        if (attackBackwardLightDownPoint == null)
+            return;
+        Gizmos.DrawWireSphere(attackBackwardLightDownPoint.position, attackRange);
+
+        if (attackUpLightUpPoint == null)
+            return;
+        Gizmos.DrawWireSphere(attackUpLightUpPoint.position, attackRange);
+
+        if (attackDownLightDownPoint == null)
+            return;
+        Gizmos.DrawWireSphere(attackDownLightDownPoint.position, attackRange);
+
     }
+
+    public void CombatIndicateur()
+    {
+        if (Input.GetKey("down"))
+        {
+            indicateurBas.SetActive(true);
+            indicateurHaut.SetActive(false);
+            placement = false;
+        }
+        else if (Input.GetKey("up") || Input.mousePosition.y > Screen.height * 0.5f)
+        {
+            indicateurHaut.SetActive(true);
+            indicateurBas.SetActive(false);
+            placement = true;
+        }
+        else if (Input.mousePosition.y < Screen.height * 0.5f)
+        {
+            indicateurBas.SetActive(true);
+            indicateurHaut.SetActive(false);
+            placement = false;
+        }
+
+        if (Input.mousePosition.x > Screen.width * 0.5f)
+        {
+            faceRight = true;
+            spriteRenderer.transform.localScale = new Vector3(0.21f, 0.17f, 1);
+        }
+        else
+        {
+            faceRight = false;
+            spriteRenderer.transform.localScale = new Vector3(-0.21f, 0.17f, 1);
+        }
+    }
+
 
 }
