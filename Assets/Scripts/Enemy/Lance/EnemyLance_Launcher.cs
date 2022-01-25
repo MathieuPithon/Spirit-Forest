@@ -85,7 +85,6 @@ public class EnemyLance_Launcher : MonoBehaviour
     void goBackward()
     {
         Vector3 vecAgro = transform.position.Y() - cible.position.Y();
-        Debug.Log(vecAgro);
         transform.Translate(vecAgro.normalized * 4 * Time.deltaTime, Space.World);
         anim.SetFloat("speed", 1.0f);
 
@@ -135,7 +134,7 @@ public class EnemyLance_Launcher : MonoBehaviour
     void Update()
     {
         //rb.velocity.x = vitesse du personnage sur axe X
-        float characterVelocity = Mathf.Abs(rb.velocity.x);            
+        float characterVelocity = Mathf.Abs(rb.velocity.x);
         animator.SetFloat("speed", characterVelocity);
         float ecareGate = Vector2.Distance(gate.position, transform.position);
         if (isAttacking)

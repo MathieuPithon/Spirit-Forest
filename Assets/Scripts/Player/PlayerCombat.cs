@@ -14,7 +14,7 @@ public class PlayerCombat : MonoBehaviour
     public GameObject topBar;
     public GameObject bottomBar;
     public SpriteRenderer spriteRenderer;
-    public Camera mainCamera; 
+    public Camera mainCamera;
 
     public Transform attackStaticLightUpPoint;
     public Transform attackStaticLightDownPoint;
@@ -34,7 +34,7 @@ public class PlayerCombat : MonoBehaviour
     public bool paradeActive = false;
 
 
-    
+
     public AudioSource sound1;
     public AudioSource sound2;
     public AudioSource sound3;
@@ -45,9 +45,9 @@ public class PlayerCombat : MonoBehaviour
     public AudioSource disengagingCombat;
     public AudioSource engagingCombat;
 
-    private int compteur = 0 ;
+    private int compteur = 0;
 
-    
+
 
 
     void Update()
@@ -59,14 +59,14 @@ public class PlayerCombat : MonoBehaviour
                 combatMode = true;
                 disengagingCombat.Play();
                 combatMusic.Play();
-                baseMusic.Stop(); 
+                baseMusic.Stop();
             }
             else
             {
                 combatMode = false;
                 engagingCombat.Play();
                 combatMusic.Stop();
-                baseMusic.Play(); 
+                baseMusic.Play();
 
             }
         }
@@ -79,7 +79,7 @@ public class PlayerCombat : MonoBehaviour
 
             if (topBar.transform.position.y >= Screen.height * 1.37f)
                 topBar.transform.position = new Vector2(topBar.transform.position.x, topBar.transform.position.y - 5f);
-                //Debug.Log(Screen.height * 0.9);
+            //Debug.Log(Screen.height * 0.9);
             if (bottomBar.transform.position.y <= Screen.height * -0.37f)
                 bottomBar.transform.position = new Vector2(bottomBar.transform.position.x, bottomBar.transform.position.y + 5f);
 
@@ -143,9 +143,9 @@ public class PlayerCombat : MonoBehaviour
             indicateurBas.SetActive(false);
             indicateurHaut.SetActive(false);
 
-            if (mainCamera.orthographicSize <= 6.2f)
+            if (mainCamera.orthographicSize <= 4f)
                 mainCamera.orthographicSize += 0.03f;
-           
+
             if (topBar.transform.position.y <= Screen.height * 1.7f)
                 topBar.transform.position = new Vector2(topBar.transform.position.x, topBar.transform.position.y + 5f);
             //Debug.Log(Screen.height * 0.9);
@@ -170,7 +170,7 @@ public class PlayerCombat : MonoBehaviour
             compteur = 1;
         }
 
-        if(compteur == 1)
+        if (compteur == 1)
         {
             sound1.Play();
 
@@ -178,17 +178,17 @@ public class PlayerCombat : MonoBehaviour
         if (compteur == 2)
         {
             sound2.Play();
-           
+
         }
         if (compteur == 3)
         {
             sound3.Play();
-            
+
         }
         else
         {
             sound4.Play();
-            
+
         }
     }
 
@@ -203,11 +203,11 @@ public class PlayerCombat : MonoBehaviour
         // Detecter les ennemis dans la zonne d'attaque
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackStaticLightUpPoint.position, attackRange, enemyLayers);
 
-        
+
         // Effectuer les dégats sur les ennemis
         foreach (Collider2D Enemy in hitEnemies)
         {
-            if(Enemy.gameObject.tag == "Enemy")
+            if (Enemy.gameObject.tag == "Enemy")
             {
                 Debug.Log("Hit Enemy");
             }
@@ -236,8 +236,8 @@ public class PlayerCombat : MonoBehaviour
             {
                 Debug.Log("Hit Enemy");
             }
-            
-            
+
+
         }
     }
     void AttackForwardLightUp()
@@ -419,5 +419,5 @@ public class PlayerCombat : MonoBehaviour
         }
     }
 
-    
+
 }

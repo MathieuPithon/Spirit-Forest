@@ -17,10 +17,12 @@ public class CameraFollow : MonoBehaviour
 
         if (movement.isGrounded)
         {
-            transform.position = Vector3.SmoothDamp(transform.position, player.transform.position + posOffSetGrounded, ref velocity, timeOffSet);
+            
+            transform.position = Vector3.SmoothDamp(transform.position, player.transform.position + posOffSetGrounded , ref velocity, timeOffSet);
         }
         else transform.position = Vector3.SmoothDamp(transform.position, player.transform.position + posOffSet, ref velocity, timeOffSet);
 
+        
     }
 
     void directionCameraDeplacement(float velocity)
