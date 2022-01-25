@@ -31,27 +31,33 @@ public class CameraFollow : MonoBehaviour
         //si le personnage va en haut à droite
         if(velocityX > -V && velocityY >V)
         {
-            posOffSet=new Vector3(3f, 2f, -10f);
-            posOffSetGrounded=new Vector3(3f, 2f, -10f);
+            posOffSet=new Vector3(1f, 0.5f, -10f);
+            posOffSetGrounded=new Vector3(1f, 0.5f, -10f);
             
         }
         //si le personnage va en haut à gauche
         else if (velocityX < -V && velocityY >V )
         {
-            posOffSet=new Vector3(-3f, 2f, -10f);
-            posOffSetGrounded=new Vector3(-3f, 2f, -10f);
+            posOffSet=new Vector3(-1f, 0.5f, -10f);d
+            posOffSetGrounded=new Vector3(-1f, 0.5f, -10f);
         }
         //si le personnage va en bas à droite
         else if (velocityX >V && velocityY <-V)
         {
-            posOffSet=new Vector3(3f, -2f, -10f);
-            posOffSetGrounded=new Vector3(-3f, -2f, -10f);
+            posOffSet=new Vector3(1f, -0.5f, -10f);
+            posOffSetGrounded=new Vector3(-1f, -0.5f, -10f);
         }
         //si le personnage se va en bas à gauche
         else if (velocityX < -V && velocityY <-V)
         {
-            posOffSet=new Vector3(-3f, -2f, -10f);
-            posOffSetGrounded=new Vector3(0f, -2f, -10f);
+            posOffSet=new Vector3(-1f, -0.5f, -10f);
+            posOffSetGrounded=new Vector3(-1f, -0.5f, -10f);
+        } 
+        //si le personnage se déplace sur la droite sans sauter
+        else if(velocityX > V )
+        {
+            posOffSet=new Vector3(2f, 0f, -10f);
+            posOffSetGrounded=new Vector3(2f, 0f, -10f);
         }
         //si le personnage ne bouge pas
         else 
@@ -59,5 +65,8 @@ public class CameraFollow : MonoBehaviour
             posOffSet=new Vector3(0f, 0f, -10f);
             posOffSetGrounded=new Vector3(0f, 0f, -10f);
         }
+        
+
+       
     }
 }
