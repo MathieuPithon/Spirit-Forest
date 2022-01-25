@@ -11033,8 +11033,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c1c0846d31d6354e92a19970688e3de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashLenght: 5
-  dashSpeed: 6
+  dashLenght: 100
+  dashSpeed: 0
+  rb: {fileID: 2044014192}
 --- !u!114 &2044014199
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -15,15 +15,27 @@ public class Player_Dash : MonoBehaviour
     private Vector3 velocity = Vector3.zero;
     void Update()
     {
+        if (rb.velocity.x > 7)
+        {
+            rb.GetComponent<Rigidbody2D>().gravityScale = 0f;
+            Debug.Log("1");
+        }
+        else
+        {
+            rb.GetComponent<Rigidbody2D>().gravityScale = 1f;
+            Debug.Log("0");
+        }
         if (Input.GetKeyDown(KeyCode.LeftShift) && transform.localScale.x > 0f)
         {
-            rb.AddForce(new Vector2(transform.position.x + dashLenght, transform.position.y));
+            rb.velocity = new Vector2(rb.velocity.x + dashLenght, rb.velocity.y);
         }
         else if (Input.GetKeyDown(KeyCode.LeftShift) && transform.localScale.x < 0f)
         {
-            rb.MovePosition(transform.right * (new Vector2(transform.position.x - dashLenght, transform.position.y)));
+            rb.velocity = new Vector2(rb.velocity.x - dashLenght, rb.velocity.y);
         }
     }
+
+
 }
 
 // public void MovePlayer(float _horizontalMovement)
