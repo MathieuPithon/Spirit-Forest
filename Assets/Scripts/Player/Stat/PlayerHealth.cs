@@ -23,6 +23,17 @@ public class PlayerHealth : MonoBehaviour
     public SpriteRenderer graphics;
     public HealthBar healthBar;
     public AudioSource hurtSound;
+
+    public static PlayerHealth instance;
+
+    private void Awake(){
+        if (instance != null){
+            Debug.LogWarning("Il y a plus d'une instance de PlayerHealth dans la scene ");
+            return;
+        }
+        instance = this;
+    }
+
     void Start()
     {
         CurrentHealth = maxHealth;
@@ -33,8 +44,8 @@ public class PlayerHealth : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.H))
         {//test
-            TakeDamage(19, false);
-            Debug.Log("take damage");
+            TakeDamage(100, false);
+
         }
         if (healingInProgress)
         {
@@ -64,6 +75,8 @@ public class PlayerHealth : MonoBehaviour
     {
         if (!isInvincible)
         {
+             Debug.Log(currentHealth);
+            
             if (combat.placement == attackPlacement)
             {
                 if (combat.paradeActive == true)
@@ -81,7 +94,24 @@ public class PlayerHealth : MonoBehaviour
                 StartCoroutine(HandleInvincibilityDelay());
             }
         }
+        //vérifier si le joueur est en vie
+        if(currentHealth <=0 ){
+                Die();
+                
+            }
 
+    }
+
+    public void Die()
+    {
+        
+        Debug.Log("Le joueur est dead");
+        PlayerMovement.instance.enabled = false;
+        PlayerMovement.instance.animator.SetTrigger("Die");
+        
+        //jouer animation de mort 
+                //bloquer les action 
+                //empêcher les interaction physique avec les autre éléments 
     }
     public void Healing(float heal)
     {

@@ -19,12 +19,12 @@ public class Player_Dash : MonoBehaviour
         if (rb.velocity.x > 7)
         {
             rb.GetComponent<Rigidbody2D>().gravityScale = 0f;
-            Debug.Log("1");
+            
         }
         else
         {
             rb.GetComponent<Rigidbody2D>().gravityScale = 1f;
-            Debug.Log("0");
+            
         }
 
         // transform.localScale.x > 0f true si le perso regarde a droite 
