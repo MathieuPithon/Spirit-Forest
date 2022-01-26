@@ -909,7 +909,6 @@ GameObject:
   - component: {fileID: 7740850819667362058}
   - component: {fileID: 8614258085987808551}
   - component: {fileID: 8412577261133269315}
-  - component: {fileID: 8987121174867737947}
   - component: {fileID: 3639590674104570349}
   - component: {fileID: 24637721866452953}
   m_Layer: 8
@@ -1098,7 +1097,6 @@ MonoBehaviour:
   moveSpeed: 350
   jumpForce: 550
   groundCheckRadius: 0.5
-  facingCoef: 1
   jumpStamina: 10
   isJumping: 0
   isGrounded: 0
@@ -1197,21 +1195,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ed1a3667d87ad641b3d499e8b2a912b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fallMultiplier: 2.5
-  lowJumpMultiplier: 2
---- !u!114 &8987121174867737947
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8614258085987808544}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04936aa95ed1bb54bbd7696b3240b754, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dashLenght: 0
 --- !u!114 &3639590674104570349
 MonoBehaviour:
   m_ObjectHideFlags: 0
