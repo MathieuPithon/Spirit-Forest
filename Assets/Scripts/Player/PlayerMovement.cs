@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce;
     public float groundCheckRadius;
     private float horizontalMovement;
+    public float facingCoef = 1f;
     public int jumpStamina = 10;
 
     public bool isJumping;
@@ -62,14 +63,14 @@ public class PlayerMovement : MonoBehaviour
             audioSrc.Stop();
         }
 
-        horizontalMovement = Input.GetAxis("Horizontal") * moveSpeed * Time.fixedDeltaTime;
+        horizontalMovement = Input.GetAxis("Horizontal") * moveSpeed * Time.fixedDeltaTime * facingCoef;
 
-        if (Input.GetKeyDown("space") && ((isGrounded == true) || (isNearWall && wallJump < 1)) && (playerStamina.CurrentStamina >= jumpStamina)) //Jump correspond par defaut à la barre espace
+        if (Input.GetButtonDown("Jump") && ((isGrounded == true) || (isNearWall && wallJump < 1)) && (playerStamina.CurrentStamina >= jumpStamina)) //Jump correspond par defaut à la barre espace
         {
             isJumping = true;
-            if (isNearWall == true)
+            if(isNearWall == true)
             {
-                wallJump++;
+              wallJump ++;
             }
             playerStamina.LoseStamina(jumpStamina);
         }
@@ -104,7 +105,7 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()//FIXED UPDATE S'UTILISE SEULEMENT POUR LES OPERATIONS DE PHYSIQUE (pas d'input ou quoi que ce soit d'autre)
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, collisionGroundLayers);
-        MovePlayer(horizontalMovement);
+        MovePlayer(horizontalMovement);                                 //Si pb de déplacement remettre cette ligne dans fixedUpdate
 
         isNearWall = playerCollider.IsTouchingLayers(collisionWallLayers);
     }
