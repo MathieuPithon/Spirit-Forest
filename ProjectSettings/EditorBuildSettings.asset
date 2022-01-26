@@ -6,24 +6,24 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
+    path: Assets/Scenes/Menu.unity
     guid: 64a3c0b59c2693047bc5f32f26a2a7db
   - enabled: 0
-    path: Assets/Scenes/TutorialLevel.unity
+    path: Assets/Scenes/Tuto.unity
     guid: 328f8b48a85f38b448f2d3cdf3a9e3cc
   - enabled: 0
-    path: Assets/Scenes/Level01.unity
+    path: Assets/Scenes/inutile2.unity
     guid: 3cdacadfcc7faef4e9a6cdb7efaecf37
   - enabled: 0
-    path: Assets/Scenes/Level02.unity
+    path: Assets/Scenes/inutile.unity
     guid: b2a2aa66bd559454d80a6d77acb2968c
   - enabled: 1
-    path: Assets/Scenes/MainLevel01.unity
+    path: "Assets/Scenes/For\xEAt.unity"
     guid: 6be1d56cbf51ac1409a0271470495d8b
   - enabled: 1
-    path: Assets/Scenes/MainLevel02.unity
+    path: Assets/Scenes/Scene5_cave.unity
     guid: d05e140687767484ab3cb7f6bf0c669e
   - enabled: 0
-    path: Assets/Scenes/MainLevel.unity
+    path: "Assets/Scenes/bac_\xE0_sable.unity"
     guid: 4a699e3813f671e43a1b6a1e96d4da8d
   m_configObjects: {}
