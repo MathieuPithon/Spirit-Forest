@@ -518,6 +518,18 @@ PrefabInstance:
       propertyPath: combat
       value: 
       objectReference: {fileID: 1902282539}
+    - target: {fileID: 8680743239553715390, guid: af5ff4938045f2a4da69c23494bb3197, type: 3}
+      propertyPath: theplayer
+      value: 
+      objectReference: {fileID: 1902282528}
+    - target: {fileID: 8680743239553715390, guid: af5ff4938045f2a4da69c23494bb3197, type: 3}
+      propertyPath: combat
+      value: 
+      objectReference: {fileID: 1902282539}
+    - target: {fileID: 8680743239553715390, guid: af5ff4938045f2a4da69c23494bb3197, type: 3}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 1902282537}
     m_RemovedComponents:
     - {fileID: 8614258085987808546, guid: af5ff4938045f2a4da69c23494bb3197, type: 3}
     - {fileID: 8073313470511287212, guid: af5ff4938045f2a4da69c23494bb3197, type: 3}
