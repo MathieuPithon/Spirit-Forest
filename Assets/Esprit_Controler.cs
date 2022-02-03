@@ -12,9 +12,8 @@ public class Esprit_Controler : MonoBehaviour
 
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        Esprit_Mouvement.EspritMouvement();
-
+        // Esprit_Mouvement.EspritMouvement();
     }
 }
