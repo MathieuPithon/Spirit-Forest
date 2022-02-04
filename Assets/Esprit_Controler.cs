@@ -15,11 +15,11 @@ public class Esprit_Controler : MonoBehaviour
 
     void FixedUpdate()
     {
-        Esprit_Mouvement.Mouvement();
-        if (Input.GetButtonDown("Jump"))
+
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             Esprit_Jump.Jump();
-            Debug.Log("testostestas");
         }
+        Esprit_Mouvement.Mouvement();
     }
 }
