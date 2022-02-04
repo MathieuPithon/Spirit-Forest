@@ -14,21 +14,11 @@ public class Esprit_Mouvement : MonoBehaviour
     private Vector3 velocity = Vector3.zero;
 
 
-    public void EspritMouvement(float horizontalMovement)
+    public void Mouvement()
     {
-
-        Vector3 wantedVelocity = new Vector2(horizontalMovement, rb.velocity.y);
-        rb.velocity = Vector3.SmoothDamp(rb.velocity, wantedVelocity, ref velocity, 0.5f);
-    }
-
-    void Update()
-    {
-
         horizontalMovement = Input.GetAxis("Horizontal") * Time.fixedDeltaTime * moveSpeed;
+        Vector3 wantedVelocity = new Vector2(horizontalMovement, rb.velocity.y);
+        rb.velocity = Vector3.SmoothDamp(rb.velocity, wantedVelocity, ref velocity, .05f);
     }
 
-    void FixedUpdate()
-    {
-        EspritMouvement(horizontalMovement);
-    }
 }
