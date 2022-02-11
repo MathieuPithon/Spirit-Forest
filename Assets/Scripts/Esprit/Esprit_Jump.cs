@@ -8,7 +8,7 @@ public class Esprit_Jump : MonoBehaviour
     private Vector3 velocity = Vector3.zero;
     public void Jump()
     {
-        Vector3 wantedVelocity = new Vector2(rb.velocity.x, 30f);
-        rb.velocity = Vector3.SmoothDamp(rb.velocity, wantedVelocity, ref velocity, .05f);
+        rb.AddForce(new Vector2(0, 10), ForceMode2D.Impulse);
     }
 }
+
