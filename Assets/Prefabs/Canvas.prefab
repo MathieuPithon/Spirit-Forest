@@ -5006,7 +5006,7 @@ GameObject:
   - component: {fileID: 194261355736060296}
   m_Layer: 5
   m_Name: Crossfade
-  m_TagString: Untagged
+  m_TagString: FadeSystem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5078,7 +5078,7 @@ Animator:
   m_GameObject: {fileID: 194261355736060302}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 168dd84a31abebc4781c8b303f9f2b55, type: 2}
+  m_Controller: {fileID: 9100000, guid: 1242c0a70882b0740be6a4f01f237ee9, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
