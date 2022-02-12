@@ -22,7 +22,7 @@ public class LoadSpecificScene : MonoBehaviour
 
     public IEnumerator LoadNextScene()
     {
-        fadeSystem.SetTrigger("FadeIn");
+        fadeSystem.SetTrigger("Start");
        /**
         PlayerMovement.instance.enabled = false;
         GameObject.Find("Player").GetComponent<PlayerActions>().enabled = false;
