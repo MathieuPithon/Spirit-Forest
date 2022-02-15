@@ -10,5 +10,14 @@ public class Esprit_Jump : MonoBehaviour
     {
         rb.AddForce(new Vector2(0, 10), ForceMode2D.Impulse);
     }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Jump();
+        }
+
+    }
 }
 

@@ -21,4 +21,9 @@ public class Esprit_Mouvement : MonoBehaviour
         rb.velocity = Vector3.SmoothDamp(rb.velocity, wantedVelocity, ref velocity, .05f);
     }
 
+    void Update()
+    {
+        Mouvement();
+    }
+
 }
