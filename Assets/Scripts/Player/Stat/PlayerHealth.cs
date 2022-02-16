@@ -75,7 +75,6 @@ public class PlayerHealth : MonoBehaviour
     {
         if (!isInvincible)
         {
-             Debug.Log(currentHealth);
             
             if (combat.placement == attackPlacement)
             {
