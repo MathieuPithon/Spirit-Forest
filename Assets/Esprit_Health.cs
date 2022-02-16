@@ -5,7 +5,7 @@ using UnityEngine;
 // Cyriaque - dans 'public Healthbar' il faut mettre la health bar qui est dans canvas 
 // si le joueur rentre en collision avec qql chose du layer Enemy alors 
 // colide = true et il prend des dmgs , quand il arrete de toucher un ennemi colide = false 
-// quand il se fait toucher une coroutine de 2 s start et pendant ce temps il est invinsible 
+// quand il se fait toucher une coroutine de 2 s start et pendant ce temps il est invincible 
 public class Esprit_Health : MonoBehaviour
 {
     private int maxHealth = 100;
@@ -23,13 +23,9 @@ public class Esprit_Health : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (invicibility == false)
+        if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
-            if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Enemy"))
-            {
-                colide = true;
-            }
-
+            colide = true;
         }
     }
 
@@ -56,7 +52,6 @@ public class Esprit_Health : MonoBehaviour
     IEnumerator Delay()
     {
         invicibility = true;
-        Debug.Log("true");
         yield return new WaitForSeconds(2f);
         invicibility = false;
     }
