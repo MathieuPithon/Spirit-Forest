@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Cyriaque - dans 'public StaminaBar' il faut mettre la stamina bar qui est dans canvas 
+// DelayCd et DelayRegene sont la psk si ont tous est juste dans 2 fonctions on peut pas appeler depuis un autre script
+
 
 public class Esprit_Stamina : MonoBehaviour
 {
@@ -20,15 +23,10 @@ public class Esprit_Stamina : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown("s"))
-        {
-            ReduceStamina(50);
-        }
         if (!cd && currentStamina < maxStamina && !cdRegene)
         {
             RegenStamina();
         }
-
         StaminaBar.SetStamina(currentStamina);
     }
 
