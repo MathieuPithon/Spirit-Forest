@@ -6,9 +6,10 @@ using UnityEngine;
 public class Esprit_Stamina : MonoBehaviour
 {
     private int maxStamina = 100;
-    private int currentStamina;
+    private float currentStamina;
     public StaminaBar StaminaBar;
     private bool cd = false;
+    private bool cdRegene = false;
 
     void Start()
     {
@@ -19,29 +20,36 @@ public class Esprit_Stamina : MonoBehaviour
 
     void Update()
     {
-        if (!cd)
+        if (Input.GetKeyDown("s"))
         {
-            RegenStamina();
+            StartCoroutine(ReduceStamina(50));
         }
+        if (!cd && currentStamina < maxStamina && !cdRegene)
+        {
+            StartCoroutine(RegenStamina());
+        }
+
+        StaminaBar.SetStamina(currentStamina);
     }
 
-    void ReduceStamina(int amount)
+    IEnumerator ReduceStamina(int amount)
     {
         currentStamina -= amount;
         StaminaBar.SetStamina(currentStamina);
-        Delay();
-    }
-
-    void RegenStamina() {
-        
-    }
-
-    IEnumerator Delay()
-    {
         cd = true;
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);
         cd = false;
     }
+
+    IEnumerator RegenStamina()
+    {
+        currentStamina += 2.5f;
+        cdRegene = true;
+        yield return new WaitForSeconds(0.1f);
+        cdRegene = false;
+    }
+
+
 
 
 }
