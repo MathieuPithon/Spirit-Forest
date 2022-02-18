@@ -43,9 +43,9 @@ public class Esprit_Stamina : MonoBehaviour
 
     IEnumerator RegenStamina()
     {
-        currentStamina += 2.5f;
+        currentStamina += 1.5f;
         cdRegene = true;
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.05f);
         cdRegene = false;
     }
 
