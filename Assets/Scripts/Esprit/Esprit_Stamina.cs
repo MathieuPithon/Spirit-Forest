@@ -22,33 +22,43 @@ public class Esprit_Stamina : MonoBehaviour
     {
         if (Input.GetKeyDown("s"))
         {
-            StartCoroutine(ReduceStamina(50));
+            ReduceStamina(50);
         }
         if (!cd && currentStamina < maxStamina && !cdRegene)
         {
-            StartCoroutine(RegenStamina());
+            RegenStamina();
         }
 
         StaminaBar.SetStamina(currentStamina);
     }
 
-    IEnumerator ReduceStamina(int amount)
+    public void ReduceStamina(int amount)
     {
         currentStamina -= amount;
         StaminaBar.SetStamina(currentStamina);
-        cd = true;
-        yield return new WaitForSeconds(2f);
-        cd = false;
+        StartCoroutine(DelayCd(1.5f));
     }
 
-    IEnumerator RegenStamina()
+    public void RegenStamina()
     {
         currentStamina += 1.5f;
+        StartCoroutine(DelayRegene(0.05f));
+    }
+
+
+    IEnumerator DelayRegene(float time)
+    {
         cdRegene = true;
-        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(time);
         cdRegene = false;
     }
 
+    IEnumerator DelayCd(float time)
+    {
+        cd = true;
+        yield return new WaitForSeconds(time);
+        cd = false;
+    }
 
 
 
