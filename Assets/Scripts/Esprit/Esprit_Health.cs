@@ -94,7 +94,7 @@ public class Esprit_Health : MonoBehaviour
         //jouer animation de mort
         esprit.GetComponent<Animator>().Play("PlayerDie");
 
-         
+
 
     }
 }
