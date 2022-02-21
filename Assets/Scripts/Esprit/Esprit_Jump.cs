@@ -8,6 +8,7 @@ public class Esprit_Jump : MonoBehaviour
 {
     public Rigidbody2D rb;
     private Vector3 velocity = Vector3.zero;
+    public Esprit_Stamina Stamina;
 
 
     public void Jump()
@@ -20,6 +21,7 @@ public class Esprit_Jump : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Jump();
+            Stamina.ReduceStamina(10);
         }
 
     }
