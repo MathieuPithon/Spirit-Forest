@@ -3469,7 +3469,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7922089134945196838, guid: 18a573116d8e844429fe7a2aeb388c33, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7922089134945196838, guid: 18a573116d8e844429fe7a2aeb388c33, type: 3}
       propertyPath: m_Name
@@ -3523,6 +3523,10 @@ PrefabInstance:
       propertyPath: xp
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7922089135354018330, guid: 18a573116d8e844429fe7a2aeb388c33, type: 3}
+      propertyPath: Samourai
+      value: 
+      objectReference: {fileID: 1316498631}
     - target: {fileID: 7922089135354018331, guid: 18a573116d8e844429fe7a2aeb388c33, type: 3}
       propertyPath: m_Sprite
       value: 
