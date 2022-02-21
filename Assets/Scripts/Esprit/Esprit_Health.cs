@@ -36,6 +36,10 @@ public class Esprit_Health : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown("h"))
+        {
+            TakeDamage(100);
+        }
         if (colide && !invicibility)
         {
             TakeDamage(20);
@@ -62,15 +66,15 @@ public class Esprit_Health : MonoBehaviour
     }
 
 
-public void Die()
+    public void Die()
     {
-        
+
         Debug.Log("Le joueur est dead");
         PlayerMovement.instance.enabled = false;
         PlayerMovement.instance.animator.SetTrigger("Die");
-        
+
         //jouer animation de mort 
-                //bloquer les action 
-                //empêcher les interaction physique avec les autre éléments 
+        //bloquer les action 
+        //empêcher les interaction physique avec les autre éléments 
     }
 }
