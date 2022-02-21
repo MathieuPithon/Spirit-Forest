@@ -3475,6 +3475,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: lanceHitBox
       objectReference: {fileID: 0}
+    - target: {fileID: 7922089134945196838, guid: 18a573116d8e844429fe7a2aeb388c33, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 7922089135180874168, guid: 18a573116d8e844429fe7a2aeb388c33, type: 3}
       propertyPath: m_Layer
       value: 0
