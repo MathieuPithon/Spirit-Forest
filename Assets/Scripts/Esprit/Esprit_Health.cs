@@ -57,4 +57,15 @@ public class Esprit_Health : MonoBehaviour
     }
 
 
+public void Die()
+    {
+        
+        Debug.Log("Le joueur est dead");
+        PlayerMovement.instance.enabled = false;
+        PlayerMovement.instance.animator.SetTrigger("Die");
+        
+        //jouer animation de mort 
+                //bloquer les action 
+                //empêcher les interaction physique avec les autre éléments 
+    }
 }
