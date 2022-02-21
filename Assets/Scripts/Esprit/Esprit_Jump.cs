@@ -10,8 +10,7 @@ public class Esprit_Jump : MonoBehaviour
     private Vector3 velocity = Vector3.zero;
     public Esprit_Stamina Stamina;
     public Esprit_IsGrounded IsGrounded;
-
-
+    public Animator animator;
     public void Jump()
     {
         rb.AddForce(new Vector2(0, 10), ForceMode2D.Impulse);
@@ -22,7 +21,12 @@ public class Esprit_Jump : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded.isGrounded)
         {
             Jump();
-            Stamina.ReduceStamina(10);
+            Stamina.ReduceStamina(10);    
+            animator.SetBool("Jump", true);        
+        
+        }else if(IsGrounded.isGrounded)
+        {
+            animator.SetBool("Jump", false);
         }
 
     }

@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 6052051924589421010}
   - component: {fileID: 4656780180709319761}
   - component: {fileID: 408428044027511056}
+  - component: {fileID: 1466890902835256247}
   m_Layer: 0
   m_Name: Esprit
   m_TagString: Player
@@ -41,6 +42,7 @@ Transform:
   m_LocalScale: {x: 0.2004366, y: 0.2004366, z: 0.2004366}
   m_Children:
   - {fileID: 1058035933600654431}
+  - {fileID: 945216261723124362}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -162,6 +164,7 @@ MonoBehaviour:
   rb: {fileID: 1809746307179047665}
   Stamina: {fileID: 1809746307179047671}
   IsGrounded: {fileID: 6052051924589421010}
+  animator: {fileID: 408428044027511056}
 --- !u!114 &1809746307179047667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,6 +194,7 @@ MonoBehaviour:
   dashLenght: 100
   rb: {fileID: 1809746307179047665}
   Stamina: {fileID: 1809746307179047671}
+  esprit: {fileID: 1809746307179047677}
 --- !u!114 &1809746307179047668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,6 +208,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 0}
+  esprit: {fileID: 0}
+  rend: {fileID: 1809746307179047676}
 --- !u!114 &1809746307179047671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -284,6 +290,55 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1466890902835256247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809746307179047677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e84c37b8b462654fa686f70bb8007d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isInCombat: 0
+  attackPos: {fileID: 945216261723124362}
+  attackRange: 0.88
+  enemies:
+    serializedVersion: 2
+    m_Bits: 512
+  damage: 20
+--- !u!1 &7345411644179733685
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 945216261723124362}
+  m_Layer: 0
+  m_Name: attackPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &945216261723124362
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7345411644179733685}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1809746307179047678}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9173205736883642594
 GameObject:
   m_ObjectHideFlags: 0

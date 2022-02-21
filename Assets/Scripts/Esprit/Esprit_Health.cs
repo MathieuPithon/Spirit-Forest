@@ -13,6 +13,8 @@ public class Esprit_Health : MonoBehaviour
     public HealthBar healthBar;
     private bool invicibility = false;
     private bool colide = false;
+    public GameObject esprit;
+    public Renderer rend;
 
     void Start()
     {
@@ -51,18 +53,32 @@ public class Esprit_Health : MonoBehaviour
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
-        
-        if(currentHealth <=0 ){
-                Die();
-                
-            }
+
+        StartCoroutine(Clignotement());
+
+        if (currentHealth <= 0)
+        {
+            Die();
+
+        }
     }
 
     IEnumerator Delay()
     {
         invicibility = true;
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1.5f);
         invicibility = false;
+    }
+    IEnumerator Clignotement()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+
+            rend.enabled = false;
+            yield return new WaitForSeconds(0.25f);
+            rend.enabled = true;
+            yield return new WaitForSeconds(0.25f);
+        }
     }
 
 
@@ -70,11 +86,15 @@ public class Esprit_Health : MonoBehaviour
     {
 
         Debug.Log("Le joueur est dead");
-        PlayerMovement.instance.enabled = false;
-        PlayerMovement.instance.animator.SetTrigger("Die");
-
-        //jouer animation de mort 
         //bloquer les action 
-        //empêcher les interaction physique avec les autre éléments 
+        GetComponent<Esprit_Mouvement>().enabled = false;
+        GetComponent<Esprit_Jump>().enabled = false;
+        GetComponent<Esprit_Health>().enabled = false;
+        GetComponent<Esprit_Dash>().enabled = false;
+        //jouer animation de mort
+        esprit.GetComponent<Animator>().Play("PlayerDie");
+
+         
+
     }
 }
