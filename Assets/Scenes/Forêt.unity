@@ -1321,12 +1321,16 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 276316327}
+  - component: {fileID: 276316328}
   - component: {fileID: 276316326}
   - component: {fileID: 276316325}
-  - component: {fileID: 276316328}
   - component: {fileID: 276316329}
   - component: {fileID: 276316331}
   - component: {fileID: 276316330}
+  - component: {fileID: 276316332}
+  - component: {fileID: 276316333}
+  - component: {fileID: 276316334}
+  - component: {fileID: 276316335}
   m_Layer: 0
   m_Name: Esprit
   m_TagString: Untagged
@@ -1409,7 +1413,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 276316324}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -18.725, y: -44.171, z: 0}
+  m_LocalPosition: {x: -13.34, y: -42.98, z: 0}
   m_LocalScale: {x: 0.2004366, y: 0.2004366, z: 0.2004366}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1459,11 +1463,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 276316324}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 277e9800d6153dc48994bc374160e6f3, type: 3}
+  m_Script: {fileID: 11500000, guid: 066852b247e54e44d875c01925a323c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Esprit_Mouvement: {fileID: 276316329}
-  Esprit_Jump: {fileID: 276316331}
+  spriteRenderer: {fileID: 276316325}
+  rb: {fileID: 276316328}
 --- !u!114 &276316331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1477,6 +1481,64 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 276316328}
+  Stamina: {fileID: 276316334}
+--- !u!114 &276316332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276316324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f86c34a6518ac047abbd0f782ea74e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dashLenght: 100
+  rb: {fileID: 276316328}
+  Stamina: {fileID: 276316334}
+--- !u!114 &276316333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276316324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 425b4339b97bd524da69a59aa2f57d88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBar: {fileID: 1005584190}
+--- !u!114 &276316334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276316324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a40966a2a3757b3428b01073e7b6ef5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StaminaBar: {fileID: 479472964}
+--- !u!114 &276316335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276316324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 200ba29c31f33514894d4e19b735b2ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelUpAlarmUI: {fileID: 1328805922}
+  levelUpAlarm: {fileID: 976866888}
+  xpBar: {fileID: 1158749389}
+  levelUpSideUI: {fileID: 1099523076}
 --- !u!1 &276923940
 GameObject:
   m_ObjectHideFlags: 0
@@ -4486,7 +4548,7 @@ PrefabInstance:
     - target: {fileID: 8614258085987808546, guid: af5ff4938045f2a4da69c23494bb3197, type: 3}
       propertyPath: fadeSystem
       value: 
-      objectReference: {fileID: 2024832177}
+      objectReference: {fileID: 0}
     - target: {fileID: 8614258085987808546, guid: af5ff4938045f2a4da69c23494bb3197, type: 3}
       propertyPath: xpBar
       value: 
@@ -5091,6 +5153,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -165.7002
       objectReference: {fileID: 0}
+    - target: {fileID: 4719221213313225448, guid: 83725ee394eae584082e91cfdde2c954, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.004760742
+      objectReference: {fileID: 0}
     - target: {fileID: 5231602645595724295, guid: 83725ee394eae584082e91cfdde2c954, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0.00048828125
@@ -5235,11 +5301,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a802227f82ef434b96176795b017a11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 2044014184}
+  player: {fileID: 276316324}
   timeOffSet: 0.2
   posOffSetGrounded: {x: 0, y: 0, z: 0}
   movement: {fileID: 2044014196}
-  rb: {fileID: 2044014192}
+  rb: {fileID: 276316328}
 --- !u!20 &814941367 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 7145240358054539965, guid: 05de4a65476180246a9575c412431b51, type: 3}
@@ -11184,11 +11250,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8585939345247523113, guid: 83496bd34c74ceb4e9165e99142e2432, type: 3}
   m_PrefabInstance: {fileID: 265560390}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &2024832177 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 194261355736060299, guid: 83725ee394eae584082e91cfdde2c954, type: 3}
-  m_PrefabInstance: {fileID: 812601582}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2037124261 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8585939345247523113, guid: 83496bd34c74ceb4e9165e99142e2432, type: 3}
@@ -11414,7 +11475,7 @@ MonoBehaviour:
   currentXp: 1
   maxXp: 10
   caracteristicsPoints: 0
-  fadeSystem: {fileID: 2024832177}
+  fadeSystem: {fileID: 0}
 --- !u!82 &2044014201
 AudioSource:
   m_ObjectHideFlags: 0
