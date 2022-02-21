@@ -15,6 +15,7 @@ public class EnemyHealthManager : MonoBehaviour
     public EnemyHealthBar healthBar;
     public PlayerXp xp;
     public AudioSource deathSound;
+    public GameObject Samourai;
     void Start()
     {
         SetMaxHealth();
@@ -25,8 +26,9 @@ public class EnemyHealthManager : MonoBehaviour
     {
        if (currentHealth <= 0)
         {
-            deathSound.Play();
-            xp.XpGain(xpEarned);
+            deathSound.Play();            
+            //jouer animation de mort
+            Samourai.GetComponent<Animator>().Play("SamouraiDie");
             Destroy(gameObject);
         }
         
