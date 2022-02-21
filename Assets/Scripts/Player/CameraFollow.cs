@@ -8,7 +8,7 @@ public class CameraFollow : MonoBehaviour
     public float timeOffSet;
     private Vector3 posOffSet; // ??? le Y c'est posOffSetGrounded -1 (la variable d'en dessous)
     public Vector3 posOffSetGrounded;
-    public PlayerMovement movement;
+    public Esprit_IsGrounded movement;
     private Vector3 velocity = Vector3.zero;
 
     public Rigidbody2D rb;
