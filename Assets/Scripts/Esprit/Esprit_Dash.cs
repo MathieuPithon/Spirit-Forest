@@ -11,6 +11,7 @@ public class Esprit_Dash : MonoBehaviour
     public Rigidbody2D rb;
     private Vector3 velocity = Vector3.zero;
     public Esprit_Stamina Stamina;
+    public GameObject esprit;
 
     void Update()
     {
@@ -31,12 +32,14 @@ public class Esprit_Dash : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x + dashLenght, rb.velocity.y);
             Stamina.ReduceStamina(10);
+            esprit.GetComponent<Animator>().Play("PlayerDash");
         }
         // transform.localScale.x > 0f true si le perso regarde a gauche 
         else if (Input.GetKeyDown(KeyCode.LeftShift) && transform.localScale.x < 0f)
         {
             rb.velocity = new Vector2(rb.velocity.x - dashLenght, rb.velocity.y);
             Stamina.ReduceStamina(10);
+            esprit.GetComponent<Animator>().Play("PlayerDash");
         }
     }
 

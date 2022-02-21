@@ -5848,6 +5848,10 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1005584190}
+    - target: {fileID: 1809746307179047668, guid: 8050734cacb6af0468407079d0c10500, type: 3}
+      propertyPath: esprit
+      value: 
+      objectReference: {fileID: 1615948505}
     - target: {fileID: 1809746307179047670, guid: 8050734cacb6af0468407079d0c10500, type: 3}
       propertyPath: xpBar
       value: 

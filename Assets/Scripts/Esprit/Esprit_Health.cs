@@ -13,6 +13,7 @@ public class Esprit_Health : MonoBehaviour
     public HealthBar healthBar;
     private bool invicibility = false;
     private bool colide = false;
+    public GameObject esprit;
 
     void Start()
     {
@@ -70,8 +71,9 @@ public class Esprit_Health : MonoBehaviour
     {
 
         Debug.Log("Le joueur est dead");
-        PlayerMovement.instance.enabled = false;
-        PlayerMovement.instance.animator.SetTrigger("Die");
+       // espritMovement.instance.enabled = false;
+        esprit.GetComponent<Animator>().Play("PlayerDie");
+       // espritMovement.instance.animator.SetTrigger("Die");
 
         //jouer animation de mort 
         //bloquer les action 
