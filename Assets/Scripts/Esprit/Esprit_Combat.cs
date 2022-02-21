@@ -34,6 +34,7 @@ public class Esprit_Combat : MonoBehaviour
         for (int i = 0; i < enemiesToDamage.Length; i++)
         {
             enemiesToDamage[i].GetComponent<EnemyHealthManager>().HurtEnemy(dmg);
+            Debug.Log("enenenenen");
         }
     }
     void OnDrawGizmosSelected()
