@@ -24,11 +24,14 @@ public class EnemyHealthManager : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(currentHealth);
        if (currentHealth <= 0)
         {
             deathSound.Play();            
             //jouer animation de mort
             Samourai.GetComponent<Animator>().Play("SamouraiDie");
+            GetComponent<EnemyLance_HitBoxLance>().enabled = false;
+            Samourai.SetActive(false);
             Destroy(Samourai);
         }
         
