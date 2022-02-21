@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 1809746307179047670}
   - component: {fileID: 6052051924589421010}
   - component: {fileID: 4656780180709319761}
+  - component: {fileID: 408428044027511056}
   m_Layer: 0
   m_Name: Esprit
   m_TagString: Untagged
@@ -119,7 +120,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: e44bda5902fdc8d47ad79ce0431b0cd1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -145,7 +146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 350
   rb: {fileID: 1809746307179047665}
-  animator: {fileID: 0}
+  animator: {fileID: 408428044027511056}
 --- !u!114 &1809746307179047666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -261,8 +262,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d15b31c6af5c3d44b46a0a8a005d5df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 1809746307179047665}
-  moveSpeed: 300
+--- !u!95 &408428044027511056
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809746307179047677}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7ace6960377d65744bc144061c63e7ce, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &9173205736883642594
 GameObject:
   m_ObjectHideFlags: 0
