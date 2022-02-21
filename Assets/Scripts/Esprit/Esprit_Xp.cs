@@ -11,9 +11,12 @@ public class Esprit_Xp : MonoBehaviour
     public XpBar xpBar;
     public GameObject levelUpSideUI;
 
-    private int currentXp = 0;
-    private int maxXp = 10;
-    private int caracteristicsPoints = 0;
+    [HideInInspector]
+    public int currentXp = 0;
+    [HideInInspector]
+    public int maxXp = 10;
+    [HideInInspector]
+    public int caracteristicsPoints = 0;
 
 
 

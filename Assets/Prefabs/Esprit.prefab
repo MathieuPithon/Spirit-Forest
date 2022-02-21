@@ -206,6 +206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 0}
+  rend: {fileID: 1809746307179047676}
 --- !u!114 &1809746307179047671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -235,6 +236,9 @@ MonoBehaviour:
   levelUpAlarm: {fileID: 0}
   xpBar: {fileID: 0}
   levelUpSideUI: {fileID: 0}
+  currentXp: 0
+  maxXp: 10
+  caracteristicsPoints: 0
 --- !u!114 &6052051924589421010
 MonoBehaviour:
   m_ObjectHideFlags: 0

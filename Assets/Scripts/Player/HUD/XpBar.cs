@@ -3,17 +3,17 @@ using UnityEngine.UI;
 
 public class XpBar : MonoBehaviour
 {
-    public PlayerXp playerXp;
+    public Esprit_Xp playerXp;
     public Slider slider;
     public Text txt;
     public int currentLevel;
-    
-    
-    void Start () 
+
+
+    void Start()
     {
         currentLevel = 1;
         DisplayXp();
-     }
+    }
 
     public void SetXp(int xp)
     {
@@ -29,6 +29,6 @@ public class XpBar : MonoBehaviour
     }
     public void DisplayXp()
     {
-        txt.text = "Level " + currentLevel +"\nCurrentXp: " + playerXp.currentXp + "/" + playerXp.maxXp;
+        txt.text = "Level " + currentLevel + "\nCurrentXp: " + playerXp.currentXp + "/" + playerXp.maxXp;
     }
 }
