@@ -29,7 +29,7 @@ public class EnemyHealthManager : MonoBehaviour
             deathSound.Play();            
             //jouer animation de mort
             Samourai.GetComponent<Animator>().Play("SamouraiDie");
-            Destroy(gameObject);
+            Destroy(Samourai);
         }
         
     }    
