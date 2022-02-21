@@ -9,6 +9,7 @@ public class Esprit_Jump : MonoBehaviour
     public Rigidbody2D rb;
     private Vector3 velocity = Vector3.zero;
     public Esprit_Stamina Stamina;
+    public Esprit_IsGrounded IsGrounded;
 
 
     public void Jump()
@@ -18,7 +19,7 @@ public class Esprit_Jump : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded.isGrounded)
         {
             Jump();
             Stamina.ReduceStamina(10);
