@@ -1,11 +1,11 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 /**
-    Si la lance touche le personnage alors il prends des dégats
+    Si les piques touchent le personnage alors il meurt
 **/
-public class EnemyLance_HitBoxLance : MonoBehaviour
+public class Pique : MonoBehaviour
 {
 
     public int damageToTake;
@@ -13,7 +13,7 @@ public class EnemyLance_HitBoxLance : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            collision.gameObject.GetComponent<Esprit_Health>().TakeDamage(20);
+            collision.gameObject.GetComponent<Esprit_Health>().TakeDamage(damageToTake);
         }
     }
 }
