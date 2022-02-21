@@ -47,6 +47,11 @@ public class Esprit_Health : MonoBehaviour
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
+        
+        if(currentHealth <=0 ){
+                Die();
+                
+            }
     }
 
     IEnumerator Delay()
