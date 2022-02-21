@@ -38,7 +38,7 @@ public class LoadSpecificScene : MonoBehaviour
         GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = true;
         GameObject.Find("Player").GetComponent<PlayerCombat>().enabled = true;
         **/
-         yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(sceneName);
     }
 }
