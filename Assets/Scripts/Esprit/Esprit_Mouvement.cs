@@ -12,6 +12,7 @@ public class Esprit_Mouvement : MonoBehaviour
     public Rigidbody2D rb;
     private float horizontalMovement;
     private Vector3 velocity = Vector3.zero;
+    public Animator animator;
 
 
     public void Mouvement()
@@ -19,11 +20,18 @@ public class Esprit_Mouvement : MonoBehaviour
         horizontalMovement = Input.GetAxis("Horizontal") * Time.fixedDeltaTime * moveSpeed;
         Vector3 wantedVelocity = new Vector2(horizontalMovement, rb.velocity.y);
         rb.velocity = Vector3.SmoothDamp(rb.velocity, wantedVelocity, ref velocity, .05f);
+        
     }
 
+ 
+  
     void Update()
     {
         Mouvement();
+
+        float characterVelocity = Mathf.Abs(rb.velocity.x);  
+        animator.SetFloat("Speed",characterVelocity);
+
     }
 
 }
