@@ -12,7 +12,6 @@ public class Esprit_Mouvement : MonoBehaviour
     public Rigidbody2D rb;
     private float horizontalMovement;
     private Vector3 velocity = Vector3.zero;
-    // public static espritMovement instance;
     public Animator animator;
 
 

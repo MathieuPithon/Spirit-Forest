@@ -86,12 +86,15 @@ public class Esprit_Health : MonoBehaviour
     {
 
         Debug.Log("Le joueur est dead");
-       // espritMovement.instance.enabled = false;
-        esprit.GetComponent<Animator>().Play("PlayerDie");
-       // espritMovement.instance.animator.SetTrigger("Die");
-
-        //jouer animation de mort 
         //bloquer les action 
-        //empêcher les interaction physique avec les autre éléments 
+        GetComponent<Esprit_Mouvement>().enabled = false;
+        GetComponent<Esprit_Jump>().enabled = false;
+        GetComponent<Esprit_Health>().enabled = false;
+        GetComponent<Esprit_Dash>().enabled = false;
+        //jouer animation de mort
+        esprit.GetComponent<Animator>().Play("PlayerDie");
+
+         
+
     }
 }
