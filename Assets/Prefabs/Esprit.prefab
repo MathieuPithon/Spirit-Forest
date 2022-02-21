@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 408428044027511056}
   m_Layer: 0
   m_Name: Esprit
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -233,6 +233,9 @@ MonoBehaviour:
   levelUpAlarm: {fileID: 0}
   xpBar: {fileID: 0}
   levelUpSideUI: {fileID: 0}
+  currentXp: 0
+  maxXp: 10
+  caracteristicsPoints: 0
 --- !u!114 &6052051924589421010
 MonoBehaviour:
   m_ObjectHideFlags: 0
