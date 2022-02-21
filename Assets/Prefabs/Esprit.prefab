@@ -164,6 +164,7 @@ MonoBehaviour:
   rb: {fileID: 1809746307179047665}
   Stamina: {fileID: 1809746307179047671}
   IsGrounded: {fileID: 6052051924589421010}
+  animator: {fileID: 408428044027511056}
 --- !u!114 &1809746307179047667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,6 +194,7 @@ MonoBehaviour:
   dashLenght: 100
   rb: {fileID: 1809746307179047665}
   Stamina: {fileID: 1809746307179047671}
+  esprit: {fileID: 1809746307179047677}
 --- !u!114 &1809746307179047668
 MonoBehaviour:
   m_ObjectHideFlags: 0
