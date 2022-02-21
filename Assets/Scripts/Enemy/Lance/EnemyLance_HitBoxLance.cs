@@ -14,7 +14,7 @@ public class EnemyLance_HitBoxLance : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(damageToTake, false);
+            collision.gameObject.GetComponent<Esprit_Health>().TakeDamage(20);
         }
     }
 }
