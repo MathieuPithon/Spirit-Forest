@@ -27,13 +27,13 @@ public class Esprit_Combat : MonoBehaviour
         {
             startTime = Time.time;
         }
-        if (Input.GetKey(KeyCode.Mouse0) && Time.time - startTime > 1f && letGo && cantAttack == false)
+        if (Input.GetKey(KeyCode.Mouse0) && Time.time - startTime > 0.25f && letGo && cantAttack == false)
         {
-            Combat(40);
             StartCoroutine(Delay(2f));
-            anim.SetTrigger("Attack");
+            anim.SetTrigger("HeavyAttack");
             startTime = Time.time;
             letGo = false;
+            StartCoroutine(HeavyAttack());
         }
         if (Input.GetKeyUp(KeyCode.Mouse0))
         {
@@ -57,11 +57,16 @@ public class Esprit_Combat : MonoBehaviour
         yield return new WaitForSeconds(time);
         cantAttack = false;
     }
+
+    IEnumerator HeavyAttack()
+    {
+        yield return new WaitForSeconds(1.21f);
+        Combat(40);
+    }
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(attackPos.position, attackRange);
     }
 }
-
 
