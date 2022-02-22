@@ -8,10 +8,25 @@ public class Esprit_Ladder : MonoBehaviour
     public Rigidbody2D rb;
     private Vector3 velocity = Vector3.zero;
     public float moveSpeed;
+    public bool echelle = false;
 
 
 
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Ladder"))
+        {
+            echelle = true;
+        }
+    }
 
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Ladder"))
+        {
+            echelle = false;
+        }
+    }
     void ClimbLadder(int hautBas)
     {
         rb.gravityScale = 0.0f;
@@ -21,21 +36,28 @@ public class Esprit_Ladder : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKey("z"))
+        if (echelle)
         {
-            ClimbLadder(1);
-        }
-        if (Input.GetKeyUp("z"))
-        {
-            rb.velocity = Vector3.zero;
-        }
-        if (Input.GetKey("s"))
-        {
-            ClimbLadder(-1);
-        }
-        if (Input.GetKeyUp("s"))
-        {
-            rb.velocity = Vector3.zero;
+            if (Input.GetKey("z"))
+            {
+                ClimbLadder(1);
+            }
+            if (Input.GetKeyUp("z"))
+            {
+                rb.velocity = Vector3.zero;
+            }
+            if (Input.GetKey("s"))
+            {
+                ClimbLadder(-1);
+            }
+            if (Input.GetKeyUp("s"))
+            {
+                rb.velocity = Vector3.zero;
+            }
+            if (Input.GetKeyUp(KeyCode.Space))
+            {
+                rb.gravityScale = 2f;
+            }
         }
 
     }

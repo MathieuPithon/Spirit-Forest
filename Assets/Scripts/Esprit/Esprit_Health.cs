@@ -47,7 +47,7 @@ public class Esprit_Health : MonoBehaviour
         }
         if (colide && !invicibility)
         {
-            TakeDamage(20);
+            //TakeDamage(20);
             StartCoroutine(Delay());
         }
     }
