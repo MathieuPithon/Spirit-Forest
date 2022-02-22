@@ -1209,13 +1209,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backgrounds:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 463659323}
+  - {fileID: 1468210313}
+  - {fileID: 1087022115}
+  - {fileID: 437352194}
   - {fileID: 48383015}
   smoothing: 0.5
-  cam: {fileID: 81737090}
+  cam: {fileID: 2095914975}
 --- !u!4 &1122382563
 Transform:
   m_ObjectHideFlags: 0
@@ -2150,3 +2150,8 @@ Transform:
   m_Father: {fileID: 69892956}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &2095914975 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7145240358054539842, guid: 05de4a65476180246a9575c412431b51, type: 3}
+  m_PrefabInstance: {fileID: 673622556}
+  m_PrefabAsset: {fileID: 0}
