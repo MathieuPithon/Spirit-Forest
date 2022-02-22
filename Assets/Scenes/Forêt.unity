@@ -4184,7 +4184,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 1
   m_DrawMode: 0
-  m_Size: {x: 77.43459, y: 120.049995}
+  m_Size: {x: 135.58, y: 160.0391}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
@@ -4338,39 +4338,55 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4428767768348895911, guid: af5ff4938045f2a4da69c23494bb3197, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.4000087
+      value: -0.266
       objectReference: {fileID: 0}
     - target: {fileID: 4428767768348895911, guid: af5ff4938045f2a4da69c23494bb3197, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.4
+      value: 7.392
       objectReference: {fileID: 0}
     - target: {fileID: 4428767768348895911, guid: af5ff4938045f2a4da69c23494bb3197, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.11431952
+      value: 0.07484663
       objectReference: {fileID: 0}
     - target: {fileID: 4428767768348895911, guid: af5ff4938045f2a4da69c23494bb3197, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.12067978
+      value: 0.09103154
       objectReference: {fileID: 0}
     - target: {fileID: 4428767768348895911, guid: af5ff4938045f2a4da69c23494bb3197, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0.9961646
       objectReference: {fileID: 0}
     - target: {fileID: 4428767768348895911, guid: af5ff4938045f2a4da69c23494bb3197, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: -0.045426372
       objectReference: {fileID: 0}
     - target: {fileID: 4428767768348895911, guid: af5ff4938045f2a4da69c23494bb3197, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.55310327
+      value: 0.06448386
       objectReference: {fileID: 0}
     - target: {fileID: 4428767768348895911, guid: af5ff4938045f2a4da69c23494bb3197, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.83311266
+      value: -0.03787311
       objectReference: {fileID: 0}
     - target: {fileID: 4428767768348895911, guid: af5ff4938045f2a4da69c23494bb3197, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 67.16
+      value: 5.4869995
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428767768348895911, guid: af5ff4938045f2a4da69c23494bb3197, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 366664
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428767768348895911, guid: af5ff4938045f2a4da69c23494bb3197, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -7.598999
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428767768348895911, guid: af5ff4938045f2a4da69c23494bb3197, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.041
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428767768348895911, guid: af5ff4938045f2a4da69c23494bb3197, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.77576774
       objectReference: {fileID: 0}
     - target: {fileID: 7740850819667362058, guid: af5ff4938045f2a4da69c23494bb3197, type: 3}
       propertyPath: pauseMenu
@@ -11360,7 +11376,6 @@ MonoBehaviour:
   currentXp: 1
   maxXp: 10
   caracteristicsPoints: 0
-  fadeSystem: {fileID: 0}
 --- !u!82 &2044014201
 AudioSource:
   m_ObjectHideFlags: 0
