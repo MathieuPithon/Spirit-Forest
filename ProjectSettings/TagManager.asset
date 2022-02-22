@@ -11,6 +11,7 @@ TagManager:
   - Boomerang
   - FadeSystem
   - Pique
+  - Start
   layers:
   - Default
   - TransparentFX
