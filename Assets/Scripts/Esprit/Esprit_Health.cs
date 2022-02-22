@@ -33,7 +33,10 @@ public class Esprit_Health : MonoBehaviour
 
     void onCollisionExit2D(Collision2D collision)
     {
-        colide = false;
+        if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        {
+            colide = false;
+        }
     }
 
     void Update()
