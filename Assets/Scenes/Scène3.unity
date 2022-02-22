@@ -527,6 +527,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 194261354576849310, guid: 83725ee394eae584082e91cfdde2c954, type: 3}
+      propertyPath: playerXp
+      value: 
+      objectReference: {fileID: 1791344657}
     - target: {fileID: 194261354950364041, guid: 83725ee394eae584082e91cfdde2c954, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -1144,13 +1148,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backgrounds:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 463659323}
+  - {fileID: 1468210313}
+  - {fileID: 1087022115}
+  - {fileID: 437352194}
   - {fileID: 48383015}
   smoothing: 0.5
-  cam: {fileID: 0}
+  cam: {fileID: 2095914975}
 --- !u!4 &1122382563
 Transform:
   m_ObjectHideFlags: 0
@@ -1780,6 +1784,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e25b009330a7ddf4bac60505c5874824, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1791344657 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1809746307179047670, guid: 8050734cacb6af0468407079d0c10500, type: 3}
+  m_PrefabInstance: {fileID: 1435977157}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791344651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 200ba29c31f33514894d4e19b735b2ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!50 &1791344665 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 1809746307179047665, guid: 8050734cacb6af0468407079d0c10500, type: 3}
@@ -2131,3 +2146,8 @@ Transform:
   m_Father: {fileID: 69892956}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &2095914975 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7145240358054539842, guid: 05de4a65476180246a9575c412431b51, type: 3}
+  m_PrefabInstance: {fileID: 673622556}
+  m_PrefabAsset: {fileID: 0}
