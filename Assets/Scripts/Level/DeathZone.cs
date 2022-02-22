@@ -15,7 +15,8 @@ public class DeathZone : MonoBehaviour
     {
         if(collision.CompareTag("Player"))
         {
-            StartCoroutine(ReplacePlayer(collision));
+            collision.transform.position = playerSpawn.position;
+            //StartCoroutine(ReplacePlayer(collision));
         }
     }
 
