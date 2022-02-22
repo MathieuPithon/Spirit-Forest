@@ -15,6 +15,7 @@ public class Esprit_Combat : MonoBehaviour
     public Animator anim;
     private bool letGo = true;
     private bool cantAttack;
+    public Animator attackUpAnimator;
     void Update()
     {
         if (Input.GetKeyUp(KeyCode.Mouse0) && cantAttack == false)
@@ -22,6 +23,7 @@ public class Esprit_Combat : MonoBehaviour
             Combat(20);
             StartCoroutine(Delay(0.25f));
             anim.SetTrigger("Attack");
+            attackUpAnimator.SetTrigger("Attack");
         }
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
