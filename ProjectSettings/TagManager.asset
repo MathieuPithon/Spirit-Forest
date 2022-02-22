@@ -11,8 +11,13 @@ TagManager:
   - Boomerang
   - FadeSystem
   - Pique
+<<<<<<< HEAD
   - Fall
   - returnScene2
+=======
+  - Start
+  - Ladder
+>>>>>>> c9019f936028676ec105eab3b48b0eadfb77bce3
   layers:
   - Default
   - TransparentFX
@@ -28,7 +33,7 @@ TagManager:
   - Ground
   - Boomerang
   - Wall
-  - 
+  - Ladder
   - 
   - 
   - 

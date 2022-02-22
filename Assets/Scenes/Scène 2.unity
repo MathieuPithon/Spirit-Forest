@@ -3057,9 +3057,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1146430129}
   - component: {fileID: 1146430128}
+  - component: {fileID: 1146430130}
   m_Layer: 0
   m_Name: echelle 1
-  m_TagString: Untagged
+  m_TagString: Ladder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3129,6 +3130,32 @@ Transform:
   m_Father: {fileID: 182145346}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1146430130
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1146430127}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -3.7637959, y: 0.038155556}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 16.762001, y: 6.1466126}
+    newSize: {x: 16.762001, y: 6.1466126}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.33351326, y: 3.373991}
+  m_EdgeRadius: 0
 --- !u!1001 &1198359025
 PrefabInstance:
   m_ObjectHideFlags: 0
