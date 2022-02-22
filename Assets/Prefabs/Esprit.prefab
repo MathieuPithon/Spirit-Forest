@@ -294,6 +294,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1809746307179047665}
   moveSpeed: 500
+  echelle: 0
+  isGrounded: {fileID: 6052051924589421010}
 --- !u!95 &408428044027511056
 Animator:
   serializedVersion: 3

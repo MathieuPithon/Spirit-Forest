@@ -8,27 +8,28 @@ public class Esprit_Ladder : MonoBehaviour
     public Rigidbody2D rb;
     private Vector3 velocity = Vector3.zero;
     public float moveSpeed;
-    public bool echelle = false;
+    private bool echelle = false;
+    public Esprit_IsGrounded isGrounded;
 
 
-
-    void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Ladder"))
+        if (collision.gameObject.tag == "Ladder")
         {
             echelle = true;
         }
     }
 
-    void OnCollisionExit2D(Collision2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Ladder"))
+        if (collision.gameObject.tag == "Ladder")
         {
             echelle = false;
         }
     }
     void ClimbLadder(int hautBas)
     {
+        rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
         rb.gravityScale = 0.0f;
         verticalMovement = hautBas * Time.fixedDeltaTime * moveSpeed;
         Vector3 wantedVelocity = new Vector2(rb.velocity.x, verticalMovement);
@@ -57,7 +58,12 @@ public class Esprit_Ladder : MonoBehaviour
             if (Input.GetKeyUp(KeyCode.Space))
             {
                 rb.gravityScale = 2f;
+                rb.constraints = RigidbodyConstraints2D.FreezeRotation;
             }
+        }
+        if (isGrounded.isGrounded)
+        {
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
 
     }

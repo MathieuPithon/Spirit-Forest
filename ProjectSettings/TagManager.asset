@@ -12,6 +12,7 @@ TagManager:
   - FadeSystem
   - Pique
   - Start
+  - Ladder
   layers:
   - Default
   - TransparentFX
@@ -27,7 +28,7 @@ TagManager:
   - Ground
   - Boomerang
   - Wall
-  - 
+  - Ladder
   - 
   - 
   - 
