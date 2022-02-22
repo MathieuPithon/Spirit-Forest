@@ -12,10 +12,10 @@ public class Esprit_Ladder : MonoBehaviour
 
 
 
-    void ClimbLadder()
+    void ClimbLadder(int hautBas)
     {
         rb.gravityScale = 0.0f;
-        verticalMovement = Time.fixedDeltaTime * moveSpeed;
+        verticalMovement = hautBas * Time.fixedDeltaTime * moveSpeed;
         Vector3 wantedVelocity = new Vector2(rb.velocity.x, verticalMovement);
         rb.velocity = Vector3.SmoothDamp(rb.velocity, wantedVelocity, ref velocity, .05f);
     }
@@ -23,9 +23,17 @@ public class Esprit_Ladder : MonoBehaviour
     {
         if (Input.GetKey("z"))
         {
-            ClimbLadder();
+            ClimbLadder(1);
         }
         if (Input.GetKeyUp("z"))
+        {
+            rb.velocity = Vector3.zero;
+        }
+        if (Input.GetKey("s"))
+        {
+            ClimbLadder(-1);
+        }
+        if (Input.GetKeyUp("s"))
         {
             rb.velocity = Vector3.zero;
         }
