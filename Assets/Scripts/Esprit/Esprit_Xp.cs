@@ -2,8 +2,6 @@
 using UnityEngine;
 using System.Collections;
 
-//Cyriaque - C'est pas moi qui l'ai fait mais en vrai il est ez a comprendre
-
 public class Esprit_Xp : MonoBehaviour
 {
     public GameObject levelUpAlarmUI;
@@ -20,7 +18,6 @@ public class Esprit_Xp : MonoBehaviour
 
 
 
-
     void Start()
     {
         xpBar.SetXp(currentXp);
@@ -28,10 +25,15 @@ public class Esprit_Xp : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            XpGain(10);
+        }
         if (caracteristicsPoints > 0)
         {
             levelUpAlarm.text = $"Vous avez {caracteristicsPoints} points de compétence à dépenser !" +
                     $" Appuyez sur 'C' pour améliorer une de vos statistiques";
+            levelUpAlarmUI.SetActive(true);
         }
         else levelUpAlarmUI.SetActive(false);
 
