@@ -27,6 +27,9 @@ EditorBuildSettings:
     path: "Assets/Scenes/bac_\xE0_sable.unity"
     guid: 4a699e3813f671e43a1b6a1e96d4da8d
   - enabled: 1
-    path: "Assets/Scenes/Sc\xE8ne 2.unity"
+    path: "Assets/Scenes/Ancienne sc\xE8ne2.unity"
     guid: c7361153cf85b3f41beb68a12238349c
+  - enabled: 1
+    path: "Assets/Scenes/Sc\xE8ne 2.unity"
+    guid: 6c00b34659ae92246892474b40c9d501
   m_configObjects: {}
