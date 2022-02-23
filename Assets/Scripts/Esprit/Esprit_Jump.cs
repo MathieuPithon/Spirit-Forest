@@ -22,28 +22,22 @@ public class Esprit_Jump : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded.isGrounded)
         {
             Jump();
-            Stamina.ReduceStamina(10);    
-            animator.SetBool("Jump", true);        
-               
-        
+            Stamina.ReduceStamina(10);
+            animator.SetBool("Jump", true);
+
+
         }
-         else if (IsGrounded.isGrounded)
+        else if (IsGrounded.isGrounded)
         {
-            
-            
-            Debug.Log(IsGrounded.isGrounded);                      
-           animator.SetBool("Jump", false);
-        
-        
-       
+            animator.SetBool("Jump", false);
+        }
+
     }
-        
-    }
-    
+
 
 }
-    
 
-           
-        
-    
+
+
+
+
