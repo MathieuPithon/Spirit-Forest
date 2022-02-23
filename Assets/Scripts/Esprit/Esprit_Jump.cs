@@ -36,9 +36,8 @@ public class Esprit_Jump : MonoBehaviour
             }
 
         }
-
-
-
+         
+                 
 
         IEnumerator Wait()
         {
