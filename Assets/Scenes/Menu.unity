@@ -3854,8 +3854,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9e909ab2c3545d41aa3bd5a86ba9fe8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainLevel1: MainLevel01
-  MainLevel2: MainLevel02
+  MainLevel1: "Sc\xE8ne 1"
+  MainLevel2: "Sc\xE8ne 2"
   levelTutorial: TutorialLevel
   startGameSound: {fileID: 264427724}
   mainMenuMusic: {fileID: 235717162}
