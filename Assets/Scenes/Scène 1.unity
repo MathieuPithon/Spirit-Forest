@@ -2504,6 +2504,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &370859612 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4614774525200975042, guid: 18a573116d8e844429fe7a2aeb388c33, type: 3}
+  m_PrefabInstance: {fileID: 1895036453}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c89e9a7483bb1ac4fbf47d22a430e9b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &379141779
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7814,6 +7825,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1517099317 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8401150433980449237, guid: 18a573116d8e844429fe7a2aeb388c33, type: 3}
+  m_PrefabInstance: {fileID: 1895036453}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a57ba16b66047c340bd76dc647906d8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1542902906
 GameObject:
   m_ObjectHideFlags: 0
@@ -7867,6 +7889,45 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1362722788575237708, guid: 2553d11356bbb93428c19d58af5167b4, type: 3}
   m_PrefabInstance: {fileID: 330887516}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1613924491 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7922089135354018308, guid: 18a573116d8e844429fe7a2aeb388c33, type: 3}
+  m_PrefabInstance: {fileID: 1895036453}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1613924497 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7922089135354018329, guid: 18a573116d8e844429fe7a2aeb388c33, type: 3}
+  m_PrefabInstance: {fileID: 1895036453}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &1613924498 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 7922089135354018334, guid: 18a573116d8e844429fe7a2aeb388c33, type: 3}
+  m_PrefabInstance: {fileID: 1895036453}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1613924499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1613924491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a914d52e0225d4c9503c9e24ad96d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CoolDown: 3
+  CDAttacking: 1
+  goBack: {fileID: 1517099317}
+  agro: {fileID: 1666995756}
+  turn: {fileID: 370859612}
+  gate: {fileID: 2101513042}
+  attackArea: {fileID: 1677758291}
+  rb: {fileID: 1613924498}
+  cible: {fileID: 1854663047}
+  inCoolDown: 0
+  isAttacking: 0
+  animator: {fileID: 1613924497}
 --- !u!1 &1614068100
 GameObject:
   m_ObjectHideFlags: 0
@@ -8247,6 +8308,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1666995756 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7922089134325422011, guid: 18a573116d8e844429fe7a2aeb388c33, type: 3}
+  m_PrefabInstance: {fileID: 1895036453}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09df146ea55713e449145f3b1a58f376, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1677758291 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2536407017224196979, guid: 18a573116d8e844429fe7a2aeb388c33, type: 3}
+  m_PrefabInstance: {fileID: 1895036453}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d8174ed3fae2c246bc457649c76fdf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1679634522
 GameObject:
   m_ObjectHideFlags: 0
@@ -9493,6 +9576,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: First samourai
       objectReference: {fileID: 0}
+    - target: {fileID: 7922089135354018330, guid: 18a573116d8e844429fe7a2aeb388c33, type: 3}
+      propertyPath: Samourai
+      value: 
+      objectReference: {fileID: 1613924491}
     - target: {fileID: 7922089135354018331, guid: 18a573116d8e844429fe7a2aeb388c33, type: 3}
       propertyPath: m_SortingOrder
       value: 1
@@ -9544,6 +9631,10 @@ PrefabInstance:
     - target: {fileID: 7922089135354018335, guid: 18a573116d8e844429fe7a2aeb388c33, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7922089135354018335, guid: 18a573116d8e844429fe7a2aeb388c33, type: 3}
+      propertyPath: m_LocalScale.x
+      value: -0.2
       objectReference: {fileID: 0}
     - target: {fileID: 8409647200465802812, guid: 18a573116d8e844429fe7a2aeb388c33, type: 3}
       propertyPath: spreadCustomCurve.m_Curve.Array.data[0].value
@@ -10194,6 +10285,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2101513041
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2101513042}
+  m_Layer: 0
+  m_Name: gate
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2101513042
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2101513041}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 22.43, y: -3.69, z: 0.22768402}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2103806950 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 194261353912073197, guid: 83725ee394eae584082e91cfdde2c954, type: 3}
