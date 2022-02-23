@@ -62,6 +62,15 @@ public class Esprit_Health : MonoBehaviour
         }
     }
 
+    //ca devrait pas etre la mais ca marche pas quand c'est mis sur le gameObject spike
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.gameObject.tag == "Pique")
+        {
+            TakeDamage(50);
+        }
+    }
+
     IEnumerator Delay()
     {
         invicibility = true;
