@@ -4985,10 +4985,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2070977977}
   - component: {fileID: 2070977979}
-  - component: {fileID: 2070977978}
   m_Layer: 0
   m_Name: Pique
-  m_TagString: Untagged
+  m_TagString: Pique
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5009,19 +5008,6 @@ Transform:
   m_Father: {fileID: 2116369255}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2070977978
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2070977976}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 729db85fa96cdb54ab5708d7ab0a42da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: {fileID: 1809746307179047668, guid: 8050734cacb6af0468407079d0c10500, type: 3}
 --- !u!60 &2070977979
 PolygonCollider2D:
   m_ObjectHideFlags: 0
