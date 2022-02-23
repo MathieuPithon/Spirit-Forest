@@ -14,7 +14,7 @@ public class Esprit_Jump : MonoBehaviour
     private float startTime;
     public void Jump()
     {
-        rb.AddForce(new Vector2(0, 10), ForceMode2D.Impulse);
+        rb.AddForce(new Vector2(0, 13), ForceMode2D.Impulse);
     }
 
     void Update()
@@ -25,7 +25,9 @@ public class Esprit_Jump : MonoBehaviour
             Stamina.ReduceStamina(10);    
             animator.SetBool("Jump", true);        
                
-        }else
+        
+        }
+         else if (IsGrounded.isGrounded)
         {
             
             
