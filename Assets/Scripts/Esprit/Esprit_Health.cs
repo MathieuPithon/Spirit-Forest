@@ -14,7 +14,7 @@ public class Esprit_Health : MonoBehaviour
     private bool invicibility = false;
     private bool colide = false;
     public GameObject esprit;
-    public Renderer rend;
+    public AudioSource audioSource;
 
     void Start()
     {
@@ -51,6 +51,7 @@ public class Esprit_Health : MonoBehaviour
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
+        audioSource.Play();
 
         StartCoroutine(Clignotement());
 
@@ -72,9 +73,9 @@ public class Esprit_Health : MonoBehaviour
         for (int i = 0; i < 3; i++)
         {
 
-            rend.enabled = false;
+            GetComponent<Renderer>().enabled = false;
             yield return new WaitForSeconds(0.25f);
-            rend.enabled = true;
+            GetComponent<Renderer>().enabled = true;
             yield return new WaitForSeconds(0.25f);
         }
     }
