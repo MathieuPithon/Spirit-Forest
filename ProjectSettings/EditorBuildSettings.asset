@@ -23,13 +23,13 @@ EditorBuildSettings:
   - enabled: 1
     path: "Assets/Scenes/Sc\xE8ne 1.unity"
     guid: eb76db88c2c4f39498b73f3c9084434b
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: "Assets/Scenes/Sc\xE8ne2_pique.unity"
-    guid: 6c00b34659ae92246892474b40c9d501
-  - enabled: 1
-    path: "Assets/Scenes/Sc\xE8ne 3.unity"
+    path: "Assets/Scenes/Se\xE8ne3.unity"
     guid: 94ffd28b4dd2b6d48a52f688b885f1f6
-  - enabled: 1
-    path: "Assets/Scenes/Sc\xE8ne 2.unity"
-    guid: a53560f52bdb3984b91884732e6c9f21
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}
