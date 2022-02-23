@@ -477,10 +477,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   anim: {fileID: 408428044027511056}
-  sound1: {fileID: 0}
-  sound2: {fileID: 0}
-  sound3: {fileID: 0}
-  sound4: {fileID: 0}
+  sound1: {fileID: 8182448678525453829}
+  sound2: {fileID: 2985284188413184176}
+  sound3: {fileID: 2550978644561727331}
+  sound4: {fileID: 5000557643579429210}
 --- !u!114 &4656780180709319761
 MonoBehaviour:
   m_ObjectHideFlags: 0

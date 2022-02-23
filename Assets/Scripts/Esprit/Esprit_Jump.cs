@@ -22,42 +22,43 @@ public class Esprit_Jump : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded.isGrounded)
         {
             Jump();
-            Stamina.ReduceStamina(10);    
-            animator.SetBool("Jump", true);        
-            
-        
-        }        
+            Stamina.ReduceStamina(10);
+            animator.SetBool("Jump", true);
+
+
+        }
         else
         {
-            if(animator.GetBool("Jump") == true && IsGrounded.isGrounded){
-               
-             StartCoroutine(Wait());
-        }                         
-        
+            if (animator.GetBool("Jump") == true && IsGrounded.isGrounded)
+            {
+
+                StartCoroutine(Wait());
+            }
+
         }
          
                  
-             
 
-              IEnumerator Wait()
-             {   
-        
-                yield return new WaitForSeconds(0.07f);
-                if(animator.GetBool("Jump") == true && IsGrounded.isGrounded){
-                 
-                animator.SetBool("Jump", false);  
-                animator.SetBool("Fall", true);   
-                }
-                
-     
-              }
+        IEnumerator Wait()
+        {
 
+            yield return new WaitForSeconds(0.07f);
+            if (animator.GetBool("Jump") == true && IsGrounded.isGrounded)
+            {
+                animator.SetBool("Jump", false);
+                animator.SetBool("Fall", true);
             }
+
+
+        }
+
     }
+}
 
 
-    
 
-           
-        
-    
+
+
+
+
+
