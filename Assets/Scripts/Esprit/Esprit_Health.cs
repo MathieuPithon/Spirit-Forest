@@ -23,7 +23,7 @@ public class Esprit_Health : MonoBehaviour
     }
 
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnCollision2D(Collision2D collision)
     {
         if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
@@ -31,13 +31,7 @@ public class Esprit_Health : MonoBehaviour
         }
     }
 
-    void onCollisionExit2D(Collision2D collision)
-    {
-        if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Enemy"))
-        {
-            colide = false;
-        }
-    }
+
 
     void Update()
     {
@@ -47,8 +41,9 @@ public class Esprit_Health : MonoBehaviour
         }
         if (colide && !invicibility)
         {
-            //TakeDamage(20);
+            TakeDamage(20);
             StartCoroutine(Delay());
+            colide = false;
         }
     }
 
