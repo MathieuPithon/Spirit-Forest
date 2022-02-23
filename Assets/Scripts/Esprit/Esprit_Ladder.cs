@@ -11,6 +11,8 @@ public class Esprit_Ladder : MonoBehaviour
     private bool echelle = false;
     public Esprit_IsGrounded isGrounded;
 
+    public Animator anim;
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -42,6 +44,7 @@ public class Esprit_Ladder : MonoBehaviour
             if (Input.GetKey("z"))
             {
                 ClimbLadder(1);
+                anim.SetTrigger("PlayerLadder");
             }
             if (Input.GetKeyUp("z"))
             {
