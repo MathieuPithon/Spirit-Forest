@@ -7,10 +7,12 @@ public class Spawner : MonoBehaviour
     public Transform[] spawnPoints;
     public GameObject[] enemyPrefabs;
     private bool play;
-
+    public GameObject esprit;
     void Start()
     {
         StartCoroutine(myWaitCoroutine());
+        esprit.GetComponent<Animator>().SetTrigger("EndClimb");
+         
     }
 
     // Update is called once per frame
@@ -21,16 +23,12 @@ public class Spawner : MonoBehaviour
             StartCoroutine(myWaitCoroutine());
         }
 
-        /*if(Input.GetMouseButtonDown(0))
-        {
-            
-        }    */
     }
     IEnumerator myWaitCoroutine()
     {
         
         play= true;
-        yield return new WaitForSeconds(0.8f);// Wait for one second
+        yield return new WaitForSeconds(0.8f);// Wait for 0.8 second
 
         int randEnemy = Random.Range(0, enemyPrefabs.Length);
         int randSpawnPoint = Random.Range(0, spawnPoints.Length);
