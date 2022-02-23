@@ -46,7 +46,6 @@ public class Esprit_Jump : MonoBehaviour
             yield return new WaitForSeconds(0.07f);
             if (animator.GetBool("Jump") == true && IsGrounded.isGrounded)
             {
-                Debug.Log(animator.GetBool("Jump"));
                 animator.SetBool("Jump", false);
                 animator.SetBool("Fall", true);
             }
