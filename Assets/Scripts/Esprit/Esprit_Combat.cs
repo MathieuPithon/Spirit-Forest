@@ -6,8 +6,6 @@ using UnityEngine;
 //Cyriaque - attaque lourde / attaque legere c'est le bordel demandé irl si pb
 public class Esprit_Combat : MonoBehaviour
 {
-    [HideInInspector]
-    public bool isInCombat;
     public Transform attackPos;
     public float attackRange;
     public LayerMask enemies;
@@ -15,7 +13,13 @@ public class Esprit_Combat : MonoBehaviour
     public Animator anim;
     private bool letGo = true;
     private bool cantAttack;
-    public Animator attackUpAnimator;
+    private int compteur = 1;
+    public AudioSource sound1;
+    public AudioSource sound2;
+    public AudioSource sound3;
+    public AudioSource sound4;
+
+
     void Update()
     {
         if (Input.GetKeyUp(KeyCode.Mouse0) && cantAttack == false)
@@ -23,7 +27,6 @@ public class Esprit_Combat : MonoBehaviour
             Combat(20);
             StartCoroutine(Delay(0.25f));
             anim.SetTrigger("Attack");
-            attackUpAnimator.SetTrigger("Attack");
         }
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
@@ -51,6 +54,7 @@ public class Esprit_Combat : MonoBehaviour
         {
             enemiesToDamage[i].GetComponent<EnemyHealthManager>().HurtEnemy(dmg);
         }
+        sound();
     }
 
     IEnumerator Delay(float time)
@@ -69,6 +73,37 @@ public class Esprit_Combat : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(attackPos.position, attackRange);
+    }
+
+
+    void sound()
+    {
+        compteur++;
+        if (compteur == 5)
+        {
+            compteur = 1;
+        }
+
+        if (compteur == 1)
+        {
+            sound1.Play();
+
+        }
+        if (compteur == 2)
+        {
+            sound2.Play();
+
+        }
+        if (compteur == 3)
+        {
+            sound3.Play();
+
+        }
+        else
+        {
+            sound4.Play();
+
+        }
     }
 }
 

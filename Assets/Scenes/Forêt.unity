@@ -5857,9 +5857,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1466890902835256247, guid: 8050734cacb6af0468407079d0c10500, type: 3}
+      propertyPath: sound1
+      value: 
+      objectReference: {fileID: 1615948526}
+    - target: {fileID: 1466890902835256247, guid: 8050734cacb6af0468407079d0c10500, type: 3}
+      propertyPath: sound2
+      value: 
+      objectReference: {fileID: 1615948525}
+    - target: {fileID: 1466890902835256247, guid: 8050734cacb6af0468407079d0c10500, type: 3}
+      propertyPath: sound3
+      value: 
+      objectReference: {fileID: 1615948524}
+    - target: {fileID: 1466890902835256247, guid: 8050734cacb6af0468407079d0c10500, type: 3}
+      propertyPath: sound4
+      value: 
+      objectReference: {fileID: 1615948523}
     - target: {fileID: 1809746307179047664, guid: 8050734cacb6af0468407079d0c10500, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1809746307179047665, guid: 8050734cacb6af0468407079d0c10500, type: 3}
+      propertyPath: m_GravityScale
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1809746307179047668, guid: 8050734cacb6af0468407079d0c10500, type: 3}
       propertyPath: healthBar
@@ -9731,6 +9751,26 @@ Rigidbody2D:
 --- !u!4 &1615948519 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1809746307179047678, guid: 8050734cacb6af0468407079d0c10500, type: 3}
+  m_PrefabInstance: {fileID: 924770168}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1615948523 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5000557643579429210, guid: 8050734cacb6af0468407079d0c10500, type: 3}
+  m_PrefabInstance: {fileID: 924770168}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1615948524 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2550978644561727331, guid: 8050734cacb6af0468407079d0c10500, type: 3}
+  m_PrefabInstance: {fileID: 924770168}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1615948525 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2985284188413184176, guid: 8050734cacb6af0468407079d0c10500, type: 3}
+  m_PrefabInstance: {fileID: 924770168}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1615948526 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8182448678525453829, guid: 8050734cacb6af0468407079d0c10500, type: 3}
   m_PrefabInstance: {fileID: 924770168}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1661308048 stripped

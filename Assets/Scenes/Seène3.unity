@@ -2057,6 +2057,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1466890902835256247, guid: 8050734cacb6af0468407079d0c10500, type: 3}
+      propertyPath: attackUpAnimator
+      value: 
+      objectReference: {fileID: 1230240764}
     - target: {fileID: 1809746307179047664, guid: 8050734cacb6af0468407079d0c10500, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -2891,6 +2895,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1230240764 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8720702574226926943, guid: 8050734cacb6af0468407079d0c10500, type: 3}
+  m_PrefabInstance: {fileID: 924770168}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1275757881
 GameObject:
   m_ObjectHideFlags: 0

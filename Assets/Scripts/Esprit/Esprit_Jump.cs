@@ -11,9 +11,10 @@ public class Esprit_Jump : MonoBehaviour
     public Esprit_Stamina Stamina;
     public Esprit_IsGrounded IsGrounded;
     public Animator animator;
+    private float startTime;
     public void Jump()
     {
-        rb.AddForce(new Vector2(0, 10), ForceMode2D.Impulse);
+        rb.AddForce(new Vector2(0, 13), ForceMode2D.Impulse);
     }
 
     void Update()
@@ -21,14 +22,45 @@ public class Esprit_Jump : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded.isGrounded)
         {
             Jump();
-            Stamina.ReduceStamina(10);    
-            animator.SetBool("Jump", true);        
-        
-        }else if(IsGrounded.isGrounded)
+            Stamina.ReduceStamina(10);
+            animator.SetBool("Jump", true);
+
+
+        }
+        else
         {
-            animator.SetBool("Jump", false);
+            if (animator.GetBool("Jump") == true && IsGrounded.isGrounded)
+            {
+
+                StartCoroutine(Wait());
+            }
+
+        }
+
+
+
+
+        IEnumerator Wait()
+        {
+
+            yield return new WaitForSeconds(0.07f);
+            if (animator.GetBool("Jump") == true && IsGrounded.isGrounded)
+            {
+                Debug.Log(animator.GetBool("Jump"));
+                animator.SetBool("Jump", false);
+                animator.SetBool("Fall", true);
+            }
+
+
         }
 
     }
 }
+
+
+
+
+
+
+
 
