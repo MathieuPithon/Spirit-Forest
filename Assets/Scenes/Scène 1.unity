@@ -2259,7 +2259,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1362722788575237698, guid: 2553d11356bbb93428c19d58af5167b4, type: 3}
       propertyPath: sceneName
-      value: "Sc\xE8ne 3"
+      value: "Sc\xE8ne3"
       objectReference: {fileID: 0}
     - target: {fileID: 1362722788575237699, guid: 2553d11356bbb93428c19d58af5167b4, type: 3}
       propertyPath: m_SortingOrder
@@ -10212,7 +10212,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2101513041}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 22.43, y: -3.69, z: 0.22768402}
+  m_LocalPosition: {x: 22.73, y: -3.15, z: 0.22768402}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

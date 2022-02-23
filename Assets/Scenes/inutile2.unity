@@ -1626,7 +1626,6 @@ MonoBehaviour:
   currentXp: 9
   maxXp: 10
   caracteristicsPoints: 0
-  fadeSystem: {fileID: 4700617923705203756}
 --- !u!114 &382938708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1658,11 +1657,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   stillToHeal: 0
+  stillToDmg: 0
   invincibilityTimeAfterHit: 2
   isInvincible: 0
   invincibilityFlashDelay: 0.2
+  stamina: {fileID: 0}
+  combat: {fileID: 0}
   graphics: {fileID: 0}
   healthBar: {fileID: 0}
+  hurtSound: {fileID: 0}
 --- !u!114 &382938710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1676,6 +1679,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 382938712}
+  attackUpAnimator: {fileID: 0}
+  attackDownAnimator: {fileID: 0}
   enemyLayers:
     serializedVersion: 2
     m_Bits: 512
@@ -1705,6 +1710,10 @@ MonoBehaviour:
   sound2: {fileID: 0}
   sound3: {fileID: 0}
   sound4: {fileID: 0}
+  combatMusic: {fileID: 0}
+  baseMusic: {fileID: 0}
+  disengagingCombat: {fileID: 0}
+  engagingCombat: {fileID: 0}
 --- !u!114 &382938711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1718,7 +1727,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fallMultiplier: 2.5
-  lowJumpMultiplier: 2
+  jumpHight: 10
 --- !u!95 &382938712
 Animator:
   serializedVersion: 3
@@ -1808,10 +1817,15 @@ MonoBehaviour:
   jumpStamina: 10
   isJumping: 0
   isGrounded: 0
+  isNearWall: 0
+  wallJump: 0
   playerStamina: {fileID: 0}
   combat: {fileID: 0}
   groundCheck: {fileID: 0}
-  collisionLayers:
+  collisionGroundLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  collisionWallLayers:
     serializedVersion: 2
     m_Bits: 0
   rb: {fileID: 0}
@@ -2845,6 +2859,7 @@ MonoBehaviour:
   timeOffSet: 0.2
   posOffSetGrounded: {x: 0, y: 1, z: -10}
   movement: {fileID: 0}
+  rb: {fileID: 0}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -5962,12 +5977,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainVolume: {fileID: 701962736}
   mainTxt: {fileID: 338406285}
-  musicVolume: {fileID: 0}
-  musicTxt: {fileID: 346312676}
-  soundVolume: {fileID: 933154052}
-  soundTxt: {fileID: 0}
-  voiceVolume: {fileID: 1186195739}
-  voiceTxt: {fileID: 760980211}
+  audioMixer: {fileID: 0}
   player: {fileID: 0}
 --- !u!1 &1039344333
 GameObject:
@@ -6308,7 +6318,7 @@ RectTransform:
   - {fileID: 318313778}
   - {fileID: 37607665}
   m_Father: {fileID: 1983563410}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -56550,7 +56560,7 @@ PrefabInstance:
     - target: {fileID: 1362722788575237698, guid: 2553d11356bbb93428c19d58af5167b4, type: 3}
       propertyPath: fadeSystem
       value: 
-      objectReference: {fileID: 1947728166}
+      objectReference: {fileID: 0}
     - target: {fileID: 1362722788575237708, guid: 2553d11356bbb93428c19d58af5167b4, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -56601,11 +56611,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2553d11356bbb93428c19d58af5167b4, type: 3}
---- !u!95 &1947728166 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 194261355736060299, guid: 83725ee394eae584082e91cfdde2c954, type: 3}
-  m_PrefabInstance: {fileID: 194261353788876973}
-  m_PrefabAsset: {fileID: 0}
 --- !u!222 &1981370615
 CanvasRenderer:
   m_ObjectHideFlags: 0
