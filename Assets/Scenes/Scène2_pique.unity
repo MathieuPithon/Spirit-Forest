@@ -1381,7 +1381,7 @@ GameObject:
   - component: {fileID: 529258900}
   - component: {fileID: 529258899}
   m_Layer: 0
-  m_Name: Audio Reverb Zone
+  m_Name: Sleeping_door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
