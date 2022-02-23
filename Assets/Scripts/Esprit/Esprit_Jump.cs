@@ -24,24 +24,38 @@ public class Esprit_Jump : MonoBehaviour
             Jump();
             Stamina.ReduceStamina(10);    
             animator.SetBool("Jump", true);        
+            
+        
+        }        
+        else
+        {
+            if(animator.GetBool("Jump") == true && IsGrounded.isGrounded){
                
+             StartCoroutine(Wait());
+        }                         
         
         }
-         else if (IsGrounded.isGrounded)
-        {
-            
-            
-            Debug.Log(IsGrounded.isGrounded);                      
-           animator.SetBool("Jump", false);
-        
-        
-       
-    }
-        
-    }
-    
+         
+                 
+             
 
-}
+              IEnumerator Wait()
+             {   
+        
+                yield return new WaitForSeconds(0.07f);
+                if(animator.GetBool("Jump") == true && IsGrounded.isGrounded){
+                    Debug.Log(animator.GetBool("Jump"));
+                animator.SetBool("Jump", false);  
+                animator.SetBool("Fall", true);   
+                }
+                
+     
+              }
+
+            }
+    }
+
+
     
 
            
