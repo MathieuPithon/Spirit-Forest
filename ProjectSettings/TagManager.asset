@@ -9,6 +9,8 @@ TagManager:
   - PlayerSpawn
   - FadeSystem
   - Fall
+  - Pique
+  - Ground
   layers:
   - Default
   - TransparentFX
@@ -19,7 +21,7 @@ TagManager:
   - 
   - 
   - Enemy
-  - 
+  - Ground
   - 
   - 
   - 
