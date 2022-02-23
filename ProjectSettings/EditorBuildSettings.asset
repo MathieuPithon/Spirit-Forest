@@ -11,15 +11,15 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Tuto.unity
     guid: 328f8b48a85f38b448f2d3cdf3a9e3cc
-  - enabled: 1
+  - enabled: 0
     path: "Assets/Scenes/For\xEAt.unity"
     guid: 6be1d56cbf51ac1409a0271470495d8b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Scene5_cave.unity
     guid: d05e140687767484ab3cb7f6bf0c669e
-  - enabled: 1
-    path: "Assets/Scenes/Sc\xE8ne 2.unity"
-    guid: 6c00b34659ae92246892474b40c9d501
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: "Assets/Scenes/Sc\xE8ne 1.unity"
     guid: eb76db88c2c4f39498b73f3c9084434b

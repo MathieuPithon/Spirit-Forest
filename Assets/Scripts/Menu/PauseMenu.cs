@@ -6,6 +6,7 @@ public class PauseMenu : MonoBehaviour
     public static bool gameIsPaused = false;
     public string mainMenu;
     public GameObject player;
+    public Rigidbody2D rb;
 
     void Update()
     {
@@ -29,6 +30,7 @@ public class PauseMenu : MonoBehaviour
     {
         PlayerMovement.instance.enabled = false;
         player.GetComponent<PlayerActions>().enabled = false;
+        rb.constraints = RigidbodyConstraints2D.FreezePosition;
         player.GetComponent<PlayerMovement>().enabled = false;
         player.GetComponent<PlayerCombat>().enabled = false;
         player.GetComponent<AudioSource>().enabled = false;
@@ -39,6 +41,7 @@ public class PauseMenu : MonoBehaviour
     public void Resume()
     {
         PlayerMovement.instance.enabled = true;
+        rb.constraints = ~RigidbodyConstraints2D.FreezePosition;
         player.GetComponent<PlayerActions>().enabled = true;
         player.GetComponent<PlayerMovement>().enabled = true;
         player.GetComponent<PlayerCombat>().enabled = true;
