@@ -11,6 +11,7 @@ public class Esprit_Combat : MonoBehaviour
     public LayerMask enemies;
     private float startTime;
     public Animator anim;
+    public Animator animSlash;
     private bool letGo = true;
     private bool cantAttack;
     private int compteur = 1;
@@ -27,6 +28,7 @@ public class Esprit_Combat : MonoBehaviour
             Combat(20);
             StartCoroutine(Delay(0.25f));
             anim.SetTrigger("Attack");
+            animSlash.SetTrigger("Attack");
         }
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
