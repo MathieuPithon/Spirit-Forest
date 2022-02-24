@@ -10,7 +10,7 @@ public class Esprit_Ladder : MonoBehaviour
     public float moveSpeed;
     private bool echelle = false;
     public Esprit_IsGrounded isGrounded;
-
+    public GameObject esprit;
     public Animator anim;
 
 
@@ -44,7 +44,7 @@ public class Esprit_Ladder : MonoBehaviour
             if (Input.GetKey("z"))
             {
                 ClimbLadder(1);
-                anim.SetTrigger("PlayerLadder");
+                esprit.GetComponent<Animator>().Play("PlayerLadder");
             }
             if (Input.GetKeyUp("z"))
             {
@@ -67,6 +67,7 @@ public class Esprit_Ladder : MonoBehaviour
         if (isGrounded.isGrounded)
         {
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+            esprit.GetComponent<Animator>().SetTrigger("EndClimb");
         }
 
     }

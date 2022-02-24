@@ -381,7 +381,7 @@ MonoBehaviour:
   gate: {fileID: 0}
   attackArea: {fileID: 7538963754105545547}
   rb: {fileID: 391581785213882953}
-  cible: {fileID: 0}
+  cible: {fileID: 1809746307179047678, guid: 8050734cacb6af0468407079d0c10500, type: 3}
   inCoolDown: 0
   isAttacking: 0
   animator: {fileID: 391581785213882958}
