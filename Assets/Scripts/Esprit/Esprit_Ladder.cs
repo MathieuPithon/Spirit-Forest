@@ -8,13 +8,17 @@ public class Esprit_Ladder : MonoBehaviour
     public Rigidbody2D rb;
     private Vector3 velocity = Vector3.zero;
     public float moveSpeed;
-    private bool echelle = false;
+    public bool echelle = false;
     public Esprit_IsGrounded isGrounded;
     public GameObject esprit;
     public Animator anim;
 
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void Awake()
+    {
+        echelle = false;
+    }
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Ladder")
         {
@@ -60,7 +64,7 @@ public class Esprit_Ladder : MonoBehaviour
             }
             if (Input.GetKeyUp(KeyCode.Space))
             {
-                rb.gravityScale = 2f;
+                rb.gravityScale = 3f;
                 rb.constraints = RigidbodyConstraints2D.FreezeRotation;
             }
         }
@@ -68,6 +72,10 @@ public class Esprit_Ladder : MonoBehaviour
         {
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;
             esprit.GetComponent<Animator>().SetTrigger("EndClimb");
+        }
+        if (!echelle)
+        {
+            rb.gravityScale = 3f;
         }
 
     }

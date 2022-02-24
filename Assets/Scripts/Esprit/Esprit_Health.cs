@@ -37,7 +37,7 @@ public class Esprit_Health : MonoBehaviour
     {
         if (Input.GetKeyDown("h"))
         {
-            TakeDamage(100);
+            TakeDamage(-2000);
         }
         if (colide && !invicibility)
         {
