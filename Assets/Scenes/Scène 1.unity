@@ -1477,11 +1477,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backgrounds:
-<<<<<<< HEAD
   - {fileID: 689877453}
-=======
-  - {fileID: 0}
->>>>>>> 5489ca88fec0dc3cac8aecb2d17d2145120f44f3
   - {fileID: 1884487180}
   - {fileID: 1990449224}
   - {fileID: 1990764132}
