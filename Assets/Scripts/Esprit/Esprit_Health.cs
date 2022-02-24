@@ -92,7 +92,6 @@ public class Esprit_Health : MonoBehaviour
 
     public void Die()
     {
-
         Debug.Log("Le joueur est dead");
         //bloquer les action 
         GetComponent<Esprit_Mouvement>().enabled = false;
