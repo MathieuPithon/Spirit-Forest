@@ -38,6 +38,7 @@ public class Esprit_Combat : MonoBehaviour
         {
             StartCoroutine(Delay(2f));
             anim.SetTrigger("HeavyAttack");
+            animSlash.SetTrigger("AttackHeavy");
             startTime = Time.time;
             letGo = false;
             StartCoroutine(HeavyAttack());
@@ -68,7 +69,7 @@ public class Esprit_Combat : MonoBehaviour
 
     IEnumerator HeavyAttack()
     {
-        yield return new WaitForSeconds(1.21f);
+        yield return new WaitForSeconds(0.75f);
         Combat(40);
     }
     void OnDrawGizmosSelected()
