@@ -38,6 +38,7 @@ public class Esprit_Combat : MonoBehaviour
         {
             StartCoroutine(Delay(2f));
             anim.SetTrigger("HeavyAttack");
+            animSlash.SetTrigger("AttackHeavy");
             startTime = Time.time;
             letGo = false;
             StartCoroutine(HeavyAttack());
