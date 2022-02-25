@@ -15,6 +15,7 @@ public class Esprit_Health : MonoBehaviour
     private bool colide = false;
     public GameObject esprit;
     public AudioSource audioSource;
+    public DeathMenu deathMenu;
 
     void Start()
     {
@@ -92,6 +93,7 @@ public class Esprit_Health : MonoBehaviour
 
     public void Die()
     {
+        deathMenu.ToggleEndMenu ();
         Debug.Log("Le joueur est dead");
         //bloquer les action 
         GetComponent<Esprit_Mouvement>().enabled = false;
@@ -100,7 +102,7 @@ public class Esprit_Health : MonoBehaviour
         GetComponent<Esprit_Dash>().enabled = false;
         GetComponent<Esprit_Combat>().enabled = false;
         //jouer animation de mort
-        esprit.GetComponent<Animator>().Play("PlayerDie");        
+        esprit.GetComponent<Animator>().Play("PlayerDie");       
 
 
 
