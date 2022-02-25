@@ -69,7 +69,7 @@ public class Esprit_Combat : MonoBehaviour
 
     IEnumerator HeavyAttack()
     {
-        yield return new WaitForSeconds(1.21f);
+        yield return new WaitForSeconds(0.75f);
         Combat(40);
     }
     void OnDrawGizmosSelected()

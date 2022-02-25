@@ -98,6 +98,7 @@ public class Esprit_Health : MonoBehaviour
         GetComponent<Esprit_Jump>().enabled = false;
         GetComponent<Esprit_Health>().enabled = false;
         GetComponent<Esprit_Dash>().enabled = false;
+        GetComponent<Esprit_Combat>().enabled = false;
         //jouer animation de mort
         esprit.GetComponent<Animator>().Play("PlayerDie");        
 
