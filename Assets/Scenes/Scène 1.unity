@@ -1483,7 +1483,7 @@ MonoBehaviour:
   - {fileID: 1990764132}
   - {fileID: 355156624}
   smoothing: 0.5
-  cam: {fileID: 0}
+  cam: {fileID: 7145240358054539842, guid: 05de4a65476180246a9575c412431b51, type: 3}
 --- !u!4 &194615628
 Transform:
   m_ObjectHideFlags: 0
