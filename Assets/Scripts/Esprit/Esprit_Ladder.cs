@@ -23,6 +23,9 @@ public class Esprit_Ladder : MonoBehaviour
         if (collision.gameObject.tag == "Ladder")
         {
             echelle = true;
+        } else 
+        {
+            echelle = false;
         }
     }
 
