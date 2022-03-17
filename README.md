@@ -7,7 +7,7 @@
 
 Convention de nommage : 
 
-TOUS EN ANGLAIS 
+TOUT EN ANGLAIS 
 
 
  Nom des scripts :
