@@ -20,7 +20,7 @@ public class DeathMenu : MonoBehaviour
     }
     public void ToggleEndMenu(){
          gameObject.SetActive (true);
-         Time.timeScale = 0;
+         //Time.timeScale = 0;
     }
 
     public void Restart(){
@@ -35,5 +35,9 @@ public class DeathMenu : MonoBehaviour
 
         Debug.Log("testQuit");
         //Application.Quit();
+    }
+    public void respwan(){
+        Time.timeScale = 1;
+        
     }
 }
