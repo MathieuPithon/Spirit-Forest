@@ -20,19 +20,20 @@ public class DeathMenu : MonoBehaviour
     }
     public void ToggleEndMenu(){
          gameObject.SetActive (true);
+         Time.timeScale = 0;
     }
 
     public void Restart(){
 
         Debug.Log("retry");
-        SceneManager.LoadScene("Menu"); 
+       /* SceneManager.LoadScene("Menu"); 
         SceneManager.LoadScene(Menu);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name); 
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name); */
     }
 
     public void Quitter(){
 
         Debug.Log("testQuit");
-        Application.Quit();
+        //Application.Quit();
     }
 }
