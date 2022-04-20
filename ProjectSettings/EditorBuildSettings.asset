@@ -38,4 +38,7 @@ EditorBuildSettings:
   - enabled: 1
     path: "Assets/Scenes/Sc\xE8ne2_pique.unity"
     guid: a44dc17721f2f8342b5de437a8d75741
+  - enabled: 1
+    path: "Assets/Scenes/Sc\xE8ne 4.unity"
+    guid: b314bc6859dfe704fb27472fd9ebb416
   m_configObjects: {}
