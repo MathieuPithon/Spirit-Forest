@@ -5828,7 +5828,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: La  foret est corrompu
+  m_Text: La  foret est corrompue
 --- !u!222 &1715174477
 CanvasRenderer:
   m_ObjectHideFlags: 0
