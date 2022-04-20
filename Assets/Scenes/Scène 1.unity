@@ -7576,6 +7576,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8369056137859150993, guid: 6dc688ed0c2019842977d0c83189fc2f, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 8369056137859151002, guid: 6dc688ed0c2019842977d0c83189fc2f, type: 3}
       propertyPath: m_Name
       value: enemy_tire_1.5
