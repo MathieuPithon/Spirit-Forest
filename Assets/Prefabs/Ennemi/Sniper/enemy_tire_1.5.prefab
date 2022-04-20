@@ -282,12 +282,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CoolDown: 10
   CDAttacking: 2
-  turnAround: {fileID: 8369056138178613877}
+  goBack: {fileID: 4630482443800616158}
   agro: {fileID: 8369056138404812729}
-  attackDistArea: {fileID: 0}
-  attackCaCArea: {fileID: 0}
+  turn: {fileID: 8369056138178613877}
+  gate: {fileID: 0}
+  attackArea: {fileID: 8369056136696631644}
   rb: {fileID: 8369056137859150993}
-  cible: {fileID: 0}
+  cible: {fileID: 1809746307179047678, guid: 8050734cacb6af0468407079d0c10500, type: 3}
   inCoolDown: 0
   isAttacking: 0
   animator: {fileID: 0}
@@ -523,8 +524,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8369056137960538450}
   - component: {fileID: 8369056137960538453}
+  - component: {fileID: 4630482443800616158}
   m_Layer: 8
-  m_Name: "C\xE0cAttackArea"
+  m_Name: goBackArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -570,6 +572,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.83599377, y: 2.1073685}
   m_EdgeRadius: 0
+--- !u!114 &4630482443800616158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8369056137960538451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8e9672e4ec04b04a9a249629c08feda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  needBack: 0
 --- !u!1 &8369056138178613872
 GameObject:
   m_ObjectHideFlags: 0
