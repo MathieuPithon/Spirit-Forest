@@ -15,13 +15,13 @@ public class test_parallax : MonoBehaviour {
     }
 
     void Update(){
-        float temp =(cam.transform.position.x * (1-parallaxEffect));
+        float temp = (cam.transform.position.x * (1-parallaxEffect));
         float dist = (cam.transform.position.x * parallaxEffect);
 
         transform.position = new Vector3(startpos + dist,transform.position.y, transform.position.z);
 
-        if(temp>startpos + lenght) startpos += lenght;
-        else if (temp<startpos - lenght) startpos-=lenght;
+        if(temp > startpos + lenght) startpos += lenght;
+        else if (temp < startpos - lenght) startpos-=lenght;
 
     }
 
