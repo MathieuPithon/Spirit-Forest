@@ -15,9 +15,12 @@ public class EnemySniper_Launcher : MonoBehaviour
     private Vector3 scaleChange;
     private bool faceLeft;
     public float CDAttack;
-    private bool inCD;
+    public bool inCD;
+    public bool aimed = false;
 
-    void Start(){
+
+    void Start()
+    {
         esprit = GameObject.FindGameObjectsWithTag("Player");
         player = esprit[0];
     }
@@ -26,6 +29,21 @@ public class EnemySniper_Launcher : MonoBehaviour
         yield return new WaitForSeconds(CDAttack);
         inCD = false;
     }
+    IEnumerator TimerAime()
+    {
+        yield return new WaitForSeconds(3f);
+        aimed = true;
+    }
+    IEnumerator TimerShooting()
+    {
+        yield return new WaitForSeconds(0.5f);
+        temp();
+        aimed = false;
+        inCD = true;
+        StartCoroutine(TimerCDAttack());
+    }
+
+
 
     void rotationSniper()
     {
@@ -44,31 +62,38 @@ public class EnemySniper_Launcher : MonoBehaviour
         turn.needTurn = false;
     }
 
-    void Shoot()
+    void Aime()
     {
         Vector3 origin = firePoint.position;
         Vector3 end = player.transform.position;
         Vector3 direction = end - origin;
-        Debug.Log(end);
 
         RaycastHit2D hitInfo = Physics2D.Raycast(firePoint.position, direction);
         if (hitInfo)
         {
-            Debug.Log(hitInfo.transform.name);
             lineRenderer.SetPosition(0, firePoint.position);
-            lineRenderer.SetPosition(1, hitInfo.point);
+            lineRenderer.SetPosition(1, hitInfo.point );
 
         }
     }
 
+
+    void temp()
+    {
+        lineRenderer.SetPosition(0, firePoint.position);
+        lineRenderer.SetPosition(1, firePoint.position);
+    }
     void Update()
     {
-
-        if (range.inRange && inCD == false)
+        if (range.inRange && inCD == false && aimed == false)
         {
-            inCD = true;
-            Shoot();
-            StartCoroutine(TimerCDAttack());
+            Aime();
+            StartCoroutine(TimerAime());
+        }
+        if (range.inRange && aimed)
+        {
+            StartCoroutine(TimerShooting());
+
         }
 
         if (turn.needTurn)
