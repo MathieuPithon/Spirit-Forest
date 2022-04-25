@@ -62,6 +62,18 @@ public class EnemySniper_Launcher : MonoBehaviour
         turn.needTurn = false;
     }
 
+    void setcolor(LineRenderer lineRenderer, Color newColor)
+    {
+        Gradient tempGradient = new Gradient();
+
+        GradientColorKey[] tempColorkeys = new GradientColorKey[2];
+        tempColorkeys[0] = new GradientColorKey(newColor, 0);
+        tempColorkeys[1] = new GradientColorKey(newColor, 1);
+
+        tempGradient.colorKeys = tempColorkeys;
+
+        lineRenderer.colorGradient = tempGradient;
+    }
     void Aime()
     {
         Vector3 origin = firePoint.position;
@@ -71,8 +83,9 @@ public class EnemySniper_Launcher : MonoBehaviour
         RaycastHit2D hitInfo = Physics2D.Raycast(firePoint.position, direction);
         if (hitInfo)
         {
+            setcolor(lineRenderer, UnityEngine.Color.green);
             lineRenderer.SetPosition(0, firePoint.position);
-            lineRenderer.SetPosition(1, hitInfo.point );
+            lineRenderer.SetPosition(1, hitInfo.point);
 
         }
     }
@@ -92,6 +105,8 @@ public class EnemySniper_Launcher : MonoBehaviour
         }
         if (range.inRange && aimed)
         {
+            setcolor(lineRenderer, UnityEngine.Color.red);
+
             StartCoroutine(TimerShooting());
 
         }
