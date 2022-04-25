@@ -6,11 +6,21 @@ public class EnemySniper_Launcher : MonoBehaviour
 {
     public EnemySniper_RangeArea range;
     public EnemySniper_Turn turn;
+    public Transform firePoint;
+    public GameObject[] esprit;
+    public GameObject player;
+    public Esprit_Health esprit_Health;
+    public LineRenderer lineRenderer;
 
     private Vector3 scaleChange;
     private bool faceLeft;
     public float CDAttack;
     private bool inCD;
+
+    void Start(){
+        esprit = GameObject.FindGameObjectsWithTag("Player");
+        player = esprit[0];
+    }
     IEnumerator TimerCDAttack()
     {
         yield return new WaitForSeconds(CDAttack);
@@ -33,13 +43,31 @@ public class EnemySniper_Launcher : MonoBehaviour
         transform.localScale += scaleChange;
         turn.needTurn = false;
     }
+
+    void Shoot()
+    {
+        Vector3 origin = firePoint.position;
+        Vector3 end = player.transform.position;
+        Vector3 direction = end - origin;
+        Debug.Log(end);
+
+        RaycastHit2D hitInfo = Physics2D.Raycast(firePoint.position, direction);
+        if (hitInfo)
+        {
+            Debug.Log(hitInfo.transform.name);
+            lineRenderer.SetPosition(0, firePoint.position);
+            lineRenderer.SetPosition(1, hitInfo.point);
+
+        }
+    }
+
     void Update()
     {
 
         if (range.inRange && inCD == false)
         {
             inCD = true;
-            Debug.Log("piou piou");
+            Shoot();
             StartCoroutine(TimerCDAttack());
         }
 
