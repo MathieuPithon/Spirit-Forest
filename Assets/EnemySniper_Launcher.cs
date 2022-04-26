@@ -15,7 +15,7 @@ public class EnemySniper_Launcher : MonoBehaviour
     private Vector3 scaleChange;
     private bool faceLeft;
     public float CDAttack;
-    public bool inCD;
+    public bool inCD = false;
     public bool aimed = false;
     private bool updateAime;
     private Vector3 directionTemp;
@@ -27,6 +27,7 @@ public class EnemySniper_Launcher : MonoBehaviour
     {
         esprit = GameObject.FindGameObjectsWithTag("Player");
         player = esprit[0];
+        temp();
     }
     IEnumerator TimerCDAttack()
     {
