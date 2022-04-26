@@ -17,6 +17,10 @@ public class EnemySniper_Launcher : MonoBehaviour
     public float CDAttack;
     public bool inCD;
     public bool aimed = false;
+    private bool updateAime;
+    private Vector3 directionTemp;
+    private bool coroutine2 = false;
+    private bool coroutine1 = false;
 
 
     void Start()
@@ -33,13 +37,17 @@ public class EnemySniper_Launcher : MonoBehaviour
     {
         yield return new WaitForSeconds(3f);
         aimed = true;
+        coroutine1 = false;
     }
     IEnumerator TimerShooting()
     {
         yield return new WaitForSeconds(0.5f);
+
         temp();
         aimed = false;
         inCD = true;
+        updateAime = true;
+        coroutine2 = false;
         StartCoroutine(TimerCDAttack());
     }
 
@@ -76,19 +84,42 @@ public class EnemySniper_Launcher : MonoBehaviour
     }
     void Aime()
     {
+
         Vector3 origin = firePoint.position;
         Vector3 end = player.transform.position;
         Vector3 direction = end - origin;
+        if (updateAime)
+        {
+            directionTemp = direction;
+        }
 
-        RaycastHit2D hitInfo = Physics2D.Raycast(firePoint.position, direction);
+
+        RaycastHit2D hitInfo = Physics2D.Raycast(firePoint.position, directionTemp);
         if (hitInfo)
         {
-            setcolor(lineRenderer, UnityEngine.Color.green);
+            if (updateAime)
+            {
+                setcolor(lineRenderer, UnityEngine.Color.green);
+            }
+
+            else
+            {
+                setcolor(lineRenderer, UnityEngine.Color.red);
+            }
+
             lineRenderer.SetPosition(0, firePoint.position);
             lineRenderer.SetPosition(1, hitInfo.point);
 
+
         }
+
     }
+
+
+
+
+
+
 
 
     void temp()
@@ -101,13 +132,23 @@ public class EnemySniper_Launcher : MonoBehaviour
         if (range.inRange && inCD == false && aimed == false)
         {
             Aime();
-            StartCoroutine(TimerAime());
+            if (coroutine1 == false)
+            {
+                coroutine1 = true;
+                StartCoroutine(TimerAime());
+            }
+
         }
         if (range.inRange && aimed)
         {
-            setcolor(lineRenderer, UnityEngine.Color.red);
+            updateAime = false;
+            Aime();
+            if (coroutine2 == false)
+            {
+                coroutine2 = true;
+                StartCoroutine(TimerShooting());
+            }
 
-            StartCoroutine(TimerShooting());
 
         }
 
