@@ -13522,10 +13522,16 @@ MonoBehaviour:
   range: {fileID: 1071129540}
   turn: {fileID: 618635533}
   firePoint: {fileID: 1727957609}
-  esprit: {fileID: 1809746307179047678, guid: 8050734cacb6af0468407079d0c10500, type: 3}
+  esprit:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  player: {fileID: 0}
   esprit_Health: {fileID: 1809746307179047668, guid: 8050734cacb6af0468407079d0c10500, type: 3}
   lineRenderer: {fileID: 897495263}
   CDAttack: 3
+  inCD: 0
+  aimed: 0
 --- !u!212 &850936055
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15097,7 +15103,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -7.3815503, y: 0.9839263}
+  m_Offset: {x: -8.541884, y: 0.9839263}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -15108,7 +15114,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 12.593629, y: 6.696416}
+  m_Size: {x: 10.272963, y: 6.696416}
   m_EdgeRadius: 0
 --- !u!1 &1071415723
 GameObject:
