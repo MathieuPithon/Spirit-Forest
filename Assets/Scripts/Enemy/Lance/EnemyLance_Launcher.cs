@@ -151,7 +151,6 @@ public class EnemyLance_Launcher : MonoBehaviour
         if (attackArea.inRange == true && inCoolDown == false)
         {
             attack();
-
         }
 
         //if mouvement

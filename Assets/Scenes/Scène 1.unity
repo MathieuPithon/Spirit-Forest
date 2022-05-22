@@ -13538,6 +13538,7 @@ GameObject:
   - component: {fileID: 850936055}
   - component: {fileID: 850936054}
   - component: {fileID: 850936058}
+  - component: {fileID: 850936059}
   m_Layer: 0
   m_Name: EnemySniper
   m_TagString: Untagged
@@ -13570,6 +13571,7 @@ MonoBehaviour:
   CDAttack: 3
   inCD: 0
   aimed: 0
+  animator: {fileID: 0}
 --- !u!212 &850936055
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13609,13 +13611,13 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 159403c32d7998f4183428c04073b08f, type: 3}
+  m_SortingOrder: 5
+  m_Sprite: {fileID: 21300000, guid: 7c115ebada5f8cc469676303b40c165d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.0013788, y: 2.352941}
+  m_Size: {x: 17.011719, y: 20}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -13650,7 +13652,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 850936053}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -32.195805, y: 5.0379314, z: 148.95064}
+  m_LocalPosition: {x: -29.03, y: 0.74, z: 148.95064}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1071129539}
@@ -13676,6 +13678,25 @@ CapsuleCollider2D:
   m_Offset: {x: 0.25276005, y: 0.006902933}
   m_Size: {x: 0.53537107, y: 1.7868934}
   m_Direction: 0
+--- !u!95 &850936059
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 850936053}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 25412aea374bd294ba2a4263bd4292b0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &854239892
 GameObject:
   m_ObjectHideFlags: 0
@@ -13746,7 +13767,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: e236d7e71dcc08f49be5518e17f9862a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

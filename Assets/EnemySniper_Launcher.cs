@@ -9,7 +9,7 @@ public class EnemySniper_Launcher : MonoBehaviour
     public Transform firePoint;
     public GameObject[] esprit;
     public GameObject player;
-    public Esprit_Health esprit_Health;
+    public Esprit_Health esprit_Health; 
     public LineRenderer lineRenderer;
 
     private Vector3 scaleChange;
@@ -21,6 +21,9 @@ public class EnemySniper_Launcher : MonoBehaviour
     private Vector3 directionTemp;
     private bool coroutine2 = false;
     private bool coroutine1 = false;
+    
+    public Animator animator;
+
 
 
     void Start()
