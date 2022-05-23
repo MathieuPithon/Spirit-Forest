@@ -11,9 +11,10 @@ public class Ours_Launcher : MonoBehaviour
     public GameObject player;
 
     private bool animAttack = false;
+    private bool animScream = false;
     private bool inCDattack = false;
     private bool inCDscream = false;
-
+    private bool needScream = false;
 
     void Start()
     {
@@ -26,11 +27,22 @@ public class Ours_Launcher : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         animAttack = false;
     }
+    IEnumerator AnimeScreamCD()
+    {
+        yield return new WaitForSeconds(1.5f);
+        animScream = false;
+    }
 
     IEnumerator inCDattackCD()
     {
         yield return new WaitForSeconds(4f);
-        animAttack = false;
+        inCDattack = false;
+    }
+
+    IEnumerator inCDscreamCD()
+    {
+        yield return new WaitForSeconds(4f);
+        inCDscream = false;
     }
 
     private void attack()
@@ -43,8 +55,13 @@ public class Ours_Launcher : MonoBehaviour
         StartCoroutine(inCDattackCD());
     }
 
-    private void scream(){
-
+    private void scream()
+    {
+        //start animation scream
+        animScream = true;
+        StartCoroutine(AnimeScreamCD());
+        inCDscream = true;
+        StartCoroutine(inCDscreamCD());
     }
 
     void Update()
@@ -53,7 +70,7 @@ public class Ours_Launcher : MonoBehaviour
         {
             attack();
         }
-        if (platfromArea.onPlatfrom && !animAttack && !inCDscream)
+        if ((platfromArea.onPlatfrom || needScream) && !animAttack && !inCDscream)
         {
             scream();
         }
