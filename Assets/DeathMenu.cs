@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -19,6 +19,7 @@ public class DeathMenu : MonoBehaviour
         
     }
     public void ToggleEndMenu(){
+         new WaitForSeconds(1f);
          gameObject.SetActive (true);
          //Time.timeScale = 0;
     }

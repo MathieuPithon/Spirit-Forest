@@ -12,7 +12,7 @@ public class Spawner : MonoBehaviour
     {
         StartCoroutine(myWaitCoroutine());
         //esprit.GetComponent<Animator>().SetTrigger("EndClimb");
-        Debug.log("Spawner.cs");
+        Debug.Log("Spawner.cs");
          
     }
 
@@ -27,7 +27,7 @@ public class Spawner : MonoBehaviour
     }
     IEnumerator myWaitCoroutine()
     {
-        
+        Debug.Log("Spawner.cs");
         play= true;
         yield return new WaitForSeconds(0.8f);// Wait for 0.8 second
 
