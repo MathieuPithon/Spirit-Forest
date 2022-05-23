@@ -16579,7 +16579,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1362722788575237698, guid: 2553d11356bbb93428c19d58af5167b4, type: 3}
       propertyPath: sceneName
-      value: "Sc\xE8ne 4"
+      value: "Sc\xE8ne 6"
       objectReference: {fileID: 0}
     - target: {fileID: 1362722788575237708, guid: 2553d11356bbb93428c19d58af5167b4, type: 3}
       propertyPath: m_LocalPosition.x
