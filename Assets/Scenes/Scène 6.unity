@@ -1780,6 +1780,7 @@ GameObject:
   - component: {fileID: 339735586}
   - component: {fileID: 339735590}
   - component: {fileID: 339735589}
+  - component: {fileID: 339735591}
   m_Layer: 0
   m_Name: Boss ours
   m_TagString: Untagged
@@ -1884,11 +1885,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f972c363f882b6c4cb26b012a2f36b97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundArea: {fileID: 0}
-  platfromArea: {fileID: 0}
-  rangeArea: {fileID: 0}
+  groundArea: {fileID: 750583452}
+  platfromArea: {fileID: 1034837415}
+  rangeArea: {fileID: 170452294}
   esprit: []
   player: {fileID: 0}
+  leftWall: {fileID: 1117301645}
+  rightWall: {fileID: 1472456369}
+  rb: {fileID: 339735591}
+  moveSpeed: 0
 --- !u!61 &339735590
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1915,6 +1920,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.6733265, y: 2.1489239}
   m_EdgeRadius: 0
+--- !u!50 &339735591
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 339735585}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &348463035
 GameObject:
   m_ObjectHideFlags: 0
@@ -4590,6 +4616,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1117301645
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1117301646}
+  m_Layer: 0
+  m_Name: wallLeft
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1117301646
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1117301645}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -9.62, y: -26.47, z: -11.711141}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1177916303
 GameObject:
   m_ObjectHideFlags: 0
