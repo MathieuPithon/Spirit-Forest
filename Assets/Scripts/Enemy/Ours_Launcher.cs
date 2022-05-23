@@ -12,6 +12,11 @@ public class Ours_Launcher : MonoBehaviour
     public GameObject leftWall;
     public GameObject rightWall;
     public Rigidbody2D rb;
+    public SpriteRenderer spriteRenderer;
+    public turnArea turnArea;
+    private Vector3 scaleChange;
+    private bool faceLeft;
+
 
     public bool animAttack = false;
     public bool animScream = false;
@@ -20,6 +25,7 @@ public class Ours_Launcher : MonoBehaviour
     public bool animCharge = false;
     public bool inCDcharge = false;
     public bool overideCharge = false;
+    public bool CoroutineCharge = true;
     public int goLeft;
 
     private bool anim = false;
@@ -41,7 +47,7 @@ public class Ours_Launcher : MonoBehaviour
     }
     IEnumerator AnimeChargeCD()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(3f);
         animCharge = false;
     }
 
@@ -59,12 +65,12 @@ public class Ours_Launcher : MonoBehaviour
 
     IEnumerator inCDchargeCD()
     {
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(10f);
         inCDcharge = false;
+        CoroutineCharge = true;
     }
     private void attack()
     {
-        print("attack");
         //start animation attack
         player.GetComponent<Esprit_Health>().TakeDamage(20);
         animAttack = true;
@@ -75,7 +81,6 @@ public class Ours_Launcher : MonoBehaviour
 
     private void scream()
     {
-        print("scream");
         //start animation scream
         animScream = true;
         StartCoroutine(AnimeScreamCD());
@@ -86,15 +91,28 @@ public class Ours_Launcher : MonoBehaviour
     private void charge()
     {
         //player entre le mur gauche et l'ours
-        if (transform.position.x - leftWall.transform.position.x > player.transform.position.x - leftWall.transform.position.x)
+        if (!inCDcharge)
         {
-            goLeft = -1;
+            if (transform.position.x - leftWall.transform.position.x > player.transform.position.x - leftWall.transform.position.x)
+            {
+                goLeft = 1;
+            }
+            else
+            {
+                goLeft = -1;
+            }
         }
-        else
+
+        if (CoroutineCharge)
         {
-            goLeft = 1;
+            CoroutineCharge = false;
+            animCharge = true;
+            StartCoroutine(AnimeChargeCD());
+            inCDcharge = true;
+            StartCoroutine(inCDchargeCD());
         }
-        if (leftWall.transform.position.x <= transform.position.x)
+
+        if (leftWall.transform.position.x <= transform.position.x && animCharge)
         {
 
             overideCharge = true;
@@ -103,15 +121,27 @@ public class Ours_Launcher : MonoBehaviour
         {
             overideCharge = false;
         }
-        print("charge");
         Vector3 vecAgro = leftWall.transform.position.Y() - transform.position.Y();
-        transform.Translate(vecAgro.normalized * 50 * Time.deltaTime, Space.World);
+        transform.Translate(vecAgro.normalized * goLeft * 10 * Time.deltaTime, Space.World);
 
 
-        animCharge = true;
-        StartCoroutine(AnimeChargeCD());
-        inCDcharge = true;
-        StartCoroutine(inCDchargeCD());
+    }
+
+    void Flip()
+    {
+        if (faceLeft == true)
+        {
+            scaleChange = new Vector3(2f, 0f, 0f);
+            faceLeft = false;
+        }
+        else
+        {
+            scaleChange = new Vector3(-2f, 0f, 0f);
+            faceLeft = true;
+        }
+
+        transform.localScale += scaleChange;
+        turnArea.needTurn = false;
     }
 
     void Update()
@@ -123,6 +153,10 @@ public class Ours_Launcher : MonoBehaviour
         else
         {
             anim = false;
+        }
+        if (turnArea.needTurn && anim)
+        {
+            Flip();
         }
         if (rangeArea.seePlayer && !inCDattack && anim)
         {
