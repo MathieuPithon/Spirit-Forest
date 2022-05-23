@@ -11,7 +11,8 @@ public class Spawner : MonoBehaviour
     void Start()
     {
         StartCoroutine(myWaitCoroutine());
-        esprit.GetComponent<Animator>().SetTrigger("EndClimb");
+        //esprit.GetComponent<Animator>().SetTrigger("EndClimb");
+        Debug.log("Spawner.cs");
          
     }
 
