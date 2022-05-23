@@ -48,7 +48,7 @@ public class EnemySniper_Launcher : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
 
         temp();
-        player.GetComponent<Esprit_Health>().TakeDamage(20);
+        // player.GetComponent<Esprit_Health>().TakeDamage(20);
         aimed = false;
         inCD = true;
         updateAime = true;
