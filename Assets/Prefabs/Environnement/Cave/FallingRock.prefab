@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3476697134154340604}
   - component: {fileID: 3476697134154340606}
   - component: {fileID: 3476697134154340605}
+  - component: {fileID: 5770459107941823544}
   m_Layer: 8
   m_Name: FallingRock
   m_TagString: Untagged
@@ -120,4 +121,23 @@ Rigidbody2D:
   m_Interpolate: 2
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 2
+  m_Constraints: 6
+--- !u!95 &5770459107941823544
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3476697134154340594}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: de4636756d3ca0848b58e35ec2f9260a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
