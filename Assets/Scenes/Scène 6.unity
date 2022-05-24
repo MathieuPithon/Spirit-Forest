@@ -1855,7 +1855,6 @@ GameObject:
   - component: {fileID: 339735589}
   - component: {fileID: 339735591}
   - component: {fileID: 339735592}
-  - component: {fileID: 339735595}
   - component: {fileID: 339735594}
   - component: {fileID: 339735593}
   m_Layer: 0
@@ -2235,20 +2234,7 @@ MonoBehaviour:
   healthBar: {fileID: 313390736}
   deathSound: {fileID: 339735593}
   Samourai: {fileID: 339735585}
---- !u!114 &339735595
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 339735585}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f311801d9b5470748871193e7b699b00, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slider: {fileID: 313390738}
-  fill: {fileID: 335407663}
+  animator: {fileID: 339735586}
 --- !u!1 &348463035
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,6 +14,7 @@ public class EnemyHealthManager : MonoBehaviour
     public OursHealth healthBar;
     public AudioSource deathSound;
     public GameObject Samourai;
+    public Animator animator;
     void Start()
     {
         SetMaxHealth();
@@ -25,6 +26,7 @@ public class EnemyHealthManager : MonoBehaviour
         if (currentHealth <= 0)
         {
             deathSound.Play();
+            animator.SetBool("die", true);
             //jouer animation de mort
         }
 
