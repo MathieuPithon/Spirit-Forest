@@ -1575,7 +1575,7 @@ GameObject:
   - component: {fileID: 313390736}
   - component: {fileID: 313390739}
   - component: {fileID: 313390738}
-  m_Layer: 9
+  m_Layer: 5
   m_Name: BossHealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1746,7 +1746,7 @@ GameObject:
   - component: {fileID: 335407665}
   - component: {fileID: 335407664}
   - component: {fileID: 335407663}
-  m_Layer: 9
+  m_Layer: 5
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4376,7 +4376,7 @@ GameObject:
   - component: {fileID: 1207367779}
   - component: {fileID: 1207367781}
   - component: {fileID: 1207367780}
-  m_Layer: 9
+  m_Layer: 5
   m_Name: Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
