@@ -1692,6 +1692,7 @@ MonoBehaviour:
   turnArea: {fileID: 1680725800}
   animator: {fileID: 339735586}
   speed: 0
+  audioScream: {fileID: 339735592}
 --- !u!61 &339735590
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1749,7 +1750,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 76fd351c1c7a4c147a0af3128647d245, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
