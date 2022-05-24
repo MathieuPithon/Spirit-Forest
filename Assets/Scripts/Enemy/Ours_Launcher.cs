@@ -22,7 +22,8 @@ public class Ours_Launcher : MonoBehaviour
 
 
     private bool animAttack = false;
-    private bool animScream = false;
+    [HideInInspector]
+    public bool animScream = Ours_Launcher.animScream;
     private bool inCDattack = false;
     private bool inCDscream = false;
     private bool animCharge = false;
