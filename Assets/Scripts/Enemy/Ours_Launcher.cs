@@ -17,7 +17,7 @@ public class Ours_Launcher : MonoBehaviour
     public Animator animator;
     private Vector3 scaleChange;
     private bool faceLeft;
-    private float speed = 0;
+    public float speed = 0;
 
 
 
