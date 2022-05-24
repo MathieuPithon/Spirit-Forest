@@ -1475,7 +1475,7 @@ MonoBehaviour:
   - {fileID: 624269525}
   - {fileID: 1221879392}
   - {fileID: 1706286605}
-  enemyPrefabs: {fileID: 6296575450069254978, guid: ed8a7c5e4f8affa4793467d55a13316f, type: 3}
+  enemyPrefabs: {fileID: 3476697135405675461}
   hurlement: 0
   esprit: {fileID: 1809746307179047677, guid: 8050734cacb6af0468407079d0c10500, type: 3}
 --- !u!1 &274139870
@@ -6911,6 +6911,10 @@ PrefabInstance:
     - target: {fileID: 3476697134154340594, guid: 4afcb7b392aeafb44973b7ec415b68bc, type: 3}
       propertyPath: m_Name
       value: FallingRock
+      objectReference: {fileID: 0}
+    - target: {fileID: 3476697134154340594, guid: 4afcb7b392aeafb44973b7ec415b68bc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3476697134154340595, guid: 4afcb7b392aeafb44973b7ec415b68bc, type: 3}
       propertyPath: m_LocalPosition.x

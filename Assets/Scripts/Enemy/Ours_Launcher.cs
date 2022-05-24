@@ -42,7 +42,7 @@ public class Ours_Launcher : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
         animAttack = false;
-        animator.SetBool("attack", true);
+        animator.SetBool("attack", false);
     }
     IEnumerator AnimeScreamCD()
     {
