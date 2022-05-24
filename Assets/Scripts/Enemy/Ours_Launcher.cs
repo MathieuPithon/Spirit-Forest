@@ -104,6 +104,8 @@ public class Ours_Launcher : MonoBehaviour
         if (transform.position.x - leftWall.transform.position.x < 2F || rightWall.transform.position.x - transform.position.x < 2f)
         {
             animator.SetBool("hitWall", true);
+            new WaitForSeconds(2.5f);
+            animator.SetBool("hitWall", false);
         }
         else
         {
