@@ -18,16 +18,15 @@ public class Ours_Launcher : MonoBehaviour
     private bool faceLeft;
 
 
-    public bool animAttack = false;
-    public bool animScream = false;
-    public bool inCDattack = false;
-    public bool inCDscream = false;
-    public bool animCharge = false;
-    public bool inCDcharge = false;
-    public bool overideCharge = false;
-    public bool CoroutineCharge = true;
-    public int goLeft;
-
+    private bool animAttack = false;
+    private bool animScream = false;
+    private bool inCDattack = false;
+    private bool inCDscream = false;
+    private bool animCharge = false;
+    private bool inCDcharge = false;
+    private bool overideCharge = false;
+    private bool CoroutineCharge = true;
+    private int goLeft;
     private bool anim = false;
     void Start()
     {
@@ -171,4 +170,17 @@ public class Ours_Launcher : MonoBehaviour
             charge();
         }
     }
+
+    public float speed = 0;
+
+    Vector3 lastPosition = Vector3.zero;
+    void FixedUpdate()
+    {
+        speed = (transform.position - lastPosition).magnitude;
+        lastPosition = transform.position;
+        print(speed);
+    }
+
+
+
 }
