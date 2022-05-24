@@ -1689,15 +1689,7 @@ MonoBehaviour:
   rb: {fileID: 339735591}
   spriteRenderer: {fileID: 339735587}
   turnArea: {fileID: 1680725800}
-  animAttack: 0
-  animScream: 0
-  inCDattack: 0
-  inCDscream: 0
-  animCharge: 0
-  inCDcharge: 0
-  overideCharge: 0
-  CoroutineCharge: 1
-  goLeft: 0
+  animator: {fileID: 339735586}
 --- !u!61 &339735590
 BoxCollider2D:
   m_ObjectHideFlags: 0
