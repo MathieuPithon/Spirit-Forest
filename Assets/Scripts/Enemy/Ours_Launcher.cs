@@ -41,11 +41,13 @@ public class Ours_Launcher : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
         animAttack = false;
+        animator.SetBool("attack", true);
     }
     IEnumerator AnimeScreamCD()
     {
         yield return new WaitForSeconds(1.5f);
         animScream = false;
+        animator.SetBool("scream", false);
     }
     IEnumerator AnimeChargeCD()
     {
@@ -73,6 +75,7 @@ public class Ours_Launcher : MonoBehaviour
     }
     private void attack()
     {
+        animator.SetBool("attack", true);
         //start animation attack
         player.GetComponent<Esprit_Health>().TakeDamage(20);
         animAttack = true;
@@ -83,6 +86,7 @@ public class Ours_Launcher : MonoBehaviour
 
     private void scream()
     {
+        animator.SetBool("scream", true);
         //start animation scream
         animScream = true;
         StartCoroutine(AnimeScreamCD());
