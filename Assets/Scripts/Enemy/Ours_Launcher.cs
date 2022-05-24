@@ -14,8 +14,11 @@ public class Ours_Launcher : MonoBehaviour
     public Rigidbody2D rb;
     public SpriteRenderer spriteRenderer;
     public turnArea turnArea;
+    public Animator animator;
     private Vector3 scaleChange;
     private bool faceLeft;
+    private float speed = 0;
+
 
 
     private bool animAttack = false;
@@ -171,14 +174,14 @@ public class Ours_Launcher : MonoBehaviour
         }
     }
 
-    public float speed = 0;
+
 
     Vector3 lastPosition = Vector3.zero;
     void FixedUpdate()
     {
         speed = (transform.position - lastPosition).magnitude;
         lastPosition = transform.position;
-        print(speed);
+        animator.SetFloat("speed", speed);
     }
 
 
