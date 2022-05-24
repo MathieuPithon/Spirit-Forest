@@ -39,6 +39,8 @@ public class Ours_Launcher : MonoBehaviour
     {
         esprit = GameObject.FindGameObjectsWithTag("Player");
         player = esprit[0];
+        StartCoroutine(WaitBeginning());
+
     }
 
     IEnumerator AnimeAttackCD()
@@ -59,6 +61,13 @@ public class Ours_Launcher : MonoBehaviour
         animCharge = false;
     }
 
+    IEnumerator AnimeHitWallCD()
+    {
+        yield return new WaitForSeconds(2.5f);
+        hitWall = false;
+        Debug.Log("HitWall CoroutineCharge");
+    }
+
     IEnumerator inCDattackCD()
     {
         yield return new WaitForSeconds(4f);
@@ -73,9 +82,14 @@ public class Ours_Launcher : MonoBehaviour
 
     IEnumerator inCDchargeCD()
     {
-        yield return new WaitForSeconds(20f);
+        yield return new WaitForSeconds(8f);
         inCDcharge = false;
         CoroutineCharge = true;
+    }
+
+    IEnumerator WaitBeginning()
+    {
+        yield return new WaitForSeconds(5f);
     }
     private void attack()
     {
@@ -101,17 +115,7 @@ public class Ours_Launcher : MonoBehaviour
 
     private void charge()
     {
-        if (transform.position.x - leftWall.transform.position.x < 2F || rightWall.transform.position.x - transform.position.x < 2f)
-        {
-            animator.SetBool("hitWall", true);
-            new WaitForSeconds(2.5f);
-            animator.SetBool("hitWall", false);
-        }
-        else
-        {
-            animator.SetBool("hitWall", false);
-        }
-
+        
         if (hited.hited)
         {
             print("vdsssss");
@@ -137,8 +141,16 @@ public class Ours_Launcher : MonoBehaviour
             CoroutineCharge = false;
             animCharge = true;
             StartCoroutine(AnimeChargeCD());
+            /*
+            if (transform.position.x - leftWall.transform.position.x < 1F || rightWall.transform.position.x - transform.position.x < 1f)
+            {
+                HitWall();
+                animator.SetBool("hitWall", false);
+            }
+            */
             inCDcharge = true;
             StartCoroutine(inCDchargeCD());
+
         }
 
         if (leftWall.transform.position.x <= transform.position.x && animCharge)
@@ -153,6 +165,10 @@ public class Ours_Launcher : MonoBehaviour
         Vector3 vecAgro = leftWall.transform.position.Y() - transform.position.Y();
         transform.Translate(vecAgro.normalized * goLeft * 10 * Time.deltaTime, Space.World);
 
+        
+        
+        
+        
 
     }
 
@@ -173,8 +189,18 @@ public class Ours_Launcher : MonoBehaviour
         turnArea.needTurn = false;
     }
 
+    void HitWall()
+    {
+        //audioWallHitted.Play();
+        animator.SetBool("hitWall",true);
+        hitWall = true;
+        StartCoroutine(AnimeHitWallCD());
+
+    }
+
     void Update()
     {
+
         if (!animAttack && !animScream && !animCharge)
         {
             anim = true;
@@ -198,7 +224,9 @@ public class Ours_Launcher : MonoBehaviour
         if ((!platfromArea.onPlatfrom && !rangeArea.seePlayer && groundArea.isGrounded && !inCDcharge && anim) || overideCharge)
         {
             charge();
+            //animator.SetBool("hitWall",false);
         }
+        
         if (!platfromArea.onPlatfrom && !rangeArea.seePlayer && groundArea.isGrounded && inCDcharge && anim)
         {
             Vector3 vecAgro = player.transform.position.Y() - transform.position.Y();
