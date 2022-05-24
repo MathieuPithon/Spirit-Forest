@@ -6,7 +6,7 @@ using UnityEngine.UI;
 /**
     Initialise la barre des points de vies
 **/
-public class Ours_Health : MonoBehaviour
+public class OursHealth : MonoBehaviour
 {
     public Slider slider;
     public Image fill;

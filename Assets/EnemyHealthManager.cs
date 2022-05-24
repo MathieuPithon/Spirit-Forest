@@ -6,12 +6,12 @@ using UnityEngine;
 /**
     Initialise les variables qui sont mises dans la barre de vie, ainsi que l'évènement quand HP = 0
 **/
-public class Ours_Health_Manager : MonoBehaviour
+public class EnemyHealthManager : MonoBehaviour
 {
     public int maxHealth;
     public int currentHealth;
 
-    public EnemyHealthBar healthBar;
+    public OursHealth healthBar;
     public AudioSource deathSound;
     public GameObject Samourai;
     void Start()

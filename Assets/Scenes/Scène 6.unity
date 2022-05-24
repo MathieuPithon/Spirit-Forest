@@ -1576,7 +1576,7 @@ GameObject:
   - component: {fileID: 313390738}
   - component: {fileID: 313390736}
   m_Layer: 5
-  m_Name: BossHealthBar
+  m_Name: EnemyHealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1591,7 +1591,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 313390735}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f311801d9b5470748871193e7b699b00, type: 3}
+  m_Script: {fileID: 11500000, guid: c1c13dd1f90536943b9715d29cb74432, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 313390738}
@@ -2202,9 +2202,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 200
   currentHealth: 200
-  xpEarned: 4
-  healthBar: {fileID: 0}
-  xp: {fileID: 0}
+  healthBar: {fileID: 313390736}
   deathSound: {fileID: 339735593}
   Samourai: {fileID: 339735585}
 --- !u!114 &339735595
