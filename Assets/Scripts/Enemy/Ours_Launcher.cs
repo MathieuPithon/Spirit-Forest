@@ -18,6 +18,7 @@ public class Ours_Launcher : MonoBehaviour
     private Vector3 scaleChange;
     private bool faceLeft;
     public float speed = 0;
+    public AudioSource audioScream;
 
 
 
@@ -69,7 +70,7 @@ public class Ours_Launcher : MonoBehaviour
 
     IEnumerator inCDchargeCD()
     {
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(20f);
         inCDcharge = false;
         CoroutineCharge = true;
     }
@@ -86,7 +87,8 @@ public class Ours_Launcher : MonoBehaviour
 
     private void scream()
     {
-
+        print("screaming rn");
+        audioScream.Play();
         animator.SetBool("scream", true);
         //start animation scream
         animScream = true;
@@ -176,6 +178,11 @@ public class Ours_Launcher : MonoBehaviour
         if ((!platfromArea.onPlatfrom && !rangeArea.seePlayer && groundArea.isGrounded && !inCDcharge && anim) || overideCharge)
         {
             charge();
+        }
+        if (!platfromArea.onPlatfrom && !rangeArea.seePlayer && groundArea.isGrounded && inCDcharge && anim)
+        {
+            Vector3 vecAgro = player.transform.position.Y() - transform.position.Y();
+            transform.Translate(vecAgro.normalized * 4 * Time.deltaTime, Space.World);
         }
     }
 
