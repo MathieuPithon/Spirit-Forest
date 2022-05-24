@@ -33,6 +33,7 @@ public class Ours_Launcher : MonoBehaviour
     private bool CoroutineCharge = true;
     private int goLeft;
     private bool anim = false;
+    private bool hitWall = false;
 
     void Start()
     {
@@ -100,6 +101,15 @@ public class Ours_Launcher : MonoBehaviour
 
     private void charge()
     {
+        if (transform.position.x - leftWall.transform.position.x < 2F || rightWall.transform.position.x - transform.position.x < 2f)
+        {
+            animator.SetBool("hitWall", true);
+        }
+        else
+        {
+            animator.SetBool("hitWall", false);
+        }
+
         if (hited.hited)
         {
             print("vdsssss");
