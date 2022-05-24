@@ -6,7 +6,6 @@ public class SpawnerRock : MonoBehaviour
 {
     public Transform[] spawnPoints;
     public GameObject enemyPrefabs;
-    private bool play;
     public bool hurlement = false;
 
     public GameObject esprit;
@@ -30,9 +29,7 @@ public class SpawnerRock : MonoBehaviour
         
             foreach (var rockPosition in spawnPoints)
             {   
-                Debug.Log("Création roche on");
                 Instantiate(enemyPrefabs,rockPosition.position,rockPosition.rotation);
-                Debug.Log("Fin sleep");
             }
             hurlement = false;
         
