@@ -87,6 +87,7 @@ public class Ours_Launcher : MonoBehaviour
 
     private void scream()
     {
+
         animator.SetBool("scream", true);
         //start animation scream
         animScream = true;
