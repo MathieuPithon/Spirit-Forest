@@ -147,17 +147,17 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 45186}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 047641a4134ad3943af4e85c4892bf1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   backgrounds:
-  - {fileID: 1967096409}
-  - {fileID: 1616509447}
-  - {fileID: 1860399862}
-  - {fileID: 1154594093}
-  - {fileID: 1297906456}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   smoothing: 0.5
   cam: {fileID: 7145240358054539842, guid: 05de4a65476180246a9575c412431b51, type: 3}
 --- !u!4 &45188
@@ -678,7 +678,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 198754836}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 346.62, y: 4.04, z: 32.0122}
+  m_LocalPosition: {x: 348.19, y: 3.08, z: 32.0122}
   m_LocalScale: {x: 1.1666665, y: 1.1666665, z: 1}
   m_Children: []
   m_Father: {fileID: 1186689714}
@@ -723,7 +723,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 8521c8ab7e9d2534482a299ec28e917a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -11753,6 +11753,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1120586298}
   - component: {fileID: 1120586297}
+  - component: {fileID: 1120586300}
+  - component: {fileID: 1120586299}
   m_Layer: 0
   m_Name: mur_grotte
   m_TagString: Untagged
@@ -11799,7 +11801,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 030107e223a4035419b43d5b9cd9de95, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -11825,6 +11827,58 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1120586299
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1120586296}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -2.7559204, y: 6.3132153}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 83.36945, y: 48.89}
+    newSize: {x: 33.347786, y: 19.556}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5.3157654, y: 36.26357}
+  m_EdgeRadius: 0
+--- !u!61 &1120586300
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1120586296}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -1.9201584, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 83.36945, y: 48.89}
+    newSize: {x: 33.347786, y: 19.556}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.9160004, y: 48.89}
+  m_EdgeRadius: 0
 --- !u!1 &1141888719
 GameObject:
   m_ObjectHideFlags: 0
@@ -12695,11 +12749,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1362722788575237708, guid: 2553d11356bbb93428c19d58af5167b4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 131.14
+      value: 130.4
       objectReference: {fileID: 0}
     - target: {fileID: 1362722788575237708, guid: 2553d11356bbb93428c19d58af5167b4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.6
+      value: -7.46
       objectReference: {fileID: 0}
     - target: {fileID: 1362722788575237708, guid: 2553d11356bbb93428c19d58af5167b4, type: 3}
       propertyPath: m_LocalPosition.z
