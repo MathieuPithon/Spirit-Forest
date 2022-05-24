@@ -19,6 +19,7 @@ public class Ours_Launcher : MonoBehaviour
     private bool faceLeft;
     public float speed = 0;
     public AudioSource audioScream;
+    public hitCharge hited;
 
 
 
@@ -32,6 +33,7 @@ public class Ours_Launcher : MonoBehaviour
     private bool CoroutineCharge = true;
     private int goLeft;
     private bool anim = false;
+
     void Start()
     {
         esprit = GameObject.FindGameObjectsWithTag("Player");
@@ -87,7 +89,6 @@ public class Ours_Launcher : MonoBehaviour
 
     private void scream()
     {
-        print("screaming rn");
         audioScream.Play();
         animator.SetBool("scream", true);
         //start animation scream
@@ -99,9 +100,16 @@ public class Ours_Launcher : MonoBehaviour
 
     private void charge()
     {
+        if (hited.hited)
+        {
+            print("vdsssss");
+            overideCharge = false;
+            return;
+        }
         //player entre le mur gauche et l'ours
         if (!inCDcharge)
         {
+
             if (transform.position.x - leftWall.transform.position.x > player.transform.position.x - leftWall.transform.position.x)
             {
                 goLeft = 1;

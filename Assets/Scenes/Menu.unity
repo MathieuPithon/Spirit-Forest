@@ -508,6 +508,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1809746307179047677, guid: 8050734cacb6af0468407079d0c10500, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 1809746307179047678, guid: 8050734cacb6af0468407079d0c10500, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.19
@@ -591,6 +595,18 @@ PrefabInstance:
     - target: {fileID: 5038891731587974279, guid: 8050734cacb6af0468407079d0c10500, type: 3}
       propertyPath: m_FlipY
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6747264696246192104, guid: 8050734cacb6af0468407079d0c10500, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7345411644179733685, guid: 8050734cacb6af0468407079d0c10500, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 9173205736883642594, guid: 8050734cacb6af0468407079d0c10500, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8050734cacb6af0468407079d0c10500, type: 3}
@@ -4522,7 +4538,7 @@ GameObject:
   - component: {fileID: 1369094520}
   - component: {fileID: 1369094518}
   - component: {fileID: 1369094519}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Slash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
