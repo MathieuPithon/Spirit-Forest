@@ -1659,7 +1659,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 339735585}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.13, y: -25.89, z: -1.32745}
+  m_LocalPosition: {x: -8.04, y: -25.89, z: -1.32745}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 170452293}
@@ -1690,6 +1690,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 339735587}
   turnArea: {fileID: 1680725800}
   animator: {fileID: 339735586}
+  speed: 0
 --- !u!61 &339735590
 BoxCollider2D:
   m_ObjectHideFlags: 0

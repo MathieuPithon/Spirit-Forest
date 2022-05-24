@@ -7,8 +7,7 @@ public class SpawnerRock : MonoBehaviour
     public Transform[] spawnPoints;
     public GameObject enemyPrefabs;
     private bool play;
-    public  Ours_Launcher Ours_Launcher;
-    public bool hurlement = Ours_Launcher.animScream;
+    public bool hurlement = false;
 
     public GameObject esprit;
     
