@@ -2628,6 +2628,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 391581784852015599, guid: 92a45923c258836428661bc3ee9eb204, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 391581785213882952, guid: 92a45923c258836428661bc3ee9eb204, type: 3}
       propertyPath: m_LocalPosition.x
       value: 40.33266
@@ -2676,6 +2680,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy Lance
       objectReference: {fileID: 0}
+    - target: {fileID: 391581785213882963, guid: 92a45923c258836428661bc3ee9eb204, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 391581785227303891, guid: 92a45923c258836428661bc3ee9eb204, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -2683,6 +2691,34 @@ PrefabInstance:
     - target: {fileID: 391581785227303891, guid: 92a45923c258836428661bc3ee9eb204, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 391581785227303894, guid: 92a45923c258836428661bc3ee9eb204, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 391581785462338174, guid: 92a45923c258836428661bc3ee9eb204, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 391581785622705009, guid: 92a45923c258836428661bc3ee9eb204, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 391581785677833667, guid: 92a45923c258836428661bc3ee9eb204, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 391581786244448243, guid: 92a45923c258836428661bc3ee9eb204, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 391581786452036408, guid: 92a45923c258836428661bc3ee9eb204, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 391581786874311713, guid: 92a45923c258836428661bc3ee9eb204, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7538963752761582568, guid: 92a45923c258836428661bc3ee9eb204, type: 3}
       propertyPath: gate
@@ -7513,7 +7549,7 @@ GameObject:
   - component: {fileID: 618635532}
   - component: {fileID: 618635534}
   - component: {fileID: 618635533}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TurnArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13598,7 +13634,7 @@ GameObject:
   - component: {fileID: 850936054}
   - component: {fileID: 850936058}
   - component: {fileID: 850936059}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EnemySniper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14059,7 +14095,7 @@ GameObject:
   m_Component:
   - component: {fileID: 897495264}
   - component: {fileID: 897495263}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Line
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14919,7 +14955,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1053115296}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 93.91, y: -1.5, z: 32.0122}
+  m_LocalPosition: {x: 87.8, y: -1.5, z: 32.0122}
   m_LocalScale: {x: 1, y: 0.75, z: 1}
   m_Children: []
   m_Father: {fileID: 447874807}
@@ -15122,7 +15158,7 @@ GameObject:
   - component: {fileID: 1071129539}
   - component: {fileID: 1071129541}
   - component: {fileID: 1071129540}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RangeArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16654,7 +16690,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1460700956}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 88.33, y: -0.95, z: 32.0122}
+  m_LocalPosition: {x: 84.7, y: -0.95, z: 32.0122}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1186689714}
@@ -17055,7 +17091,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1502665996}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 93.9, y: -1.4, z: 32.0122}
+  m_LocalPosition: {x: 87.8, y: -1.4, z: 32.0122}
   m_LocalScale: {x: 1, y: 0.75, z: 1}
   m_Children: []
   m_Father: {fileID: 1181477482}
@@ -17250,7 +17286,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1514146564}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 91.92, y: -0.9, z: 32.0122}
+  m_LocalPosition: {x: 87.2, y: -0.9, z: 32.0122}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1186689714}
@@ -22744,7 +22780,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1727957609}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: firePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23817,6 +23853,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 391581784852015599, guid: 92a45923c258836428661bc3ee9eb204, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 391581785213882952, guid: 92a45923c258836428661bc3ee9eb204, type: 3}
       propertyPath: m_LocalPosition.x
       value: 77.08
@@ -23865,6 +23905,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy Lance (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 391581785213882963, guid: 92a45923c258836428661bc3ee9eb204, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 391581785227303891, guid: 92a45923c258836428661bc3ee9eb204, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -23872,6 +23916,34 @@ PrefabInstance:
     - target: {fileID: 391581785227303891, guid: 92a45923c258836428661bc3ee9eb204, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 391581785227303894, guid: 92a45923c258836428661bc3ee9eb204, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 391581785462338174, guid: 92a45923c258836428661bc3ee9eb204, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 391581785622705009, guid: 92a45923c258836428661bc3ee9eb204, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 391581785677833667, guid: 92a45923c258836428661bc3ee9eb204, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 391581786244448243, guid: 92a45923c258836428661bc3ee9eb204, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 391581786452036408, guid: 92a45923c258836428661bc3ee9eb204, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 391581786874311713, guid: 92a45923c258836428661bc3ee9eb204, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7538963752761582568, guid: 92a45923c258836428661bc3ee9eb204, type: 3}
       propertyPath: gate
@@ -24543,7 +24615,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2141712911}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 91.92, y: -0.9, z: 32.0122}
+  m_LocalPosition: {x: 81.8, y: -0.9, z: 32.0122}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1186689714}
