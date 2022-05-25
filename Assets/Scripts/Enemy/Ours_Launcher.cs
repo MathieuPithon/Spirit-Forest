@@ -232,6 +232,7 @@ public class Ours_Launcher : MonoBehaviour
             Vector3 vecAgro = player.transform.position.Y() - transform.position.Y();
             transform.Translate(vecAgro.normalized * 4 * Time.deltaTime, Space.World);
         }
+        
     }
 
 
