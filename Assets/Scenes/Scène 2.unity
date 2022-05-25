@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 49832836}
   - component: {fileID: 49832838}
   - component: {fileID: 49832837}
-  m_Layer: 13
+  m_Layer: 10
   m_Name: WallCave (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -406,7 +406,7 @@ GameObject:
   m_Component:
   - component: {fileID: 105586611}
   - component: {fileID: 105586612}
-  m_Layer: 13
+  m_Layer: 10
   m_Name: WallCave (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -571,7 +571,7 @@ GameObject:
   - component: {fileID: 159872288}
   - component: {fileID: 159872290}
   - component: {fileID: 159872289}
-  m_Layer: 13
+  m_Layer: 10
   m_Name: WallCave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -678,7 +678,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 182145346}
-  m_Layer: 13
+  m_Layer: 10
   m_Name: Mur de gauche
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -714,7 +714,7 @@ GameObject:
   m_Component:
   - component: {fileID: 234239120}
   - component: {fileID: 234239121}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mur_fissure (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -798,7 +798,7 @@ GameObject:
   - component: {fileID: 276976381}
   - component: {fileID: 276976379}
   - component: {fileID: 276976378}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: piege_pique
   m_TagString: Pique
   m_Icon: {fileID: 0}
@@ -910,7 +910,7 @@ GameObject:
   - component: {fileID: 397063679}
   - component: {fileID: 397063681}
   - component: {fileID: 397063680}
-  m_Layer: 11
+  m_Layer: 9
   m_Name: sol B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1019,7 +1019,7 @@ GameObject:
   - component: {fileID: 399947110}
   - component: {fileID: 399947112}
   - component: {fileID: 399947111}
-  m_Layer: 11
+  m_Layer: 9
   m_Name: FloorCave1
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -1373,7 +1373,7 @@ GameObject:
   m_Component:
   - component: {fileID: 527998479}
   - component: {fileID: 527998480}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mur_fissure (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1957,7 +1957,7 @@ GameObject:
   - component: {fileID: 854621947}
   - component: {fileID: 854621949}
   - component: {fileID: 854621948}
-  m_Layer: 11
+  m_Layer: 9
   m_Name: SOL A
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -2310,7 +2310,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 953444457}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Mur de droite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2510,7 +2510,7 @@ GameObject:
   - component: {fileID: 999474939}
   - component: {fileID: 999474940}
   - component: {fileID: 999474941}
-  m_Layer: 13
+  m_Layer: 10
   m_Name: mur_fissure
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -2701,7 +2701,7 @@ GameObject:
   - component: {fileID: 1081464874}
   - component: {fileID: 1081464873}
   - component: {fileID: 1081464875}
-  m_Layer: 11
+  m_Layer: 9
   m_Name: FloorCave1
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -2892,7 +2892,7 @@ GameObject:
   - component: {fileID: 1146430129}
   - component: {fileID: 1146430128}
   - component: {fileID: 1146430130}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: echelle 1
   m_TagString: Ladder
   m_Icon: {fileID: 0}
@@ -3069,7 +3069,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1201146376}
   - component: {fileID: 1201146379}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: piege_pique
   m_TagString: Pique
   m_Icon: {fileID: 0}
@@ -4648,7 +4648,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1960760229}
-  m_Layer: 11
+  m_Layer: 9
   m_Name: Sol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4683,7 +4683,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2011561262}
   - component: {fileID: 2011561263}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mur_fissure (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4850,7 +4850,7 @@ GameObject:
   - component: {fileID: 2054458921}
   - component: {fileID: 2054458920}
   - component: {fileID: 2054458919}
-  m_Layer: 13
+  m_Layer: 10
   m_Name: plafond_retour_scene1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5042,7 +5042,7 @@ GameObject:
   - component: {fileID: 2070977977}
   - component: {fileID: 2070977979}
   - component: {fileID: 2070977978}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pique
   m_TagString: Untagged
   m_Icon: {fileID: 0}
