@@ -67,7 +67,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8369056136696631643}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a1e56a1d37726f4e84cdb16de8e9dc0, type: 3}
+  m_Script: {fileID: 11500000, guid: 4ff9148b88b9b3748b29b8d0946c5e26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   inRange: 0
@@ -158,7 +158,6 @@ GameObject:
   - component: {fileID: 8369056137859151007}
   - component: {fileID: 8369056137859151004}
   - component: {fileID: 8369056137859151005}
-  - component: {fileID: 8369056137859150992}
   - component: {fileID: 8369056137859150993}
   - component: {fileID: 8369056137859150995}
   m_Layer: 8
@@ -264,34 +263,10 @@ MonoBehaviour:
   maxHealth: 75
   currentHealth: 0
   xpEarned: 4
-  healthBar: {fileID: 8369056137859151004}
+  healthBar: {fileID: 8369056137923782440}
   xp: {fileID: 0}
   deathSound: {fileID: 0}
   Samourai: {fileID: 8369056137859151002}
---- !u!114 &8369056137859150992
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8369056137859151002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dfc30fd485eabe243a4064f469078136, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CoolDown: 10
-  CDAttacking: 2
-  goBack: {fileID: 4630482443800616158}
-  agro: {fileID: 8369056138404812729}
-  turn: {fileID: 8369056138178613877}
-  gate: {fileID: 0}
-  attackArea: {fileID: 8369056136696631644}
-  rb: {fileID: 8369056137859150993}
-  cible: {fileID: 1809746307179047678, guid: 8050734cacb6af0468407079d0c10500, type: 3}
-  inCoolDown: 0
-  isAttacking: 0
-  animator: {fileID: 0}
 --- !u!50 &8369056137859150993
 Rigidbody2D:
   serializedVersion: 4
@@ -652,7 +627,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8369056138178613872}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a4fefd4b4bce124ca59bf7f7eb41830, type: 3}
+  m_Script: {fileID: 11500000, guid: d2aa0d5ec767bf34fa6daa70c9a5f9d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   needTurn: 0
@@ -801,7 +776,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8369056138404812708}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6470282eed11e8428f7e2ab5da91ad7, type: 3}
+  m_Script: {fileID: 11500000, guid: 4ff9148b88b9b3748b29b8d0946c5e26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seePlayer: 0
+  inRange: 0

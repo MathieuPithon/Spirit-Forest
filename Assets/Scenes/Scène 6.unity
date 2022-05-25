@@ -1592,7 +1592,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 313390735}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1c13dd1f90536943b9715d29cb74432, type: 3}
+  m_Script: {fileID: 11500000, guid: 98162b6aa14a7fd4c8a9476cdb11dc05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 313390738}
@@ -1950,7 +1950,6 @@ MonoBehaviour:
   animator: {fileID: 339735586}
   speed: 0
   audioScream: {fileID: 339735592}
-  audioWallHitted: {fileID: 339735592}
   hited: {fileID: 1152524255}
 --- !u!61 &339735590
 BoxCollider2D:
@@ -2200,15 +2199,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 339735585}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 779970a5d0713264a9177627d4dfcf2a, type: 3}
+  m_Script: {fileID: 11500000, guid: 3f0dec0e2196d44478ba1856ddef6a35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 200
-  currentHealth: 200
+  maxHealth: 400
+  currentHealth: 0
+  xpEarned: 40
   healthBar: {fileID: 313390736}
+  xp: {fileID: 0}
   deathSound: {fileID: 339735593}
   Samourai: {fileID: 339735585}
-  animator: {fileID: 339735586}
 --- !u!1 &348463035
 GameObject:
   m_ObjectHideFlags: 0

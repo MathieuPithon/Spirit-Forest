@@ -6,7 +6,7 @@ using UnityEngine;
 /**
     Initialise les variables qui sont mises dans la barre de vie, ainsi que l'évènement quand HP = 0
 **/
-public class BossHealthManager : MonoBehaviour
+public class EnemyHealthManager : MonoBehaviour
 {
     public int maxHealth;
     public int currentHealth;
@@ -29,6 +29,7 @@ public class BossHealthManager : MonoBehaviour
             deathSound.Play();
             //jouer animation de mort
             Samourai.GetComponent<Animator>().Play("SamouraiDie");
+            Samourai.GetComponent<Animator>().Play("die");
             Samourai.SetActive(false);
             Destroy(Samourai);
             //GetComponent<EnemyLance_HitBoxLance>().enabled = false;
