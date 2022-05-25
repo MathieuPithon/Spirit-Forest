@@ -18,7 +18,6 @@ public class SpawnerRock : MonoBehaviour
     private void Update() {
         if (hurlement)
         {
-            Debug.Log("hurlement");
             onTriggerEnter();
         }
     }
