@@ -121,12 +121,6 @@ public class EnemySniper_Launcher : MonoBehaviour
     }
 
 
-
-
-
-
-
-
     void temp()
     {
         lineRenderer.SetPosition(0, firePoint.position);
