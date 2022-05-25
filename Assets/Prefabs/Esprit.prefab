@@ -314,6 +314,7 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   esprit: {fileID: 0}
   audioSource: {fileID: 5129687337622600368}
+  deathMenu: {fileID: 0}
 --- !u!82 &5129687337622600368
 AudioSource:
   m_ObjectHideFlags: 0
@@ -475,8 +476,9 @@ MonoBehaviour:
   attackRange: 0.88
   enemies:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 256
   anim: {fileID: 408428044027511056}
+  animSlash: {fileID: 0}
   sound1: {fileID: 8182448678525453829}
   sound2: {fileID: 2985284188413184176}
   sound3: {fileID: 2550978644561727331}
@@ -495,7 +497,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1809746307179047665}
   moveSpeed: 500
+  echelle: 0
   isGrounded: {fileID: 6052051924589421010}
+  esprit: {fileID: 0}
+  anim: {fileID: 0}
 --- !u!95 &408428044027511056
 Animator:
   serializedVersion: 3
