@@ -288,7 +288,7 @@ GameObject:
   m_Component:
   - component: {fileID: 102243074}
   - component: {fileID: 102243075}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: wall (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10799,7 +10799,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 547726700}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11583,7 +11583,7 @@ GameObject:
   - component: {fileID: 986237643}
   - component: {fileID: 986237642}
   - component: {fileID: 986237644}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: forest_wall_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12664,7 +12664,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1475943150}
   - component: {fileID: 1475943151}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: wall (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12916,7 +12916,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1547461875}
   - component: {fileID: 1547461876}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: wall (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

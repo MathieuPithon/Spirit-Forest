@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 33571704}
   - component: {fileID: 33571703}
-  m_Layer: 13
+  m_Layer: 9
   m_Name: plateformCave2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1950,7 +1950,6 @@ MonoBehaviour:
   animator: {fileID: 339735586}
   speed: 0
   audioScream: {fileID: 339735592}
-  audioWallHitted: {fileID: 339735592}
   hited: {fileID: 1152524255}
 --- !u!61 &339735590
 BoxCollider2D:
@@ -2951,7 +2950,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4458075139260402380, guid: feab394b9f04e5b478a3b0298b68ab27, type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4691693852907156904, guid: feab394b9f04e5b478a3b0298b68ab27, type: 3}
       propertyPath: m_Offset.x
@@ -3463,7 +3462,7 @@ GameObject:
   - component: {fileID: 854621947}
   - component: {fileID: 854621949}
   - component: {fileID: 854621948}
-  m_Layer: 11
+  m_Layer: 9
   m_Name: SOL A
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -4043,7 +4042,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1081464874}
   - component: {fileID: 1081464873}
-  m_Layer: 11
+  m_Layer: 9
   m_Name: FloorCave1
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -4709,7 +4708,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4458075139260402380, guid: feab394b9f04e5b478a3b0298b68ab27, type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4691693852907156904, guid: feab394b9f04e5b478a3b0298b68ab27, type: 3}
       propertyPath: m_Offset.x
@@ -6440,7 +6439,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1830591674}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: plateforme
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6578,7 +6577,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4458075139260402380, guid: feab394b9f04e5b478a3b0298b68ab27, type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4691693852907156904, guid: feab394b9f04e5b478a3b0298b68ab27, type: 3}
       propertyPath: m_Offset.x
@@ -7232,7 +7231,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1960760229}
-  m_Layer: 11
+  m_Layer: 9
   m_Name: Sol
   m_TagString: Untagged
   m_Icon: {fileID: 0}

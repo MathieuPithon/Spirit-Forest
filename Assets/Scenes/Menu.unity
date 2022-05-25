@@ -596,6 +596,10 @@ PrefabInstance:
       propertyPath: m_FlipY
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6052051924589421010, guid: 8050734cacb6af0468407079d0c10500, type: 3}
+      propertyPath: collisionGroundLayers.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
     - target: {fileID: 6747264696246192104, guid: 8050734cacb6af0468407079d0c10500, type: 3}
       propertyPath: m_Layer
       value: 11

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Esprit_IsGrounded : MonoBehaviour
 {
-    [HideInInspector]
+    // [HideInInspector]
     public bool isGrounded;
     public Transform groundCheck;
     private float groundCheckRadius = 0.63f;
