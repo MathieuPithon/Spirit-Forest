@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Cyriaque - dans 'public Healthbar' il faut mettre la health bar qui est dans canvas 
-// si le joueur rentre en collision avec qql chose du layer Enemy alors 
-// colide = true et il prend des dmgs , quand il arrete de toucher un ennemi colide = false 
-// quand il se fait toucher une coroutine de 2 s start et pendant ce temps il est invincible 
+// Cyriaque - dans 'public Healthbar' il faut mettre la health bar qui est dans canvas
+// si le joueur rentre en collision avec qql chose du layer Enemy alors
+// colide = true et il prend des dmgs , quand il arrete de toucher un ennemi colide = false
+// quand il se fait toucher une coroutine de 2 s start et pendant ce temps il est invincible
 public class Esprit_Health : MonoBehaviour
 {
     private int maxHealth = 100;
@@ -58,7 +58,7 @@ public class Esprit_Health : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            Die();
+            StartCoroutine(Die());
 
         }
     }
@@ -91,20 +91,20 @@ public class Esprit_Health : MonoBehaviour
     }
 
 
-    public void Die()
+    IEnumerator Die()
     {
-        deathMenu.ToggleEndMenu ();
+
         Debug.Log("Le joueur est dead");
-        //bloquer les action 
+        //bloquer les action
         GetComponent<Esprit_Mouvement>().enabled = false;
         GetComponent<Esprit_Jump>().enabled = false;
         GetComponent<Esprit_Health>().enabled = false;
         GetComponent<Esprit_Dash>().enabled = false;
         GetComponent<Esprit_Combat>().enabled = false;
         //jouer animation de mort
-        esprit.GetComponent<Animator>().Play("PlayerDie");       
-
-
+        esprit.GetComponent<Animator>().Play("PlayerDie");
+        yield return new WaitForSeconds(1.5f);
+        deathMenu.ToggleEndMenu ();
 
     }
 }
